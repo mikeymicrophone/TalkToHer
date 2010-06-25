@@ -1,0 +1,259 @@
+TTalkToHer
+v7
+r0
+t299128229.753196
+cCheck dependencies
+cProcessInfoPlistFile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist TalkToHer-Info.plist
+cCompileXIB /Users/mschwab/Documents/TalkToHer/MainWindow.xib
+cCompileXIB /Users/mschwab/Documents/TalkToHer/RootViewController.xib
+cProcessPCH /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch TalkToHer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o /Users/mschwab/Documents/TalkToHer/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C239C5C0000000000000132
+t1277402204
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/Availability.h
+c000000004BF4CBF90000000000001A3B
+t1274334201
+s6715
+
+N/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.h
+c000000004C241C3100000000000000EB
+t1277434929
+s235
+i<UIKit/UIKit.h>
+
+N/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m
+c000000004C241E21000000000000116B
+t1277435425
+s4459
+i"RootViewController.h"
+
+N/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.h
+c000000004C241C3100000000000001D7
+t1277434929
+s471
+i<UIKit/UIKit.h>
+
+N/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m
+c000000004C241C310000000000000AA3
+t1277434929
+s2723
+i"TalkToHerAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/mschwab/Documents/TalkToHer/MainWindow.xib
+c000000004C241C310000000000005FFC
+t1277434929
+s24572
+
+N/Users/mschwab/Documents/TalkToHer/RootViewController.xib
+c000000004C241D24000000000000485A
+t1277435172
+s18522
+
+N/Users/mschwab/Documents/TalkToHer/TalkToHer_Prefix.pch
+c000000004C241C310000000000000144
+t1277434929
+s324
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app
+t2
+s0
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app.dSYM
+t2
+s0
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist
+t1277435427
+s599
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/MainWindow.nib
+t1277435428
+s1511
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/PkgInfo
+t1277435427
+s8
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/RootViewController.nib
+t1277435428
+s971
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer
+t2
+s0
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o
+t2
+s0
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHer.LinkFileList
+c000000004C241E23000000000000018C
+t1277435427
+s396
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o
+t1277435429
+s49492
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o
+t1277435429
+s6296
+
+N/Users/mschwab/Documents/TalkToHer/main.m
+c000000004C241C310000000000000169
+t1277434929
+s361
+i<UIKit/UIKit.h>
+
+N/var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch
+t1277435429
+s15232016
+
+NTalkToHer-Info.plist
+c000000004C241C31000000000000038D
+t1277434929
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies299128227#299128227#0(0"0(0#1#0"3343187568374212096#0"0#
+
+CCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299128229.697629
+e299128229.753114
+r0
+xCompileC
+xbuild/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o
+x/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:81: warning: comparison between pointer and integer
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:82:20: warning: character constant too long for its type
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:83: error: object cannot be set - either readonly property or no setter found
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:83: error: expected ';' before '}' token
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:83: warning: comparison between pointer and integer
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:84:20: warning: character constant too long for its type
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:85: error: object cannot be set - either readonly property or no setter found
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:85: error: expected ';' before '}' token
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:85: warning: comparison between pointer and integer
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:87: error: object cannot be set - either readonly property or no setter found
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:87: error: expected ';' before '}' token
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:87: warning: comparison between pointer and integer
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:88:20: warning: character constant too long for its type
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:89: error: object cannot be set - either readonly property or no setter found
+o/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:89: error: expected ';' before '}' token
+lSLF07#2@71"Compile /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128229#299128229#0(1950"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:81: warning: comparison between pointer and integer/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:82:20: warning: character constant too long for its type/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:83: error: object cannot be set - either readonly property or no setter found/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:83: error: expected ';' before '}' token/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:83: warning: comparison between pointer and integer/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:84:20: warning: character constant too long for its type/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:85: error: object cannot be set - either readonly property or no setter found/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:85: error: expected ';' before '}' token/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:85: warning: comparison between pointer and integer/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:87: error: object cannot be set - either readonly property or no setter found/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:87: error: expected ';' before '}' token/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:87: warning: comparison between pointer and integer/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:88:20: warning: character constant too long for its type/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:89: error: object cannot be set - either readonly property or no setter found/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m:89: error: expected ';' before '}' token15(22@38"Comparison between pointer and integer299128229#135#116#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#81#0#81#0#0"0(22@40"Character constant too long for its type299128229#251#121#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#82#0#82#0#0"0(4@66"Object cannot be set - either readonly property or no setter found299128229#372#142#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#83#0#83#0#0"0(4@29"Expected ';' before '}' token299128229#514#105#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#83#0#83#0#19"expected * before *0(22@38"Comparison between pointer and integer299128229#619#116#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#83#0#83#0#0"0(22@40"Character constant too long for its type299128229#735#121#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#84#0#84#0#0"0(4@66"Object cannot be set - either readonly property or no setter found299128229#856#142#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#85#0#85#0#0"0(4@29"Expected ';' before '}' token299128229#998#105#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#85#0#85#0#19"expected * before *0(22@38"Comparison between pointer and integer299128229#1103#116#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#85#0#85#0#0"0(4@66"Object cannot be set - either readonly property or no setter found299128229#1219#142#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#87#0#87#0#0"0(4@29"Expected ';' before '}' token299128229#1361#105#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#87#0#87#0#19"expected * before *0(22@38"Comparison between pointer and integer299128229#1466#116#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#87#0#87#0#0"0(22@40"Character constant too long for its type299128229#1582#121#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#88#0#88#0#0"0(4@66"Object cannot be set - either readonly property or no setter found299128229#1703#142#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#89#0#89#0#0"0(4@29"Expected ';' before '}' token299128229#1845#105#0(6@63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299128225#89#0#89#0#19"expected * before *0(0#0#63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m8599051648#1933"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -include /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch -c /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m -o /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o1#
+
+CCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299128229.521928
+e299128229.707204
+r1
+xCompileC
+xbuild/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o
+x/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m299128229#299128229#0(0"0(0#0#65"/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m8598997632#1937"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -include /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch -c /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m -o /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o0#
+
+CCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o /Users/mschwab/Documents/TalkToHer/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299128229.520549
+e299128229.697529
+r1
+xCompileC
+xbuild/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o
+x/Users/mschwab/Documents/TalkToHer/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@49"Compile /Users/mschwab/Documents/TalkToHer/main.m299128229#299128229#0(0"0(0#0#41"/Users/mschwab/Documents/TalkToHer/main.m8599026528#1897"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -include /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch -c /Users/mschwab/Documents/TalkToHer/main.m -o /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/mschwab/Documents/TalkToHer/MainWindow.xib
+s299128227.872598
+e299128228.368036
+r1
+xCompileXIB
+x/Users/mschwab/Documents/TalkToHer/MainWindow.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@25"CompileXIB MainWindow.xib299128227#299128228#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#49"/Users/mschwab/Documents/TalkToHer/MainWindow.xib8613303040#560"    cd /Users/mschwab/Documents/TalkToHer    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/MainWindow.nib /Users/mschwab/Documents/TalkToHer/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/mschwab/Documents/TalkToHer/RootViewController.xib
+s299128227.874226
+e299128228.393586
+r1
+xCompileXIB
+x/Users/mschwab/Documents/TalkToHer/RootViewController.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@33"CompileXIB RootViewController.xib299128227#299128228#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#57"/Users/mschwab/Documents/TalkToHer/RootViewController.xib8613064960#576"    cd /Users/mschwab/Documents/TalkToHer    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/RootViewController.nib /Users/mschwab/Documents/TalkToHer/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CGenerateDSYMFile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app.dSYM /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer
+r0
+
+CLd /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer normal i386
+r0
+
+CProcessInfoPlistFile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist TalkToHer-Info.plist
+s299128227.846429
+e299128227.872520
+r1
+xProcessInfoPlistFile
+x/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist
+xTalkToHer-Info.plist
+lSLF07#2@28"Process TalkToHer-Info.plist299128227#299128227#0(0"0(0#0#55"/Users/mschwab/Documents/TalkToHer/TalkToHer-Info.plist29555366482477168#473"    cd /Users/mschwab/Documents/TalkToHer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TalkToHer-Info.plist -genpkginfo /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist0#
+
+CProcessPCH /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch TalkToHer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s299128228.393731
+e299128229.520320
+r1
+xProcessPCH
+x/var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch
+xTalkToHer_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile TalkToHer_Prefix.pch299128228#299128229#0(0"0(0#0#55"/Users/mschwab/Documents/TalkToHer/TalkToHer_Prefix.pch8613132960#1791"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -c /Users/mschwab/Documents/TalkToHer/TalkToHer_Prefix.pch -o /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch0#
+
+CTouch /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app
+r0
+

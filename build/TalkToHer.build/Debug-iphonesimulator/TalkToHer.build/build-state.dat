@@ -1,0 +1,263 @@
+TTalkToHer
+v7
+r0
+t299130004.830325
+cCheck dependencies
+cProcessInfoPlistFile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist TalkToHer-Info.plist
+cCompileXIB /Users/mschwab/Documents/TalkToHer/MainWindow.xib
+cCompileXIB /Users/mschwab/Documents/TalkToHer/RootViewController.xib
+cProcessPCH /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch TalkToHer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o /Users/mschwab/Documents/TalkToHer/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer normal i386
+cGenerateDSYMFile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app.dSYM /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer
+cTouch /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C239C5C0000000000000132
+t1277402204
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/Availability.h
+c000000004BF4CBF90000000000001A3B
+t1274334201
+s6715
+
+N/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.h
+c000000004C241C3100000000000000EB
+t1277434929
+s235
+i<UIKit/UIKit.h>
+
+N/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m
+c000000004C24251000000000000011B9
+t1277437200
+s4537
+i"RootViewController.h"
+
+N/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.h
+c000000004C241C3100000000000001D7
+t1277434929
+s471
+i<UIKit/UIKit.h>
+
+N/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m
+c000000004C241C310000000000000AA3
+t1277434929
+s2723
+i"TalkToHerAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/mschwab/Documents/TalkToHer/MainWindow.xib
+c000000004C241E890000000000006032
+t1277435529
+s24626
+
+N/Users/mschwab/Documents/TalkToHer/RootViewController.xib
+c000000004C241D24000000000000485A
+t1277435172
+s18522
+
+N/Users/mschwab/Documents/TalkToHer/TalkToHer_Prefix.pch
+c000000004C241C310000000000000144
+t1277434929
+s324
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app
+t1277437204
+s238
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app.dSYM
+t1277437204
+s102
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist
+t1277435427
+s599
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/MainWindow.nib
+t1277435558
+s1543
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/PkgInfo
+t1277435427
+s8
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/RootViewController.nib
+t1277435428
+s971
+
+N/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer
+t1277437204
+s18236
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o
+t1277437204
+s39488
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHer.LinkFileList
+c000000004C241E23000000000000018C
+t1277435427
+s396
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o
+t1277435429
+s49492
+
+N/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o
+t1277435429
+s6296
+
+N/Users/mschwab/Documents/TalkToHer/main.m
+c000000004C241C310000000000000169
+t1277434929
+s361
+i<UIKit/UIKit.h>
+
+N/var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch
+t1277435429
+s15232016
+
+NTalkToHer-Info.plist
+c000000004C241C31000000000000038D
+t1277434929
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies299130004#299130004#0(0"0(0#1#0"8624265504#0"0#
+
+CCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299130004.658390
+e299130004.784956
+r1
+xCompileC
+xbuild/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o
+x/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m299130004#299130004#0(0"0(0#0#63"/Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m8626794848#1933"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -include /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch -c /Users/mschwab/Documents/TalkToHer/Classes/RootViewController.m -o /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/RootViewController.o0#
+
+CCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299128229.521928
+e299128229.707204
+r1
+xCompileC
+xbuild/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o
+x/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m299128229#299128229#0(0"0(0#0#65"/Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m8598997632#1937"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -include /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch -c /Users/mschwab/Documents/TalkToHer/Classes/TalkToHerAppDelegate.m -o /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHerAppDelegate.o0#
+
+CCompileC build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o /Users/mschwab/Documents/TalkToHer/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299128229.520549
+e299128229.697529
+r1
+xCompileC
+xbuild/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o
+x/Users/mschwab/Documents/TalkToHer/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@49"Compile /Users/mschwab/Documents/TalkToHer/main.m299128229#299128229#0(0"0(0#0#41"/Users/mschwab/Documents/TalkToHer/main.m8599026528#1897"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -include /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch -c /Users/mschwab/Documents/TalkToHer/main.m -o /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/mschwab/Documents/TalkToHer/MainWindow.xib
+s299128358.163054
+e299128358.560055
+r1
+xCompileXIB
+x/Users/mschwab/Documents/TalkToHer/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib299128358#299128358#0(0"0(0#0#49"/Users/mschwab/Documents/TalkToHer/MainWindow.xib8612713472#560"    cd /Users/mschwab/Documents/TalkToHer    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/MainWindow.nib /Users/mschwab/Documents/TalkToHer/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/mschwab/Documents/TalkToHer/RootViewController.xib
+s299128227.874226
+e299128228.393586
+r1
+xCompileXIB
+x/Users/mschwab/Documents/TalkToHer/RootViewController.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@33"CompileXIB RootViewController.xib299128227#299128228#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#57"/Users/mschwab/Documents/TalkToHer/RootViewController.xib8613064960#576"    cd /Users/mschwab/Documents/TalkToHer    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/RootViewController.nib /Users/mschwab/Documents/TalkToHer/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CGenerateDSYMFile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app.dSYM /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer
+s299130004.808792
+e299130004.827223
+r1
+xGenerateDSYMFile
+x/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app.dSYM
+x/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer
+lSLF07#2@115"GenerateDSYMFile build/Debug-iphonesimulator/TalkToHer.app.dSYM build/Debug-iphonesimulator/TalkToHer.app/TalkToHer299130004#299130004#0(0"0(0#0#86"/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer8627447136#377"    cd /Users/mschwab/Documents/TalkToHer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer -o /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app.dSYM0#
+
+CLd /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer normal i386
+s299130004.785052
+e299130004.808697
+r1
+xLd
+x/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer
+xnormal
+xi386
+lSLF07#2@91"Link /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer299130004#299130004#0(0"0(0#0#0"8628170944#890"    cd /Users/mschwab/Documents/TalkToHer    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -filelist /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/Objects-normal/i386/TalkToHer.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/TalkToHer0#
+
+CProcessInfoPlistFile /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist TalkToHer-Info.plist
+s299128227.846429
+e299128227.872520
+r1
+xProcessInfoPlistFile
+x/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist
+xTalkToHer-Info.plist
+lSLF07#2@28"Process TalkToHer-Info.plist299128227#299128227#0(0"0(0#0#55"/Users/mschwab/Documents/TalkToHer/TalkToHer-Info.plist29555366482477168#473"    cd /Users/mschwab/Documents/TalkToHer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TalkToHer-Info.plist -genpkginfo /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app/Info.plist0#
+
+CProcessPCH /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch TalkToHer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s299128228.393731
+e299128229.520320
+r1
+xProcessPCH
+x/var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch
+xTalkToHer_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile TalkToHer_Prefix.pch299128228#299128229#0(0"0(0#0#55"/Users/mschwab/Documents/TalkToHer/TalkToHer_Prefix.pch8613132960#1791"    cd /Users/mschwab/Documents/TalkToHer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-generated-files.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-own-target-headers.hmap -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-all-target-headers.hmap -iquote /Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/TalkToHer-project-headers.hmap -F/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator -I/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/include -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources/i386 -I/Users/mschwab/Documents/TalkToHer/build/TalkToHer.build/Debug-iphonesimulator/TalkToHer.build/DerivedSources -c /Users/mschwab/Documents/TalkToHer/TalkToHer_Prefix.pch -o /var/folders/vZ/vZ6tRAH7FNqswBJF91nlHk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TalkToHer_Prefix-gqgfilwkzbggjafkwcyszeihhwwl/TalkToHer_Prefix.pch.gch0#
+
+CTouch /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app
+s299130004.827453
+e299130004.830278
+r1
+xTouch
+x/Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app
+lSLF07#2@82"Touch /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app299130004#299130004#0(0"0(0#0#0"8626816256#272"    cd /Users/mschwab/Documents/TalkToHer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/mschwab/Documents/TalkToHer/build/Debug-iphonesimulator/TalkToHer.app0#
+
