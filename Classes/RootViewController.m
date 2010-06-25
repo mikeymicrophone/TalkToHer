@@ -11,6 +11,7 @@
 
 @implementation RootViewController
 
+//@synthesize inspirationController;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -138,13 +139,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+	 InspirationController *inspirationController = [[InspirationController alloc] initWithNibName:nil bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+	 [self.navigationController pushViewController:inspirationController animated:YES];
+	 [inspirationController release];
+
 }
 
 

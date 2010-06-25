@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class InspirationController;
 
 @interface RootViewController : UITableViewController {
+//	InspirationController *inspirationController;
 }
+
+//@property (nonatomic, retain) InspirationController *inspirationController;
 
 @end
