@@ -9,17 +9,28 @@
 #import "InspirationController.h"
 #import "ObjectiveResourceConfig.h"
 #import "Line.h"
+#import "Tip.h"
+#import "Exercise.h"
+#import "Goal.h"
 
 
 @implementation InspirationController
 
-@synthesize content_set;
+@synthesize content_set, content_type;
 
--(void)load_content:(NSString *)model {
-	NSLog(@"loading content");
+-(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
-	content_set = [Line findAllRemote];
-	NSLog(@"content loaded: %@", content_set);
+	
+	if (content_type == @"lines") {
+		content_set = [Line findAllRemote];
+	} else if (content_type == @"tips") {
+		content_set = [Tip findAllRemote];
+	} else if (content_type == @"goals") {
+		content_set = [Goal findAllRemote];
+	} else if (content_type == @"exercises") {
+		content_set = [Exercise findAllRemote];
+	}
+	
 }
 
 #pragma mark -
@@ -28,7 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[self load_content:@"lines"];
+	[self load_content];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -93,9 +104,27 @@
     }
     
 	// Configure the cell...
-	cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-	cell.textLabel.numberOfLines = 5;
-	[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] phrasing]];
+	if (indexPath.section == 0) {
+		if (content_type == @"lines") {
+			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			cell.textLabel.numberOfLines = 5;
+			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] phrasing]];
+		} else if (content_type == @"tips") {
+			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			cell.textLabel.numberOfLines = 5;
+			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] advice]];
+		} else if (content_type == @"goals") {
+			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			cell.textLabel.numberOfLines = 5;
+			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] description]];
+		} else if (content_type == @"exercises") {
+			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			cell.textLabel.numberOfLines = 5;
+			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] name]];
+		}
+	} else {
+		[cell.textLabel setText:@"refresh"];
+	}
     
     return cell;
 }

@@ -51,6 +51,9 @@
 		E4C6AEC311D5415400068008 /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEA111D5415400068008 /* NSError+Error.m */; };
 		E4C6AEC411D5415400068008 /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEA411D5415400068008 /* ObjectiveResourceConfig.m */; };
 		E4C6AEC911D5421100068008 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEC811D5421100068008 /* Line.m */; };
+		E4C6AF4911D5522900068008 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4811D5522900068008 /* Tip.m */; };
+		E4C6AF4C11D5526800068008 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4B11D5526800068008 /* Exercise.m */; };
+		E4C6AF4F11D552BD00068008 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4E11D552BD00068008 /* Goal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +149,12 @@
 		E4C6AEA411D5415400068008 /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		E4C6AEC711D5421100068008 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		E4C6AEC811D5421100068008 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		E4C6AF4711D5522900068008 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
+		E4C6AF4811D5522900068008 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
+		E4C6AF4A11D5526800068008 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		E4C6AF4B11D5526800068008 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		E4C6AF4D11D552BD00068008 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		E4C6AF4E11D552BD00068008 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +183,12 @@
 				E439369611D50DD300D6DED9 /* InspirationController.m */,
 				E4C6AEC711D5421100068008 /* Line.h */,
 				E4C6AEC811D5421100068008 /* Line.m */,
+				E4C6AF4711D5522900068008 /* Tip.h */,
+				E4C6AF4811D5522900068008 /* Tip.m */,
+				E4C6AF4A11D5526800068008 /* Exercise.h */,
+				E4C6AF4B11D5526800068008 /* Exercise.m */,
+				E4C6AF4D11D552BD00068008 /* Goal.h */,
+				E4C6AF4E11D552BD00068008 /* Goal.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -473,6 +488,9 @@
 				E4C6AEC311D5415400068008 /* NSError+Error.m in Sources */,
 				E4C6AEC411D5415400068008 /* ObjectiveResourceConfig.m in Sources */,
 				E4C6AEC911D5421100068008 /* Line.m in Sources */,
+				E4C6AF4911D5522900068008 /* Tip.m in Sources */,
+				E4C6AF4C11D5526800068008 /* Exercise.m in Sources */,
+				E4C6AF4F11D552BD00068008 /* Goal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

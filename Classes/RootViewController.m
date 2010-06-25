@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "InspirationController.h"
 
 
 @implementation RootViewController
@@ -140,7 +141,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	 InspirationController *inspirationController = [[InspirationController alloc] initWithNibName:nil bundle:nil];
-     // ...
+	 [inspirationController setContent_type:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
      // Pass the selected object to the new view controller.
 	 [self.navigationController pushViewController:inspirationController animated:YES];
 	 [inspirationController release];

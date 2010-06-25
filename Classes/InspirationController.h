@@ -10,11 +10,13 @@
 
 
 @interface InspirationController : UITableViewController {
+	NSString *content_type;
 	NSArray *content_set;
 }
 
+@property (nonatomic, retain) NSString *content_type;
 @property (nonatomic, retain) NSArray *content_set;
 
--(void)load_content:(NSString *)model;
+-(void)load_content;
 
 @end
