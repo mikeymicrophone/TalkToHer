@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DataDelegate;
 
 
 @interface InspirationController : UITableViewController {
 	NSString *content_type;
 	NSArray *content_set;
 	NSNumber *content_amount;
+	DataDelegate *data_source;
 }
 
 @property (nonatomic, retain) NSString *content_type;
 @property (nonatomic, retain) NSArray *content_set;
 @property (nonatomic, retain) NSNumber *content_amount;
+@property (nonatomic, retain) DataDelegate *data_source;
 
 -(void)load_content;
 

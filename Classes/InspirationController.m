@@ -16,7 +16,7 @@
 
 @implementation InspirationController
 
-@synthesize content_set, content_type, content_amount;
+@synthesize content_set, content_type, content_amount, data_source;
 
 -(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
@@ -31,6 +31,11 @@
 		content_set = [Goal findAllRemote];
 	} else if (content_type == @"exercises") {
 		content_set = [Exercise findAllRemote];
+	}
+	
+	if (content_set == nil) {
+		NSLog(@"about to perform selector on data delegate");
+		content_set = [data_source performSelector:NSSelectorFromString(content_type)];
 	}
 	
 	NSLog(@"fetched content.");
@@ -90,7 +95,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
 	if (section == 0) {
-		return content_amount;
+		return 5;//content_amount;
 	} else if (section == 1) {
 		return 1;
 	}
@@ -111,19 +116,19 @@
 	if (indexPath.section == 0) {
 		if (content_type == @"lines") {
 			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 5;
+			cell.textLabel.numberOfLines = 10;
 			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] phrasing]];
 		} else if (content_type == @"tips") {
 			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 5;
+			cell.textLabel.numberOfLines = 10;
 			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] advice]];
 		} else if (content_type == @"goals") {
 			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 5;
+			cell.textLabel.numberOfLines = 10;
 			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] description]];
 		} else if (content_type == @"exercises") {
 			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 5;
+			cell.textLabel.numberOfLines = 10;
 			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] name]];
 		}
 	} else {

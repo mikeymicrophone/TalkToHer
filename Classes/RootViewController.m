@@ -143,6 +143,7 @@
 	InspirationController *inspirationController = [[InspirationController alloc] initWithNibName:nil bundle:nil];
 	[inspirationController setContent_type:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
 	[inspirationController setContent_amount:[NSNumber numberWithInt:3]];
+	[inspirationController setData_source:data_source];
     // Pass the selected object to the new view controller.
 	[self.navigationController pushViewController:inspirationController animated:YES];
 	[inspirationController release];
