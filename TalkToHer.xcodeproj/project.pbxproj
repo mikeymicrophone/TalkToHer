@@ -54,6 +54,7 @@
 		E4C6AF4911D5522900068008 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4811D5522900068008 /* Tip.m */; };
 		E4C6AF4C11D5526800068008 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4B11D5526800068008 /* Exercise.m */; };
 		E4C6AF4F11D552BD00068008 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4E11D552BD00068008 /* Goal.m */; };
+		E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,8 @@
 		E4C6AF4B11D5526800068008 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		E4C6AF4D11D552BD00068008 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
 		E4C6AF4E11D552BD00068008 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
+		E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDelegate.h; sourceTree = "<group>"; };
+		E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				E4C6AF4B11D5526800068008 /* Exercise.m */,
 				E4C6AF4D11D552BD00068008 /* Goal.h */,
 				E4C6AF4E11D552BD00068008 /* Goal.m */,
+				E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */,
+				E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				E4C6AF4911D5522900068008 /* Tip.m in Sources */,
 				E4C6AF4C11D5526800068008 /* Exercise.m in Sources */,
 				E4C6AF4F11D552BD00068008 /* Goal.m in Sources */,
+				E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

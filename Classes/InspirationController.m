@@ -16,10 +16,12 @@
 
 @implementation InspirationController
 
-@synthesize content_set, content_type;
+@synthesize content_set, content_type, content_amount;
 
 -(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
+	
+	NSLog(@"about to fetch content: %@", content_type);
 	
 	if (content_type == @"lines") {
 		content_set = [Line findAllRemote];
@@ -30,6 +32,8 @@
 	} else if (content_type == @"exercises") {
 		content_set = [Exercise findAllRemote];
 	}
+	
+	NSLog(@"fetched content.");
 	
 }
 
@@ -86,7 +90,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
 	if (section == 0) {
-		return 3;
+		return content_amount;
 	} else if (section == 1) {
 		return 1;
 	}
@@ -174,6 +178,12 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.section == 1) {
+		content_amount = [NSNumber numberWithInt:[content_amount integerValue] + 3];
+		NSIndexSet *sections = [NSIndexSet indexSetWithIndex:0];
+		[tableView reloadSections:sections withRowAnimation:UITableViewRowAnimationFade];
+	}
+	
     // Navigation logic may go here. Create and push another view controller.
 	/*
 	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

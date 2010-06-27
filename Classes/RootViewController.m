@@ -8,23 +8,24 @@
 
 #import "RootViewController.h"
 #import "InspirationController.h"
+#import "DataDelegate.h"
 
 
 @implementation RootViewController
 
-//@synthesize inspirationController;
+@synthesize data_source;
 
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+	data_source = [[DataDelegate alloc] init];
+	[data_source initialize_data];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -139,13 +140,12 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	 InspirationController *inspirationController = [[InspirationController alloc] initWithNibName:nil bundle:nil];
-	 [inspirationController setContent_type:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:inspirationController animated:YES];
-	 [inspirationController release];
-
+	InspirationController *inspirationController = [[InspirationController alloc] initWithNibName:nil bundle:nil];
+	[inspirationController setContent_type:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
+	[inspirationController setContent_amount:[NSNumber numberWithInt:3]];
+    // Pass the selected object to the new view controller.
+	[self.navigationController pushViewController:inspirationController animated:YES];
+	[inspirationController release];
 }
 
 

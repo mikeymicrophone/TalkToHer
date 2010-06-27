@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class InspirationController;
+@class DataDelegate;
 
 @interface RootViewController : UITableViewController {
-//	InspirationController *inspirationController;
+	DataDelegate *data_source;
 }
 
-//@property (nonatomic, retain) InspirationController *inspirationController;
+@property (nonatomic, retain) DataDelegate *data_source;
 
 @end
