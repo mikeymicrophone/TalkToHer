@@ -15,23 +15,6 @@
 
 @synthesize window;
 @synthesize navigationController;
-@synthesize lines, tips, exercises, goals;
-
--(void)load_content {
-	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com"];
-	self.lines = [Line findAllRemote];
-	
-//	NSString *path = @"http://lineoftheday.com/iphone";
-//	NSURL *url = [[NSURL alloc] initWithString:path];
-//	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-//	[url release];
-//	[request startSynchronous];
-//	NSError *error = [request error];
-//	if (!error) {
-//		NSString *response = [request responseString];
-//		NSLog(@"response: %@", response);
-//	}
-}
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -43,8 +26,6 @@
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
-	
-	[self load_content];
 
     return YES;
 }

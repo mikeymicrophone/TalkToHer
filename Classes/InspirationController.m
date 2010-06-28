@@ -16,7 +16,7 @@
 
 @implementation InspirationController
 
-@synthesize content_set, content_type, content_amount, data_source;
+@synthesize content_set, content_type, displayed_content_amount, data_source;
 
 -(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
@@ -33,11 +33,9 @@
 	
 	if (self.content_set == nil) {
 		self.content_set = [data_source performSelector:NSSelectorFromString(content_type)];
-	} //else {
-//		NSLog(@"about to add content to data delegate: %@", [data_source performSelector:NSSelectorFromString(content_type)]);
-//		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
-//		NSLog(@"successfully added content: %@", content_set);
-//	}
+	} else {
+		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
+	}
 	
 }
 
@@ -94,7 +92,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	int length;
 	if (section == 0) {
-		length = [self.content_amount integerValue];
+		length = [self.displayed_content_amount integerValue];
 	} else if (section == 1) {
 		length = 1;
 	}
@@ -185,14 +183,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1) {
-		//NSLog(@"clicked 'refresh', %@", content_amount);
-		NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.content_amount integerValue] inSection:0], [NSIndexPath indexPathForRow:[self.content_amount integerValue] + 1 inSection:0], [NSIndexPath indexPathForRow:[self.content_amount integerValue] + 2 inSection:0], nil];
-		self.content_amount = [NSNumber numberWithInt:[self.content_amount integerValue] + 3];
-		//NSIndexSet *sections = [NSIndexSet indexSetWithIndex:0];
-		//[tableView reloadSections:sections withRowAnimation:UITableViewRowAnimationFade];
-		[self.tableView beginUpdates];
+		NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
+														  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],
+														  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];
+		self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
 		[self.tableView insertRowsAtIndexPaths:insertedRows withRowAnimation:UITableViewRowAnimationRight];
-		[self.tableView endUpdates];
 	}
 	
     // Navigation logic may go here. Create and push another view controller.
