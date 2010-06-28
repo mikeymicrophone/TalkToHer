@@ -35,6 +35,7 @@
 		self.content_set = [self.data_source performSelector:NSSelectorFromString(content_type)];
 	} else {
 		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
+		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
 	}
 	
 }
@@ -107,20 +108,22 @@
 	
 	// Configure the cell...
 	if (indexPath.section == 0) {
-		id content;
-		content = [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
-		SEL displayed_text;
-		if (content != nil) {
-			if ([self content_type] == @"lines") {
-				displayed_text = @selector(phrasing);
-			} else if (self.content_type == @"tips") {
-				displayed_text = @selector(advice);
-			} else if (self.content_type == @"goals") {
-				displayed_text = @selector(description);
-			} else if (self.content_type == @"exercises") {
-				displayed_text = @selector(name);
+		if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
+			id content;
+			content = [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
+			SEL displayed_text;
+			if (content != nil) {
+				if ([self content_type] == @"lines") {
+					displayed_text = @selector(phrasing);
+				} else if (self.content_type == @"tips") {
+					displayed_text = @selector(advice);
+				} else if (self.content_type == @"goals") {
+					displayed_text = @selector(description);
+				} else if (self.content_type == @"exercises") {
+					displayed_text = @selector(name);
+				}
+				[[cell textLabel] setText:[content performSelector:displayed_text]];
 			}
-			[[cell textLabel] setText:[content performSelector:displayed_text]];
 		}
 	} else {
 		[cell.textLabel setText:@"refresh"];
