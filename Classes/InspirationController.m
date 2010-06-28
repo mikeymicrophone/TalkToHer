@@ -21,24 +21,23 @@
 -(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
 	
-	NSLog(@"about to fetch content: %@", content_type);
-	
-	if (content_type == @"lines") {
-		content_set = [Line findAllRemote];
-	} else if (content_type == @"tips") {
-		content_set = [Tip findAllRemote];
-	} else if (content_type == @"goals") {
-		content_set = [Goal findAllRemote];
-	} else if (content_type == @"exercises") {
-		content_set = [Exercise findAllRemote];
+	if (self.content_type == @"lines") {
+		self.content_set = [Line findAllRemote];
+	} else if (self.content_type == @"tips") {
+		self.content_set = [Tip findAllRemote];
+	} else if (self.content_type == @"goals") {
+		self.content_set = [Goal findAllRemote];
+	} else if (self.content_type == @"exercises") {
+		self.content_set = [Exercise findAllRemote];
 	}
 	
-	if (content_set == nil) {
-		NSLog(@"about to perform selector on data delegate");
-		content_set = [data_source performSelector:NSSelectorFromString(content_type)];
-	}
-	
-	NSLog(@"fetched content.");
+	if (self.content_set == nil) {
+		self.content_set = [data_source performSelector:NSSelectorFromString(content_type)];
+	} //else {
+//		NSLog(@"about to add content to data delegate: %@", [data_source performSelector:NSSelectorFromString(content_type)]);
+//		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
+//		NSLog(@"successfully added content: %@", content_set);
+//	}
 	
 }
 
@@ -93,12 +92,13 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
+	int length;
 	if (section == 0) {
-		return 5;//content_amount;
+		length = [self.content_amount integerValue];
 	} else if (section == 1) {
-		return 1;
+		length = 1;
 	}
+	return length;
 }
 
 
@@ -109,31 +109,32 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
     }
     
+	//NSLog(@"about to configure cell.");
+	//NSLog(@"content set: %@", content_set);
+	
 	// Configure the cell...
 	if (indexPath.section == 0) {
-		if (content_type == @"lines") {
-			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 10;
-			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] phrasing]];
-		} else if (content_type == @"tips") {
-			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 10;
-			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] advice]];
-		} else if (content_type == @"goals") {
-			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 10;
-			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] description]];
-		} else if (content_type == @"exercises") {
-			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-			cell.textLabel.numberOfLines = 10;
-			[[cell textLabel] setText:[[content_set objectAtIndex:[indexPath indexAtPosition:1]] name]];
+		if ([self content_type] == @"lines") {
+			//NSLog(@"what is happening");
+			//NSLog(@"content set, %@", content_set);
+			//NSLog(@"index path, %@", indexPath);
+			//NSLog(@"index at position, %@", indexPath.section);
+			[[cell textLabel] setText:[[content_set objectAtIndex:indexPath.row] phrasing]];
+		} else if (self.content_type == @"tips") {
+			[[cell textLabel] setText:[[[self content_set] objectAtIndex:[indexPath indexAtPosition:1]] advice]];
+		} else if (self.content_type == @"goals") {
+			[[cell textLabel] setText:[[[self content_set] objectAtIndex:[indexPath indexAtPosition:1]] description]];
+		} else if (self.content_type == @"exercises") {
+			[[cell textLabel] setText:[[[self content_set] objectAtIndex:[indexPath indexAtPosition:1]] name]];
 		}
 	} else {
 		[cell.textLabel setText:@"refresh"];
 	}
+	
+	//NSLog(@"configured cell.");
     
     return cell;
 }
@@ -184,9 +185,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1) {
-		content_amount = [NSNumber numberWithInt:[content_amount integerValue] + 3];
-		NSIndexSet *sections = [NSIndexSet indexSetWithIndex:0];
-		[tableView reloadSections:sections withRowAnimation:UITableViewRowAnimationFade];
+		//NSLog(@"clicked 'refresh', %@", content_amount);
+		NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.content_amount integerValue] inSection:0], [NSIndexPath indexPathForRow:[self.content_amount integerValue] + 1 inSection:0], [NSIndexPath indexPathForRow:[self.content_amount integerValue] + 2 inSection:0], nil];
+		self.content_amount = [NSNumber numberWithInt:[self.content_amount integerValue] + 3];
+		//NSIndexSet *sections = [NSIndexSet indexSetWithIndex:0];
+		//[tableView reloadSections:sections withRowAnimation:UITableViewRowAnimationFade];
+		[self.tableView beginUpdates];
+		[self.tableView insertRowsAtIndexPaths:insertedRows withRowAnimation:UITableViewRowAnimationRight];
+		[self.tableView endUpdates];
 	}
 	
     // Navigation logic may go here. Create and push another view controller.

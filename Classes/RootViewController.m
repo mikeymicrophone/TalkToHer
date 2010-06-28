@@ -21,8 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	data_source = [[DataDelegate alloc] init];
-	[data_source initialize_data];
+	self.data_source = [[DataDelegate alloc] init];
+	[self.data_source initialize_data];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }

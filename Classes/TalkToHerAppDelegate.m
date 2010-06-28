@@ -19,7 +19,7 @@
 
 -(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com"];
-	lines = [Line findAllRemote];
+	self.lines = [Line findAllRemote];
 	
 //	NSString *path = @"http://lineoftheday.com/iphone";
 //	NSURL *url = [[NSURL alloc] initWithString:path];
