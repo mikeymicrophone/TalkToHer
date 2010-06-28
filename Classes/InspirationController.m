@@ -16,7 +16,7 @@
 
 @implementation InspirationController
 
-@synthesize content_set, content_type, displayed_content_amount, data_source;
+@synthesize content_set, content_type, displayed_content_amount, available_content_amount, data_source;
 
 -(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
@@ -32,7 +32,7 @@
 	}
 	
 	if (self.content_set == nil) {
-		self.content_set = [data_source performSelector:NSSelectorFromString(content_type)];
+		self.content_set = [self.data_source performSelector:NSSelectorFromString(content_type)];
 	} else {
 		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
 	}
@@ -72,19 +72,14 @@
 }
 */
 
-// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
     return YES;
 }
-
-
 
 #pragma mark -
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 2;
 }
 
@@ -109,30 +104,27 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
     }
-    
-	//NSLog(@"about to configure cell.");
-	//NSLog(@"content set: %@", content_set);
 	
 	// Configure the cell...
 	if (indexPath.section == 0) {
-		if ([self content_type] == @"lines") {
-			//NSLog(@"what is happening");
-			//NSLog(@"content set, %@", content_set);
-			//NSLog(@"index path, %@", indexPath);
-			//NSLog(@"index at position, %@", indexPath.section);
-			[[cell textLabel] setText:[[content_set objectAtIndex:indexPath.row] phrasing]];
-		} else if (self.content_type == @"tips") {
-			[[cell textLabel] setText:[[[self content_set] objectAtIndex:[indexPath indexAtPosition:1]] advice]];
-		} else if (self.content_type == @"goals") {
-			[[cell textLabel] setText:[[[self content_set] objectAtIndex:[indexPath indexAtPosition:1]] description]];
-		} else if (self.content_type == @"exercises") {
-			[[cell textLabel] setText:[[[self content_set] objectAtIndex:[indexPath indexAtPosition:1]] name]];
+		id content;
+		content = [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
+		SEL displayed_text;
+		if (content != nil) {
+			if ([self content_type] == @"lines") {
+				displayed_text = @selector(phrasing);
+			} else if (self.content_type == @"tips") {
+				displayed_text = @selector(advice);
+			} else if (self.content_type == @"goals") {
+				displayed_text = @selector(description);
+			} else if (self.content_type == @"exercises") {
+				displayed_text = @selector(name);
+			}
+			[[cell textLabel] setText:[content performSelector:displayed_text]];
 		}
 	} else {
 		[cell.textLabel setText:@"refresh"];
 	}
-	
-	//NSLog(@"configured cell.");
     
     return cell;
 }
