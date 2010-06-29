@@ -17,4 +17,7 @@
 @property (nonatomic, retain) NSString *tipId;
 @property (nonatomic, retain) NSString *advice;
 
+-(NSString *)main_text;
+-(NSString *)additional_text;
+
 @end

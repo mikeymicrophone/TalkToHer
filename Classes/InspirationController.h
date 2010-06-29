@@ -25,5 +25,6 @@
 @property (nonatomic, retain) DataDelegate *data_source;
 
 -(void)load_content;
+-(id)contentForIndexPath:(NSIndexPath *)indexPath;
 
 @end

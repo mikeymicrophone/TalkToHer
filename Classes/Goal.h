@@ -21,5 +21,7 @@
 @property (nonatomic, retain) NSString *progress;
 @property (nonatomic, retain) NSString *complete;
 
+-(NSString *)main_text;
+-(NSString *)additional_text;
 
 @end

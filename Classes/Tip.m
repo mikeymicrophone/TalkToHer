@@ -13,4 +13,12 @@
 
 @synthesize tipId, advice;
 
+-(NSString *)main_text {
+	return advice;
+}
+
+-(NSString *)additional_text {
+	return @"";
+}
+
 @end

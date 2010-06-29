@@ -13,4 +13,11 @@
 
 @synthesize exerciseId, name, description;
 
+-(NSString *)main_text {
+	return name;
+}
+-(NSString *)additional_text {
+	return description;
+}
+
 @end

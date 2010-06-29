@@ -13,4 +13,12 @@
 
 @synthesize goalId, description, progress, complete;
 
+-(NSString *)main_text {
+	return description;
+}
+
+-(NSString *)additional_text {
+	return @"";
+}
+
 @end

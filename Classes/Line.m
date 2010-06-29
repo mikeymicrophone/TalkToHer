@@ -13,4 +13,13 @@
 
 @synthesize lineId, userId, phrasing;
 
+-(NSString *)main_text {
+	return phrasing;
+}
+
+-(NSString *)additional_text {
+	return @"";
+}
+
+
 @end

@@ -19,4 +19,7 @@
 @property (nonatomic, retain) NSString *phrasing;
 @property (nonatomic, retain) NSString *userId;
 
+-(NSString *)main_text;
+-(NSString *)additional_text;
+
 @end

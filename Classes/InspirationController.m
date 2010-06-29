@@ -12,7 +12,7 @@
 #import "Tip.h"
 #import "Exercise.h"
 #import "Goal.h"
-
+#import "InspirationCell.h"
 
 @implementation InspirationController
 
@@ -99,39 +99,61 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"InspirationCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    InspirationCell *cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
+        cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+		if (indexPath.section == 0) {
+			id content = [self contentForIndexPath:indexPath];
+			
+			NSString *main_text = [content main_text];
+			NSString *additional = [content additional_text];
+			
+			cell.main_text = main_text;
+			cell.additional_text = additional;
+		} else {
+			[cell.textLabel setText:@"refresh"];
+		}
     }
 	
 	// Configure the cell...
-	if (indexPath.section == 0) {
-		if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
-			id content;
-			content = [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
-			SEL displayed_text;
-			if (content != nil) {
-				if ([self content_type] == @"lines") {
-					displayed_text = @selector(phrasing);
-				} else if (self.content_type == @"tips") {
-					displayed_text = @selector(advice);
-				} else if (self.content_type == @"goals") {
-					displayed_text = @selector(description);
-				} else if (self.content_type == @"exercises") {
-					displayed_text = @selector(name);
-				}
-				[[cell textLabel] setText:[content performSelector:displayed_text]];
-			}
-		}
-	} else {
-		[cell.textLabel setText:@"refresh"];
-	}
+//		if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
+//			id content;
+//			content = [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
+//			SEL displayed_text;
+//			if (content != nil) {
+//				if ([self content_type] == @"lines") {
+//					displayed_text = @selector(phrasing);
+//				} else if (self.content_type == @"tips") {
+//					displayed_text = @selector(advice);
+//				} else if (self.content_type == @"goals") {
+//					displayed_text = @selector(description);
+//				} else if (self.content_type == @"exercises") {
+//					displayed_text = @selector(name);
+//				}
+//				[[cell textLabel] setText:[content performSelector:displayed_text]];
+//			}
+//		}
+
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	id content = [self contentForIndexPath:indexPath];
+	
+	NSString *main_text = [content main_text];
+	NSString *additional = [content additional_text];
+	
+	return [InspirationCell cellHeightForMainText:main_text
+											   additional:additional
+											  width:[[self view] frame].size.width];
+}
+
+- (id)contentForIndexPath:(NSIndexPath *)indexPath {
+	return [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
+}
 
 /*
 // Override to support conditional editing of the table view.

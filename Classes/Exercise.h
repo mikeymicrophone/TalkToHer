@@ -19,5 +19,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *description;
 
+-(NSString *)main_text;
+-(NSString *)additional_text;
 
 @end
