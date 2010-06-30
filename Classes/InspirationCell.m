@@ -13,11 +13,13 @@
 
 @synthesize main_text, additional_text;
 
-+ (CGFloat)cellHeightForMainText:(NSString *)main_text additional:(NSString *)additional width:(CGFloat)width {
-	UIFont *captionFont = [UIFont boldSystemFontOfSize:13];
-	UIFont *textFont = [UIFont systemFontOfSize:13];
-	CGSize main_size = [main_text sizeWithFont:captionFont constrainedToSize:CGSizeMake(width-20.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
++ (CGFloat)cellHeightForMainText:(NSString *)main additional:(NSString *)additional width:(CGFloat)width {
+	UIFont *captionFont = [UIFont boldSystemFontOfSize:15];
+	UIFont *textFont = [UIFont systemFontOfSize:15];
+	CGSize main_size = [main sizeWithFont:captionFont constrainedToSize:CGSizeMake(width-20.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
 	CGSize additional_size = [additional sizeWithFont:textFont constrainedToSize:CGSizeMake(width-20.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+	
+	NSLog(@"main size: %f. text: %@", main_size, main);
 
 	return main_size.height + additional_size.height + 15.0;
 }
@@ -26,11 +28,13 @@
 {
 	UIColor *captionColor = [UIColor blackColor];
 	UIColor *textColor = [UIColor darkGrayColor];
-	UIFont *captionFont = [UIFont boldSystemFontOfSize:13];
-	UIFont *textFont = [UIFont systemFontOfSize:13];
+	UIFont *captionFont = [UIFont boldSystemFontOfSize:15];
+	UIFont *textFont = [UIFont systemFontOfSize:15];
 	CGRect f = [self bounds];
-	CGSize cs = [main_text sizeWithFont:captionFont constrainedToSize:CGSizeMake(f.size.width-10, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+	CGSize cs = [self.main_text sizeWithFont:captionFont constrainedToSize:CGSizeMake(f.size.width-10, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
 
+	NSLog(@"drawing: %@", self.main_text);
+	
 	CGRect c = CGRectMake(5.0, 5.0, f.size.width-10.0, cs.height+5.0);
 	[main_text drawInRect:c withFont:captionFont lineBreakMode:UILineBreakModeWordWrap];
 

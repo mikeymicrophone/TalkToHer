@@ -99,56 +99,42 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"InspirationCell";
-    
-    InspirationCell *cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-		if (indexPath.section == 0) {
-			id content = [self contentForIndexPath:indexPath];
-			
-			NSString *main_text = [content main_text];
-			NSString *additional = [content additional_text];
-			
-			cell.main_text = main_text;
-			cell.additional_text = additional;
-		} else {
-			[cell.textLabel setText:@"refresh"];
-		}
-    }
+	UITableViewCell *cell;
 	
-	// Configure the cell...
-//		if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
-//			id content;
-//			content = [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
-//			SEL displayed_text;
-//			if (content != nil) {
-//				if ([self content_type] == @"lines") {
-//					displayed_text = @selector(phrasing);
-//				} else if (self.content_type == @"tips") {
-//					displayed_text = @selector(advice);
-//				} else if (self.content_type == @"goals") {
-//					displayed_text = @selector(description);
-//				} else if (self.content_type == @"exercises") {
-//					displayed_text = @selector(name);
-//				}
-//				[[cell textLabel] setText:[content performSelector:displayed_text]];
-//			}
-//		}
-
-    
+	if (indexPath.section == 1) {
+		static NSString *CellIdentifier = @"Cell";
+		
+		cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
+		}
+		[cell.textLabel setText:@"refresh"];
+	} else if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
+		id content = [self contentForIndexPath:indexPath];
+		NSString *CellIdentifier = [NSString stringWithFormat:@"%@_%@", [content className], [content performSelector:(NSSelectorFromString([NSString stringWithFormat:@"%@Id", [[content className] lowercaseString]]))]];
+		
+		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+				
+			[cell setMain_text:[content main_text]];
+			[cell setAdditional_text:[content additional_text]];
+		}
+	}
+	
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	id content = [self contentForIndexPath:indexPath];
-	
-	NSString *main_text = [content main_text];
-	NSString *additional = [content additional_text];
-	
-	return [InspirationCell cellHeightForMainText:main_text
-											   additional:additional
-											  width:[[self view] frame].size.width];
+	if (indexPath.section == 0) {
+		id content = [self contentForIndexPath:indexPath];
+		
+		return [InspirationCell cellHeightForMainText:[content main_text]
+												   additional:[content additional_text]
+												  width:[[self view] frame].size.width];
+	} else {
+		return 44;
+	}
 }
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
