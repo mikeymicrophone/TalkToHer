@@ -268,19 +268,18 @@
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
-								<string>E4C6AE9011D5415400068008</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 20}, {233, 535}}</string>
+							<string>{{0, 0}, {233, 535}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspirationController.m</string>
+								<string>InspectionController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspirationController.m</string>
+										<string>InspectionController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4A1549511DBFA4600A044D7</string>
+										<string>E4A1551511DC111100A044D7</string>
 										<key>history</key>
 										<array>
 											<string>E439369A11D514AF00D6DED9</string>
@@ -354,9 +353,11 @@
 											<string>E4A1546711DBEC6E00A044D7</string>
 											<string>E4A1547211DBF82E00A044D7</string>
 											<string>E4A1547311DBF82E00A044D7</string>
-											<string>E4A1547411DBF82E00A044D7</string>
-											<string>E4A1548911DBF9C700A044D7</string>
-											<string>E4A1548A11DBF9C700A044D7</string>
+											<string>E4A154D311DC0BC600A044D7</string>
+											<string>E4A154D511DC0BC600A044D7</string>
+											<string>E4A154FE11DC0FD100A044D7</string>
+											<string>E4A1550811DC103200A044D7</string>
+											<string>E4A1550911DC103200A044D7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -554,12 +555,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E4A1549611DBFA4600A044D7</string>
+		<string>E4A1551411DC109900A044D7</string>
 		<string>E4A153DB11D9876500A044D7</string>
 		<string>E4A153DC11D9876500A044D7</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>E439365011D453CE00D6DED9</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -655,7 +656,7 @@
 			<key>WindowToolGUID</key>
 			<string>E439365011D453CE00D6DED9</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

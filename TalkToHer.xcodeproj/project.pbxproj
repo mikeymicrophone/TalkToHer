@@ -15,6 +15,8 @@
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */; };
 		E439369811D50DD300D6DED9 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E439369611D50DD300D6DED9 /* InspirationController.m */; };
+		E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */; };
+		E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1549F11DBFF5700A044D7 /* InspectionController.xib */; };
 		E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
 		E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
 		E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
@@ -74,6 +76,9 @@
 		E40D0DF011D9361B004CC712 /* InspirationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationCell.m; sourceTree = "<group>"; };
 		E439369511D50DD300D6DED9 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
 		E439369611D50DD300D6DED9 /* InspirationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationController.m; sourceTree = "<group>"; };
+		E4A1549D11DBFF5700A044D7 /* InspectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionController.h; sourceTree = "<group>"; };
+		E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionController.m; sourceTree = "<group>"; };
+		E4A1549F11DBFF5700A044D7 /* InspectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspectionController.xib; path = Classes/InspectionController.xib; sourceTree = "<group>"; };
 		E4C6ACCD11D514F000068008 /* InspirationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspirationController.xib; path = Views/InspirationController.xib; sourceTree = "<group>"; };
 		E4C6ACCE11D514F000068008 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		E4C6ACCF11D514F000068008 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
@@ -181,22 +186,24 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* TalkToHerAppDelegate.h */,
-				1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */,
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				E439369511D50DD300D6DED9 /* InspirationController.h */,
+				E4A1549D11DBFF5700A044D7 /* InspectionController.h */,
+				1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				E439369611D50DD300D6DED9 /* InspirationController.m */,
-				E4C6AEC711D5421100068008 /* Line.h */,
-				E4C6AEC811D5421100068008 /* Line.m */,
-				E4C6AF4711D5522900068008 /* Tip.h */,
-				E4C6AF4811D5522900068008 /* Tip.m */,
-				E4C6AF4A11D5526800068008 /* Exercise.h */,
-				E4C6AF4B11D5526800068008 /* Exercise.m */,
-				E4C6AF4D11D552BD00068008 /* Goal.h */,
-				E4C6AF4E11D552BD00068008 /* Goal.m */,
+				E4A1549E11DBFF5700A044D7 /* InspectionController.m */,
 				E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */,
+				E4C6AEC711D5421100068008 /* Line.h */,
+				E4C6AF4711D5522900068008 /* Tip.h */,
+				E4C6AF4A11D5526800068008 /* Exercise.h */,
+				E4C6AF4D11D552BD00068008 /* Goal.h */,
 				E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */,
+				E4C6AEC811D5421100068008 /* Line.m */,
+				E4C6AF4811D5522900068008 /* Tip.m */,
+				E4C6AF4B11D5526800068008 /* Exercise.m */,
+				E4C6AF4E11D552BD00068008 /* Goal.m */,
 				E40D0DEF11D9361B004CC712 /* InspirationCell.h */,
 				E40D0DF011D9361B004CC712 /* InspirationCell.m */,
 			);
@@ -235,6 +242,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4A1549F11DBFF5700A044D7 /* InspectionController.xib */,
 				E4C6ACCD11D514F000068008 /* InspirationController.xib */,
 				E4C6ACCE11D514F000068008 /* MainWindow.xib */,
 				E4C6ACCF11D514F000068008 /* RootViewController.xib */,
@@ -451,6 +459,7 @@
 				E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */,
 				E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */,
 				E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */,
+				E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +512,7 @@
 				E4C6AF4F11D552BD00068008 /* Goal.m in Sources */,
 				E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */,
 				E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */,
+				E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

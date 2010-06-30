@@ -13,6 +13,7 @@
 #import "Exercise.h"
 #import "Goal.h"
 #import "InspirationCell.h"
+#import "InspectionController.h"
 
 @implementation InspirationController
 
@@ -42,10 +43,8 @@
 	if (self.content_set == nil) {
 		self.content_set = [self.data_source performSelector:NSSelectorFromString(content_type)];
 	} else {
-		NSLog(@"new content loaded");
 		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
 		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
-		NSLog(@"new amt: %@", self.available_content_amount);
 	}
 	
 }
@@ -198,7 +197,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1) {
-		NSLog(@"first row to add: %@", self.displayed_content_amount);
 		
 		if ([[self available_content_amount] integerValue] <= [[self displayed_content_amount] integerValue] + 2) {
 			self.content_page = [NSNumber numberWithInt:[self.content_page integerValue] + 1];
@@ -211,16 +209,14 @@
 														  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];
 		self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
 		[self.tableView insertRowsAtIndexPaths:insertedRows withRowAnimation:UITableViewRowAnimationRight];
-	}
+	} else {
 	
     // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+	 InspectionController *inspectionController = [[InspectionController alloc] initWithContent:[self contentForIndexPath:indexPath]];
+
+	 [self.navigationController pushViewController:inspectionController animated:YES];
+	 [inspectionController release];
+	}
 }
 
 
