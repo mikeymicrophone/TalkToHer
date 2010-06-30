@@ -145,6 +145,7 @@
 	[inspirationController setDisplayed_content_amount:[NSNumber numberWithInt:3]];
 	[inspirationController setAvailable_content_amount:[NSNumber numberWithInt:5]];
 	[inspirationController setData_source:data_source];
+	[inspirationController setContent_page:[NSNumber numberWithInt:1]];
     // Pass the selected object to the new view controller.
 	[self.navigationController pushViewController:inspirationController animated:YES];
 	[inspirationController release];

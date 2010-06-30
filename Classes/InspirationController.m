@@ -16,10 +16,14 @@
 
 @implementation InspirationController
 
-@synthesize content_set, content_type, displayed_content_amount, available_content_amount, data_source;
+@synthesize content_set, content_type, displayed_content_amount, available_content_amount, data_source, content_page;
 
 -(void)load_content {
 	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
+	
+	if (self.content_page != nil) {
+		[ObjectiveResourceConfig setRemoteProtocolExtension:[NSString stringWithFormat:@".xml?page=%@", content_page]];
+	}
 	
 	if (self.content_type == @"lines") {
 		self.content_set = [Line findAllRemote];
@@ -31,11 +35,17 @@
 		self.content_set = [Exercise findAllRemote];
 	}
 	
+	if (self.content_page != nil) {
+		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
+	}	
+	
 	if (self.content_set == nil) {
 		self.content_set = [self.data_source performSelector:NSSelectorFromString(content_type)];
 	} else {
+		NSLog(@"new content loaded");
 		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
 		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
+		NSLog(@"new amt: %@", self.available_content_amount);
 	}
 	
 }
@@ -100,6 +110,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	UITableViewCell *cell;
+	
+	NSLog(@"available content amount: %@", self.available_content_amount);
 	
 	if (indexPath.section == 1) {
 		static NSString *CellIdentifier = @"Cell";
@@ -186,6 +198,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1) {
+		NSLog(@"first row to add: %@", self.displayed_content_amount);
+		
+		if ([[self available_content_amount] integerValue] <= [[self displayed_content_amount] integerValue] + 2) {
+			self.content_page = [NSNumber numberWithInt:[self.content_page integerValue] + 1];
+			[self load_content];
+		}
+		
+		
 		NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
 														  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],
 														  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];

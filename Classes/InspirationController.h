@@ -16,6 +16,7 @@
 	NSNumber *displayed_content_amount;
 	NSNumber *available_content_amount;
 	DataDelegate *data_source;
+	NSNumber *content_page;
 }
 
 @property (nonatomic, retain) NSString *content_type;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSNumber *displayed_content_amount;
 @property (nonatomic, retain) NSNumber *available_content_amount;
 @property (nonatomic, retain) DataDelegate *data_source;
+@property (nonatomic, retain) NSNumber *content_page;
 
 -(void)load_content;
 -(id)contentForIndexPath:(NSIndexPath *)indexPath;

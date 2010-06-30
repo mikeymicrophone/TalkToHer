@@ -36,9 +36,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1233, 2275}}";
-			sepNavSelRange = "{4163, 0}";
-			sepNavVisRange = "{3743, 1154}";
+			sepNavIntBoundsRect = "{{0, 0}, {1048, 2223}}";
+			sepNavSelRange = "{4408, 0}";
+			sepNavVisRange = "{3727, 1124}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -164,6 +164,20 @@
 			E4A1545911DBDBA100A044D7 /* PBXTextBookmark */ = E4A1545911DBDBA100A044D7 /* PBXTextBookmark */;
 			E4A1545E11DBDC1800A044D7 /* PBXTextBookmark */ = E4A1545E11DBDC1800A044D7 /* PBXTextBookmark */;
 			E4A1546311DBDC6C00A044D7 /* PBXTextBookmark */ = E4A1546311DBDC6C00A044D7 /* PBXTextBookmark */;
+			E4A1546711DBEC6E00A044D7 /* PBXTextBookmark */ = E4A1546711DBEC6E00A044D7 /* PBXTextBookmark */;
+			E4A1546811DBEC6E00A044D7 /* PBXTextBookmark */ = E4A1546811DBEC6E00A044D7 /* PBXTextBookmark */;
+			E4A1546911DBEC6E00A044D7 /* PBXTextBookmark */ = E4A1546911DBEC6E00A044D7 /* PBXTextBookmark */;
+			E4A1547211DBF82E00A044D7 /* PBXTextBookmark */ = E4A1547211DBF82E00A044D7 /* PBXTextBookmark */;
+			E4A1547311DBF82E00A044D7 /* PBXTextBookmark */ = E4A1547311DBF82E00A044D7 /* PBXTextBookmark */;
+			E4A1547411DBF82E00A044D7 /* PBXTextBookmark */ = E4A1547411DBF82E00A044D7 /* PBXTextBookmark */;
+			E4A1547511DBF82E00A044D7 /* PBXTextBookmark */ = E4A1547511DBF82E00A044D7 /* PBXTextBookmark */;
+			E4A1547611DBF82E00A044D7 /* PBXTextBookmark */ = E4A1547611DBF82E00A044D7 /* PBXTextBookmark */;
+			E4A1547711DBF82E00A044D7 /* PBXTextBookmark */ = E4A1547711DBF82E00A044D7 /* PBXTextBookmark */;
+			E4A1548911DBF9C700A044D7 /* PBXTextBookmark */ = E4A1548911DBF9C700A044D7 /* PBXTextBookmark */;
+			E4A1548A11DBF9C700A044D7 /* PBXTextBookmark */ = E4A1548A11DBF9C700A044D7 /* PBXTextBookmark */;
+			E4A1548B11DBF9C700A044D7 /* PBXTextBookmark */ = E4A1548B11DBF9C700A044D7 /* PBXTextBookmark */;
+			E4A1549011DBFA0100A044D7 /* PBXTextBookmark */ = E4A1549011DBFA0100A044D7 /* PBXTextBookmark */;
+			E4A1549511DBFA4600A044D7 /* PBXTextBookmark */ = E4A1549511DBFA4600A044D7 /* PBXTextBookmark */;
 			E4C6AE0111D529BF00068008 = E4C6AE0111D529BF00068008 /* PBXTextBookmark */;
 			E4C6AE1F11D53FA300068008 = E4C6AE1F11D53FA300068008 /* PBXTextBookmark */;
 			E4C6AEF011D5485D00068008 = E4C6AEF011D5485D00068008 /* PBXTextBookmark */;
@@ -240,9 +254,9 @@
 	};
 	E40D0DF011D9361B004CC712 /* InspirationCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 936}}";
-			sepNavSelRange = "{1318, 0}";
-			sepNavVisRange = "{172, 1487}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 910}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1285}";
 		};
 	};
 	E40D0DF211D9396B004CC712 /* PBXTextBookmark */ = {
@@ -250,7 +264,7 @@
 		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
 		name = "InspirationController.h: 27";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 803;
 		rType = 0;
 		vrLen = 781;
 		vrLoc = 0;
@@ -350,7 +364,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 41";
 		rLen = 0;
-		rLoc = 1696;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 813;
@@ -360,7 +374,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 106";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1330;
 		vrLoc = 2451;
@@ -370,7 +384,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 106";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1321;
 		vrLoc = 2451;
@@ -423,17 +437,17 @@
 	};
 	E439369511D50DD300D6DED9 /* InspirationController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1230, 423}}";
-			sepNavSelRange = "{724, 0}";
-			sepNavVisRange = "{0, 782}";
+			sepNavIntBoundsRect = "{{0, 0}, {938, 429}}";
+			sepNavSelRange = "{768, 0}";
+			sepNavVisRange = "{196, 665}";
 		};
 	};
 	E439369611D50DD300D6DED9 /* InspirationController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6409, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6460, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6510, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7206}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1545, 3159}}";
-			sepNavSelRange = "{3548, 0}";
-			sepNavVisRange = "{2969, 1286}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{7138, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{7189, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{7239, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7935}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1097, 3172}}";
+			sepNavSelRange = "{6301, 0}";
+			sepNavVisRange = "{5981, 1419}";
 		};
 	};
 	E439369A11D514AF00D6DED9 /* PBXTextBookmark */ = {
@@ -468,7 +482,7 @@
 		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
 		name = "InspirationController.h: 28";
 		rLen = 0;
-		rLoc = 750;
+		rLoc = 829;
 		rType = 0;
 		vrLen = 604;
 		vrLoc = 173;
@@ -479,7 +493,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 137;
+		rLoc = 149;
 		rType = 1;
 	};
 	E4A153C111D986FC00A044D7 /* PBXTextBookmark */ = {
@@ -487,7 +501,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 3811;
+		rLoc = 4242;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 3831;
@@ -597,7 +611,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 36";
 		rLen = 0;
-		rLoc = 1587;
+		rLoc = 1397;
 		rType = 0;
 		vrLen = 1204;
 		vrLoc = 721;
@@ -617,7 +631,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 112";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 2452;
@@ -627,7 +641,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 112";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 2452;
@@ -637,7 +651,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 114";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 2452;
@@ -647,7 +661,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 114";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 2452;
@@ -667,7 +681,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 36";
 		rLen = 0;
-		rLoc = 1587;
+		rLoc = 1397;
 		rType = 0;
 		vrLen = 1342;
 		vrLoc = 0;
@@ -697,7 +711,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 120";
 		rLen = 0;
-		rLoc = 3657;
+		rLoc = 4088;
 		rType = 0;
 		vrLen = 1152;
 		vrLoc = 2607;
@@ -707,7 +721,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 117";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 3145;
@@ -727,7 +741,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 786;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 205;
@@ -737,7 +751,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 804;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 205;
@@ -747,7 +761,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 804;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 205;
@@ -757,7 +771,7 @@
 		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
 		name = "InspirationController.h: 27";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 803;
 		rType = 0;
 		vrLen = 782;
 		vrLoc = 0;
@@ -767,7 +781,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 117";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 2416;
@@ -777,7 +791,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 126";
 		rLen = 0;
-		rLoc = 3558;
+		rLoc = 3989;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 2433;
@@ -787,7 +801,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 126";
 		rLen = 0;
-		rLoc = 3558;
+		rLoc = 3989;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 2638;
@@ -797,7 +811,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 804;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 205;
@@ -817,7 +831,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 132";
 		rLen = 0;
-		rLoc = 3811;
+		rLoc = 4242;
 		rType = 0;
 		vrLen = 1196;
 		vrLoc = 2926;
@@ -837,7 +851,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 173;
@@ -847,7 +861,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 173;
@@ -857,7 +871,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 132";
 		rLen = 0;
-		rLoc = 3811;
+		rLoc = 4242;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 2809;
@@ -867,7 +881,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 132";
 		rLen = 0;
-		rLoc = 3811;
+		rLoc = 4242;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 2809;
@@ -877,7 +891,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 4062;
+		rLoc = 4493;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 2926;
@@ -887,7 +901,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 4059;
+		rLoc = 4490;
 		rType = 0;
 		vrLen = 1283;
 		vrLoc = 2969;
@@ -897,7 +911,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 4061;
+		rLoc = 4492;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 2969;
@@ -907,7 +921,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 4061;
+		rLoc = 4492;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 2930;
@@ -917,7 +931,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 173;
@@ -927,7 +941,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1535;
 		vrLoc = 172;
@@ -937,7 +951,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 36";
 		rLen = 0;
-		rLoc = 1318;
+		rLoc = 1128;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 762;
@@ -947,7 +961,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 4061;
+		rLoc = 4492;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 2930;
@@ -957,7 +971,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 121";
 		rLen = 0;
-		rLoc = 3548;
+		rLoc = 3979;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 2930;
@@ -967,7 +981,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 121";
 		rLen = 0;
-		rLoc = 3548;
+		rLoc = 3979;
 		rType = 0;
 		vrLen = 1135;
 		vrLoc = 2930;
@@ -977,7 +991,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 36";
 		rLen = 0;
-		rLoc = 1318;
+		rLoc = 1128;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 612;
@@ -987,7 +1001,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 22";
 		rLen = 0;
-		rLoc = 804;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 1129;
 		vrLoc = 0;
@@ -997,7 +1011,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 36";
 		rLen = 0;
-		rLoc = 1307;
+		rLoc = 1128;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 206;
@@ -1007,7 +1021,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 36";
 		rLen = 0;
-		rLoc = 1318;
+		rLoc = 1128;
 		rType = 0;
 		vrLen = 1487;
 		vrLoc = 172;
@@ -1017,7 +1031,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 114";
 		rLen = 0;
-		rLoc = 3303;
+		rLoc = 3734;
 		rType = 0;
 		vrLen = 1257;
 		vrLoc = 2452;
@@ -1027,7 +1041,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 114";
 		rLen = 0;
-		rLoc = 3116;
+		rLoc = 3547;
 		rType = 0;
 		vrLen = 1365;
 		vrLoc = 2453;
@@ -1038,7 +1052,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 113;
+		rLoc = 125;
 		rType = 1;
 	};
 	E4A1545211DBDB4400A044D7 /* PBXTextBookmark */ = {
@@ -1046,7 +1060,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 114";
 		rLen = 0;
-		rLoc = 3114;
+		rLoc = 3545;
 		rType = 0;
 		vrLen = 1069;
 		vrLoc = 2638;
@@ -1056,7 +1070,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 114";
 		rLen = 0;
-		rLoc = 3284;
+		rLoc = 3715;
 		rType = 0;
 		vrLen = 1283;
 		vrLoc = 2451;
@@ -1066,7 +1080,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 114";
 		rLen = 0;
-		rLoc = 3177;
+		rLoc = 3608;
 		rType = 0;
 		vrLen = 1283;
 		vrLoc = 2451;
@@ -1076,10 +1090,150 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 118";
 		rLen = 0;
-		rLoc = 3548;
+		rLoc = 3979;
 		rType = 0;
 		vrLen = 1286;
 		vrLoc = 2969;
+	};
+	E4A1546711DBEC6E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
+		name = "InspirationCell.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1285;
+		vrLoc = 0;
+	};
+	E4A1546811DBEC6E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 118";
+		rLen = 0;
+		rLoc = 3979;
+		rType = 0;
+		vrLen = 1348;
+		vrLoc = 2310;
+	};
+	E4A1546911DBEC6E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 104";
+		rLen = 0;
+		rLoc = 3066;
+		rType = 0;
+		vrLen = 1302;
+		vrLoc = 2430;
+	};
+	E4A1547211DBF82E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C6AE9211D5415400068008 /* NSObject+ObjectiveResource.m */;
+		name = "NSObject+ObjectiveResource.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 851;
+		vrLoc = 0;
+	};
+	E4A1547311DBF82E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C6AE9111D5415400068008 /* NSObject+ObjectiveResource.h */;
+		name = "NSObject+ObjectiveResource.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 36;
+	};
+	E4A1547411DBF82E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
+		name = "InspirationController.h: 27";
+		rLen = 0;
+		rLoc = 766;
+		rType = 0;
+		vrLen = 859;
+		vrLoc = 0;
+	};
+	E4A1547511DBF82E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 200";
+		rLen = 0;
+		rLoc = 6440;
+		rType = 0;
+		vrLen = 1415;
+		vrLoc = 5893;
+	};
+	E4A1547611DBF82E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 145";
+		rLen = 0;
+		rLoc = 4163;
+		rType = 0;
+		vrLen = 1211;
+		vrLoc = 3727;
+	};
+	E4A1547711DBF82E00A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 148";
+		rLen = 0;
+		rLoc = 4408;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 3727;
+	};
+	E4A1548911DBF9C700A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 148";
+		rLen = 0;
+		rLoc = 4408;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 3727;
+	};
+	E4A1548A11DBF9C700A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 200";
+		rLen = 0;
+		rLoc = 6440;
+		rType = 0;
+		vrLen = 1412;
+		vrLoc = 5893;
+	};
+	E4A1548B11DBF9C700A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 202";
+		rLen = 0;
+		rLoc = 6243;
+		rType = 0;
+		vrLen = 1577;
+		vrLoc = 5997;
+	};
+	E4A1549011DBFA0100A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 201";
+		rLen = 0;
+		rLoc = 6194;
+		rType = 0;
+		vrLen = 1475;
+		vrLoc = 5981;
+	};
+	E4A1549511DBFA4600A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 203";
+		rLen = 0;
+		rLoc = 6301;
+		rType = 0;
+		vrLen = 1476;
+		vrLoc = 5981;
 	};
 	E4C6AE0111D529BF00068008 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1107,6 +1261,20 @@
 		rType = 0;
 		vrLen = 362;
 		vrLoc = 0;
+	};
+	E4C6AE9111D5415400068008 /* NSObject+ObjectiveResource.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {884, 1105}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{36, 871}";
+		};
+	};
+	E4C6AE9211D5415400068008 /* NSObject+ObjectiveResource.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {884, 4784}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 851}";
+		};
 	};
 	E4C6AE9511D5415400068008 /* ConnectionManager.m */ = {
 		uiCtxt = {
