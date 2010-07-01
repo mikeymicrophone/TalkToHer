@@ -80,7 +80,7 @@
 
 
 // Customize the appearance of table view cells.
-- (InspirationCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	NSString *CellIdentifier;
 	InspirationCell *cell;
@@ -140,9 +140,29 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return [InspirationCell cellHeightForMainText:[content main_text]
-									   additional:[content additional_text]
-											width:[[self view] frame].size.width];
+	CGFloat height;
+	if (indexPath.section == 0) {
+		height = [InspirationCell cellHeightForMainText:[content main_text]
+											 additional:[content additional_text]
+												  width:[[self view] frame].size.width];
+	} else if (indexPath.section == 1) {
+		height = [InspirationCell cellHeightForMainText:@"3.72"
+											 additional:@"after 314 ratings"
+												  width:[[self view] frame].size.width];		
+	} else if (indexPath.section == 2) {
+		height = [InspirationCell cellHeightForMainText:@"2 tags"
+											 additional:@"black, magic, attraction... and 3 more"
+												  width:[[self view] frame].size.width];		
+	} else if (indexPath.section == 3) {
+		height = [InspirationCell cellHeightForMainText:@"38 comments"
+											 additional:@"Cookie monster would love cokie roberts"
+												  width:[[self view] frame].size.width];		
+	} else if (indexPath.section == 4) {
+		height = [InspirationCell cellHeightForMainText:@"I just said this."
+											 additional:nil
+												  width:[[self view] frame].size.width];		
+	}
+	return height;
 }
 
 /*

@@ -213,6 +213,9 @@
 			E4A1550F11DC105500A044D7 /* PBXTextBookmark */ = E4A1550F11DC105500A044D7 /* PBXTextBookmark */;
 			E4A1551311DC109900A044D7 /* PBXTextBookmark */ = E4A1551311DC109900A044D7 /* PBXTextBookmark */;
 			E4A1551511DC111100A044D7 /* PBXTextBookmark */ = E4A1551511DC111100A044D7 /* PBXTextBookmark */;
+			E4A1551A11DC152500A044D7 /* PBXTextBookmark */ = E4A1551A11DC152500A044D7 /* PBXTextBookmark */;
+			E4A1551E11DC15D200A044D7 /* PBXTextBookmark */ = E4A1551E11DC15D200A044D7 /* PBXTextBookmark */;
+			E4A1552211DC163800A044D7 /* PBXTextBookmark */ = E4A1552211DC163800A044D7 /* PBXTextBookmark */;
 			E4C6AE0111D529BF00068008 = E4C6AE0111D529BF00068008 /* PBXTextBookmark */;
 			E4C6AE1F11D53FA300068008 = E4C6AE1F11D53FA300068008 /* PBXTextBookmark */;
 			E4C6AEF011D5485D00068008 = E4C6AEF011D5485D00068008 /* PBXTextBookmark */;
@@ -1318,10 +1321,10 @@
 	};
 	E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{5670, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{5721, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{5771, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 6467}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {884, 3159}}";
-			sepNavSelRange = "{1836, 0}";
-			sepNavVisRange = "{1679, 1077}";
+			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6571, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6622, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6672, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7368}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {884, 3107}}";
+			sepNavSelRange = "{4757, 0}";
+			sepNavVisRange = "{3787, 1239}";
 		};
 	};
 	E4A154C511DC07F900A044D7 /* PBXTextBookmark */ = {
@@ -1599,7 +1602,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 147";
 		rLen = 0;
-		rLoc = 4121;
+		rLoc = 5022;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 3200;
@@ -1609,7 +1612,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 143";
 		rLen = 0;
-		rLoc = 3956;
+		rLoc = 5007;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 3179;
@@ -1619,7 +1622,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 145";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 5022;
 		rType = 0;
 		vrLen = 1101;
 		vrLoc = 3179;
@@ -1633,6 +1636,36 @@
 		rType = 0;
 		vrLen = 1077;
 		vrLoc = 1679;
+	};
+	E4A1551A11DC152500A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 83";
+		rLen = 0;
+		rLoc = 1744;
+		rType = 0;
+		vrLen = 1051;
+		vrLoc = 1677;
+	};
+	E4A1551E11DC15D200A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 161";
+		rLen = 0;
+		rLoc = 4921;
+		rType = 0;
+		vrLen = 1254;
+		vrLoc = 3836;
+	};
+	E4A1552211DC163800A044D7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 158";
+		rLen = 0;
+		rLoc = 4757;
+		rType = 0;
+		vrLen = 1239;
+		vrLoc = 3787;
 	};
 	E4C6AE0111D529BF00068008 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
