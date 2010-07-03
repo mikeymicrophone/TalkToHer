@@ -110,8 +110,6 @@
     
 	UITableViewCell *cell;
 	
-	NSLog(@"available content amount: %@", self.available_content_amount);
-	
 	if (indexPath.section == 1) {
 		static NSString *CellIdentifier = @"Cell";
 		

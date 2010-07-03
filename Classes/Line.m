@@ -7,11 +7,13 @@
 //
 
 #import "Line.h"
+#import "ObjectiveResourceConfig.h"
 
 
 @implementation Line
 
-@synthesize lineId, userId, phrasing;
+@synthesize lineId, userId, phrasing, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating;
+
 
 -(NSString *)main_text {
 	return phrasing;
@@ -21,5 +23,11 @@
 	return @"";
 }
 
+-(id)get_commentary {
+	[ObjectiveResourceConfig setProtocolExtension:@"/inspect_content"];
+	Line *line = [Line findRemote:[self lineId]];
+	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
+	return line;
+}
 
 @end

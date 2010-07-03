@@ -7,11 +7,12 @@
 //
 
 #import "Tip.h"
+#import "ObjectiveResourceConfig.h"
 
 
 @implementation Tip
 
-@synthesize tipId, advice;
+@synthesize tipId, advice, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating;
 
 -(NSString *)main_text {
 	return advice;
@@ -19,6 +20,13 @@
 
 -(NSString *)additional_text {
 	return @"";
+}
+
+-(id)get_commentary {
+	[ObjectiveResourceConfig setProtocolExtension:@"/inspect_content"];
+	Tip *tip = [Tip findRemote:[self tipId]];
+	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
+	return tip;
 }
 
 @end

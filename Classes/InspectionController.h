@@ -16,5 +16,6 @@
 @property (nonatomic, retain) id content;
 
 -(id)initWithContent:(id)contentObj;
+-(id)inspect_content:(id)contentObj;
 
 @end

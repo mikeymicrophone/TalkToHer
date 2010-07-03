@@ -19,8 +19,13 @@
 	if (![super initWithStyle:UITableViewStylePlain])
 		return nil;
 	
-	self.content = contentObj;
+	[self setContent:[self inspect_content:contentObj]];
+	NSLog(@"controller init to return");
 	return self;
+}
+
+-(id)inspect_content:(id)contentObj {
+	return [contentObj get_commentary];
 }
 
 #pragma mark -
@@ -103,8 +108,8 @@
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 			
-			[cell setMain_text:@"3.72"];
-			[cell setAdditional_text:@"after 314 ratings"];
+			[cell setMain_text:[content averageRating]];
+			[cell setAdditional_text:[content ratingCount]];
 		}
 	} else if (indexPath.section == 2) {
 		CellIdentifier = @"tags";
@@ -112,9 +117,8 @@
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-			
-			[cell setMain_text:@"14 tags"];
-			[cell setAdditional_text:@"kino, touch, first minute...11 more"];
+			[cell setMain_text:[content tagCount]];
+			[cell setAdditional_text:[content recentTags]];
 		}
     } else if (indexPath.section == 3) {
 		CellIdentifier = @"comments";
@@ -123,8 +127,8 @@
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 			
-			[cell setMain_text:@"2 comments"];
-			[cell setAdditional_text:@"cookie monster would say that"];
+			[cell setMain_text:[content commentCount]];
+			[cell setAdditional_text:[content recentComment]];
 		}
 	} else if (indexPath.section == 4) {
 		CellIdentifier = @"approach";
@@ -136,6 +140,7 @@
 			[cell setMain_text:@"I just said this."];
 		}
 	}
+	NSLog(@"returning cell");
     return cell;
 }
 

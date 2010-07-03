@@ -7,17 +7,25 @@
 //
 
 #import "Exercise.h"
+#import "ObjectiveResourceConfig.h"
 
 
 @implementation Exercise
 
-@synthesize exerciseId, name, description;
+@synthesize exerciseId, name, description, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating;
 
 -(NSString *)main_text {
 	return name;
 }
 -(NSString *)additional_text {
 	return description;
+}
+
+-(id)get_commentary {
+	[ObjectiveResourceConfig setProtocolExtension:@"/inspect_content"];
+	Exercise *exercise = [Exercise findRemote:[self exerciseId]];
+	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
+	return exercise;
 }
 
 @end
