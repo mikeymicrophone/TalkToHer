@@ -34,6 +34,6 @@
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(id)get_commentary;
--(NSString *)comment_count;
+-(void)setWrittenContent:(NSString *)writtenContent;
 
 @end

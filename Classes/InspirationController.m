@@ -14,6 +14,7 @@
 #import "Goal.h"
 #import "InspirationCell.h"
 #import "InspectionController.h"
+#import "ContributionController.h"
 
 @implementation InspirationController
 
@@ -99,7 +100,7 @@
 	if (section == 0) {
 		length = [self.displayed_content_amount integerValue];
 	} else if (section == 1) {
-		length = 1;
+		length = 2;
 	}
 	return length;
 }
@@ -117,7 +118,11 @@
 		if (cell == nil) {
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
 		}
-		[cell.textLabel setText:@"refresh"];
+		if (indexPath.row == 0) {
+			[cell.textLabel setText:@"refresh"];
+		} else if (indexPath.row == 1) {
+			[cell.textLabel setText:@"write one"];
+		}
 	} else if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
 		id content = [self contentForIndexPath:indexPath];
 		NSString *CellIdentifier = [NSString stringWithFormat:@"%@_%@", [content className], [content performSelector:(NSSelectorFromString([NSString stringWithFormat:@"%@Id", [[content className] lowercaseString]]))]];
@@ -196,17 +201,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1) {
 		
-		if ([[self available_content_amount] integerValue] <= [[self displayed_content_amount] integerValue] + 2) {
-			self.content_page = [NSNumber numberWithInt:[self.content_page integerValue] + 1];
-			[self load_content];
+		if (indexPath.row == 0) {
+		
+			if ([[self available_content_amount] integerValue] <= [[self displayed_content_amount] integerValue] + 2) {
+				self.content_page = [NSNumber numberWithInt:[self.content_page integerValue] + 1];
+				[self load_content];
+			}
+			
+			
+			NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
+															  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],
+															  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];
+			self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
+			[self.tableView insertRowsAtIndexPaths:insertedRows withRowAnimation:UITableViewRowAnimationRight];
+		} else if (indexPath.row == 1) {
+			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:0] className]];
+			[self presentModalViewController:contributionController animated:YES];
+			[contributionController release];
 		}
-		
-		
-		NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
-														  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],
-														  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];
-		self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
-		[self.tableView insertRowsAtIndexPaths:insertedRows withRowAnimation:UITableViewRowAnimationRight];
 	} else {
 	
     // Navigation logic may go here. Create and push another view controller.

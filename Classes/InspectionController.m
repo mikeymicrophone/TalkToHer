@@ -20,7 +20,6 @@
 		return nil;
 	
 	[self setContent:[self inspect_content:contentObj]];
-	NSLog(@"controller init to return");
 	return self;
 }
 
@@ -140,7 +139,6 @@
 			[cell setMain_text:@"I just said this."];
 		}
 	}
-	NSLog(@"returning cell");
     return cell;
 }
 
