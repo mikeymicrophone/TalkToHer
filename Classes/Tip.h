@@ -17,7 +17,8 @@
 	NSString *commentCount;
 	NSString *tagCount;
 	NSString *ratingCount;
-	NSString *averageRating;	
+	NSString *averageRating;
+	NSString *userId;
 }
 
 @property (nonatomic, retain) NSString *tipId;
@@ -28,9 +29,10 @@
 @property (nonatomic, retain) NSString *tagCount;
 @property (nonatomic, retain) NSString *ratingCount;
 @property (nonatomic, retain) NSString *averageRating;
-
+@property (nonatomic, retain) NSString *userId;
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(id)get_commentary;
-
+-(void)setWrittenContent:(NSString *)writtenContent;
+-(void)saveInRequest;
 @end
