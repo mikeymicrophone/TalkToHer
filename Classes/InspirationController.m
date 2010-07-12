@@ -20,9 +20,20 @@
 
 @synthesize content_set, content_type, displayed_content_amount, available_content_amount, data_source, content_page;
 
--(void)load_content {
-	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];
+-(id)initWithContentType:(NSString *)cType andDataSource:(DataDelegate *)source {
+	if (![super initWithNibName:nil bundle:nil])
+		return nil;
 	
+	self.content_type = cType;
+	self.displayed_content_amount = [NSNumber numberWithInt:3];
+	self.data_source = source;
+	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
+	self.content_page = [NSNumber numberWithInt:1];
+	
+	return self;
+}
+
+-(void)load_content {	
 	if (self.content_page != nil) {
 		[ObjectiveResourceConfig setRemoteProtocolExtension:[NSString stringWithFormat:@".xml?page=%@", content_page]];
 	}

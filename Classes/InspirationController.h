@@ -26,6 +26,7 @@
 @property (nonatomic, retain) DataDelegate *data_source;
 @property (nonatomic, retain) NSNumber *content_page;
 
+-(id)initWithContentType:(NSString *)cType andDataSource:(DataDelegate *)source;
 -(void)load_content;
 -(id)contentForIndexPath:(NSIndexPath *)indexPath;
 

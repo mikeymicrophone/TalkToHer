@@ -10,6 +10,8 @@
 #import "InspirationController.h"
 #import "DataDelegate.h"
 #import "Line.h"
+#import "Tip.h"
+#import "Exercise.h"
 #import <dispatch/dispatch.h>
 
 @implementation RootViewController
@@ -28,14 +30,31 @@
 	queue = dispatch_queue_create("com.talktoher.lines", NULL);
 	dispatch_async(queue, ^{
 		NSArray *content = [Line findAllRemote];
-		NSLog(@"data1: %@", content);
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[[data_source lines] addObjectsFromArray:content];
 		});
-		NSLog(@"data: %@", [self.data_source lines]);
 	});
 	dispatch_release(queue);
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+
+	queue = dispatch_queue_create("com.talktoher.tips", NULL);
+	dispatch_async(queue, ^{
+		NSArray *content = [Tip findAllRemote];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[data_source tips] addObjectsFromArray:content];
+		});
+	});
+	dispatch_release(queue);
+
+	queue = dispatch_queue_create("com.talktoher.exercises", NULL);
+	dispatch_async(queue, ^{
+		NSArray *content = [Exercise findAllRemote];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[data_source exercises] addObjectsFromArray:content];
+		});
+	});
+	dispatch_release(queue);
+	
+	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
@@ -104,6 +123,16 @@
 		[[cell textLabel] setText:@"exercises"];
 	}
 
+	UIActivityIndicatorView *v = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	[v startAnimating];
+	CGPoint center;
+	center.x = 290;
+	center.y = 23;
+	[v setCenter:center];
+	NSLog(@"activity: %@", v);
+	[cell addSubview:v];
+	
+	
     return cell;
 }
 
@@ -152,13 +181,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	InspirationController *inspirationController = [[InspirationController alloc] initWithNibName:nil bundle:nil];
-	[inspirationController setContent_type:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
-	[inspirationController setDisplayed_content_amount:[NSNumber numberWithInt:3]];
-	[inspirationController setAvailable_content_amount:[NSNumber numberWithInt:5]];
-	[inspirationController setData_source:data_source];
-	[inspirationController setContent_page:[NSNumber numberWithInt:1]];
-    // Pass the selected object to the new view controller.
+	InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text] andDataSource:data_source];
 	[self.navigationController pushViewController:inspirationController animated:YES];
 	[inspirationController release];
 }
