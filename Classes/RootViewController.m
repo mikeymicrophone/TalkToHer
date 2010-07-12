@@ -26,11 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
-	self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
-	self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
-	self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
-	
 	self.data_source = [[DataDelegate alloc] init];
 	[self.data_source initialize_data];
 	dispatch_queue_t queue;
@@ -48,6 +43,7 @@
 	dispatch_async(queue, ^{
 		NSArray *content = [Tip findAllRemote];
 		dispatch_async(dispatch_get_main_queue(), ^{
+			[tips_cell stop_spinning];
 			[[data_source tips] addObjectsFromArray:content];
 		});
 	});
@@ -57,6 +53,7 @@
 	dispatch_async(queue, ^{
 		NSArray *content = [Exercise findAllRemote];
 		dispatch_async(dispatch_get_main_queue(), ^{
+			[exercises_cell stop_spinning];
 			[[data_source exercises] addObjectsFromArray:content];
 		});
 	});
@@ -109,23 +106,36 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSString *CellIdentifier;
 
+	UITableViewCell *cell;
+	
 	if (indexPath.section == 0) {
-		CellIdentifier = @"lines";
+		cell = [tableView dequeueReusableCellWithIdentifier:@"lines"];
+		if (cell == nil) {
+			self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
+			cell = lines_cell;
+		}
 	} else if (indexPath.section == 1) {
-		CellIdentifier = @"goals";
+		cell = [tableView dequeueReusableCellWithIdentifier:@"tips"];
+		if (cell == nil) {
+			self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
+			cell = tips_cell;
+		}		
 	} else if (indexPath.section == 2) {
-		CellIdentifier = @"tips";
+		cell = [tableView dequeueReusableCellWithIdentifier:@"exercises"];
+		if (cell == nil) {
+			self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
+			cell = exercises_cell;
+		}		
 	} else if (indexPath.section == 3) {
-		CellIdentifier = @"exercises";
+		cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];
+		if (cell == nil) {
+			self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
+			cell = goals_cell;
+		}		
 	}
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }	
+	
+	[cell start_spinning];
 	
     return cell;
 }
