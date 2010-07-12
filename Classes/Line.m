@@ -31,7 +31,6 @@
 }
 
 -(void)setWrittenContent:(NSString *)writtenContent {
-	NSLog(@"setting content: %@", writtenContent);
 	self.phrasing = writtenContent;
 	self.userId = @"1";
 }

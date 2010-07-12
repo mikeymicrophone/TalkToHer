@@ -9,7 +9,8 @@
 #import "RootViewController.h"
 #import "InspirationController.h"
 #import "DataDelegate.h"
-
+#import "Line.h"
+#import <dispatch/dispatch.h>
 
 @implementation RootViewController
 
@@ -23,6 +24,17 @@
     [super viewDidLoad];
 	self.data_source = [[DataDelegate alloc] init];
 	[self.data_source initialize_data];
+	dispatch_queue_t queue;
+	queue = dispatch_queue_create("com.talktoher.lines", NULL);
+	dispatch_async(queue, ^{
+		NSArray *content = [Line findAllRemote];
+		NSLog(@"data1: %@", content);
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[data_source lines] addObjectsFromArray:content];
+		});
+		NSLog(@"data: %@", [self.data_source lines]);
+	});
+	dispatch_release(queue);
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }

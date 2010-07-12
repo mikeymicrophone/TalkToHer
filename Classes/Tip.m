@@ -30,7 +30,6 @@
 }
 
 -(void)setWrittenContent:(NSString *)writtenContent {
-	NSLog(@"setting content: %@", writtenContent);
 	self.advice = writtenContent;
 	self.userId = @"1";
 }
