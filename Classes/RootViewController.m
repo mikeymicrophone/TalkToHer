@@ -12,11 +12,12 @@
 #import "Line.h"
 #import "Tip.h"
 #import "Exercise.h"
+#import "LoaderCell.h"
 #import <dispatch/dispatch.h>
 
 @implementation RootViewController
 
-@synthesize data_source;
+@synthesize data_source, lines_cell, tips_cell, goals_cell, exercises_cell;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -24,6 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
+	self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
+	self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
+	self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
+	
 	self.data_source = [[DataDelegate alloc] init];
 	[self.data_source initialize_data];
 	dispatch_queue_t queue;
@@ -31,6 +38,7 @@
 	dispatch_async(queue, ^{
 		NSArray *content = [Line findAllRemote];
 		dispatch_async(dispatch_get_main_queue(), ^{
+			[lines_cell stop_spinning];
 			[[data_source lines] addObjectsFromArray:content];
 		});
 	});
@@ -53,9 +61,6 @@
 		});
 	});
 	dispatch_release(queue);
-	
-	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 /*
@@ -105,33 +110,22 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-	
-	// Configure the cell.
+    NSString *CellIdentifier;
+
 	if (indexPath.section == 0) {
-		[[cell textLabel] setText:@"lines"];
+		CellIdentifier = @"lines";
 	} else if (indexPath.section == 1) {
-		[[cell textLabel] setText:@"goals" ];
+		CellIdentifier = @"goals";
 	} else if (indexPath.section == 2) {
-		[[cell textLabel] setText:@"tips"];
+		CellIdentifier = @"tips";
 	} else if (indexPath.section == 3) {
-		[[cell textLabel] setText:@"exercises"];
+		CellIdentifier = @"exercises";
 	}
 
-	UIActivityIndicatorView *v = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	[v startAnimating];
-	CGPoint center;
-	center.x = 290;
-	center.y = 23;
-	[v setCenter:center];
-	NSLog(@"activity: %@", v);
-	[cell addSubview:v];
-	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }	
 	
     return cell;
 }

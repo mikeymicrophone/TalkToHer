@@ -9,11 +9,20 @@
 #import <UIKit/UIKit.h>
 @class InspirationController;
 @class DataDelegate;
+@class LoaderCell;
 
 @interface RootViewController : UITableViewController {
 	DataDelegate *data_source;
+	LoaderCell *lines_cell;
+	LoaderCell *tips_cell;
+	LoaderCell *goals_cell;
+	LoaderCell *exercises_cell;
 }
 
 @property (nonatomic, retain) DataDelegate *data_source;
+@property (nonatomic, retain) LoaderCell *lines_cell;
+@property (nonatomic, retain) LoaderCell *tips_cell;
+@property (nonatomic, retain) LoaderCell *goals_cell;
+@property (nonatomic, retain) LoaderCell *exercises_cell;
 
 @end
