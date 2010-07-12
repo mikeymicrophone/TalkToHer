@@ -24,22 +24,14 @@
 
 - (void)drawRect:(CGRect)rect
 {
-	NSLog(@"not dead");
 	UIFont *captionFont = [UIFont boldSystemFontOfSize:15];
 	UIFont *textFont = [UIFont systemFontOfSize:15];
-
-	NSLog(@"kill me %i", [self bounds]);
 	
 	CGRect f = [self bounds];
-	NSLog(@"still not dead, %@", [self main_text]);
 	CGSize cs = [[self main_text] sizeWithFont:captionFont constrainedToSize:CGSizeMake(f.size.width-10, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
-	
-	NSLog(@"starting to draw");
 	
 	CGRect c = CGRectMake(5.0, 5.0, f.size.width-10.0, cs.height+5.0);
 	[main_text drawInRect:c withFont:captionFont lineBreakMode:UILineBreakModeWordWrap];
-
-	NSLog(@"drawing");
 	
 	CGRect r = CGRectMake(5.0, cs.height+10.0, f.size.width-10.0, f.size.height-cs.height-15.0);
 	[additional_text drawInRect:r withFont:textFont lineBreakMode:UILineBreakModeWordWrap];

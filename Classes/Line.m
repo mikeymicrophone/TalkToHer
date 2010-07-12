@@ -36,4 +36,19 @@
 	self.userId = @"1";
 }
 
+-(void)saveInRequest {
+	NSLog(@"saving line with request");
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://localhost:3000/lines"]];
+	[request setHTTPMethod:@"POST"];
+	NSString *body = [NSString stringWithFormat:@"phrasing=%@", phrasing];
+	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	NSLog(@"connection: %@", connection);
+	[connection start];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	NSLog(@"response from grapes");
+}
+
 @end

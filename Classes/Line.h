@@ -35,5 +35,5 @@
 -(NSString *)additional_text;
 -(id)get_commentary;
 -(void)setWrittenContent:(NSString *)writtenContent;
-
+-(void)saveInRequest;
 @end

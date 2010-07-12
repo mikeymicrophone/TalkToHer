@@ -18,6 +18,7 @@
 		return nil;
 	
 	[self setContentType:cType];
+	[self prepare_content];
 	return self;
 }
 
@@ -28,8 +29,11 @@
 
 -(IBAction)submit_content {
 	[self.content setWrittenContent:writtenContent.text];
-	[self.content createRemote];
-	[[self parentViewController] dismissModalViewController];
+	NSLog(@"about to save");
+	NSLog(@"receiving object: %@", self.content);//, [self.content respondsToSelector:@selector(saveInRequest)]);
+	[self.content saveInRequest];
+	//	[self.content createRemote];
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
 /*
