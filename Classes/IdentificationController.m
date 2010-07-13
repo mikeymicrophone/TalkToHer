@@ -10,33 +10,35 @@
 #import "UserSession.h"
 #import "User.h"
 #import "ObjectiveResourceConfig.h"
+#import "ASIHTTPRequest.h"
 
 @implementation IdentificationController
 
-@synthesize username_field, password_field;
+@synthesize username_field, password_field, data_source;
 
 - (IBAction)log_in {
+	// log in
 	UserSession *user_session = [[UserSession alloc] init];
 	user_session.username = username_field.text;
 	user_session.password = password_field.text;
-	NSLog(@"remote site: %@", [ObjectiveResourceConfig getSite]);
-	[ObjectiveResourceConfig setRemoteProtocolExtension:@""];
+	[ObjectiveResourceConfig setRemoteProtocolExtension:@".iphone"];
 	[user_session createRemote];
-	NSLog(@"not dead");
-//	NSString *path = [[[stream_controller appDelegate] server_location] stringByAppendingString:@"users/"];
-//	path = [path stringByAppendingString:user_session.username];
-//	path = [path stringByAppendingString:@"/identity"];
-//	NSURL *url = [[NSURL alloc] initWithString:path];
-//	ASIHTTPRequest *nextRequest = [ASIHTTPRequest requestWithURL:url];
-//	[url release];
-//	[nextRequest startSynchronous];
-//	NSError *error = [nextRequest error];
-//	if (!error) {
-//		NSString *nextResponse = [nextRequest responseString];
-//		NSLog(@"response, %@", nextResponse);
-//		user_id = nextResponse;
-//		[[stream_controller appDelegate] setUser_id:user_id];
-//	}
+
+	// get id
+	NSString *path = [@"http://localhost:3000/" stringByAppendingString:@"users/"];
+	path = [path stringByAppendingString:user_session.username];
+	path = [path stringByAppendingString:@"/identity"];
+	NSURL *url = [[NSURL alloc] initWithString:path];
+	ASIHTTPRequest *nextRequest = [ASIHTTPRequest requestWithURL:url];
+	[url release];
+	[nextRequest startSynchronous];
+	NSError *error = [nextRequest error];
+	if (!error) {
+		NSString *nextResponse = [nextRequest responseString];
+		NSString *user_id = nextResponse;
+		[data_source setUserId:user_id];
+	}
+	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 

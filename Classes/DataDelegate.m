@@ -14,7 +14,7 @@
 
 @implementation DataDelegate
 
-@synthesize lines, tips, goals, exercises;
+@synthesize lines, tips, goals, exercises, userId;
 
 -(void)initialize_data {
 	self.lines = [[NSMutableArray alloc] init];

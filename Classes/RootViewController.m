@@ -199,6 +199,7 @@
 		[inspirationController release];
 	} else {
 		IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
+		[identificationController setData_source:data_source];
 		[self presentModalViewController:identificationController animated:YES];
 		[identificationController release];		
 	}

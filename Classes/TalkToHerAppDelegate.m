@@ -22,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-	[ObjectiveResourceConfig setSite:@"http://lineoftheday.com/"];//@"http://localhost:3000/"];
+	[ObjectiveResourceConfig setSite:@"http://localhost:3000/"];//@"http://lineoftheday.com/"];//
     
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];

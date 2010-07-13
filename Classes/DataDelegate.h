@@ -14,12 +14,14 @@
 	NSMutableArray *tips;
 	NSMutableArray *goals;
 	NSMutableArray *exercises;
+	NSString *userId;
 }
 
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSMutableArray *tips;
 @property (nonatomic, retain) NSMutableArray *goals;
 @property (nonatomic, retain) NSMutableArray *exercises;
+@property (nonatomic, retain) NSString *userId;
 
 -(void)initialize_data;
 

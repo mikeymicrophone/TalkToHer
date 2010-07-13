@@ -197,7 +197,49 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>E440667B11EC01EC00A48898</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>RootViewController.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>E440667C11EC01EC00A48898</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>RootViewController.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>E440668411EC02B000A48898</string>
+						<key>history</key>
+						<array>
+							<string>E440667D11EC01EC00A48898</string>
+							<string>E440667E11EC01EC00A48898</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {933, 462}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 270 933 503 0 0 1280 778 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -268,22 +310,18 @@
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
-								<string>E4C6AE9011D5415400068008</string>
-								<string>E4C6AE9311D5415400068008</string>
-								<string>E4C6AE5311D5415400068008</string>
-								<string>E4C6AE5411D5415400068008</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
+									<integer>12</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 45}, {361, 696}}</string>
+							<string>{{0, 16}, {361, 696}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,7 +358,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>IdentificationController.m</string>
+								<string>InspectionController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,20 +366,18 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>IdentificationController.m</string>
+										<string>InspectionController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E440662611EBFBCA00A48898</string>
+										<string>E440668311EC02B000A48898</string>
 										<key>history</key>
 										<array>
 											<string>E439369A11D514AF00D6DED9</string>
 											<string>E4C6AE0111D529BF00068008</string>
 											<string>E4C6AE1F11D53FA300068008</string>
 											<string>E4C6AEF011D5485D00068008</string>
-											<string>E4E0B2FF11D7CD1B00C0D0A2</string>
 											<string>E40D0D8F11D9217F004CC712</string>
-											<string>E4A153D211D9876500A044D7</string>
 											<string>E4A1560E11DEEBDA00A044D7</string>
 											<string>E4A156A611DEF90100A044D7</string>
 											<string>E4A156B411DEFA3500A044D7</string>
@@ -352,28 +388,30 @@
 											<string>E4A1573311DF999000A044D7</string>
 											<string>E4A1575A11DF9F8100A044D7</string>
 											<string>E4A1579411DFA44600A044D7</string>
-											<string>E4A1584B11DFC62700A044D7</string>
 											<string>E4A1585F11DFD6C500A044D7</string>
 											<string>E4A1586711DFD70500A044D7</string>
 											<string>E4A1587F11DFD8BD00A044D7</string>
 											<string>E4A158A611E4E76E00A044D7</string>
 											<string>E4A158A711E4E76E00A044D7</string>
-											<string>E4A158CD11E4EC1300A044D7</string>
 											<string>E4A1590411E6C9B500A044D7</string>
 											<string>E4A1590F11E6CC2500A044D7</string>
 											<string>E4A1592F11E6DE7600A044D7</string>
 											<string>E4A1593011E6DE7600A044D7</string>
 											<string>E4A1593111E6DE7600A044D7</string>
-											<string>E44065E611EBC73400A48898</string>
 											<string>E44065E711EBC73400A48898</string>
-											<string>E440660A11EBF68D00A48898</string>
-											<string>E440661F11EBFBCA00A48898</string>
-											<string>E440662011EBFBCA00A48898</string>
 											<string>E440662111EBFBCA00A48898</string>
 											<string>E440662211EBFBCA00A48898</string>
-											<string>E440662311EBFBCA00A48898</string>
 											<string>E440662411EBFBCA00A48898</string>
-											<string>E440662511EBFBCA00A48898</string>
+											<string>E440663911EBFFB800A48898</string>
+											<string>E440663A11EBFFB800A48898</string>
+											<string>E440663B11EBFFB800A48898</string>
+											<string>E440667411EC01EC00A48898</string>
+											<string>E440667511EC01EC00A48898</string>
+											<string>E440667611EC01EC00A48898</string>
+											<string>E440667711EC01EC00A48898</string>
+											<string>E440668011EC02B000A48898</string>
+											<string>E440668111EC02B000A48898</string>
+											<string>E440668211EC02B000A48898</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -575,6 +613,7 @@
 		<string>E44065EE11EBC73400A48898</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
+		<string>E440667B11EC01EC00A48898</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
