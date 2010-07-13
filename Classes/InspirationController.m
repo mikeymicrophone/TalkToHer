@@ -33,7 +33,8 @@
 	return self;
 }
 
--(void)load_content {	
+-(void)load_content {
+	NSLog(@"loading content");
 	if (self.content_page != nil) {
 		[ObjectiveResourceConfig setRemoteProtocolExtension:[NSString stringWithFormat:@".xml?page=%@", content_page]];
 	}
@@ -67,7 +68,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[self load_content];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
