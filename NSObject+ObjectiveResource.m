@@ -355,7 +355,10 @@ static NSString *_activeResourcePrefix = nil;
 - (NSArray *)excludedPropertyNames
 {
   // exclude id , created_at , updated_at
-  return [NSArray arrayWithObjects:[self getRemoteClassIdName],@"createdAt",@"updatedAt",nil]; 
+	return [NSArray arrayWithObjects:[self getRemoteClassIdName],@"_mapkit_hasPanoramaID", 
+			@"accessibilityLanguage", @"accessibilityFrame", 
+			@"accessibilityTraits", @"accessibilityHint", @"accessibilityValue", 
+			@"accessibilityLabel", @"isAccessibilityElement",@"createdAt",@"updatedAt",nil]; 
 }
 
 

@@ -39,7 +39,15 @@
 			objc_property_t * prop = propList + i;
 			NSString *type = [NSString stringWithCString:property_getAttributes(*prop) encoding:NSUTF8StringEncoding];
 			propName = [NSString stringWithCString:property_getName(*prop) encoding:NSUTF8StringEncoding];
-			if (![propName isEqualToString:@"_mapkit_hasPanoramaID"]) {
+			if (![propName isEqualToString:@"_mapkit_hasPanoramaID"] && 
+				![propName isEqualToString:@"URLValue"] && 
+				![propName isEqualToString:@"accessibilityLanguage"] && 
+				![propName isEqualToString:@"accessibilityFrame"] && 
+				![propName isEqualToString:@"accessibilityTraits"] && 
+				![propName isEqualToString:@"accessibilityHint"] && 
+				![propName isEqualToString:@"accessibilityValue"] && 
+				![propName isEqualToString:@"accessibilityLabel"] && 
+				![propName isEqualToString:@"isAccessibilityElement"]) {
 				[propertyNames setObject:[self getPropertyType:type] forKey:propName];
 			}
 		}

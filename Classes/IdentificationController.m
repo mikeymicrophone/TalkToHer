@@ -1,0 +1,98 @@
+//
+//  IdentificationController.m
+//  TalkToHer
+//
+//  Created by Michael Schwab on 7/7/10.
+//  Copyright 2010 Exco Ventures. All rights reserved.
+//
+
+#import "IdentificationController.h"
+#import "UserSession.h"
+#import "User.h"
+#import "ObjectiveResourceConfig.h"
+
+@implementation IdentificationController
+
+@synthesize username_field, password_field;
+
+- (IBAction)log_in {
+	UserSession *user_session = [[UserSession alloc] init];
+	user_session.username = username_field.text;
+	user_session.password = password_field.text;
+	NSLog(@"remote site: %@", [ObjectiveResourceConfig getSite]);
+	[ObjectiveResourceConfig setRemoteProtocolExtension:@""];
+	[user_session createRemote];
+	NSLog(@"not dead");
+//	NSString *path = [[[stream_controller appDelegate] server_location] stringByAppendingString:@"users/"];
+//	path = [path stringByAppendingString:user_session.username];
+//	path = [path stringByAppendingString:@"/identity"];
+//	NSURL *url = [[NSURL alloc] initWithString:path];
+//	ASIHTTPRequest *nextRequest = [ASIHTTPRequest requestWithURL:url];
+//	[url release];
+//	[nextRequest startSynchronous];
+//	NSError *error = [nextRequest error];
+//	if (!error) {
+//		NSString *nextResponse = [nextRequest responseString];
+//		NSLog(@"response, %@", nextResponse);
+//		user_id = nextResponse;
+//		[[stream_controller appDelegate] setUser_id:user_id];
+//	}
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)sign_up {
+	User *user = [User alloc];
+	UserSession *user_session = [[UserSession alloc] init];
+	user.username = user_session.username;
+	user.password = user_session.password;
+	NSError *creation_response;
+	[user createRemoteWithResponse:&creation_response];
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+	NSLog(@"creation response: %@", creation_response);
+}
+
+/*
+ // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        // Custom initialization
+    }
+    return self;
+}
+*/
+
+/*
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+*/
+
+/*
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+*/
+
+- (void)didReceiveMemoryWarning {
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+
+- (void)dealloc {
+    [super dealloc];
+}
+
+
+@end

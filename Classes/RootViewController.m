@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "InspirationController.h"
+#import "IdentificationController.h"
 #import "DataDelegate.h"
 #import "Line.h"
 #import "Tip.h"
@@ -94,7 +95,7 @@
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 
@@ -114,28 +115,35 @@
 		if (cell == nil) {
 			self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
 			cell = lines_cell;
+			[lines_cell start_spinning];
 		}
 	} else if (indexPath.section == 1) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"tips"];
 		if (cell == nil) {
 			self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
 			cell = tips_cell;
-		}		
+			[tips_cell start_spinning];
+		}
 	} else if (indexPath.section == 2) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"exercises"];
 		if (cell == nil) {
 			self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
 			cell = exercises_cell;
-		}		
+			[exercises_cell start_spinning];
+		}
 	} else if (indexPath.section == 3) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];
 		if (cell == nil) {
 			self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
 			cell = goals_cell;
-		}		
+		}
+	} else if (indexPath.section == 4) {
+		cell = [tableView dequeueReusableCellWithIdentifier:@"log in"];
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"log in"] autorelease];
+			[[cell textLabel] setText:@"log in"];
+		}
 	}
-	
-	[cell start_spinning];
 	
     return cell;
 }
@@ -185,9 +193,15 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text] andDataSource:data_source];
-	[self.navigationController pushViewController:inspirationController animated:YES];
-	[inspirationController release];
+	if (indexPath.section < 4) {
+		InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text] andDataSource:data_source];
+		[self.navigationController pushViewController:inspirationController animated:YES];
+		[inspirationController release];
+	} else {
+		IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
+		[self presentModalViewController:identificationController animated:YES];
+		[identificationController release];		
+	}
 }
 
 
