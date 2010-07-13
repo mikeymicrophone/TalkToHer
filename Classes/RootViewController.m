@@ -18,7 +18,7 @@
 
 @implementation RootViewController
 
-@synthesize data_source, lines_cell, tips_cell, goals_cell, exercises_cell;
+@synthesize data_source, lines_cell, tips_cell, goals_cell, exercises_cell, fetchedResultsController=fetchedResultsController_, managedObjectContext=managedObjectContext_;
 
 #pragma mark -
 #pragma mark View lifecycle

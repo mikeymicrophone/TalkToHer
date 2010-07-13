@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 @class InspirationController;
 @class DataDelegate;
 @class LoaderCell;
@@ -17,7 +18,14 @@
 	LoaderCell *tips_cell;
 	LoaderCell *goals_cell;
 	LoaderCell *exercises_cell;
+
+@private
+	NSFetchedResultsController *fetchedResultsController_;
+	NSManagedObjectContext *managedObjectContext_;
 }
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, retain) DataDelegate *data_source;
 @property (nonatomic, retain) LoaderCell *lines_cell;

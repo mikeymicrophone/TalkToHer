@@ -15,10 +15,10 @@
 
 @implementation DataDelegate
 
-@synthesize lines, tips, goals, exercises, userId, server_location;
+@synthesize lines, tips, goals, exercises, userId, server_location, moc;
 
 -(void)initialize_data {
-	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/"];//
+	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
 	[ObjectiveResourceConfig setSite:server_location];
 	NSLog(@"server: %@", [ObjectiveResourceConfig getSite]);
 	self.lines = [[NSMutableArray alloc] init];
@@ -110,6 +110,11 @@
 //	g = [[[Goal alloc] init] autorelease];
 //	g.description = @"Repeat her name after you learn it.";
 //	[self.goals addObject:g];
+}
+
+
+-(void)persist_data {
+	
 }
 
 @end

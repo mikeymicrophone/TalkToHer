@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 
 @interface DataDelegate : NSObject {
@@ -16,6 +17,7 @@
 	NSMutableArray *exercises;
 	NSString *userId;
 	NSString *server_location;
+	NSManagedObjectContext *moc;
 }
 
 @property (nonatomic, retain) NSMutableArray *lines;
@@ -24,7 +26,9 @@
 @property (nonatomic, retain) NSMutableArray *exercises;
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *server_location;
+@property (nonatomic, retain) NSManagedObjectContext *moc;
 
 -(void)initialize_data;
+-(void)persist_data;
 
 @end

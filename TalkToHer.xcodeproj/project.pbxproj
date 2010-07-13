@@ -26,6 +26,8 @@
 		E440666611EC00AA00A48898 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666511EC00AA00A48898 /* CFNetwork.framework */; };
 		E440666811EC00B400A48898 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666711EC00B400A48898 /* MobileCoreServices.framework */; };
 		E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666911EC00C800A48898 /* libz.1.2.3.dylib */; };
+		E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */; };
+		E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
 		E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */; };
 		E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1549F11DBFF5700A044D7 /* InspectionController.xib */; };
 		E4A1573111DF989700A044D7 /* ContributionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1572F11DF989700A044D7 /* ContributionController.m */; };
@@ -116,6 +118,8 @@
 		E440666511EC00AA00A48898 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E440666711EC00B400A48898 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E440666911EC00C800A48898 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Content.xcdatamodel; path = Classes/Content.xcdatamodel; sourceTree = "<group>"; };
+		E44066D911ED057000A48898 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E4A1549D11DBFF5700A044D7 /* InspectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionController.h; sourceTree = "<group>"; };
 		E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionController.m; sourceTree = "<group>"; };
 		E4A1549F11DBFF5700A044D7 /* InspectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspectionController.xib; path = Classes/InspectionController.xib; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 				E440666611EC00AA00A48898 /* CFNetwork.framework in Frameworks */,
 				E440666811EC00B400A48898 /* MobileCoreServices.framework in Frameworks */,
 				E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */,
+				E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,9 +294,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				E440666511EC00AA00A48898 /* CFNetwork.framework */,
-				E440666711EC00B400A48898 /* MobileCoreServices.framework */,
-				E440666911EC00C800A48898 /* libz.1.2.3.dylib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -308,6 +310,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */,
 				E4A1573011DF989700A044D7 /* ContributionController.xib */,
 				E4A1589611E4E2A600A044D7 /* IdentificationController.xib */,
 				E4A1549F11DBFF5700A044D7 /* InspectionController.xib */,
@@ -322,6 +325,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E440666511EC00AA00A48898 /* CFNetwork.framework */,
+				E440666711EC00B400A48898 /* MobileCoreServices.framework */,
+				E440666911EC00C800A48898 /* libz.1.2.3.dylib */,
 				E440663811EBFFAD00A48898 /* ASIHTTPRequest */,
 				E4C6AE9011D5415400068008 /* ObjectiveResource */,
 				E4C6AE5311D5415400068008 /* lib */,
@@ -329,6 +335,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 				E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */,
+				E44066D911ED057000A48898 /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -637,6 +644,7 @@
 				E440665411EC002000A48898 /* ASIInputStream.m in Sources */,
 				E440665511EC002000A48898 /* ASINetworkQueue.m in Sources */,
 				E440665E11EC006300A48898 /* Reachability.m in Sources */,
+				E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
