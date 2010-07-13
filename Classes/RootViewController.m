@@ -35,7 +35,7 @@
 		NSArray *content = [Line findAllRemote];
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[lines_cell stop_spinning];
-			[[data_source lines] addObjectsFromArray:content];
+			[data_source addAndPersistData:content ofType:@"lines"];
 		});
 	});
 	dispatch_release(queue);
@@ -45,7 +45,7 @@
 		NSArray *content = [Tip findAllRemote];
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[tips_cell stop_spinning];
-			[[data_source tips] addObjectsFromArray:content];
+			[data_source addAndPersistData:content ofType:@"tips"];
 		});
 	});
 	dispatch_release(queue);
@@ -55,7 +55,7 @@
 		NSArray *content = [Exercise findAllRemote];
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[exercises_cell stop_spinning];
-			[[data_source exercises] addObjectsFromArray:content];
+			[data_source addAndPersistData:content ofType:@"exercises"];
 		});
 	});
 	dispatch_release(queue);

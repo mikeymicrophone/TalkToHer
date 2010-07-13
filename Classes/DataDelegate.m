@@ -20,7 +20,6 @@
 -(void)initialize_data {
 	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
 	[ObjectiveResourceConfig setSite:server_location];
-	NSLog(@"server: %@", [ObjectiveResourceConfig getSite]);
 	self.lines = [[NSMutableArray alloc] init];
 	self.tips = [[NSMutableArray alloc] init];
 	self.goals = [[NSMutableArray alloc] init];
@@ -113,8 +112,8 @@
 }
 
 
--(void)persist_data {
-	
+-(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type {
+	[[self performSelector:NSSelectorFromString(type)] addObjectsFromArray:data];
 }
 
 @end

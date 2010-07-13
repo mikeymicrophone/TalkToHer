@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E440671211ED1BBA00A48898</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>DataDelegate.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E440671311ED1BBA00A48898</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>DataDelegate.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E440672F11ED20C300A48898</string>
-						<key>history</key>
-						<array>
-							<string>E440670511ED1B8A00A48898</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {933, 462}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>38 249 933 503 0 0 1280 778 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -313,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>9</integer>
+									<integer>11</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -356,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RootViewController.m</string>
+								<string>InspirationController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -364,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RootViewController.m</string>
+										<string>InspirationController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E440672E11ED20C300A48898</string>
+										<string>E440675911ED2DE200A48898</string>
 										<key>history</key>
 										<array>
 											<string>E439369A11D514AF00D6DED9</string>
@@ -395,7 +354,6 @@
 											<string>E4A1590F11E6CC2500A044D7</string>
 											<string>E4A1592F11E6DE7600A044D7</string>
 											<string>E4A1593011E6DE7600A044D7</string>
-											<string>E4A1593111E6DE7600A044D7</string>
 											<string>E44065E711EBC73400A48898</string>
 											<string>E440662111EBFBCA00A48898</string>
 											<string>E440662211EBFBCA00A48898</string>
@@ -405,13 +363,14 @@
 											<string>E440668011EC02B000A48898</string>
 											<string>E440668711EC042300A48898</string>
 											<string>E440669211EC050900A48898</string>
-											<string>E440670A11ED1BBA00A48898</string>
-											<string>E440670B11ED1BBA00A48898</string>
 											<string>E440671711ED1C4600A48898</string>
 											<string>E440672211ED207700A48898</string>
-											<string>E440672B11ED20C300A48898</string>
-											<string>E440672C11ED20C300A48898</string>
-											<string>E440672D11ED20C300A48898</string>
+											<string>E440674011ED2B6600A48898</string>
+											<string>E440674C11ED2BC600A48898</string>
+											<string>E440675211ED2C5D00A48898</string>
+											<string>E440675311ED2C5D00A48898</string>
+											<string>E440675711ED2DE200A48898</string>
+											<string>E440675811ED2DE200A48898</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -611,9 +570,8 @@
 	<array>
 		<string>E44065ED11EBC73400A48898</string>
 		<string>E44065EE11EBC73400A48898</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>E440671211ED1BBA00A48898</string>
 		<string>E439365011D453CE00D6DED9</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
@@ -710,7 +668,7 @@
 			<key>WindowToolGUID</key>
 			<string>E439365011D453CE00D6DED9</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

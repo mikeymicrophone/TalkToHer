@@ -34,7 +34,6 @@
 }
 
 -(void)load_content {
-	NSLog(@"loading content");
 	if (self.content_page != nil) {
 		[ObjectiveResourceConfig setRemoteProtocolExtension:[NSString stringWithFormat:@".xml?page=%@", content_page]];
 	}
@@ -68,6 +67,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	if ([[self.data_source performSelector:NSSelectorFromString(self.content_type)] count] == 0) {
+		[self load_content];
+	}
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -218,7 +220,6 @@
 				self.content_page = [NSNumber numberWithInt:[self.content_page integerValue] + 1];
 				[self load_content];
 			}
-			
 			
 			NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
 															  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],

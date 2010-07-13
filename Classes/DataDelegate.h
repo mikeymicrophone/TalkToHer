@@ -29,6 +29,6 @@
 @property (nonatomic, retain) NSManagedObjectContext *moc;
 
 -(void)initialize_data;
--(void)persist_data;
+-(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type;
 
 @end
