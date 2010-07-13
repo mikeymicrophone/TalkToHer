@@ -11,12 +11,16 @@
 #import	"Tip.h"
 #import "Goal.h"
 #import "Exercise.h"
+#import "ObjectiveResourceConfig.h"
 
 @implementation DataDelegate
 
-@synthesize lines, tips, goals, exercises, userId;
+@synthesize lines, tips, goals, exercises, userId, server_location;
 
 -(void)initialize_data {
+	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/"];//
+	[ObjectiveResourceConfig setSite:server_location];
+	NSLog(@"server: %@", [ObjectiveResourceConfig getSite]);
 	self.lines = [[NSMutableArray alloc] init];
 	self.tips = [[NSMutableArray alloc] init];
 	self.goals = [[NSMutableArray alloc] init];

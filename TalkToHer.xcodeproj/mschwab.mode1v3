@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E440668411EC02B000A48898</string>
+						<string>E440669A11EC051700A48898</string>
 						<key>history</key>
 						<array>
 							<string>E440667D11EC01EC00A48898</string>
@@ -315,13 +315,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
+									<integer>19</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 16}, {361, 696}}</string>
+							<string>{{0, 0}, {361, 696}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -358,7 +358,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspectionController.m</string>
+								<string>DataDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -366,11 +366,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspectionController.m</string>
+										<string>DataDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E440668311EC02B000A48898</string>
+										<string>E440669911EC051700A48898</string>
 										<key>history</key>
 										<array>
 											<string>E439369A11D514AF00D6DED9</string>
@@ -404,14 +404,14 @@
 											<string>E440662411EBFBCA00A48898</string>
 											<string>E440663911EBFFB800A48898</string>
 											<string>E440663A11EBFFB800A48898</string>
-											<string>E440663B11EBFFB800A48898</string>
-											<string>E440667411EC01EC00A48898</string>
-											<string>E440667511EC01EC00A48898</string>
-											<string>E440667611EC01EC00A48898</string>
-											<string>E440667711EC01EC00A48898</string>
 											<string>E440668011EC02B000A48898</string>
-											<string>E440668111EC02B000A48898</string>
-											<string>E440668211EC02B000A48898</string>
+											<string>E440668711EC042300A48898</string>
+											<string>E440668811EC042300A48898</string>
+											<string>E440668A11EC042300A48898</string>
+											<string>E440668B11EC042300A48898</string>
+											<string>E440669211EC050900A48898</string>
+											<string>E440669311EC050900A48898</string>
+											<string>E440669411EC050900A48898</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

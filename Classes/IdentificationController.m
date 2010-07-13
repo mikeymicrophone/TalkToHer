@@ -23,9 +23,10 @@
 	user_session.password = password_field.text;
 	[ObjectiveResourceConfig setRemoteProtocolExtension:@".iphone"];
 	[user_session createRemote];
+	[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
 
 	// get id
-	NSString *path = [@"http://localhost:3000/" stringByAppendingString:@"users/"];
+	NSString *path = [[data_source server_location] stringByAppendingString:@"users/"];
 	path = [path stringByAppendingString:user_session.username];
 	path = [path stringByAppendingString:@"/identity"];
 	NSURL *url = [[NSURL alloc] initWithString:path];

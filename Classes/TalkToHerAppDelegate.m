@@ -8,7 +8,6 @@
 
 #import "TalkToHerAppDelegate.h"
 #import "RootViewController.h"
-#import "ObjectiveResourceConfig.h"
 #import "Line.h"
 
 @implementation TalkToHerAppDelegate
@@ -22,7 +21,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-	[ObjectiveResourceConfig setSite:@"http://localhost:3000/"];//@"http://lineoftheday.com/"];//
     
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
