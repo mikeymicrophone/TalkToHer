@@ -41,6 +41,7 @@
 	}
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+	[[[[self parentViewController] topViewController] tableView] reloadData];
 }
 
 - (IBAction)sign_up {
@@ -64,12 +65,13 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[username_field becomeFirstResponder];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

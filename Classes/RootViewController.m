@@ -105,7 +105,7 @@
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return 4;
 }
 
 
@@ -142,16 +142,18 @@
 			[exercises_cell start_spinning];
 		}
 	} else if (indexPath.section == 3) {
-		cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];
-		if (cell == nil) {
-			self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
-			cell = goals_cell;
-		}
-	} else if (indexPath.section == 4) {
-		cell = [tableView dequeueReusableCellWithIdentifier:@"log in"];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"log in"] autorelease];
-			[[cell textLabel] setText:@"log in"];
+		if (data_source.userId == nil) {
+			cell = [tableView dequeueReusableCellWithIdentifier:@"log in"];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"log in"] autorelease];
+				[[cell textLabel] setText:@"log in"];
+			}
+		} else {
+			cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];
+			if (cell == nil) {
+				self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
+				cell = goals_cell;
+			}
 		}
 	}
 	
@@ -203,7 +205,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section < 4) {
+	if (indexPath.section < 3) {
 		InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text] andDataSource:data_source];
 		[self.navigationController pushViewController:inspirationController animated:YES];
 		[inspirationController release];
