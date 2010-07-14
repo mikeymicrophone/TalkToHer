@@ -34,7 +34,7 @@
 }
 
 -(void)saveInRequest {
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://localhost:3000/exercises"]];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://lineoftheday.com/exercises"]];
 	[request setHTTPMethod:@"POST"];
 	NSString *body = [NSString stringWithFormat:@"instruction=%@", instruction];
 	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];

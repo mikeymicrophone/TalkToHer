@@ -36,16 +36,12 @@
 }
 
 -(void)saveInRequest {
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://localhost:3000/lines"]];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://lineoftheday.com/lines"]];
 	[request setHTTPMethod:@"POST"];
 	NSString *body = [NSString stringWithFormat:@"phrasing=%@", phrasing];
 	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	[connection start];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	NSLog(@"response from grapes");
 }
 
 @end

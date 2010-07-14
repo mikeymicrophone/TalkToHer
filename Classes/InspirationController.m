@@ -68,10 +68,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	if ([[self.data_source performSelector:NSSelectorFromString(self.content_type)] count] == 0) {
-//		[self load_content];
-		self.content_set = [self.data_source fetch_collection:self.content_type];
-		NSLog(@"just fetched data from db");
-		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
+		[self load_content];
+//		self.content_set = [self.data_source fetch_collection:self.content_type];
+//		NSLog(@"just fetched data from db");
+//		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
 	}
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -168,7 +168,7 @@
 }
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"data: %@", [self.data_source performSelector:NSSelectorFromString(self.content_type)]);
+//	NSLog(@"data: %@", [[[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:1] tipId]);
 	return [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
 }
 
