@@ -11,10 +11,10 @@
 
 @implementation Goal
 
-@synthesize goalId, description, progress, complete;
+@synthesize goalId, derivedDescription, progress, complete;
 
 -(NSString *)main_text {
-	return description;
+	return derivedDescription;
 }
 
 -(NSString *)additional_text {

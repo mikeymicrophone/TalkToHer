@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-
-@interface Exercise : NSObject {
+@interface Exercise : NSManagedObject {
 	NSString *exerciseId;
 	NSString *name;
-	NSString *description;
+	NSString *instruction;
 	NSString *recentComment;
 	NSString *recentTags;
 	NSString *commentCount;
@@ -24,7 +24,7 @@
 
 @property (nonatomic, retain) NSString *exerciseId;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *instruction;
 @property (nonatomic, retain) NSString *recentComment;
 @property (nonatomic, retain) NSString *recentTags;
 @property (nonatomic, retain) NSString *commentCount;

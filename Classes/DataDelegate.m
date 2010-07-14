@@ -7,15 +7,11 @@
 //
 
 #import "DataDelegate.h"
-#import "Line.h"
-#import	"Tip.h"
-#import "Goal.h"
-#import "Exercise.h"
 #import "ObjectiveResourceConfig.h"
 
 @implementation DataDelegate
 
-@synthesize lines, tips, goals, exercises, userId, server_location, moc;
+@synthesize lines, tips, goals, exercises, userId, server_location, moc, class_names;
 
 -(void)initialize_data {
 	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
@@ -25,95 +21,53 @@
 	self.goals = [[NSMutableArray alloc] init];
 	self.exercises = [[NSMutableArray alloc] init];
 	
-//	Line *l = [[[Line alloc] init] autorelease];
-//	l.phrasing = @"Will you forgive me when I forget to walk the dog?";
-//	[self.lines addObject:l];
-//
-//	l = [[[Line alloc] init] autorelease];
-//	l.phrasing = @"Pardon me, do you know where there's a camera store around here?";
-//	[self.lines addObject:l];
-//
-//	l = [[[Line alloc] init] autorelease];
-//	l.phrasing = @"You must have quite a mission today, with a look like that on your face.";
-//	[self.lines addObject:l];
-//
-//	l = [[[Line alloc] init] autorelease];
-//	l.phrasing = @"Okay, you're on BBC one, interview time, who's the biggest influence in your life?";
-//	[self.lines addObject:l];
-//
-//	l = [[[Line alloc] init] autorelease];
-//	l.phrasing = @"Who lies more, a fish or a chicken?";
-//	[self.lines addObject:l];
-//	
-//	Tip *t = [[[Tip alloc] init] autorelease];
-//	t.advice = @"Don't ask more than two questions in a row.";
-//	[self.tips addObject:t];
-//
-//	t = [[[Tip alloc] init] autorelease];
-//	t.advice = @"Don't lose your cool if she tests you, like accusing you of being a player.";
-//	[self.tips addObject:t];
-//
-//	t = [[[Tip alloc] init] autorelease];
-//	t.advice = @"You should talk about something that you both have in common; find it by listening to what she says.";
-//	[self.tips addObject:t];
-//
-//	t = [[[Tip alloc] init] autorelease];
-//	t.advice = @"You can turn questions into statements; she'll answer anyway and it will make her curious.";
-//	[self.tips addObject:t];
-//
-//	t = [[[Tip alloc] init] autorelease];
-//	t.advice = @"You should try to engage her (say something to her) three times before going away, even if she doesn't respond to the first two.";
-//	[self.tips addObject:t];
-//	
-//	Exercise *e = [[[Exercise alloc] init] autorelease];
-//	e.name = @"Warm up";
-//	e.description = @"Walk up to somebody, give them a compliment, and walk away.  Repeat 3-6 times.";
-//	[self.exercises addObject:e];
-//
-//	e = [[[Exercise alloc] init] autorelease];
-//	e.name = @"Hired guns on duty";
-//	e.description = @"When a clerk asks if they can help you, smile and joke 'Oh my goodness, I thought you would never ask!' or say something else they don't expect.";
-//	[self.exercises addObject:e];
-//
-//	e = [[[Exercise alloc] init] autorelease];
-//	e.name = @"Questions";
-//	e.description = @"This exercise requires more than one person. When it is your turn you ask someone a question. It is now their turn, and they must ask a question. If someone answers a question they lose - you must concentrate, ignore what you have been asked, and ask a question of your own.";
-//	[self.exercises addObject:e];
-//	
-//	e = [[[Exercise alloc] init] autorelease];
-//	e.name = @"Male Cleavage";
-//	e.description = @"Practice walking around with your mouth slightly open, or at least make sure your jaw is relaxed. Wear sunglasses and you will get oggled even more (because girls can't tell if you catch them checking you out)!";
-//	[self.exercises addObject:e];
-//	
-//	e = [[[Exercise alloc] init] autorelease];
-//	e.name = @"Flash the Clown (grin)";
-//	e.description = @"After you make eye contact with a girl for a second or two, flash your biggest grin.";
-//	[self.exercises addObject:e];
-//	
-//	Goal *g = [[[Goal alloc] init] autorelease];
-//	g.description = @"Ask for directions even though you know the way.";
-//	[self.goals addObject:g];
-//	
-//	g = [[[Goal alloc] init] autorelease];
-//	g.description = @"Talk to the first tall girl you see today.";
-//	[self.goals addObject:g];
-//
-//	g = [[[Goal alloc] init] autorelease];
-//	g.description = @"Touch her on the arm every time you use a ? or a !";
-//	[self.goals addObject:g];
-//
-//	g = [[[Goal alloc] init] autorelease];
-//	g.description = @"Don't break eye contact until after she does.";
-//	[self.goals addObject:g];
-//
-//	g = [[[Goal alloc] init] autorelease];
-//	g.description = @"Repeat her name after you learn it.";
-//	[self.goals addObject:g];
+	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"Goal", @"goals", nil];
 }
 
+-(NSArray *)fetch_collection:(NSString *)type {
+	NSEntityDescription *e = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
+	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+	[f setEntity:e];
+	NSError *error = nil;
+	NSArray *results = [moc executeFetchRequest:f error:&error];
+	return results;
+}
 
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type {
 	[[self performSelector:NSSelectorFromString(type)] addObjectsFromArray:data];
+	
+	// Create a new instance of the entity managed by the fetched results controller.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
+	
+	for (NSManagedObject *c in data) {
+		NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
+    
+		// If appropriate, configure the new managed object.
+		if ([c respondsToSelector:@selector(phrasing)]) {
+			[newManagedObject setValue:[c phrasing] forKey:@"phrasing"];
+			[newManagedObject setValue:[c lineId] forKey:@"lineId"];
+		} else if ([c respondsToSelector:@selector(advice)]) {
+			[newManagedObject setValue:[c advice] forKey:@"advice"];
+			[newManagedObject setValue:[c tipId] forKey:@"tipId"];
+		} else if ([c respondsToSelector:@selector(instruction)]) {
+			[newManagedObject setValue:[c instruction] forKey:@"instruction"];
+			[newManagedObject setValue:[c name] forKey:@"name"];
+			[newManagedObject setValue:[c exerciseId] forKey:@"exerciseId"];
+		}
+		[newManagedObject setValue:[c userId] forKey:@"userId"];
+	}
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![moc save:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 @end

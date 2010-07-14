@@ -17,6 +17,7 @@
 	NSMutableArray *exercises;
 	NSString *userId;
 	NSString *server_location;
+	NSDictionary *class_names;
 	NSManagedObjectContext *moc;
 }
 
@@ -26,9 +27,11 @@
 @property (nonatomic, retain) NSMutableArray *exercises;
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *server_location;
+@property (nonatomic, retain) NSDictionary *class_names;
 @property (nonatomic, retain) NSManagedObjectContext *moc;
 
 -(void)initialize_data;
+-(NSArray *)fetch_collection:(NSString *)type;
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type;
 
 @end

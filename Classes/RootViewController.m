@@ -29,6 +29,7 @@
 	
 	self.data_source = [[DataDelegate alloc] init];
 	[self.data_source initialize_data];
+	data_source.moc = [self managedObjectContext];
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.lines", NULL);
 	dispatch_async(queue, ^{

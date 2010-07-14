@@ -12,13 +12,13 @@
 
 @implementation Exercise
 
-@synthesize exerciseId, name, description, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId;
+@synthesize exerciseId, name, instruction, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId;
 
 -(NSString *)main_text {
 	return name;
 }
 -(NSString *)additional_text {
-	return description;
+	return instruction;
 }
 
 -(id)get_commentary {
@@ -29,14 +29,14 @@
 }
 
 -(void)setWrittenContent:(NSString *)writtenContent {
-	self.description = writtenContent;
+	self.instruction = writtenContent;
 	self.userId = @"1";
 }
 
 -(void)saveInRequest {
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://localhost:3000/exercises"]];
 	[request setHTTPMethod:@"POST"];
-	NSString *body = [NSString stringWithFormat:@"description=%@", description];
+	NSString *body = [NSString stringWithFormat:@"instruction=%@", instruction];
 	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	[connection start];

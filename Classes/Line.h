@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-
-@interface Line : NSObject {
+@interface Line : NSManagedObject {
 	NSString *lineId;
 	NSString *phrasing;
 	NSString *userId;

@@ -105,7 +105,6 @@
         return managedObjectModel_;
     }
     NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"Content" ofType:@"mom"];
-	NSLog(@"model path: %@", modelPath);
     NSURL *modelURL = [NSURL fileURLWithPath:modelPath];
     managedObjectModel_ = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
     return managedObjectModel_;
@@ -165,7 +164,6 @@
  Returns the path to the application's Documents directory.
  */
 - (NSString *)applicationDocumentsDirectory {
-	NSLog(@"docs dir: %@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]);
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 

@@ -11,13 +11,13 @@
 
 @interface Goal : NSObject {
 	NSString *goalId;
-	NSString *description;
+	NSString *derivedDescription;
 	NSString *progress;
 	NSString *complete;
 }
 
 @property (nonatomic, retain) NSString *goalId;
-@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *derivedDescription;
 @property (nonatomic, retain) NSString *progress;
 @property (nonatomic, retain) NSString *complete;
 
