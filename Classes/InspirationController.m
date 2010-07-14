@@ -25,10 +25,14 @@
 		return nil;
 	
 	self.content_type = cType;
-	self.displayed_content_amount = [NSNumber numberWithInt:3];
+	if (displayed_content_amount == nil) {
+		self.displayed_content_amount = [NSNumber numberWithInt:3];
+	}
 	self.data_source = source;
 	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
-	self.content_page = [NSNumber numberWithInt:1];
+	if (content_page == nil) {
+		self.content_page = [NSNumber numberWithInt:1];
+	}
 	
 	return self;
 }
@@ -64,7 +68,6 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	if ([[self.data_source performSelector:NSSelectorFromString(self.content_type)] count] == 0) {
@@ -73,8 +76,6 @@
 //		NSLog(@"just fetched data from db");
 //		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
 	}
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
@@ -121,7 +122,6 @@
 	return length;
 }
 
-
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -132,7 +132,7 @@
 		
 		cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		}
 		if (indexPath.row == 0) {
 			[cell.textLabel setText:@"refresh"];
@@ -168,56 +168,14 @@
 }
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
-//	NSLog(@"data: %@", [[[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:1] tipId]);
 	return [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 #pragma mark -
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1) {
-		
 		if (indexPath.row == 0) {
 		
 			if ([[self available_content_amount] integerValue] <= [[self displayed_content_amount] integerValue] + 2) {
@@ -231,7 +189,7 @@
 			self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
 			[self.tableView insertRowsAtIndexPaths:insertedRows withRowAnimation:UITableViewRowAnimationRight];
 		} else if (indexPath.row == 1) {
-			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:0] className]];
+			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:0] className] andManagedObjectContext:[data_source moc]];
 			[self presentModalViewController:contributionController animated:YES];
 			[contributionController release];
 		}
@@ -244,7 +202,6 @@
 	 [inspectionController release];
 	}
 }
-
 
 #pragma mark -
 #pragma mark Memory management
@@ -261,11 +218,9 @@
     // For example: self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end
 

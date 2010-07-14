@@ -30,6 +30,7 @@
 	[f setEntity:e];
 	NSError *error = nil;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
+	[f release];
 	return results;
 }
 
@@ -49,7 +50,6 @@
 		} else if ([c respondsToSelector:@selector(advice)]) {
 			[newManagedObject setValue:[c advice] forKey:@"advice"];
 			[newManagedObject setValue:[c tipId] forKey:@"tipId"];
-			NSLog(@"tip status: %@", [newManagedObject advice]);
 		} else if ([c respondsToSelector:@selector(instruction)]) {
 			[newManagedObject setValue:[c instruction] forKey:@"instruction"];
 			[newManagedObject setValue:[c name] forKey:@"name"];

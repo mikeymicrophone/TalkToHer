@@ -33,13 +33,9 @@
 	self.userId = @"1";
 }
 
--(void)saveInRequest {
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://lineoftheday.com/exercises"]];
-	[request setHTTPMethod:@"POST"];
-	NSString *body = [NSString stringWithFormat:@"instruction=%@", instruction];
-	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-	[connection start];
+- (NSArray *)excludedPropertyNames {
+	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", nil];
+	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
 
 @end

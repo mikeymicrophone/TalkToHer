@@ -11,28 +11,26 @@
 
 @implementation ContributionController
 
-@synthesize contentType, content, writtenContent;
+@synthesize contentType, content, writtenContent, moc;
 
--(id)initWithContentType:(NSString *)cType {
+-(id)initWithContentType:(NSString *)cType andManagedObjectContext:(NSManagedObjectContext *)m {
 	if (![super initWithNibName:nil bundle:nil])
 		return nil;
 	
 	[self setContentType:cType];
+	[self setMoc:m];
 	[self prepare_content];
 	return self;
 }
 
 -(void)prepare_content {
-	self.content = [objc_getClass([contentType cStringUsingEncoding:NSASCIIStringEncoding]) alloc];
-	NSLog(@"content of contribution controller is %@", content);
+	NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
+	self.content = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];//[objc_getClass([contentType cStringUsingEncoding:NSASCIIStringEncoding]) alloc];
 }
 
 -(IBAction)submit_content {
 	[self.content setWrittenContent:writtenContent.text];
-	NSLog(@"about to save");
-	NSLog(@"receiving object: %@", self.content);//, [self.content respondsToSelector:@selector(saveInRequest)]);
-	[self.content saveInRequest];
-	//	[self.content createRemote];
+	[self.content createRemote];
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
