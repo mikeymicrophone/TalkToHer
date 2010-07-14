@@ -7,7 +7,7 @@
 //
 
 #import "ContributionController.h"
-
+#import <dispatch/dispatch.h>
 
 @implementation ContributionController
 
@@ -30,8 +30,32 @@
 
 -(IBAction)submit_content {
 	[self.content setWrittenContent:writtenContent.text];
-	[self.content createRemote];
+	
+	dispatch_queue_t queue;
+	queue = dispatch_queue_create("com.talktoher.submission", NULL);
+	dispatch_async(queue, ^{
+		[self.content createRemote];
+		NSError *error = nil;
+		if (![moc save:&error]) {
+			/*
+			 Replace this implementation with code to handle the error appropriately.
+			 
+			 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+			 */
+			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		}		
+	});
+	dispatch_release(queue);
+	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+-(IBAction)cancel {
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+-(IBAction)clear {
+	writtenContent.text = @"";
 }
 
 /*

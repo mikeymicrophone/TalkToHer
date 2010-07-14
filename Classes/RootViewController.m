@@ -33,7 +33,10 @@
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.lines", NULL);
 	dispatch_async(queue, ^{
-		NSArray *content = [Line findAllRemote];
+		NSArray *content = nil;
+		while (content == nil || [content count] == 0) {
+			content = [Line findAllRemote];
+		}
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[lines_cell stop_spinning];
 			[data_source addAndPersistData:content ofType:@"lines"];
@@ -43,7 +46,10 @@
 
 	queue = dispatch_queue_create("com.talktoher.tips", NULL);
 	dispatch_async(queue, ^{
-		NSArray *content = [Tip findAllRemote];
+		NSArray *content = nil;
+		while (content == nil || [content count] == 0) {
+			content = [Tip findAllRemote];
+		}
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[tips_cell stop_spinning];
 			[data_source addAndPersistData:content ofType:@"tips"];
@@ -53,7 +59,10 @@
 
 	queue = dispatch_queue_create("com.talktoher.exercises", NULL);
 	dispatch_async(queue, ^{
-		NSArray *content = [Exercise findAllRemote];
+		NSArray *content = nil;
+		while (content == nil || [content count] == 0) {
+			content = [Exercise findAllRemote];
+		}
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[exercises_cell stop_spinning];
 			[data_source addAndPersistData:content ofType:@"exercises"];

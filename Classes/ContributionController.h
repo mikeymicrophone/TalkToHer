@@ -27,4 +27,6 @@
 -(id)initWithContentType:(NSString *)cType andManagedObjectContext:(NSManagedObjectContext *)m;
 -(void)prepare_content;
 -(IBAction)submit_content;
+-(IBAction)cancel;
+-(IBAction)clear;
 @end
