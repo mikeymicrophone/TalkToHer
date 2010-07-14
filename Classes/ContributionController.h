@@ -13,6 +13,7 @@
 	NSString *contentType;
 	id content;
 	IBOutlet UITextView *writtenContent;
+	UILabel *heading;
 	
 @private
 	NSManagedObjectContext *moc;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSString *contentType;
 @property (nonatomic, retain) id content;
 @property (nonatomic, retain) IBOutlet UITextView *writtenContent;
+@property (nonatomic, retain) UILabel *heading;
 
 -(id)initWithContentType:(NSString *)cType andManagedObjectContext:(NSManagedObjectContext *)m;
 -(void)prepare_content;

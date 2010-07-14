@@ -11,13 +11,16 @@
 
 @implementation ContributionController
 
-@synthesize contentType, content, writtenContent, moc;
+@synthesize contentType, content, writtenContent, heading, moc;
 
 -(id)initWithContentType:(NSString *)cType andManagedObjectContext:(NSManagedObjectContext *)m {
 	if (![super initWithNibName:nil bundle:nil])
 		return nil;
 	
 	[self setContentType:cType];
+	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
+	self.heading.textAlignment = UITextAlignmentCenter;
+	self.heading.text = [NSString stringWithFormat:@"Sharing a %@", cType];
 	[self setMoc:m];
 	[self prepare_content];
 	return self;
@@ -84,6 +87,7 @@
 */
 
 - (void)viewDidAppear:(BOOL)animated {
+	[self.view addSubview:self.heading];
 	[[self writtenContent] becomeFirstResponder];
 }
 
