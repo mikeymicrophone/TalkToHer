@@ -11,7 +11,7 @@
 
 @interface Exercise : NSManagedObject {
 	NSString *exerciseId;
-	NSString *name;
+	NSString *moniker;
 	NSString *instruction;
 	NSString *recentComment;
 	NSString *recentTags;
@@ -23,7 +23,7 @@
 }
 
 @property (nonatomic, retain) NSString *exerciseId;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *moniker;
 @property (nonatomic, retain) NSString *instruction;
 @property (nonatomic, retain) NSString *recentComment;
 @property (nonatomic, retain) NSString *recentTags;

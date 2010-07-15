@@ -26,7 +26,7 @@
 	
 	self.content_type = cType;
 	self.data_source = source;
-
+	
 	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
 	if (displayed_content_amount == nil) {
 		if ([self.available_content_amount integerValue] > 2) {
@@ -47,19 +47,13 @@
 	if (self.content_page != nil) {
 		[ObjectiveResourceConfig setRemoteProtocolExtension:[NSString stringWithFormat:@".xml?page=%@", content_page]];
 	}
-	
 	self.content_set = [self.data_source fetch_collection:self.content_type];
-	
 	if (self.content_page != nil) {
 		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
 	}	
 	
-	if (self.content_set == nil) {
-		self.content_set = [self.data_source performSelector:NSSelectorFromString(content_type)];
-	} else {
-		[data_source addAndPersistData:content_set ofType:content_type];
-		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
-	}
+	[data_source addAndPersistData:content_set ofType:content_type];
+	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
 }
 
 #pragma mark -
@@ -67,11 +61,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	if ([[self.data_source performSelector:NSSelectorFromString(self.content_type)] count] == 0) {
+	if ([[self.data_source fetch_collection:self.content_type] count] == 0) {
 		[self load_content];
 		self.content_set = [self.data_source fetch_collection:self.content_type];
 		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
-		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
+		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
 	}
 }
 
@@ -163,7 +157,7 @@
 }
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
-	return [[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:[indexPath indexAtPosition:1]];
+	return [[self.data_source fetch_collection:self.content_type] objectAtIndex:[indexPath indexAtPosition:1]];
 }
 
 #pragma mark -
@@ -199,7 +193,7 @@
 			[self.tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
 			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 		} else if (indexPath.row == 1) {
-			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:0] className] andManagedObjectContext:[data_source moc]];
+			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source fetch_collection:self.content_type] objectAtIndex:0] className] andManagedObjectContext:[data_source moc]];
 			[self presentModalViewController:contributionController animated:YES];
 			[contributionController release];
 		}

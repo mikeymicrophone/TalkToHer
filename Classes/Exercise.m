@@ -12,10 +12,10 @@
 
 @implementation Exercise
 
-@synthesize exerciseId, name, instruction, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId;
+@synthesize exerciseId, moniker, instruction, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId;
 
 -(NSString *)main_text {
-	return name;
+	return moniker;
 }
 -(NSString *)additional_text {
 	return instruction;

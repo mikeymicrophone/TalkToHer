@@ -11,20 +11,20 @@
 #import "LoaderCell.h"
 
 @interface DataDelegate : NSObject {
-	NSMutableArray *lines;
-	NSMutableArray *tips;
-	NSMutableArray *goals;
-	NSMutableArray *exercises;
+//	NSMutableArray *lines;
+//	NSMutableArray *tips;
+//	NSMutableArray *goals;
+//	NSMutableArray *exercises;
 	NSString *userId;
 	NSString *server_location;
 	NSDictionary *class_names;
 	NSManagedObjectContext *moc;
 }
 
-@property (nonatomic, retain) NSMutableArray *lines;
-@property (nonatomic, retain) NSMutableArray *tips;
-@property (nonatomic, retain) NSMutableArray *goals;
-@property (nonatomic, retain) NSMutableArray *exercises;
+//@property (nonatomic, retain) NSMutableArray *lines;
+//@property (nonatomic, retain) NSMutableArray *tips;
+//@property (nonatomic, retain) NSMutableArray *goals;
+//@property (nonatomic, retain) NSMutableArray *exercises;
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *server_location;
 @property (nonatomic, retain) NSDictionary *class_names;

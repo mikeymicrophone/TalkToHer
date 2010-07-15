@@ -83,19 +83,16 @@
 		cell = [tableView dequeueReusableCellWithIdentifier:@"lines"];
 		if (cell == nil) {
 			cell = lines_cell;
-			[lines_cell start_spinning];
 		}
 	} else if (indexPath.section == 1) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"tips"];
 		if (cell == nil) {
 			cell = tips_cell;
-			[tips_cell start_spinning];
 		}
 	} else if (indexPath.section == 2) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"exercises"];
 		if (cell == nil) {
 			cell = exercises_cell;
-			[exercises_cell start_spinning];
 		}
 	} else if (indexPath.section == 3) {
 		if (data_source.userId == nil) {

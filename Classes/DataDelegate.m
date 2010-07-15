@@ -12,15 +12,15 @@
 
 @implementation DataDelegate
 
-@synthesize lines, tips, goals, exercises, userId, server_location, moc, class_names;
+@synthesize userId, server_location, moc, class_names;
 
 -(void)initialize_data {
 	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
 	[ObjectiveResourceConfig setSite:server_location];
-	self.lines = [[NSMutableArray alloc] init];
-	self.tips = [[NSMutableArray alloc] init];
-	self.goals = [[NSMutableArray alloc] init];
-	self.exercises = [[NSMutableArray alloc] init];
+//	self.lines = [[NSMutableArray alloc] init];
+//	self.tips = [[NSMutableArray alloc] init];
+//	self.goals = [[NSMutableArray alloc] init];
+//	self.exercises = [[NSMutableArray alloc] init];
 	
 	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"Goal", @"goals", nil];
 }
@@ -28,6 +28,7 @@
 -(NSArray *)fetch_collection:(NSString *)type {
 	NSEntityDescription *e = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+
 	[f setEntity:e];
 	[f setFetchBatchSize:30];
 	[f setPropertiesToFetch:[self propertiesToFetchForType:type]];
@@ -44,14 +45,14 @@
 		properties = [NSArray arrayWithObjects:@"phrasing", @"lineId", nil];
 	} else if (type == @"tips") {
 		properties = [NSArray arrayWithObjects:@"advice", @"tipId", nil];
-	} else if (type == @"exercise") {
-		properties = [NSArray arrayWithObjects:@"instruction", @"name", @"tipId", nil];
+	} else if (type == @"exercises") {
+		properties = [NSArray arrayWithObjects:@"instruction", @"moniker", @"exerciseId", nil];
 	}
    return properties;
 }
 
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type {
-	[[self performSelector:NSSelectorFromString(type)] addObjectsFromArray:data];
+//	[[self performSelector:NSSelectorFromString(type)] addObjectsFromArray:data];
 	
 	// Create a new instance of the entity managed by the fetched results controller.
     NSEntityDescription *entity = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
@@ -71,7 +72,7 @@
 				[newManagedObject setValue:[c tipId] forKey:@"tipId"];
 			} else if ([c respondsToSelector:@selector(instruction)]) {
 				[newManagedObject setValue:[c instruction] forKey:@"instruction"];
-				[newManagedObject setValue:[c name] forKey:@"name"];
+				[newManagedObject setValue:[c moniker] forKey:@"moniker"];
 				[newManagedObject setValue:[c exerciseId] forKey:@"exerciseId"];
 			}
 			[newManagedObject setValue:[c userId] forKey:@"userId"];
@@ -95,6 +96,9 @@
 	queue = dispatch_queue_create("com.talktoher.fetch", NULL);
 	dispatch_async(queue, ^{
 		NSArray *content = nil;
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[cell start_spinning];
+		});
 		while (content == nil || [content count] == 0) {
 			content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
 		}
