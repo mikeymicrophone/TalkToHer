@@ -30,6 +30,10 @@
 	[self.data_source initialize_data];
 	data_source.moc = [self managedObjectContext];
 	
+	self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
+	self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
+	self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
+	
 	[data_source loadDataSegmentOfType:@"lines" andAlertCell:lines_cell];
 	[data_source loadDataSegmentOfType:@"tips" andAlertCell:tips_cell];
 	[data_source loadDataSegmentOfType:@"exercises" andAlertCell:exercises_cell];
@@ -78,21 +82,18 @@
 	if (indexPath.section == 0) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"lines"];
 		if (cell == nil) {
-			self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
 			cell = lines_cell;
 			[lines_cell start_spinning];
 		}
 	} else if (indexPath.section == 1) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"tips"];
 		if (cell == nil) {
-			self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
 			cell = tips_cell;
 			[tips_cell start_spinning];
 		}
 	} else if (indexPath.section == 2) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"exercises"];
 		if (cell == nil) {
-			self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
 			cell = exercises_cell;
 			[exercises_cell start_spinning];
 		}

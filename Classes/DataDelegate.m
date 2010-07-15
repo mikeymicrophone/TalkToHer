@@ -110,18 +110,12 @@
 	NSEntityDescription *e = [NSEntityDescription entityForName:[item className] inManagedObjectContext:moc];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
 	[f setEntity:e];
-	NSLog(@"predicate for uniqueness check: %@", [NSPredicate predicateWithFormat:[[item getRemoteClassIdName] stringByAppendingFormat:@" == %d", 
-												  [[item performSelector:NSSelectorFromString([item getRemoteClassIdName])] integerValue]]]);
-	
 	[f setPredicate:[NSPredicate predicateWithFormat:[[item getRemoteClassIdName] stringByAppendingFormat:@" == %d", 
 					 [[item performSelector:NSSelectorFromString([item getRemoteClassIdName])] integerValue]]]];
 	
 	NSError *error = nil;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
-	NSLog(@"executed fetch request");
 	[f release];
-	
-	NSLog(@"results from uniqueness check: %@", results);
 	
 	BOOL exists = NO;
 	if ([results count] > 0)
