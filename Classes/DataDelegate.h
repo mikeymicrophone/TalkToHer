@@ -32,6 +32,7 @@
 
 -(void)initialize_data;
 -(NSArray *)fetch_collection:(NSString *)type;
+-(NSArray *)propertiesToFetchForType:(NSString *)type;
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type;
 
 @end

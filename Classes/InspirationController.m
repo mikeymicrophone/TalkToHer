@@ -25,11 +25,17 @@
 		return nil;
 	
 	self.content_type = cType;
-	if (displayed_content_amount == nil) {
-		self.displayed_content_amount = [NSNumber numberWithInt:3];
-	}
 	self.data_source = source;
+
 	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
+	if (displayed_content_amount == nil) {
+		if ([self.available_content_amount integerValue] > 2) {
+			self.displayed_content_amount = [NSNumber numberWithInt:3];
+		} else {
+			self.displayed_content_amount = self.available_content_amount;
+		}
+	}
+	
 	if (content_page == nil) {
 		self.content_page = [NSNumber numberWithInt:1];
 	}
@@ -72,12 +78,11 @@
     [super viewDidLoad];
 	if ([[self.data_source performSelector:NSSelectorFromString(self.content_type)] count] == 0) {
 		[self load_content];
-//		self.content_set = [self.data_source fetch_collection:self.content_type];
-//		NSLog(@"just fetched data from db");
-//		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
+		self.content_set = [self.data_source fetch_collection:self.content_type];
+		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
+		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
 	}
 }
-
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -110,7 +115,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	int length;
@@ -177,17 +181,32 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
-		
+			NSArray *insertableRows;
 			if ([[self available_content_amount] integerValue] <= [[self displayed_content_amount] integerValue] + 2) {
 				self.content_page = [NSNumber numberWithInt:[self.content_page integerValue] + 1];
 				[self load_content];
 			}
 			
-			NSArray *insertedRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
-															  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],
-															  [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];
-			self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
-			[self.tableView insertRowsAtIndexPaths:insertedRows withRowAnimation:UITableViewRowAnimationRight];
+			NSNumber *difference = [NSNumber numberWithInt:[available_content_amount integerValue] - [displayed_content_amount integerValue]];
+			
+			if ([difference integerValue] >= 3) {
+				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
+														   [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],
+														   [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];
+				self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
+			} else if ([difference integerValue] == 2) {
+				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
+														   [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0], nil];
+				self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 2];
+			} else if ([difference integerValue] == 1) {
+				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0], nil];
+				self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 1];				
+			} else {
+				insertableRows = [NSArray arrayWithObjects:nil];
+			}
+			
+			[self.tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
+			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 		} else if (indexPath.row == 1) {
 			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source performSelector:NSSelectorFromString(self.content_type)] objectAtIndex:0] className] andManagedObjectContext:[data_source moc]];
 			[self presentModalViewController:contributionController animated:YES];

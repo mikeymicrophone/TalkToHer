@@ -14,7 +14,7 @@
 @synthesize lines, tips, goals, exercises, userId, server_location, moc, class_names;
 
 -(void)initialize_data {
-	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
+	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
 	[ObjectiveResourceConfig setSite:server_location];
 	self.lines = [[NSMutableArray alloc] init];
 	self.tips = [[NSMutableArray alloc] init];
@@ -28,10 +28,25 @@
 	NSEntityDescription *e = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
 	[f setEntity:e];
+	[f setFetchBatchSize:30];
+	[f setPropertiesToFetch:[self propertiesToFetchForType:type]];
+	
 	NSError *error = nil;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
 	[f release];
 	return results;
+}
+
+-(NSArray *)propertiesToFetchForType:(NSString *)type {
+	NSArray *properties;
+	if (type == @"lines") {
+		properties = [NSArray arrayWithObjects:@"phrasing", @"lineId", nil];
+	} else if (type == @"tips") {
+		properties = [NSArray arrayWithObjects:@"advice", @"tipId", nil];
+	} else if (type == @"exercise") {
+		properties = [NSArray arrayWithObjects:@"instruction", @"name", @"tipId", nil];
+	}
+   return properties;
 }
 
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type {
