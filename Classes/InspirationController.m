@@ -65,10 +65,9 @@
 	if (self.content_set == nil) {
 		self.content_set = [self.data_source performSelector:NSSelectorFromString(content_type)];
 	} else {
-		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
+		[data_source addAndPersistData:content_set ofType:content_type];
 		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
 	}
-	
 }
 
 #pragma mark -

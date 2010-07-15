@@ -8,6 +8,7 @@
 
 #import "DataDelegate.h"
 #import "ObjectiveResourceConfig.h"
+#import <dispatch/dispatch.h>
 
 @implementation DataDelegate
 
@@ -56,21 +57,25 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
 	
 	for (NSManagedObject *c in data) {
-		NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
+		if ([self itemExistsInStore:c]) {
+			// this object is already in the CoreData db
+		} else {
+			NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
     
-		// If appropriate, configure the new managed object.
-		if ([c respondsToSelector:@selector(phrasing)]) {
-			[newManagedObject setValue:[c phrasing] forKey:@"phrasing"];
-			[newManagedObject setValue:[c lineId] forKey:@"lineId"];
-		} else if ([c respondsToSelector:@selector(advice)]) {
-			[newManagedObject setValue:[c advice] forKey:@"advice"];
-			[newManagedObject setValue:[c tipId] forKey:@"tipId"];
-		} else if ([c respondsToSelector:@selector(instruction)]) {
-			[newManagedObject setValue:[c instruction] forKey:@"instruction"];
-			[newManagedObject setValue:[c name] forKey:@"name"];
-			[newManagedObject setValue:[c exerciseId] forKey:@"exerciseId"];
+			// If appropriate, configure the new managed object.
+			if ([c respondsToSelector:@selector(phrasing)]) {
+				[newManagedObject setValue:[c phrasing] forKey:@"phrasing"];
+				[newManagedObject setValue:[c lineId] forKey:@"lineId"];
+			} else if ([c respondsToSelector:@selector(advice)]) {
+				[newManagedObject setValue:[c advice] forKey:@"advice"];
+				[newManagedObject setValue:[c tipId] forKey:@"tipId"];
+			} else if ([c respondsToSelector:@selector(instruction)]) {
+				[newManagedObject setValue:[c instruction] forKey:@"instruction"];
+				[newManagedObject setValue:[c name] forKey:@"name"];
+				[newManagedObject setValue:[c exerciseId] forKey:@"exerciseId"];
+			}
+			[newManagedObject setValue:[c userId] forKey:@"userId"];
 		}
-		[newManagedObject setValue:[c userId] forKey:@"userId"];
 	}
     
     // Save the context.
@@ -82,8 +87,47 @@
          abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
     }
+}
+
+-(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell {
+	dispatch_queue_t queue;
+	queue = dispatch_queue_create("com.talktoher.fetch", NULL);
+	dispatch_async(queue, ^{
+		NSArray *content = nil;
+		while (content == nil || [content count] == 0) {
+			content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
+		}
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[cell stop_spinning];
+			[self addAndPersistData:content ofType:type];
+		});
+	});
+	dispatch_release(queue);
+}
+
+-(BOOL)itemExistsInStore:(NSManagedObject *)item {
+	NSEntityDescription *e = [NSEntityDescription entityForName:[item className] inManagedObjectContext:moc];
+	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+	[f setEntity:e];
+	NSLog(@"predicate for uniqueness check: %@", [NSPredicate predicateWithFormat:[[item getRemoteClassIdName] stringByAppendingFormat:@" == %d", 
+												  [[item performSelector:NSSelectorFromString([item getRemoteClassIdName])] integerValue]]]);
+	
+	[f setPredicate:[NSPredicate predicateWithFormat:[[item getRemoteClassIdName] stringByAppendingFormat:@" == %d", 
+					 [[item performSelector:NSSelectorFromString([item getRemoteClassIdName])] integerValue]]]];
+	
+	NSError *error = nil;
+	NSArray *results = [moc executeFetchRequest:f error:&error];
+	NSLog(@"executed fetch request");
+	[f release];
+	
+	NSLog(@"results from uniqueness check: %@", results);
+	
+	BOOL exists = NO;
+	if ([results count] > 0)
+		exists = YES;
+	
+	return exists;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import "LoaderCell.h"
 
 @interface DataDelegate : NSObject {
 	NSMutableArray *lines;
@@ -34,5 +34,6 @@
 -(NSArray *)fetch_collection:(NSString *)type;
 -(NSArray *)propertiesToFetchForType:(NSString *)type;
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type;
-
+-(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell;
+-(BOOL)itemExistsInStore:(NSManagedObject *)item;
 @end

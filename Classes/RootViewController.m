@@ -23,52 +23,16 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	self.data_source = [[DataDelegate alloc] init];
 	[self.data_source initialize_data];
 	data_source.moc = [self managedObjectContext];
-	dispatch_queue_t queue;
-	queue = dispatch_queue_create("com.talktoher.lines", NULL);
-	dispatch_async(queue, ^{
-		NSArray *content = nil;
-		while (content == nil || [content count] == 0) {
-			content = [Line findAllRemote];
-		}
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[lines_cell stop_spinning];
-			[data_source addAndPersistData:content ofType:@"lines"];
-		});
-	});
-	dispatch_release(queue);
-
-	queue = dispatch_queue_create("com.talktoher.tips", NULL);
-	dispatch_async(queue, ^{
-		NSArray *content = nil;
-		while (content == nil || [content count] == 0) {
-			content = [Tip findAllRemote];
-		}
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[tips_cell stop_spinning];
-			[data_source addAndPersistData:content ofType:@"tips"];
-		});
-	});
-	dispatch_release(queue);
-
-	queue = dispatch_queue_create("com.talktoher.exercises", NULL);
-	dispatch_async(queue, ^{
-		NSArray *content = nil;
-		while (content == nil || [content count] == 0) {
-			content = [Exercise findAllRemote];
-		}
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[exercises_cell stop_spinning];
-			[data_source addAndPersistData:content ofType:@"exercises"];
-		});
-	});
-	dispatch_release(queue);
+	
+	[data_source loadDataSegmentOfType:@"lines" andAlertCell:lines_cell];
+	[data_source loadDataSegmentOfType:@"tips" andAlertCell:tips_cell];
+	[data_source loadDataSegmentOfType:@"exercises" andAlertCell:exercises_cell];
 }
 
 /*
@@ -92,30 +56,21 @@
 }
 */
 
-
- // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
 	return YES;
 }
-
 
 #pragma mark -
 #pragma mark Table view data source
 
-// Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
 }
 
-
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
-
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	UITableViewCell *cell;
@@ -160,47 +115,6 @@
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark -
 #pragma mark Table view delegate
 
@@ -217,7 +131,6 @@
 	}
 }
 
-
 #pragma mark -
 #pragma mark Memory management
 
@@ -233,11 +146,8 @@
     // For example: self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
 
-
 @end
-
