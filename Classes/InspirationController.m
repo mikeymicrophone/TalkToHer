@@ -27,7 +27,7 @@
 	self.content_type = cType;
 	self.data_source = source;
 
-	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source performSelector:NSSelectorFromString(self.content_type)] count]];
+	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
 	if (displayed_content_amount == nil) {
 		if ([self.available_content_amount integerValue] > 2) {
 			self.displayed_content_amount = [NSNumber numberWithInt:3];
@@ -48,15 +48,7 @@
 		[ObjectiveResourceConfig setRemoteProtocolExtension:[NSString stringWithFormat:@".xml?page=%@", content_page]];
 	}
 	
-	if (self.content_type == @"lines") {
-		self.content_set = [Line findAllRemote];
-	} else if (self.content_type == @"tips") {
-		self.content_set = [Tip findAllRemote];
-	} else if (self.content_type == @"goals") {
-		self.content_set = [Goal findAllRemote];
-	} else if (self.content_type == @"exercises") {
-		self.content_set = [Exercise findAllRemote];
-	}
+	self.content_set = [self.data_source fetch_collection:self.content_type];
 	
 	if (self.content_page != nil) {
 		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
