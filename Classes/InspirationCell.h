@@ -14,9 +14,9 @@
 	NSString *additional_text;
 }
 
-@property (assign) NSString *main_text;
-@property (assign) NSString *additional_text;
+@property (nonatomic, retain) NSString *main_text;
+@property (nonatomic, retain) NSString *additional_text;
 
-+(CGFloat)cellHeightForMainText:(NSString *)main_text additional:(NSString *)additional width:(CGFloat)width;
++(CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width;
 
 @end

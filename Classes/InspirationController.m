@@ -130,12 +130,12 @@
 		}
 	} else if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
 		id content = [self contentForIndexPath:indexPath];
-		NSString *CellIdentifier = [NSString stringWithFormat:@"%@_%@", [content className], [content performSelector:(NSSelectorFromString([NSString stringWithFormat:@"%@Id", [[content className] lowercaseString]]))]];
-		
+		NSString *CellIdentifier = [NSString stringWithFormat:@"%@_%@", [content className], [content performSelector:NSSelectorFromString([content getRemoteClassIdName])]];
+
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-				
+			cell = [[[InspirationCell alloc] initWithFrame:CGRectMake(0, 0, 320, 44) reuseIdentifier:CellIdentifier] autorelease];
+
 			[cell setMain_text:[content main_text]];
 			[cell setAdditional_text:[content additional_text]];
 		}
@@ -147,7 +147,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
 		id content = [self contentForIndexPath:indexPath];
-		
 		return [InspirationCell cellHeightForMainText:[content main_text]
 												   additional:[content additional_text]
 												  width:[[self view] frame].size.width];
@@ -213,6 +212,7 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
+	NSLog(@"memory warning: inspiration controller");
     
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }

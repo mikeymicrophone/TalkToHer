@@ -15,7 +15,7 @@
 @synthesize userId, server_location, moc, class_names;
 
 -(void)initialize_data {
-	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
+	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
 	[ObjectiveResourceConfig setSite:server_location];
 //	self.lines = [[NSMutableArray alloc] init];
 //	self.tips = [[NSMutableArray alloc] init];
@@ -32,7 +32,7 @@
 	[f setEntity:e];
 	[f setFetchBatchSize:30];
 	[f setPropertiesToFetch:[self propertiesToFetchForType:type]];
-	
+
 	NSError *error = nil;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
 	[f release];
