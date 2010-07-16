@@ -123,22 +123,20 @@
 			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+				UIImageView *show_more = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
+				show_more.center = cell.center;
+				[cell addSubview:show_more];				
 			}
-			
-			UIImageView *show_more = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
-			show_more.center = cell.center;
-			[cell addSubview:show_more];
 		} else if (indexPath.row == 1) {
 			static NSString *CellIdentifier = @"write";
 			
 			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-			}
-			
-			UIImageView *write_one = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"write"]];
-			write_one.center = cell.center;
-			[cell addSubview:write_one];
+				UIImageView *write_one = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"write"]];
+				write_one.center = cell.center;
+				[cell addSubview:write_one];				
+			}			
 		}
 	} else if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
 		id content = [self contentForIndexPath:indexPath];
@@ -152,6 +150,7 @@
 			[cell setAdditional_text:[content additional_text]];
 		}
 	}
+	cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	
     return cell;
 }
@@ -203,6 +202,7 @@
 			
 			[self.tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
 			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+			[[self tableView:tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 		} else if (indexPath.row == 1) {
 			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source fetch_collection:self.content_type] objectAtIndex:0] className] andManagedObjectContext:[data_source moc]];
 			[self presentModalViewController:contributionController animated:YES];

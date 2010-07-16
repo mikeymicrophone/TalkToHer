@@ -9,11 +9,9 @@
 #import "InspectionController.h"
 #import "InspirationCell.h"
 
-
 @implementation InspectionController
 
 @synthesize content;
-
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithStyle:UITableViewStylePlain])
@@ -67,23 +65,17 @@
 }
 */
 
-
 #pragma mark -
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 4;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return 1;
 }
 
-
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	NSString *CellIdentifier;
@@ -129,16 +121,9 @@
 			[cell setMain_text:[content commentCount]];
 			[cell setAdditional_text:[content recentComment]];
 		}
-	} else if (indexPath.section == 4) {
-		CellIdentifier = @"approach";
-		
-		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-			
-			[cell setMain_text:@"I just said this."];
-		}
 	}
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	
     return cell;
 }
 
@@ -149,64 +134,20 @@
 											 additional:[content additional_text]
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 1) {
-		height = [InspirationCell cellHeightForMainText:@"3.72"
-											 additional:@"after 314 ratings"
-												  width:[[self view] frame].size.width];		
+		height = [InspirationCell cellHeightForMainText:[content averageRating]
+											 additional:[content ratingCount]
+												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 2) {
-		height = [InspirationCell cellHeightForMainText:@"2 tags"
-											 additional:@"black, magic, attraction... and 3 more"
-												  width:[[self view] frame].size.width];		
+		height = [InspirationCell cellHeightForMainText:[content tagCount]
+											 additional:[content recentTags]
+												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 3) {
-		height = [InspirationCell cellHeightForMainText:@"38 comments"
-											 additional:@"Cookie monster would love cokie roberts"
-												  width:[[self view] frame].size.width];		
-	} else if (indexPath.section == 4) {
-		height = [InspirationCell cellHeightForMainText:@"I just said this."
-											 additional:nil
-												  width:[[self view] frame].size.width];		
+		height = [InspirationCell cellHeightForMainText:[content commentCount]
+											 additional:[content recentComment]
+												  width:[[self view] frame].size.width];
 	}
 	return height;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 #pragma mark -
 #pragma mark Table view delegate
@@ -221,7 +162,6 @@
 	 [detailViewController release];
 	 */
 }
-
 
 #pragma mark -
 #pragma mark Memory management
@@ -238,11 +178,8 @@
     // For example: self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
 
-
 @end
-

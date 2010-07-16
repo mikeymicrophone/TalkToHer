@@ -37,7 +37,7 @@
 
 -(IBAction)submit_content {
 	[self.content setWrittenContent:writtenContent.text];
-	
+	NSLog(@"content about to be saved: %@", self.content);
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.submission", NULL);
 	dispatch_async(queue, ^{

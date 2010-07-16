@@ -105,6 +105,7 @@
 			if ([type isEqualToString:@"goals"]) {
 				[ObjectiveResourceConfig setSite:[server_location stringByAppendingFormat:@"users/%d/", [[self userId] integerValue]]];
 			}
+			NSLog(@"fetching resource %@ from site %@", type, [ObjectiveResourceConfig getSite]);
 			content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
 			if ([type isEqualToString:@"goals"]) {
 				[ObjectiveResourceConfig setSite:server_location];

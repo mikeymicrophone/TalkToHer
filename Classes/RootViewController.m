@@ -112,6 +112,7 @@
 			}
 		}
 	}
+	cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	
     return cell;
 }
