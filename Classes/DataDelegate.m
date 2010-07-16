@@ -73,11 +73,9 @@
 				[newManagedObject setValue:[c derivedDescription] forKey:@"derivedDescription"];
 				[newManagedObject setValue:[c complete] forKey:@"complete"];
 				[newManagedObject setValue:[c progress] forKey:@"progress"];
-				NSLog(@"set progress");
-				[newManagedObject setValue:[NSNumber numberWithInt:[[c goalOwnershipId] integerValue]] forKey:@"goalOwnershipId"];
-				NSLog(@"attributes set");
+				[newManagedObject setValue:[c goalOwnershipId] forKey:@"goalOwnershipId"];
 			}
-			[newManagedObject setValue:[NSNumber numberWithInt:[[c userId] integerValue]] forKey:@"userId"];
+			[newManagedObject setValue:[c userId] forKey:@"userId"];
 		}
 	}
     
