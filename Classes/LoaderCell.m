@@ -8,7 +8,6 @@
 
 #import "LoaderCell.h"
 
-
 @implementation LoaderCell
 
 @synthesize spinner, coloredLabel;
@@ -25,8 +24,6 @@
 		self.coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:reuseIdentifier]];
 		coloredLabel.center = self.center;
 		[self addSubview:self.coloredLabel];
-		
-		[[self textLabel] setText:reuseIdentifier];
     }
     return self;
 }
@@ -39,7 +36,6 @@
 	[self.spinner startAnimating];
 }
 
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 
     [super setSelected:selected animated:animated];
@@ -47,10 +43,8 @@
     // Configure the view for the selected state
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end

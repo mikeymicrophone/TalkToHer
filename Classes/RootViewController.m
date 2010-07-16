@@ -118,12 +118,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section < 3) {
-		InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text] andDataSource:data_source];
+		InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[self tableView:tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] andDataSource:data_source];
 		[self.navigationController pushViewController:inspirationController animated:YES];
 		[inspirationController release];
 	} else {
 		if (data_source.userId != nil) {
-			InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text] andDataSource:data_source];
+			InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[self tableView:tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] andDataSource:data_source];
 			[self.navigationController pushViewController:inspirationController animated:YES];
 			[inspirationController release];			
 		} else {
