@@ -36,10 +36,10 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1538, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{1623, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1706, 85}\";\n            s = 0;\n        },\n                {\n            r = \"{1794, 83}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 4960}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1517, 1846}}";
-			sepNavSelRange = "{3518, 0}";
-			sepNavVisRange = "{3024, 1610}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1538, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{1623, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1706, 85}\";\n            s = 0;\n        },\n                {\n            r = \"{1794, 83}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 5113}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1482, 2002}}";
+			sepNavSelRange = "{2863, 0}";
+			sepNavVisRange = "{2015, 1163}";
 			sepNavWindowFrame = "{{15, 214}, {933, 559}}";
 		};
 	};
@@ -157,9 +157,9 @@
 	};
 	E40D0DF011D9361B004CC712 /* InspirationCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 871}}";
-			sepNavSelRange = "{1118, 0}";
-			sepNavVisRange = "{412, 1574}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 819}}";
+			sepNavSelRange = "{727, 0}";
+			sepNavVisRange = "{171, 1698}";
 		};
 	};
 	E439364211D453B100D6DED9 /* TalkToHer */ = {
@@ -249,9 +249,9 @@
 	};
 	E44065C011EBB9F700A48898 /* LoaderCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 728}}";
-			sepNavSelRange = "{742, 0}";
-			sepNavVisRange = "{143, 962}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 663}}";
+			sepNavSelRange = "{818, 0}";
+			sepNavVisRange = "{144, 1025}";
 		};
 	};
 	E440662111EBFBCA00A48898 /* PBXTextBookmark */ = {
@@ -306,7 +306,7 @@
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForDetailArea = {
 					_indexOfSelectedPane = 3;
-					_indexOfSelectedView = 0;
+					_indexOfSelectedView = 1;
 				};
 				UIContextForEntityArea = {
 					_indexOfSelectedView = 0;
@@ -327,7 +327,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						104.080078,
+						105.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -337,8 +337,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {608, 220}}",
-							"{{613, 0}, {320, 220}}",
+							"{{0, 0}, {608, 218}}",
+							"{{613, 0}, {320, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -348,7 +348,7 @@
 						isCollapsed = yes;
 						sizes = (
 							"{{0, 0}, {933, 220}}",
-							"{{0, 225}, {933, 221}}",
+							"{{0, 225}, {933, 198}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -357,8 +357,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {254, 220}}",
-							"{{259, 0}, {347, 220}}",
+							"{{0, 0}, {255, 218}}",
+							"{{260, 0}, {348, 218}}",
 						);
 					};
 				};
@@ -455,7 +455,7 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-99, 221}, {918, 206}}";
+				"xdesign model diagram view visible rect key" = "{{-99, 221}, {918, 183}}";
 			};
 			sepNavWindowFrame = "{{233, 95}, {933, 559}}";
 		};
@@ -861,7 +861,7 @@
 		fRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */;
 		name = "InspirationCell.m: 31";
 		rLen = 0;
-		rLoc = 1118;
+		rLoc = 1173;
 		rType = 0;
 		vrLen = 1574;
 		vrLoc = 412;
@@ -981,7 +981,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 125";
 		rLen = 0;
-		rLoc = 3844;
+		rLoc = 3998;
 		rType = 0;
 		vrLen = 1610;
 		vrLoc = 3350;

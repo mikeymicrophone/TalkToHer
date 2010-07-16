@@ -8,24 +8,23 @@
 
 #import "InspirationCell.h"
 
-
 @implementation InspirationCell
 
 @synthesize main_text, additional_text;
 
 + (CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width {
-	UIFont *captionFont = [UIFont boldSystemFontOfSize:15];
-	UIFont *textFont = [UIFont systemFontOfSize:15];
-	CGSize main_size = [mtext sizeWithFont:captionFont constrainedToSize:CGSizeMake(width-20.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
-	CGSize additional_size = [additional sizeWithFont:textFont constrainedToSize:CGSizeMake(width-20.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];
+	UIFont *textFont = [UIFont fontWithName:@"TrebuchetMS" size:15];
+	CGSize main_size = [mtext sizeWithFont:captionFont constrainedToSize:CGSizeMake(width-10.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+	CGSize additional_size = [additional sizeWithFont:textFont constrainedToSize:CGSizeMake(width-10.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
 
 	return main_size.height + additional_size.height + 15.0;
 }
 
 - (void)drawRect:(CGRect)rect
 {
-	UIFont *captionFont = [UIFont boldSystemFontOfSize:15];
-	UIFont *textFont = [UIFont systemFontOfSize:15];
+	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];
+	UIFont *textFont = [UIFont fontWithName:@"TrebuchetMS" size:15];
 
 	CGRect f = [self bounds];
 	CGSize cs = [main_text sizeWithFont:captionFont constrainedToSize:CGSizeMake(f.size.width-10.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];

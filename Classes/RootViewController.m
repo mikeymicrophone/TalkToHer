@@ -100,7 +100,10 @@
 			cell = [tableView dequeueReusableCellWithIdentifier:@"log in"];
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"log in"] autorelease];
-				[[cell textLabel] setText:@"log in"];
+				UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login"]];
+				image.center = cell.center;
+				[cell addSubview:image];
+//				[[cell textLabel] setText:@"log in"];
 			}
 		} else {
 			cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];
