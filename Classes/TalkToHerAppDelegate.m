@@ -8,7 +8,6 @@
 
 #import "TalkToHerAppDelegate.h"
 #import "RootViewController.h"
-#import "Line.h"
 
 @implementation TalkToHerAppDelegate
 

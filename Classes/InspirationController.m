@@ -11,7 +11,7 @@
 #import "Line.h"
 #import "Tip.h"
 #import "Exercise.h"
-#import "Goal.h"
+#import "GoalOwnership.h"
 #import "InspirationCell.h"
 #import "InspectionController.h"
 #import "ContributionController.h"
@@ -26,7 +26,7 @@
 	
 	self.content_type = cType;
 	self.data_source = source;
-	
+	NSLog(@"about to fetch collection: %@", content_type);
 	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
 	if (displayed_content_amount == nil) {
 		if ([self.available_content_amount integerValue] > 2) {
@@ -147,6 +147,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
 		id content = [self contentForIndexPath:indexPath];
+		NSLog(@"content is: %@", content);
 		return [InspirationCell cellHeightForMainText:[content main_text]
 												   additional:[content additional_text]
 												  width:[[self view] frame].size.width];

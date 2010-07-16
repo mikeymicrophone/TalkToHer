@@ -76,7 +76,7 @@
 		E4C6AEC911D5421100068008 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEC811D5421100068008 /* Line.m */; };
 		E4C6AF4911D5522900068008 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4811D5522900068008 /* Tip.m */; };
 		E4C6AF4C11D5526800068008 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4B11D5526800068008 /* Exercise.m */; };
-		E4C6AF4F11D552BD00068008 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4E11D552BD00068008 /* Goal.m */; };
+		E4C6AF4F11D552BD00068008 /* GoalOwnership.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4E11D552BD00068008 /* GoalOwnership.m */; };
 		E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -218,8 +218,8 @@
 		E4C6AF4811D5522900068008 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
 		E4C6AF4A11D5526800068008 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		E4C6AF4B11D5526800068008 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
-		E4C6AF4D11D552BD00068008 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
-		E4C6AF4E11D552BD00068008 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
+		E4C6AF4D11D552BD00068008 /* GoalOwnership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOwnership.h; sourceTree = "<group>"; };
+		E4C6AF4E11D552BD00068008 /* GoalOwnership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOwnership.m; sourceTree = "<group>"; };
 		E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDelegate.h; sourceTree = "<group>"; };
 		E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,12 +262,12 @@
 				E4C6AEC711D5421100068008 /* Line.h */,
 				E4C6AF4711D5522900068008 /* Tip.h */,
 				E4C6AF4A11D5526800068008 /* Exercise.h */,
-				E4C6AF4D11D552BD00068008 /* Goal.h */,
+				E4C6AF4D11D552BD00068008 /* GoalOwnership.h */,
 				E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */,
 				E4C6AEC811D5421100068008 /* Line.m */,
 				E4C6AF4811D5522900068008 /* Tip.m */,
 				E4C6AF4B11D5526800068008 /* Exercise.m */,
-				E4C6AF4E11D552BD00068008 /* Goal.m */,
+				E4C6AF4E11D552BD00068008 /* GoalOwnership.m */,
 				E40D0DEF11D9361B004CC712 /* InspirationCell.h */,
 				E40D0DF011D9361B004CC712 /* InspirationCell.m */,
 				E44065BF11EBB9F700A48898 /* LoaderCell.h */,
@@ -632,7 +632,7 @@
 				E4C6AEC911D5421100068008 /* Line.m in Sources */,
 				E4C6AF4911D5522900068008 /* Tip.m in Sources */,
 				E4C6AF4C11D5526800068008 /* Exercise.m in Sources */,
-				E4C6AF4F11D552BD00068008 /* Goal.m in Sources */,
+				E4C6AF4F11D552BD00068008 /* GoalOwnership.m in Sources */,
 				E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */,
 				E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */,
 				E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */,

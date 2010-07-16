@@ -40,8 +40,29 @@
 		[data_source setUserId:user_id];
 	}
 	
+	
+//	dispatch_queue_t queue;
+//	queue = dispatch_queue_create("com.talktoher.fetch", NULL);
+//	dispatch_async(queue, ^{
+//		NSArray *content = nil;
+//		dispatch_async(dispatch_get_main_queue(), ^{
+//			[cell start_spinning];
+//		});
+//		while (content == nil || [content count] == 0) {
+//			content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
+//		}
+//		dispatch_async(dispatch_get_main_queue(), ^{
+//			[cell stop_spinning];
+//			[self addAndPersistData:content ofType:type];
+//		});
+//	});
+//	dispatch_release(queue);
+
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	[[[[self parentViewController] topViewController] tableView] reloadData];
+	
+	// get goals
+	[data_source loadDataSegmentOfType:@"goals" andAlertCell:[[[self parentViewController] topViewController] goals_cell]];
 }
 
 - (IBAction)sign_up {

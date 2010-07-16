@@ -9,7 +9,6 @@
 #import "Exercise.h"
 #import "ObjectiveResourceConfig.h"
 
-
 @implementation Exercise
 
 @synthesize exerciseId, moniker, instruction, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId;

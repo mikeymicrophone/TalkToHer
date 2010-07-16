@@ -1,5 +1,5 @@
 //
-//  Goal.h
+//  GoalOwnership.h
 //  TalkToHer
 //
 //  Created by Michael Schwab on 6/25/10.
@@ -7,19 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-
-@interface Goal : NSObject {
-	NSString *goalId;
+@interface GoalOwnership : NSManagedObject {
+	NSString *goalOwnershipId;
 	NSString *derivedDescription;
 	NSString *progress;
 	NSString *complete;
+	NSString *userId;
 }
 
-@property (nonatomic, retain) NSString *goalId;
+@property (nonatomic, retain) NSString *goalOwnershipId;
 @property (nonatomic, retain) NSString *derivedDescription;
 @property (nonatomic, retain) NSString *progress;
 @property (nonatomic, retain) NSString *complete;
+@property (nonatomic, retain) NSString *userId;
 
 -(NSString *)main_text;
 -(NSString *)additional_text;

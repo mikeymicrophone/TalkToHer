@@ -1,17 +1,16 @@
 //
-//  Goal.m
+//  GoalOwnership.m
 //  TalkToHer
 //
 //  Created by Michael Schwab on 6/25/10.
 //  Copyright 2010 Exco Ventures. All rights reserved.
 //
 
-#import "Goal.h"
+#import "GoalOwnership.h"
 
+@implementation GoalOwnership
 
-@implementation Goal
-
-@synthesize goalId, derivedDescription, progress, complete;
+@synthesize goalOwnershipId, derivedDescription, progress, complete, userId;
 
 -(NSString *)main_text {
 	return derivedDescription;

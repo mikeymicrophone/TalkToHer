@@ -33,6 +33,7 @@
 	self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
 	self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
 	self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
+	self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
 	
 	[data_source loadDataSegmentOfType:@"lines" andAlertCell:lines_cell];
 	[data_source loadDataSegmentOfType:@"tips" andAlertCell:tips_cell];
@@ -104,7 +105,6 @@
 		} else {
 			cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];
 			if (cell == nil) {
-				self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
 				cell = goals_cell;
 			}
 		}
@@ -122,10 +122,16 @@
 		[self.navigationController pushViewController:inspirationController animated:YES];
 		[inspirationController release];
 	} else {
-		IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
-		[identificationController setData_source:data_source];
-		[self presentModalViewController:identificationController animated:YES];
-		[identificationController release];		
+		if (data_source.userId != nil) {
+			InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[[self tableView:tableView cellForRowAtIndexPath:indexPath] textLabel] text] andDataSource:data_source];
+			[self.navigationController pushViewController:inspirationController animated:YES];
+			[inspirationController release];			
+		} else {
+			IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
+			[identificationController setData_source:data_source];
+			[self presentModalViewController:identificationController animated:YES];
+			[identificationController release];
+		}
 	}
 }
 
