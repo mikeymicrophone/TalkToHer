@@ -11,7 +11,7 @@
 
 @implementation LoaderCell
 
-@synthesize spinner;
+@synthesize spinner, coloredLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
@@ -21,6 +21,11 @@
 		center.y = 23;
 		[self.spinner setCenter:center];
 		[self addSubview:self.spinner];
+		
+		self.coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:reuseIdentifier]];
+		coloredLabel.center = self.center;
+		[self addSubview:self.coloredLabel];
+		
 		[[self textLabel] setText:reuseIdentifier];
     }
     return self;

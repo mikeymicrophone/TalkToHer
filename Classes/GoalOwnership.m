@@ -13,7 +13,6 @@
 @synthesize goalOwnershipId, derivedDescription, progress, complete, userId;
 
 -(NSString *)main_text {
-	NSLog(@"main text has been called, %@", derivedDescription);
 	return derivedDescription;
 }
 

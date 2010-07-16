@@ -150,9 +150,9 @@
 	};
 	E40D0DEF11D9361B004CC712 /* InspirationCell.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 520}}";
-			sepNavSelRange = "{401, 0}";
-			sepNavVisRange = "{0, 468}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 508}}";
+			sepNavSelRange = "{265, 0}";
+			sepNavVisRange = "{0, 490}";
 		};
 	};
 	E40D0DF011D9361B004CC712 /* InspirationCell.m */ = {
@@ -217,9 +217,9 @@
 	};
 	E439369611D50DD300D6DED9 /* InspirationController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {938, 3224}}";
-			sepNavSelRange = "{295, 0}";
-			sepNavVisRange = "{2192, 392}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 3198}}";
+			sepNavSelRange = "{754, 0}";
+			sepNavVisRange = "{435, 1371}";
 			sepNavWindowFrame = "{{134, 109}, {933, 559}}";
 		};
 	};
@@ -242,16 +242,16 @@
 	};
 	E44065BF11EBB9F700A48898 /* LoaderCell.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 534}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 366}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 508}}";
+			sepNavSelRange = "{378, 0}";
+			sepNavVisRange = "{0, 450}";
 		};
 	};
 	E44065C011EBB9F700A48898 /* LoaderCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {859, 611}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 631}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 728}}";
+			sepNavSelRange = "{742, 0}";
+			sepNavVisRange = "{143, 962}";
 		};
 	};
 	E440662111EBFBCA00A48898 /* PBXTextBookmark */ = {
@@ -835,8 +835,8 @@
 	};
 	E4C6AF4E11D552BD00068008 /* GoalOwnership.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 511}}";
-			sepNavSelRange = "{166, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 508}}";
+			sepNavSelRange = "{301, 0}";
 			sepNavVisRange = "{0, 385}";
 		};
 	};
@@ -850,9 +850,9 @@
 	};
 	E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2343, 1755}}";
+			sepNavIntBoundsRect = "{{0, 0}, {2343, 1768}}";
 			sepNavSelRange = "{3180, 0}";
-			sepNavVisRange = "{1669, 2274}";
+			sepNavVisRange = "{1670, 2271}";
 			sepNavWindowFrame = "{{61, 172}, {933, 559}}";
 		};
 	};
@@ -911,7 +911,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 150";
 		rLen = 0;
-		rLoc = 4700;
+		rLoc = 4608;
 		rType = 0;
 		vrLen = 1410;
 		vrLoc = 4120;

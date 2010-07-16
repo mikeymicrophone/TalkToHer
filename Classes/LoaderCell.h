@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface LoaderCell : UITableViewCell {
 	UIActivityIndicatorView *spinner;
+	UIImageView *coloredLabel;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
+@property (nonatomic, retain) UIImageView *coloredLabel;
 
 -(void)stop_spinning;
 -(void)start_spinning;
