@@ -44,7 +44,7 @@
 	} else if (type == @"exercises") {
 		properties = [NSArray arrayWithObjects:@"instruction", @"moniker", @"exerciseId", nil];
 	} else if (type == @"goals") {
-		properties = [NSArray arrayWithObjects:@"goalOwnershipId", @"derivedDescription", @"complete", @"progress", nil];
+		properties = [NSArray arrayWithObjects:@"goalOwnershipId", @"derivedDescription", @"complete", @"progress", @"completionStatus", @"remainingDaysText", nil];
 	}
    return properties;
 }
@@ -73,6 +73,8 @@
 				[newManagedObject setValue:[c derivedDescription] forKey:@"derivedDescription"];
 				[newManagedObject setValue:[c complete] forKey:@"complete"];
 				[newManagedObject setValue:[c progress] forKey:@"progress"];
+				[newManagedObject setValue:[c completionStatus] forKey:@"completionStatus"];
+				[newManagedObject setValue:[c remainingDaysText] forKey:@"remainingDaysText"];
 				[newManagedObject setValue:[c goalOwnershipId] forKey:@"goalOwnershipId"];
 			}
 			[newManagedObject setValue:[c userId] forKey:@"userId"];

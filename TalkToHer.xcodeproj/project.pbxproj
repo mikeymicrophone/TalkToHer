@@ -19,6 +19,8 @@
 		E419E36811F0182500F400DD /* goals.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E36711F0182500F400DD /* goals.png */; };
 		E419E36E11F0199500F400DD /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E36D11F0199500F400DD /* login.png */; };
 		E419E37211F01A1F00F400DD /* tips.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37111F01A1F00F400DD /* tips.png */; };
+		E419E37D11F0224800F400DD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37C11F0224800F400DD /* more.png */; };
+		E419E38111F0236E00F400DD /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E38011F0236E00F400DD /* write.png */; };
 		E439369811D50DD300D6DED9 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E439369611D50DD300D6DED9 /* InspirationController.m */; };
 		E44065C111EBB9F700A48898 /* LoaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E44065C011EBB9F700A48898 /* LoaderCell.m */; };
 		E440665011EC002000A48898 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664111EC001F00A48898 /* ASIAuthenticationDialog.m */; };
@@ -104,6 +106,8 @@
 		E419E36711F0182500F400DD /* goals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goals.png; sourceTree = "<group>"; };
 		E419E36D11F0199500F400DD /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		E419E37111F01A1F00F400DD /* tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tips.png; sourceTree = "<group>"; };
+		E419E37C11F0224800F400DD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		E419E38011F0236E00F400DD /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
 		E439369511D50DD300D6DED9 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
 		E439369611D50DD300D6DED9 /* InspirationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationController.m; sourceTree = "<group>"; };
 		E44065BF11EBB9F700A48898 /* LoaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaderCell.h; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				E419E36711F0182500F400DD /* goals.png */,
 				E419E35F11F016E000F400DD /* lines.png */,
 				E419E36D11F0199500F400DD /* login.png */,
+				E419E38011F0236E00F400DD /* write.png */,
+				E419E37C11F0224800F400DD /* more.png */,
 				E4A1573011DF989700A044D7 /* ContributionController.xib */,
 				E4A1589611E4E2A600A044D7 /* IdentificationController.xib */,
 				E4A1549F11DBFF5700A044D7 /* InspectionController.xib */,
@@ -603,6 +609,8 @@
 				E419E36811F0182500F400DD /* goals.png in Resources */,
 				E419E36E11F0199500F400DD /* login.png in Resources */,
 				E419E37211F01A1F00F400DD /* tips.png in Resources */,
+				E419E37D11F0224800F400DD /* more.png in Resources */,
+				E419E38111F0236E00F400DD /* write.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

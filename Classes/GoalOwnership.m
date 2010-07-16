@@ -10,14 +10,14 @@
 
 @implementation GoalOwnership
 
-@synthesize goalOwnershipId, derivedDescription, progress, complete, userId;
+@synthesize goalOwnershipId, derivedDescription, progress, complete, completionStatus, remainingDaysText, userId;
 
 -(NSString *)main_text {
 	return derivedDescription;
 }
 
 -(NSString *)additional_text {
-	return @"";
+	return [[completionStatus stringByAppendingString:@"\n"] stringByAppendingString:remainingDaysText];
 }
 
 @end

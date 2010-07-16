@@ -20,7 +20,11 @@
 	[self setContentType:cType];
 	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
 	self.heading.textAlignment = UITextAlignmentCenter;
-	self.heading.text = [NSString stringWithFormat:@"Sharing a %@", cType];
+	if ([cType isEqualToString:@"Exercise"]) {
+		self.heading.text = @"Sharing an Exercise";
+	} else {
+		self.heading.text = [NSString stringWithFormat:@"Sharing a %@", cType];
+	}
 	[self setMoc:m];
 	[self prepare_content];
 	return self;
@@ -28,7 +32,7 @@
 
 -(void)prepare_content {
 	NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
-	self.content = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];//[objc_getClass([contentType cStringUsingEncoding:NSASCIIStringEncoding]) alloc];
+	self.content = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
 }
 
 -(IBAction)submit_content {
@@ -54,6 +58,7 @@
 }
 
 -(IBAction)cancel {
+	[moc deleteObject:self.content];
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 

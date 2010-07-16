@@ -2,7 +2,7 @@
 //  LoaderCell.m
 //  TalkToHer
 //
-//  Created by Raquel Hernandez on 7/12/10.
+//  Created by Michael Schwab on 7/12/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 

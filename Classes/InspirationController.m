@@ -117,16 +117,28 @@
 	UITableViewCell *cell;
 	
 	if (indexPath.section == 1) {
-		static NSString *CellIdentifier = @"Cell";
-		
-		cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		}
 		if (indexPath.row == 0) {
-			[cell.textLabel setText:@"refresh"];
+			static NSString *CellIdentifier = @"more";
+			
+			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			}
+			
+			UIImageView *show_more = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
+			show_more.center = cell.center;
+			[cell addSubview:show_more];
 		} else if (indexPath.row == 1) {
-			[cell.textLabel setText:@"write one"];
+			static NSString *CellIdentifier = @"write";
+			
+			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			}
+			
+			UIImageView *write_one = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"write"]];
+			write_one.center = cell.center;
+			[cell addSubview:write_one];
 		}
 	} else if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
 		id content = [self contentForIndexPath:indexPath];

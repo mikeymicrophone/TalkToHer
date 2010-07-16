@@ -14,6 +14,8 @@
 	NSString *derivedDescription;
 	NSString *progress;
 	NSString *complete;
+	NSString *completionStatus;
+	NSString *remainingDaysText;
 	NSString *userId;
 }
 
@@ -21,6 +23,8 @@
 @property (nonatomic, retain) NSString *derivedDescription;
 @property (nonatomic, retain) NSString *progress;
 @property (nonatomic, retain) NSString *complete;
+@property (nonatomic, retain) NSString *completionStatus;
+@property (nonatomic, retain) NSString *remainingDaysText;
 @property (nonatomic, retain) NSString *userId;
 
 -(NSString *)main_text;
