@@ -53,7 +53,14 @@
 	// Create a new instance of the entity managed by the fetched results controller.
     NSEntityDescription *entity = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
 	for (NSManagedObject *c in data) {
-		if ([self itemExistsInStore:c]) {
+		NSLog(@"this is c: %@", c);
+		NSManagedObject *e = [self itemExistsInStore:c];
+		if (e) {
+			if ([[c className] isEqualToString:@"GoalOwnership"]) {
+				NSLog(@"about to update local store: %@", [c progress]);
+				[c setValue:[e progress] forKey:@"progress"];
+				NSLog(@"set value of %@ to %@", c, [c progress]);
+			}
 			// this object is already in the CoreData db
 		} else {
 			NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
@@ -105,7 +112,6 @@
 			if ([type isEqualToString:@"goals"]) {
 				[ObjectiveResourceConfig setSite:[server_location stringByAppendingFormat:@"users/%d/", [[self userId] integerValue]]];
 			}
-			NSLog(@"fetching resource %@ from site %@", type, [ObjectiveResourceConfig getSite]);
 			content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
 			if ([type isEqualToString:@"goals"]) {
 				[ObjectiveResourceConfig setSite:server_location];
@@ -113,13 +119,20 @@
 		}
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[cell stop_spinning];
+			for (NSManagedObject *c in content) {
+				NSLog(@"this is the content fetched: %@", [c getRemoteId]);
+				NSLog(@"and the written content: %@", [c main_text]);
+				if ([c respondsToSelector:@selector(progress)]) {
+					NSLog(@"c progress is %@", [c progress]);
+				}
+			}
 			[self addAndPersistData:content ofType:type];
 		});
 	});
 	dispatch_release(queue);
 }
 
--(BOOL)itemExistsInStore:(NSManagedObject *)item {
+-(NSManagedObject *)itemExistsInStore:(NSManagedObject *)item {
 	NSEntityDescription *e = [NSEntityDescription entityForName:[item className] inManagedObjectContext:moc];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
 	[f setEntity:e];
@@ -129,11 +142,20 @@
 	NSError *error = nil;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
 	[f release];
-	
-	BOOL exists = NO;
+	NSLog(@"found results: %@", results);
+	if ([[results objectAtIndex:0] respondsToSelector:@selector(progress)]) {
+		NSLog(@"progress? %@", [[results objectAtIndex:0] progress]);
+	}
+	NSManagedObject *exists = nil;
 	if ([results count] > 0)
-		exists = YES;
-
+		exists = [results objectAtIndex:0];
+//	[newManagedObject setValue:[c derivedDescription] forKey:@"derivedDescription"];
+//	[newManagedObject setValue:[c complete] forKey:@"complete"];
+//	[newManagedObject setValue:[c progress] forKey:@"progress"];
+//	[newManagedObject setValue:[c completionStatus] forKey:@"completionStatus"];
+//	[newManagedObject setValue:[c remainingDaysText] forKey:@"remainingDaysText"];
+//	[newManagedObject setValue:[c goalOwnershipId] forKey:@"goalOwnershipId"];
+	
 	return exists;
 }
 

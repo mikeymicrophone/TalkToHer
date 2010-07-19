@@ -38,6 +38,7 @@
 -(IBAction)submit_content {
 	[self.content setWrittenContent:writtenContent.text];
 	NSLog(@"content about to be saved: %@", self.content);
+	[self.content retain];
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.submission", NULL);
 	dispatch_async(queue, ^{
@@ -52,6 +53,7 @@
 			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		}		
 	});
+	[self.content release];
 	dispatch_release(queue);
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];

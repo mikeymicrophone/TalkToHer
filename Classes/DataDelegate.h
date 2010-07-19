@@ -27,5 +27,5 @@
 -(NSArray *)propertiesToFetchForType:(NSString *)type;
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type;
 -(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell;
--(BOOL)itemExistsInStore:(NSManagedObject *)item;
+-(NSManagedObject *)itemExistsInStore:(NSManagedObject *)item;
 @end

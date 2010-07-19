@@ -15,6 +15,7 @@
 #import "InspirationCell.h"
 #import "InspectionController.h"
 #import "ContributionController.h"
+#import "ProgressController.h"
 
 @implementation InspirationController
 
@@ -64,7 +65,6 @@
 	if ([[self.data_source fetch_collection:self.content_type] count] == 0) {
 		[self load_content];
 		self.content_set = [self.data_source fetch_collection:self.content_type];
-		[[self.data_source performSelector:NSSelectorFromString(self.content_type)] addObjectsFromArray:self.content_set];
 		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
 	}
 }
@@ -200,21 +200,28 @@
 				insertableRows = [NSArray arrayWithObjects:nil];
 			}
 			
-			[self.tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
-			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+			[tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
+			if (self.available_content_amount > [NSNumber numberWithInteger:0]) {
+				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[displayed_content_amount integerValue] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+			}
 			[[self tableView:tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 		} else if (indexPath.row == 1) {
-			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[[self.data_source fetch_collection:self.content_type] objectAtIndex:0] className] andManagedObjectContext:[data_source moc]];
+			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[data_source class_names] objectForKey:content_type] andManagedObjectContext:[data_source moc]];
 			[self presentModalViewController:contributionController animated:YES];
 			[contributionController release];
 		}
 	} else {
-	
-    // Navigation logic may go here. Create and push another view controller.
-	 InspectionController *inspectionController = [[InspectionController alloc] initWithContent:[self contentForIndexPath:indexPath]];
+		if ([self.content_type isEqualToString:@"goals"]) {
+			ProgressController *progressController = [[ProgressController alloc] initWithGoal:[self contentForIndexPath:indexPath]];
+			progressController.data_source = self.data_source;
+			[self.navigationController pushViewController:progressController animated:YES];
+			[progressController release];
+		} else {
+			InspectionController *inspectionController = [[InspectionController alloc] initWithContent:[self contentForIndexPath:indexPath]];
 
-	 [self.navigationController pushViewController:inspectionController animated:YES];
-	 [inspectionController release];
+			[self.navigationController pushViewController:inspectionController animated:YES];
+			[inspectionController release];
+		}
 	}
 }
 
