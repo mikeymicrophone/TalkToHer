@@ -18,12 +18,12 @@
 		return nil;
 	
 	[self setContentType:cType];
-	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
-	self.heading.textAlignment = UITextAlignmentCenter;
+	heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
+	heading.textAlignment = UITextAlignmentCenter;
 	if ([cType isEqualToString:@"Exercise"]) {
-		self.heading.text = @"Sharing an Exercise";
+		heading.text = @"Sharing an Exercise";
 	} else {
-		self.heading.text = [NSString stringWithFormat:@"Sharing a %@", cType];
+		heading.text = [NSString stringWithFormat:@"Sharing a %@", cType];
 	}
 	[self setMoc:m];
 	[self prepare_content];
@@ -32,17 +32,20 @@
 
 -(void)prepare_content {
 	NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
-	self.content = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
+	content = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
 }
 
 -(IBAction)submit_content {
-	[self.content setWrittenContent:writtenContent.text];
-	NSLog(@"content about to be saved: %@", self.content);
-	[self.content retain];
+	[content setWrittenContent:writtenContent.text];
+	NSLog(@"content about to be saved: %@", content);
+	[content retain];
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.submission", NULL);
 	dispatch_async(queue, ^{
-		[self.content createRemote];
+		NSLog(@"content about to be saved (in queue): %@", content);
+		if ([[[self parentViewController] bottomViewController] lotd_is_reachable]) {
+			[content createRemote];
+		}
 		NSError *error = nil;
 		if (![moc save:&error]) {
 			/*
@@ -53,7 +56,7 @@
 			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		}		
 	});
-	[self.content release];
+	[content release];
 	dispatch_release(queue);
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];

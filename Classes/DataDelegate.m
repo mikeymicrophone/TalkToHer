@@ -35,6 +35,21 @@
 	return results;
 }
 
+-(NSArray *)unidentified_set_of_type:(NSString *)type {
+	NSEntityDescription *e = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
+	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+	
+	[f setEntity:e];
+	[f setPropertiesToFetch:[self propertiesToFetchForType:type]];
+	[f setPredicate:[NSPredicate predicateWithFormat:[[objc_getClass([[class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) getRemoteClassIdName] stringByAppendingFormat:@" == %d", nil]]];
+	
+	NSError *error = nil;
+	NSArray *results = [moc executeFetchRequest:f error:&error];
+	[f release];
+	NSLog(@"unidentified set: %@", results);
+	return results;	
+}
+
 -(NSArray *)propertiesToFetchForType:(NSString *)type {
 	NSArray *properties;
 	if (type == @"lines") {
@@ -52,39 +67,49 @@
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type {
 	// Create a new instance of the entity managed by the fetched results controller.
     NSEntityDescription *entity = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:moc];
+	NSArray *unidentified_set = [self unidentified_set_of_type:type];
 	for (NSManagedObject *c in data) {
 		NSLog(@"this is c: %@", c);
 		NSManagedObject *e = [self itemExistsInStore:c];
 		if (e) {
+			// this object is already in the CoreData db
 			if ([[c className] isEqualToString:@"GoalOwnership"]) {
 				NSLog(@"about to update local store: %@", [c progress]);
 				[c setValue:[e progress] forKey:@"progress"];
 				NSLog(@"set value of %@ to %@", c, [c progress]);
 			}
-			// this object is already in the CoreData db
 		} else {
-			NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
+			NSManagedObject *identifiable = [self item:c existsInSet:unidentified_set];
+			if (identifiable) {
+				NSLog(@"identified a content piece: %@. setting %@ to %@", [identifiable main_text], [identifiable getRemoteClassIdName], [c getRemoteId]);
+				NSLog(@"previous id: %@", [identifiable valueForKey:@"tipId"]);
+				[identifiable setValue:[c getRemoteId] forKey:[identifiable getRemoteClassIdName]];
+				NSLog(@"new id: %@", [identifiable valueForKey:@"tipId"]);
+				NSLog(@"changed values: %@", [identifiable changedValues]);
+			} else {
+				NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
 
-			// If appropriate, configure the new managed object.
-			if ([c respondsToSelector:@selector(phrasing)]) {
-				[newManagedObject setValue:[c phrasing] forKey:@"phrasing"];
-				[newManagedObject setValue:[c lineId] forKey:@"lineId"];
-			} else if ([c respondsToSelector:@selector(advice)]) {
-				[newManagedObject setValue:[c advice] forKey:@"advice"];
-				[newManagedObject setValue:[c tipId] forKey:@"tipId"];
-			} else if ([c respondsToSelector:@selector(instruction)]) {
-				[newManagedObject setValue:[c instruction] forKey:@"instruction"];
-				[newManagedObject setValue:[c moniker] forKey:@"moniker"];
-				[newManagedObject setValue:[c exerciseId] forKey:@"exerciseId"];
-			} else if ([c respondsToSelector:@selector(derivedDescription)]) {
-				[newManagedObject setValue:[c derivedDescription] forKey:@"derivedDescription"];
-				[newManagedObject setValue:[c complete] forKey:@"complete"];
-				[newManagedObject setValue:[c progress] forKey:@"progress"];
-				[newManagedObject setValue:[c completionStatus] forKey:@"completionStatus"];
-				[newManagedObject setValue:[c remainingDaysText] forKey:@"remainingDaysText"];
-				[newManagedObject setValue:[c goalOwnershipId] forKey:@"goalOwnershipId"];
+				// If appropriate, configure the new managed object.
+				if ([c respondsToSelector:@selector(phrasing)]) {
+					[newManagedObject setValue:[c phrasing] forKey:@"phrasing"];
+					[newManagedObject setValue:[c lineId] forKey:@"lineId"];
+				} else if ([c respondsToSelector:@selector(advice)]) {
+					[newManagedObject setValue:[c advice] forKey:@"advice"];
+					[newManagedObject setValue:[c tipId] forKey:@"tipId"];
+				} else if ([c respondsToSelector:@selector(instruction)]) {
+					[newManagedObject setValue:[c instruction] forKey:@"instruction"];
+					[newManagedObject setValue:[c moniker] forKey:@"moniker"];
+					[newManagedObject setValue:[c exerciseId] forKey:@"exerciseId"];
+				} else if ([c respondsToSelector:@selector(derivedDescription)]) {
+					[newManagedObject setValue:[c derivedDescription] forKey:@"derivedDescription"];
+					[newManagedObject setValue:[c complete] forKey:@"complete"];
+					[newManagedObject setValue:[c progress] forKey:@"progress"];
+					[newManagedObject setValue:[c completionStatus] forKey:@"completionStatus"];
+					[newManagedObject setValue:[c remainingDaysText] forKey:@"remainingDaysText"];
+					[newManagedObject setValue:[c goalOwnershipId] forKey:@"goalOwnershipId"];
+				}
+				[newManagedObject setValue:[c userId] forKey:@"userId"];
 			}
-			[newManagedObject setValue:[c userId] forKey:@"userId"];
 		}
 	}
     
@@ -108,13 +133,15 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[cell start_spinning];
 		});
-		while (content == nil || [content count] == 0) {
-			if ([type isEqualToString:@"goals"]) {
-				[ObjectiveResourceConfig setSite:[server_location stringByAppendingFormat:@"users/%d/", [[self userId] integerValue]]];
-			}
-			content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
-			if ([type isEqualToString:@"goals"]) {
-				[ObjectiveResourceConfig setSite:server_location];
+		for (int i = 0; i < 4; i++) {
+			if (content == nil || [content count] == 0) {
+				if ([type isEqualToString:@"goals"]) {
+					[ObjectiveResourceConfig setSite:[server_location stringByAppendingFormat:@"users/%d/", [[self userId] integerValue]]];
+				}
+				content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
+				if ([type isEqualToString:@"goals"]) {
+					[ObjectiveResourceConfig setSite:server_location];
+				}
 			}
 		}
 		dispatch_async(dispatch_get_main_queue(), ^{
@@ -126,7 +153,9 @@
 					NSLog(@"c progress is %@", [c progress]);
 				}
 			}
-			[self addAndPersistData:content ofType:type];
+			if (!(content == nil || [content count] == 0)) {
+				[self addAndPersistData:content ofType:type];
+			}
 		});
 	});
 	dispatch_release(queue);
@@ -142,21 +171,23 @@
 	NSError *error = nil;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
 	[f release];
-	NSLog(@"found results: %@", results);
-	if ([[results objectAtIndex:0] respondsToSelector:@selector(progress)]) {
-		NSLog(@"progress? %@", [[results objectAtIndex:0] progress]);
-	}
+
 	NSManagedObject *exists = nil;
 	if ([results count] > 0)
 		exists = [results objectAtIndex:0];
-//	[newManagedObject setValue:[c derivedDescription] forKey:@"derivedDescription"];
-//	[newManagedObject setValue:[c complete] forKey:@"complete"];
-//	[newManagedObject setValue:[c progress] forKey:@"progress"];
-//	[newManagedObject setValue:[c completionStatus] forKey:@"completionStatus"];
-//	[newManagedObject setValue:[c remainingDaysText] forKey:@"remainingDaysText"];
-//	[newManagedObject setValue:[c goalOwnershipId] forKey:@"goalOwnershipId"];
 	
 	return exists;
+}
+
+-(NSManagedObject *)item:(NSManagedObject *)i existsInSet:(NSArray *)us {
+	NSManagedObject *matched = nil;
+	for (NSManagedObject *c in us) {
+		if ([[i main_text] isEqualToString:[c main_text]]) {
+			matched = c;
+			break;
+		}
+	}
+	return matched;
 }
 
 @end

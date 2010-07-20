@@ -20,7 +20,7 @@
 @property (nonatomic, retain) UITextField *password_field;
 @property (nonatomic, retain) DataDelegate *data_source;
 
-- (IBAction)log_in;
-- (IBAction)sign_up;
-
+-(IBAction)log_in;
+-(IBAction)sign_up;
+-(void)get_identity:(NSString *)username;
 @end

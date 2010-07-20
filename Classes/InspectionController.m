@@ -18,6 +18,7 @@
 		return nil;
 	
 	[self setContent:[self inspect_content:contentObj]];
+	[self.view setAllowsSelection:NO];
 	return self;
 }
 
@@ -122,7 +123,7 @@
 			[cell setAdditional_text:[content recentComment]];
 		}
 	}
-	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	
     return cell;
 }

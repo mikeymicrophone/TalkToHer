@@ -223,6 +223,15 @@ static NSString *_activeResourcePrefix = nil;
 	}
 }
 
++ (NSString *)getRemoteClassIdName {
+	NSString * remoteElementName = NSStringFromClass(self);
+	if (_activeResourcePrefix != nil) {
+		remoteElementName = [remoteElementName substringFromIndex:[_activeResourcePrefix length]];
+	}
+	return [NSString stringWithFormat:@"%@Id", 
+			[remoteElementName stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+													   withString:[[remoteElementName substringWithRange:NSMakeRange(0,1)] lowercaseString]]];
+}
 
 - (NSString *)getRemoteClassIdName {
 	NSString * remoteElementName = NSStringFromClass([self class]);

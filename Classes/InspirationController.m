@@ -217,10 +217,14 @@
 			[self.navigationController pushViewController:progressController animated:YES];
 			[progressController release];
 		} else {
-			InspectionController *inspectionController = [[InspectionController alloc] initWithContent:[self contentForIndexPath:indexPath]];
+			if (![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"]) {
+				InspectionController *inspectionController = [[InspectionController alloc] initWithContent:[self contentForIndexPath:indexPath]];
 
-			[self.navigationController pushViewController:inspectionController animated:YES];
-			[inspectionController release];
+				[self.navigationController pushViewController:inspectionController animated:YES];
+				[inspectionController release];
+			} else {
+				[[self tableView:tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+			}
 		}
 	}
 }

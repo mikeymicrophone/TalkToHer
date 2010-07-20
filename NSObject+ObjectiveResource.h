@@ -51,6 +51,8 @@ typedef enum {
 + (NSString *)getRemoteCollectionPathWithParameters:(NSDictionary *)parameters;
 + (NSString *)populateRemotePath:(NSString *)path withParameters:(NSDictionary *)parameters;
 
++ (NSString *)getRemoteClassIdName;
+
 // Instance-specific methods
 - (id)getRemoteId;
 - (void)setRemoteId:(id)orsId;

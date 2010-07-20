@@ -15,6 +15,7 @@
 #import "Exercise.h"
 #import "LoaderCell.h"
 #import <dispatch/dispatch.h>
+#import "Reachability.h"
 
 @implementation RootViewController
 
@@ -23,21 +24,31 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+-(BOOL)lotd_is_reachable {
+	Reachability *r = [Reachability reachabilityWithHostName:[data_source server_location]];
+	
+	return [r isReachable] || [[data_source server_location] isEqualToString:@"http://localhost:3000/"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.data_source = [[DataDelegate alloc] init];
-	[self.data_source initialize_data];
+	data_source = [[DataDelegate alloc] init];
+	[data_source initialize_data];
 	data_source.moc = [self managedObjectContext];
 	
-	self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
-	self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
-	self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
-	self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
+	lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
+	tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
+	exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
+	goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
+	NSLog(@"goals cell: %@", [self goals_cell]);
+	[goals_cell retain];
 	
-	[data_source loadDataSegmentOfType:@"lines" andAlertCell:lines_cell];
-	[data_source loadDataSegmentOfType:@"tips" andAlertCell:tips_cell];
-	[data_source loadDataSegmentOfType:@"exercises" andAlertCell:exercises_cell];
+	if ([self lotd_is_reachable]) {
+		[data_source loadDataSegmentOfType:@"lines" andAlertCell:lines_cell];
+		[data_source loadDataSegmentOfType:@"tips" andAlertCell:tips_cell];
+		[data_source loadDataSegmentOfType:@"exercises" andAlertCell:exercises_cell];
+	}
 }
 
 /*
@@ -103,7 +114,6 @@
 				UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login"]];
 				image.center = cell.center;
 				[cell addSubview:image];
-//				[[cell textLabel] setText:@"log in"];
 			}
 		} else {
 			cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];

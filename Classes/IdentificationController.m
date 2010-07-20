@@ -11,6 +11,7 @@
 #import "User.h"
 #import "ObjectiveResourceConfig.h"
 #import "ASIHTTPRequest.h"
+#import "LoaderCell.h"
 
 @implementation IdentificationController
 
@@ -21,13 +22,41 @@
 	UserSession *user_session = [[UserSession alloc] init];
 	user_session.username = username_field.text;
 	user_session.password = password_field.text;
-	[ObjectiveResourceConfig setRemoteProtocolExtension:@".iphone"];
-	[user_session createRemote];
-	[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
+	NSLog(@"about to assign s and c, gc: %@", [[[self parentViewController] bottomViewController] goals_cell]);
+	UITableView *s = [[[self parentViewController] bottomViewController] tableView];
+	LoaderCell *c = [[[self parentViewController] bottomViewController] goals_cell];
+	NSLog(@"s: %@, c: %@", s, c);
+	dispatch_queue_t queue;
+	queue = dispatch_queue_create("com.talktoher.login", NULL);
+	dispatch_async(queue, ^{
+		[user_session createRemote];
+		// get id
+		[self get_identity:username_field.text];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			// show goals button
+			[s reloadData];
+		});
+		// get goals
+		[data_source loadDataSegmentOfType:@"goals" andAlertCell:c];
+	});
+	dispatch_release(queue);
 
-	// get id
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)sign_up {
+	User *user = [User alloc];
+	user.username = username_field.text;
+	user.password = password_field.text;
+	NSError *creation_response;
+	[user createRemoteWithResponse:&creation_response];
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+	NSLog(@"creation response: %@", creation_response);
+}
+
+-(void)get_identity:(NSString *)username {
 	NSString *path = [[data_source server_location] stringByAppendingString:@"users/"];
-	path = [path stringByAppendingString:user_session.username];
+	path = [path stringByAppendingString:username];
 	path = [path stringByAppendingString:@"/identity"];
 	NSURL *url = [[NSURL alloc] initWithString:path];
 	ASIHTTPRequest *nextRequest = [ASIHTTPRequest requestWithURL:url];
@@ -38,42 +67,7 @@
 		NSString *nextResponse = [nextRequest responseString];
 		NSString *user_id = nextResponse;
 		[data_source setUserId:user_id];
-	}
-	
-	
-//	dispatch_queue_t queue;
-//	queue = dispatch_queue_create("com.talktoher.fetch", NULL);
-//	dispatch_async(queue, ^{
-//		NSArray *content = nil;
-//		dispatch_async(dispatch_get_main_queue(), ^{
-//			[cell start_spinning];
-//		});
-//		while (content == nil || [content count] == 0) {
-//			content = [objc_getClass([[self.class_names objectForKey:type] cStringUsingEncoding:NSASCIIStringEncoding]) findAllRemote];
-//		}
-//		dispatch_async(dispatch_get_main_queue(), ^{
-//			[cell stop_spinning];
-//			[self addAndPersistData:content ofType:type];
-//		});
-//	});
-//	dispatch_release(queue);
-
-	[[self parentViewController] dismissModalViewControllerAnimated:YES];
-	[[[[self parentViewController] topViewController] tableView] reloadData];
-	
-	// get goals
-	[data_source loadDataSegmentOfType:@"goals" andAlertCell:[[[self parentViewController] topViewController] goals_cell]];
-}
-
-- (IBAction)sign_up {
-	User *user = [User alloc];
-	UserSession *user_session = [[UserSession alloc] init];
-	user.username = user_session.username;
-	user.password = user_session.password;
-	NSError *creation_response;
-	[user createRemoteWithResponse:&creation_response];
-	[[self parentViewController] dismissModalViewControllerAnimated:YES];
-	NSLog(@"creation response: %@", creation_response);
+	}	
 }
 
 - (void)viewDidLoad {

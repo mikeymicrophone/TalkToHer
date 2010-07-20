@@ -25,7 +25,9 @@
 -(void)initialize_data;
 -(NSArray *)fetch_collection:(NSString *)type;
 -(NSArray *)propertiesToFetchForType:(NSString *)type;
+-(NSArray *)unidentified_set_of_type:(NSString *)type;
 -(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type;
 -(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell;
 -(NSManagedObject *)itemExistsInStore:(NSManagedObject *)item;
+-(NSManagedObject *)item:(NSManagedObject *)i existsInSet:(NSArray *)us;
 @end

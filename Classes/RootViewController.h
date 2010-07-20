@@ -33,4 +33,6 @@
 @property (nonatomic, retain) LoaderCell *goals_cell;
 @property (nonatomic, retain) LoaderCell *exercises_cell;
 
+-(BOOL)lotd_is_reachable;
+
 @end
