@@ -68,6 +68,7 @@
 		email_field.borderStyle = UITextBorderStyleRoundedRect;
 		email_field.font = username_field.font;
 		email_field.textAlignment = username_field.textAlignment;
+		email_field.contentVerticalAlignment = username_field.contentVerticalAlignment;
 		[self.view addSubview:email_field];
 		[self.view addSubview:email_heading];
 		[self.view setNeedsDisplay];
