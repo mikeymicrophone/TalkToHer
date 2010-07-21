@@ -89,7 +89,7 @@
 	if (!error) {
 		NSString *nextResponse = [nextRequest responseString];
 		NSString *user_id = nextResponse;
-		[data_source setUserId:user_id];
+		[data_source setMyUserId:user_id forUsername:username];
 	}	
 }
 
@@ -99,14 +99,6 @@
 	username_field.autocorrectionType = UITextAutocorrectionTypeNo;
 	email_shown = NO;
 }
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -118,6 +110,11 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+	[email_field release];
+	[email_heading release];
+	[username_field release];
+	[password_field release];
+	[data_source release];
     // e.g. self.myOutlet = nil;
 }
 

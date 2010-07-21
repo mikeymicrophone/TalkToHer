@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>E435D9A311F72C4D00A5061D</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Content.xcdatamodel</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>E435D9A411F72C4D00A5061D</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Content.xcdatamodel</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>E435D9B711F72CB700A5061D</string>
+						<key>history</key>
+						<array>
+							<string>E435D9A511F72C4D00A5061D</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {933, 462}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>233 151 933 503 0 0 1280 778 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -279,7 +320,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 7}, {160, 664}}</string>
+							<string>{{0, 67}, {160, 664}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +357,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>IdentificationController.m</string>
+								<string>User.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +365,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>IdentificationController.m</string>
+										<string>User.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E435D99411F7229100A5061D</string>
+										<string>E435D9B611F72CB700A5061D</string>
 										<key>history</key>
 										<array>
 											<string>E439369A11D514AF00D6DED9</string>
@@ -359,13 +400,11 @@
 											<string>E419E3B211F02A5A00F400DD</string>
 											<string>E419E3B311F02A5A00F400DD</string>
 											<string>E409694811F1159D0055459F</string>
-											<string>E40969B511F172200055459F</string>
 											<string>E40969D711F2485F0055459F</string>
 											<string>E4096A4011F26E220055459F</string>
 											<string>E4096AC811F365BC0055459F</string>
 											<string>E4096AE511F41EAD0055459F</string>
 											<string>E4096AE611F41EAD0055459F</string>
-											<string>E4096B2F11F425070055459F</string>
 											<string>E4096B3011F425070055459F</string>
 											<string>E4096B3111F425070055459F</string>
 											<string>E4096B5D11F43A7B0055459F</string>
@@ -373,15 +412,18 @@
 											<string>E4096BBA11F4452C0055459F</string>
 											<string>E435D8C911F705D700A5061D</string>
 											<string>E435D91611F716C000A5061D</string>
-											<string>E435D93311F7183E00A5061D</string>
-											<string>E435D93E11F718A000A5061D</string>
-											<string>E435D94511F7195100A5061D</string>
 											<string>E435D96711F71CE300A5061D</string>
 											<string>E435D96811F71CE300A5061D</string>
-											<string>E435D96911F71CE300A5061D</string>
 											<string>E435D98411F7214F00A5061D</string>
-											<string>E435D98511F7214F00A5061D</string>
-											<string>E435D98611F7214F00A5061D</string>
+											<string>E435D99A11F72C4D00A5061D</string>
+											<string>E435D99B11F72C4D00A5061D</string>
+											<string>E435D99C11F72C4D00A5061D</string>
+											<string>E435D99D11F72C4D00A5061D</string>
+											<string>E435D99E11F72C4D00A5061D</string>
+											<string>E435D99F11F72C4D00A5061D</string>
+											<string>E435D9A011F72C4D00A5061D</string>
+											<string>E435D9B411F72CB700A5061D</string>
+											<string>E435D9B511F72CB700A5061D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -579,12 +621,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E435D99511F7229100A5061D</string>
+		<string>E435D9B811F72CB700A5061D</string>
 		<string>E435D8DB11F705D700A5061D</string>
 		<string>E435D8DC11F705D700A5061D</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
+		<string>E435D9A311F72C4D00A5061D</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -961,7 +1004,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-
-@interface User : NSObject {
+@interface User : NSManagedObject {
 	NSString *username;
 	NSString *userId;
 	NSString *password;

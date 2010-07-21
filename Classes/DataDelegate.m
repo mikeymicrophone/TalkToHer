@@ -193,4 +193,36 @@
 	return matched;
 }
 
+-(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name {
+	userId = user_id;
+	NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:moc];
+	NSManagedObject *userObject = [NSEntityDescription insertNewObjectForEntityForName:[e name] inManagedObjectContext:moc];
+	[userObject setValue:user_id forKey:@"userId"];
+	[userObject setValue:user_name forKey:@"username"];
+	
+	NSError *error = nil;
+    if (![moc save:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }	
+}
+
+-(void)attemptIdentification {
+	NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:moc];
+	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+	[f setEntity:e];
+	[f setPropertiesToFetch:[NSArray arrayWithObjects:@"userId", @"username", nil]];
+
+	NSError *error = nil;
+	NSArray *results = [moc executeFetchRequest:f error:&error];
+	[f release];
+	
+	if ([results count] > 0)
+		userId = [[results objectAtIndex:0] valueForKey:@"userId"];
+}
+
 @end

@@ -30,4 +30,6 @@
 -(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell;
 -(NSManagedObject *)itemExistsInStore:(NSManagedObject *)item;
 -(NSManagedObject *)item:(NSManagedObject *)i existsInSet:(NSArray *)us;
+-(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name;
+-(void)attemptIdentification;
 @end
