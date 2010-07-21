@@ -11,6 +11,6 @@
 
 @implementation User
 
-@synthesize username, password, email, userId;
+@synthesize username, password, password_confirmation, email, userId;
 
 @end

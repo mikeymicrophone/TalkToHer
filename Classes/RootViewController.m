@@ -41,7 +41,6 @@
 	tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
 	exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
 	goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
-	NSLog(@"goals cell: %@", [self goals_cell]);
 	[goals_cell retain];
 	
 	if ([self lotd_is_reachable]) {

@@ -27,6 +27,9 @@
 
 	[f setEntity:e];
 	[f setFetchBatchSize:30];
+	if ([type isEqualToString:@"goals"]) {
+		[f setPredicate:[NSPredicate predicateWithFormat:@"userId == %d", userId]];
+	}
 	[f setPropertiesToFetch:[self propertiesToFetchForType:type]];
 
 	NSError *error = nil;

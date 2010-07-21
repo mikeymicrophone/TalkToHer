@@ -23,6 +23,7 @@
 		E419E37211F01A1F00F400DD /* tips.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37111F01A1F00F400DD /* tips.png */; };
 		E419E37D11F0224800F400DD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37C11F0224800F400DD /* more.png */; };
 		E419E38111F0236E00F400DD /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E38011F0236E00F400DD /* write.png */; };
+		E435D8F311F7085F00A5061D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E435D8F211F7085F00A5061D /* AddressBook.framework */; };
 		E439369811D50DD300D6DED9 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E439369611D50DD300D6DED9 /* InspirationController.m */; };
 		E44065C111EBB9F700A48898 /* LoaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E44065C011EBB9F700A48898 /* LoaderCell.m */; };
 		E440665011EC002000A48898 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664111EC001F00A48898 /* ASIAuthenticationDialog.m */; };
@@ -113,6 +114,7 @@
 		E419E37111F01A1F00F400DD /* tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tips.png; sourceTree = "<group>"; };
 		E419E37C11F0224800F400DD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		E419E38011F0236E00F400DD /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
+		E435D8F211F7085F00A5061D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E439369511D50DD300D6DED9 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
 		E439369611D50DD300D6DED9 /* InspirationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationController.m; sourceTree = "<group>"; };
 		E44065BF11EBB9F700A48898 /* LoaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaderCell.h; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				E440666811EC00B400A48898 /* MobileCoreServices.framework in Frameworks */,
 				E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */,
 				E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */,
+				E435D8F311F7085F00A5061D /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +371,7 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 				E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */,
 				E44066D911ED057000A48898 /* CoreData.framework */,
+				E435D8F211F7085F00A5061D /* AddressBook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -12,31 +12,25 @@
 #import "ObjectiveResourceConfig.h"
 #import "ASIHTTPRequest.h"
 #import "LoaderCell.h"
+#import <AddressBook/AddressBook.h>
 
 @implementation IdentificationController
 
-@synthesize username_field, password_field, data_source;
+@synthesize username_field, password_field, email_field, email_heading, data_source;
 
 - (IBAction)log_in {
-	// log in
 	UserSession *user_session = [[UserSession alloc] init];
 	user_session.username = username_field.text;
 	user_session.password = password_field.text;
-	NSLog(@"about to assign s and c, gc: %@", [[[self parentViewController] bottomViewController] goals_cell]);
+
 	UITableView *s = [[[self parentViewController] bottomViewController] tableView];
 	LoaderCell *c = [[[self parentViewController] bottomViewController] goals_cell];
-	NSLog(@"s: %@, c: %@", s, c);
-	dispatch_queue_t queue;
-	queue = dispatch_queue_create("com.talktoher.login", NULL);
+
+	dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
 	dispatch_async(queue, ^{
 		[user_session createRemote];
-		// get id
 		[self get_identity:username_field.text];
-		dispatch_async(dispatch_get_main_queue(), ^{
-			// show goals button
-			[s reloadData];
-		});
-		// get goals
+		dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
 		[data_source loadDataSegmentOfType:@"goals" andAlertCell:c];
 	});
 	dispatch_release(queue);
@@ -45,13 +39,41 @@
 }
 
 - (IBAction)sign_up {
-	User *user = [User alloc];
-	user.username = username_field.text;
-	user.password = password_field.text;
-	NSError *creation_response;
-	[user createRemoteWithResponse:&creation_response];
-	[[self parentViewController] dismissModalViewControllerAnimated:YES];
-	NSLog(@"creation response: %@", creation_response);
+	if (email_shown) {
+		User *user = [User alloc];
+		user.username = username_field.text;
+		user.password = password_field.text;
+		user.password_confirmation = password_field.text;
+		user.email = email_field.text;
+
+		UITableView *s = [[[self parentViewController] bottomViewController] tableView];
+		
+		dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
+		dispatch_async(queue, ^{
+			[user createRemote];
+			[self get_identity:username_field.text];
+			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
+		});
+		dispatch_release(queue);
+		
+		[[self parentViewController] dismissModalViewControllerAnimated:YES];
+	} else {
+		[login_button removeFromSuperview];
+		email_heading = [[UILabel alloc] initWithFrame:CGRectMake(171, 99, 70, 21)];
+		email_heading.text = @"email";
+		
+		email_field = [[UITextField alloc] initWithFrame:CGRectMake(20, 98, 136, 31)];
+		email_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+		email_field.autocorrectionType = UITextAutocorrectionTypeNo;
+		email_field.borderStyle = UITextBorderStyleRoundedRect;
+		email_field.font = username_field.font;
+		email_field.textAlignment = username_field.textAlignment;
+		[self.view addSubview:email_field];
+		[self.view addSubview:email_heading];
+		[self.view setNeedsDisplay];
+		[email_field becomeFirstResponder];
+		email_shown = YES;
+	}
 }
 
 -(void)get_identity:(NSString *)username {
@@ -73,6 +95,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[username_field becomeFirstResponder];
+	username_field.autocorrectionType = UITextAutocorrectionTypeNo;
+	email_shown = NO;
 }
 
 /*

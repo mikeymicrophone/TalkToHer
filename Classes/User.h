@@ -13,12 +13,14 @@
 	NSString *username;
 	NSString *userId;
 	NSString *password;
+	NSString *password_confirmation;
 	NSString *email;
 }
 
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *password;
+@property (nonatomic, retain) NSString *password_confirmation;
 @property (nonatomic, retain) NSString *email;
 
 @end
