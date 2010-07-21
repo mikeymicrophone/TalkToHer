@@ -28,10 +28,15 @@
 
 	dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
 	dispatch_async(queue, ^{
-		[user_session createRemote];
-		[self get_identity:username_field.text];
-		dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
-		[data_source loadDataSegmentOfType:@"goals" andAlertCell:c];
+		NSError *response = nil;
+		[ObjectiveResourceConfig setRemoteProtocolExtension:@".iphone"];
+		[user_session createRemoteWithResponse:&response];
+		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
+		if (response == nil) {
+			[self get_identity:username_field.text];
+			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
+			[data_source loadDataSegmentOfType:@"goals" andAlertCell:c];
+		}
 	});
 	dispatch_release(queue);
 

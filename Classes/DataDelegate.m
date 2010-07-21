@@ -49,7 +49,7 @@
 	NSError *error = nil;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
 	[f release];
-	NSLog(@"unidentified set: %@", results);
+//	NSLog(@"unidentified set: %@", results);
 	return results;	
 }
 
@@ -77,9 +77,9 @@
 		if (e) {
 			// this object is already in the CoreData db
 			if ([[c className] isEqualToString:@"GoalOwnership"]) {
-				NSLog(@"about to update local store: %@", [c progress]);
+//				NSLog(@"about to update local store: %@", [c progress]);
 				[c setValue:[e progress] forKey:@"progress"];
-				NSLog(@"set value of %@ to %@", c, [c progress]);
+//				NSLog(@"set value of %@ to %@", c, [c progress]);
 			}
 		} else {
 			NSManagedObject *identifiable = [self item:c existsInSet:unidentified_set];
@@ -150,11 +150,11 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[cell stop_spinning];
 			for (NSManagedObject *c in content) {
-				NSLog(@"this is the content fetched: %@", [c getRemoteId]);
-				NSLog(@"and the written content: %@", [c main_text]);
-				if ([c respondsToSelector:@selector(progress)]) {
-					NSLog(@"c progress is %@", [c progress]);
-				}
+//				NSLog(@"this is the content fetched: %@", [c getRemoteId]);
+//				NSLog(@"and the written content: %@", [c main_text]);
+//				if ([c respondsToSelector:@selector(progress)]) {
+//					NSLog(@"c progress is %@", [c progress]);
+//				}
 			}
 			if (!(content == nil || [content count] == 0)) {
 				[self addAndPersistData:content ofType:type];
