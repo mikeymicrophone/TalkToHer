@@ -270,7 +270,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataDelegate.m</string>
+								<string>RootViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +321,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataDelegate.m</string>
+										<string>RootViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4001A3111FF6AE6001359B0</string>
+										<string>E4001AE411FF7872001359B0</string>
 										<key>history</key>
 										<array>
 											<string>E40017FE11FE520B001359B0</string>
@@ -355,13 +355,13 @@
 											<string>E400196011FF34F1001359B0</string>
 											<string>E40019B211FF4CFC001359B0</string>
 											<string>E40019C211FF500E001359B0</string>
-											<string>E40019C411FF500E001359B0</string>
-											<string>E40019E411FF59C8001359B0</string>
 											<string>E40019F511FF5C5B001359B0</string>
 											<string>E40019F711FF5C5B001359B0</string>
-											<string>E4001A2D11FF6A85001359B0</string>
-											<string>E4001A2E11FF6A85001359B0</string>
-											<string>E4001A2F11FF6A85001359B0</string>
+											<string>E4001A7A11FF721A001359B0</string>
+											<string>E4001A9911FF74AB001359B0</string>
+											<string>E4001A9A11FF74AB001359B0</string>
+											<string>E4001AE211FF7872001359B0</string>
+											<string>E4001AE311FF7872001359B0</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -559,6 +559,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E4001AE511FF7872001359B0</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E400186011FE641A001359B0</string>
 		<string>E400185311FE63EF001359B0</string>

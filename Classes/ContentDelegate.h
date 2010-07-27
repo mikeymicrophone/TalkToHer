@@ -26,5 +26,6 @@
 -(id)initWithContentType:(NSString *)klass;
 -(NSInteger)undisplayed_row_count;
 -(void)displayRows:(NSInteger)rows;
+-(NSInteger)display_amount;
 
 @end

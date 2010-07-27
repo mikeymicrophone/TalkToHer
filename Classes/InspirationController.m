@@ -27,7 +27,7 @@
 		return nil;
 	
 	self.content_source = source;
-	
+
 	return self;
 }
 
@@ -72,9 +72,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	int length;
+	NSInteger length;
 	if (section == 0) {
-		length = [[content_source displayed_amount] integerValue];
+		length = [content_source display_amount];
 	} else if (section == 1) {
 		length = 2;
 	}
@@ -84,7 +84,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell;
-	
+
 	if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
 			static NSString *CellIdentifier = @"more";
@@ -124,16 +124,24 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
 		id content = [self contentForIndexPath:indexPath];
-		return [InspirationCell cellHeightForMainText:[content main_text]
+		if (content) {
+			return [InspirationCell cellHeightForMainText:[content main_text]
 												   additional:[content additional_text]
 												  width:[[self view] frame].size.width];
+		} else {
+			return 44;
+		}
 	} else {
 		return 44;
 	}
 }
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
-	return [[content_source content] objectAtIndex:[indexPath indexAtPosition:1]];
+	if ([indexPath indexAtPosition:1] < [[content_source loaded_amount] integerValue]) {
+		return [[content_source content] objectAtIndex:[indexPath indexAtPosition:1]];
+	} else {
+		return nil;
+	}
 }
 
 #pragma mark -
@@ -144,7 +152,7 @@
 		if (indexPath.row == 0) {
 			NSArray *insertableRows;
 			
-			NSInteger displayed_rows = [[content_source displayed_amount] integerValue];
+			NSInteger displayed_rows = [content_source display_amount];
 			NSInteger undisplayed_rows = [content_source undisplayed_row_count];
 			
 			if (undisplayed_rows >= 3) {

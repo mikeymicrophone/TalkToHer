@@ -24,11 +24,23 @@
 
 -(void)update_content {
 	self.content = [[[[UIApplication sharedApplication] delegate] data_source] fetch_collection:content_type];
-	self.loaded_amount = [NSNumber numberWithInt:[content count]];
+	if (content) {
+		self.loaded_amount = [NSNumber numberWithInt:[content count]];
+	} else {
+		self.loaded_amount = [NSNumber numberWithInt:0];
+	}
 }
 
 -(NSInteger)undisplayed_row_count {
 	return [loaded_amount integerValue] - [displayed_amount integerValue];
+}
+
+-(NSInteger)display_amount {
+	if ([displayed_amount integerValue] >= [loaded_amount integerValue]) {
+		return [loaded_amount integerValue];
+	} else {
+		return [displayed_amount integerValue];
+	}
 }
 
 -(void)displayRows:(NSInteger)rows {
