@@ -11,59 +11,66 @@
 
 @implementation ContributionController
 
-@synthesize contentType, content, writtenContent, heading, moc;
+@synthesize contentType, content, writtenContent, heading;
 
--(id)initWithContentType:(NSString *)cType andManagedObjectContext:(NSManagedObjectContext *)m {
+-(id)initWithContentType:(NSString *)cType{
 	if (![super initWithNibName:nil bundle:nil])
 		return nil;
 	
 	[self setContentType:cType];
+	[self prepare_content];
+	
 	heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
 	heading.textAlignment = UITextAlignmentCenter;
 	if ([cType isEqualToString:@"Exercise"]) {
-		heading.text = @"Sharing an Exercise";
+		heading.text = @"Sharing: an Exercise";
+		
+		exercise_name = [[UITextField alloc] initWithFrame:CGRectMake(21, 150, 166, 31)];
+		exercise_name.borderStyle = UITextBorderStyleRoundedRect;
+		exercise_name.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+		exercise_name.font = [UIFont systemFontOfSize:11];
+		exercise_name.placeholder = @"name of exercise";
 	} else {
-		heading.text = [NSString stringWithFormat:@"Sharing a %@", cType];
+		heading.text = [NSString stringWithFormat:@"Sharing: a %@", cType];
 	}
-	[self setMoc:m];
-	[self prepare_content];
 	return self;
 }
 
 -(void)prepare_content {
+	NSManagedObjectContext *moc = [[[UIApplication sharedApplication] delegate] managedObjectContext];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
-	content = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:moc];
+	content = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:moc];
 }
 
 -(IBAction)submit_content {
 	[content setWrittenContent:writtenContent.text];
+	if ([contentType isEqualToString:@"Exercise"]) {
+		[content setMoniker:exercise_name.text];
+	}
 	NSLog(@"content about to be saved: %@", content);
-	[content retain];
+//	[content retain];
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.submission", NULL);
 	dispatch_async(queue, ^{
 		NSLog(@"content about to be saved (in queue): %@", content);
 		if ([[[self parentViewController] bottomViewController] lotd_is_reachable]) {
 			[content createRemote];
+		} else {
+			[content markForDelayedSubmission];
 		}
 		NSError *error = nil;
-		if (![moc save:&error]) {
-			/*
-			 Replace this implementation with code to handle the error appropriately.
-			 
-			 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-			 */
-			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		}		
+        NSLog(@"about to save moc");
+		if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
+        NSLog(@"saved moc");
 	});
-	[content release];
+//	[content release];
 	dispatch_release(queue);
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)cancel {
-	[moc deleteObject:self.content];
+	[[[[UIApplication sharedApplication] delegate] managedObjectContext] deleteObject:self.content];
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
@@ -97,7 +104,8 @@
 */
 
 - (void)viewDidAppear:(BOOL)animated {
-	[self.view addSubview:self.heading];
+	[self.view addSubview:heading];
+	[self.view addSubview:exercise_name];
 	[[self writtenContent] becomeFirstResponder];
 }
 

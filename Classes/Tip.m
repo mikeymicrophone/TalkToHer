@@ -13,13 +13,27 @@
 @implementation Tip
 
 @synthesize tipId, advice, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId;
-
--(NSString *)main_text {
-	return advice;
+-(id)initWithManagedObject:(NSManagedObject *)ps {
+    [self init];
+    
+    advice = [ps advice];
+    userId = [ps userId];
+    
+    return self;
 }
 
--(NSString *)additional_text {
-	return @"";
+-(BOOL)matches:(NSManagedObject *)po {
+    return [advice isEqualToString:[po valueForKey:@"advice"]];
+}
+
+-(TipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
+    TipEntity *ps = [[TipEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Tip" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
+	//    NSLog(@"lineId is a: %@ and is: %d, a %@", [lineId className], [lineId integerValue], [[lineId integerValue] className]);
+    [ps setValue:advice forKey:@"advice"];
+    [ps setValue:[NSNumber numberWithInt:[tipId integerValue]] forKey:@"tipId"];
+    [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
+    NSLog(@"persisting object: %@", ps);
+    return ps;
 }
 
 -(id)get_commentary {
@@ -29,15 +43,9 @@
 	return tip;
 }
 
--(void)setWrittenContent:(NSString *)writtenContent {
-	self.advice = writtenContent;
-	self.userId = @"1";
-}
-
 - (NSArray *)excludedPropertyNames {
 	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", nil];
 	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
-
 
 @end

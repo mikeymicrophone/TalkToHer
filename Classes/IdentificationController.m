@@ -16,7 +16,7 @@
 
 @implementation IdentificationController
 
-@synthesize username_field, password_field, email_field, email_heading, data_source;
+@synthesize username_field, password_field, email_field, email_heading;
 
 - (IBAction)log_in {
 	UserSession *user_session = [[UserSession alloc] init];
@@ -35,7 +35,7 @@
 		if (response == nil) {
 			[self get_identity:username_field.text];
 			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
-			[data_source loadDataSegmentOfType:@"goals" andAlertCell:c];
+			[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:@"goals" andAlertCell:c];
 		}
 	});
 	dispatch_release(queue);
@@ -83,7 +83,7 @@
 }
 
 -(void)get_identity:(NSString *)username {
-	NSString *path = [[data_source server_location] stringByAppendingString:@"users/"];
+	NSString *path = [[[[[UIApplication sharedApplication] delegate] data_source] server_location] stringByAppendingString:@"users/"];
 	path = [path stringByAppendingString:username];
 	path = [path stringByAppendingString:@"/identity"];
 	NSURL *url = [[NSURL alloc] initWithString:path];
@@ -94,7 +94,7 @@
 	if (!error) {
 		NSString *nextResponse = [nextRequest responseString];
 		NSString *user_id = nextResponse;
-		[data_source setMyUserId:user_id forUsername:username];
+		[[[[UIApplication sharedApplication] delegate] data_source] setMyUserId:user_id forUsername:username];
 	}	
 }
 
@@ -119,7 +119,6 @@
 	[email_heading release];
 	[username_field release];
 	[password_field release];
-	[data_source release];
     // e.g. self.myOutlet = nil;
 }
 

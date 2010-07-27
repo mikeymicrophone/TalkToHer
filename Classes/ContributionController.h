@@ -14,19 +14,15 @@
 	id content;
 	IBOutlet UITextView *writtenContent;
 	UILabel *heading;
-	
-@private
-	NSManagedObjectContext *moc;
+	UITextField *exercise_name;
 }
-
-@property (nonatomic, retain) NSManagedObjectContext *moc;
 
 @property (nonatomic, retain) NSString *contentType;
 @property (nonatomic, retain) id content;
 @property (nonatomic, retain) IBOutlet UITextView *writtenContent;
 @property (nonatomic, retain) UILabel *heading;
 
--(id)initWithContentType:(NSString *)cType andManagedObjectContext:(NSManagedObjectContext *)m;
+-(id)initWithContentType:(NSString *)cType;
 -(void)prepare_content;
 -(IBAction)submit_content;
 -(IBAction)cancel;

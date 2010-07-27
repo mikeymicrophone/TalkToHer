@@ -16,59 +16,30 @@
 #import "InspectionController.h"
 #import "ContributionController.h"
 #import "ProgressController.h"
+#import "DataDelegate.h"
 
 @implementation InspirationController
 
-@synthesize content_set, content_type, displayed_content_amount, available_content_amount, data_source, content_page;
+@synthesize content_source;
 
--(id)initWithContentType:(NSString *)cType andDataSource:(DataDelegate *)source {
+-(id)initWithContentSource:(ContentDelegate *)source {
 	if (![super initWithNibName:nil bundle:nil])
 		return nil;
 	
-	self.content_type = cType;
-	self.data_source = source;
-
-	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
-	if (displayed_content_amount == nil) {
-		if ([self.available_content_amount integerValue] > 2) {
-			self.displayed_content_amount = [NSNumber numberWithInt:3];
-		} else {
-			self.displayed_content_amount = self.available_content_amount;
-		}
-	}
+	self.content_source = source;
 	
-	if (content_page == nil) {
-		self.content_page = [NSNumber numberWithInt:1];
-	}
-	
+	NSLog(@"initialized inspiration controller");
 	return self;
-}
-
--(void)load_content {
-	if (self.content_page != nil) {
-		[ObjectiveResourceConfig setRemoteProtocolExtension:[NSString stringWithFormat:@".xml?page=%@", content_page]];
-	}
-	self.content_set = [self.data_source fetch_collection:self.content_type];
-	if (self.content_page != nil) {
-		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
-	}	
-	
-	[data_source addAndPersistData:content_set ofType:content_type];
-	self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
 }
 
 #pragma mark -
 #pragma mark View lifecycle
 
+/*
 - (void)viewDidLoad {
     [super viewDidLoad];
-	if ([[self.data_source fetch_collection:self.content_type] count] == 0) {
-		[self load_content];
-		self.content_set = [self.data_source fetch_collection:self.content_type];
-		self.available_content_amount = [NSNumber numberWithInt:[[self.data_source fetch_collection:self.content_type] count]];
-	}
 }
-
+*/
 /*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -104,7 +75,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	int length;
 	if (section == 0) {
-		length = [self.displayed_content_amount integerValue];
+		length = [[content_source displayed_amount] integerValue];
 	} else if (section == 1) {
 		length = 2;
 	}
@@ -113,6 +84,7 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"cell for index path: %@", indexPath);
     
 	UITableViewCell *cell;
 	
@@ -138,16 +110,13 @@
 				[cell addSubview:write_one];				
 			}			
 		}
-	} else if ([indexPath indexAtPosition:1] < [self.available_content_amount integerValue]) {
+	} else if ([indexPath indexAtPosition:1] < [[content_source loaded_amount] integerValue]) {
 		id content = [self contentForIndexPath:indexPath];
-		NSString *CellIdentifier = [NSString stringWithFormat:@"%@_%@", [content className], [content performSelector:NSSelectorFromString([content getRemoteClassIdName])]];
+		NSString *identifier = [NSString stringWithFormat:@"%@_%@", [content className], [content performSelector:NSSelectorFromString([content getRemoteClassIdName])]];
 
-		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectMake(0, 0, 320, 44) reuseIdentifier:CellIdentifier] autorelease];
-
-			[cell setMain_text:[content main_text]];
-			[cell setAdditional_text:[content additional_text]];
+			cell = [[[InspirationCell alloc] initWithContent:content] autorelease];
 		}
 	}
 	cell.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -156,6 +125,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"height for index path: %@", indexPath);
 	if (indexPath.section == 0) {
 		id content = [self contentForIndexPath:indexPath];
 		return [InspirationCell cellHeightForMainText:[content main_text]
@@ -167,7 +137,10 @@
 }
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
-	return [[self.data_source fetch_collection:self.content_type] objectAtIndex:[indexPath indexAtPosition:1]];
+	NSLog(@"content for %@", indexPath);
+	NSLog(@"content source: %@", content_source);
+	NSLog(@"content of %@: %@", [content_source content_type], [content_source content]);
+	return [[content_source content] objectAtIndex:[indexPath indexAtPosition:1]];
 }
 
 #pragma mark -
@@ -177,43 +150,39 @@
 	if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
 			NSArray *insertableRows;
-			if ([[self available_content_amount] integerValue] <= [[self displayed_content_amount] integerValue] + 2) {
-				self.content_page = [NSNumber numberWithInt:[self.content_page integerValue] + 1];
-				[self load_content];
-			}
 			
-			NSNumber *difference = [NSNumber numberWithInt:[available_content_amount integerValue] - [displayed_content_amount integerValue]];
+			NSInteger displayed_rows = [[content_source displayed_amount] integerValue];
+			NSInteger undisplayed_rows = [content_source undisplayed_row_count];
 			
-			if ([difference integerValue] >= 3) {
-				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
-														   [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0],
-														   [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 2 inSection:0], nil];
-				self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 3];
-			} else if ([difference integerValue] == 2) {
-				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0],
-														   [NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] + 1 inSection:0], nil];
-				self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 2];
-			} else if ([difference integerValue] == 1) {
-				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[self.displayed_content_amount integerValue] inSection:0], nil];
-				self.displayed_content_amount = [NSNumber numberWithInt:[self.displayed_content_amount integerValue] + 1];				
+			if (undisplayed_rows >= 3) {
+				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:displayed_rows inSection:0],
+														   [NSIndexPath indexPathForRow:displayed_rows + 1 inSection:0],
+														   [NSIndexPath indexPathForRow:displayed_rows + 2 inSection:0], nil];
+				[content_source displayRows:3];
+			} else if (undisplayed_rows == 2) {
+				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:displayed_rows inSection:0],
+														   [NSIndexPath indexPathForRow:displayed_rows + 1 inSection:0], nil];
+				[content_source displayRows:2];
+			} else if (undisplayed_rows == 1) {
+				insertableRows = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:displayed_rows inSection:0], nil];
+				[content_source displayRows:1];
 			} else {
 				insertableRows = [NSArray arrayWithObjects:nil];
 			}
 			
 			[tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
-			if (self.available_content_amount > [NSNumber numberWithInteger:0]) {
-				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[displayed_content_amount integerValue] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+			if ([[content_source loaded_amount] integerValue] > 0) {
+				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:displayed_rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 			}
 			[[self tableView:tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 		} else if (indexPath.row == 1) {
-			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[[data_source class_names] objectForKey:content_type] andManagedObjectContext:[data_source moc]];
+			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[content_source content_type]];
 			[self presentModalViewController:contributionController animated:YES];
 			[contributionController release];
 		}
 	} else {
-		if ([self.content_type isEqualToString:@"goals"]) {
+		if ([[content_source content_type] isEqualToString:@"goals"]) {
 			ProgressController *progressController = [[ProgressController alloc] initWithGoal:[self contentForIndexPath:indexPath]];
-			progressController.data_source = self.data_source;
 			[self.navigationController pushViewController:progressController animated:YES];
 			[progressController release];
 		} else {

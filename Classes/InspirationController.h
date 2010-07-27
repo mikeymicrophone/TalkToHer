@@ -7,27 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-@class DataDelegate;
+@class ContentDelegate;
 
 
 @interface InspirationController : UITableViewController {
-	NSString *content_type;
-	NSArray *content_set;
-	NSNumber *displayed_content_amount;
-	NSNumber *available_content_amount;
-	DataDelegate *data_source;
-	NSNumber *content_page;
+	ContentDelegate *content_source;
 }
 
-@property (nonatomic, retain) NSString *content_type;
-@property (nonatomic, retain) NSArray *content_set;
-@property (nonatomic, retain) NSNumber *displayed_content_amount;
-@property (nonatomic, retain) NSNumber *available_content_amount;
-@property (nonatomic, retain) DataDelegate *data_source;
-@property (nonatomic, retain) NSNumber *content_page;
+@property (nonatomic, retain) ContentDelegate *content_source;
 
--(id)initWithContentType:(NSString *)cType andDataSource:(DataDelegate *)source;
--(void)load_content;
+-(id)initWithContentSource:(ContentDelegate *)source;
 -(id)contentForIndexPath:(NSIndexPath *)indexPath;
 
 @end

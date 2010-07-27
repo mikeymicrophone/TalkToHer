@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class ExerciseEntity;
 
-@interface Exercise : NSManagedObject {
+@interface Exercise : NSObject {
 	NSString *exerciseId;
 	NSString *moniker;
 	NSString *instruction;
@@ -20,6 +21,7 @@
 	NSString *ratingCount;
 	NSString *averageRating;
 	NSString *userId;
+	BOOL delayed;
 }
 
 @property (nonatomic, retain) NSString *exerciseId;
@@ -33,9 +35,9 @@
 @property (nonatomic, retain) NSString *averageRating;
 @property (nonatomic, retain) NSString *userId;
 
--(NSString *)main_text;
--(NSString *)additional_text;
+-(id)initWithManagedObject:(NSManagedObject *)ps;
 -(id)get_commentary;
--(void)setWrittenContent:(NSString *)writtenContent;
--(void)saveInRequest;
+-(BOOL)matches:(NSManagedObject *)po;
+-(ExerciseEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
+
 @end

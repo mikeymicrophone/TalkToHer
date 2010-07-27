@@ -21,6 +21,17 @@
 	return main_size.height + additional_size.height + 15.0;
 }
 
+-(id)initWithContent:(NSObject *)c {
+	if (!(self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"%@_%@",
+					[c className], [c performSelector:NSSelectorFromString([c getRemoteClassIdName])]]]))
+		return nil;
+	
+	main_text = [c main_text];
+	additional_text = [c additional_text];
+	
+	return self;
+}
+
 - (void)drawRect:(CGRect)rect
 {
 	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];

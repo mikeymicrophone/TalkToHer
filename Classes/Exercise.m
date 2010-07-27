@@ -8,16 +8,35 @@
 
 #import "Exercise.h"
 #import "ObjectiveResourceConfig.h"
+#import "ExerciseEntity.h"
 
 @implementation Exercise
 
 @synthesize exerciseId, moniker, instruction, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId;
-
--(NSString *)main_text {
-	return moniker;
+-(id)initWithManagedObject:(NSManagedObject *)ps {
+    [self init];
+    
+    instruction = [ps instruction];
+	moniker = [ps moniker];
+    userId = [ps userId];
+    
+    return self;
 }
--(NSString *)additional_text {
-	return instruction;
+
+-(BOOL)matches:(NSManagedObject *)po {
+    return [instruction isEqualToString:[po valueForKey:@"instruction"]] && 
+			[moniker isEqualToString:[po valueForKey:@"moniker"]];
+}
+
+-(ExerciseEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
+    ExerciseEntity *ps = [[ExerciseEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Exercise" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
+	//    NSLog(@"lineId is a: %@ and is: %d, a %@", [lineId className], [lineId integerValue], [[lineId integerValue] className]);
+    [ps setValue:instruction forKey:@"instruction"];
+	[ps setValue:moniker forKey:@"moniker"];
+    [ps setValue:[NSNumber numberWithInt:[exerciseId integerValue]] forKey:@"exerciseId"];
+    [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
+    NSLog(@"persisting object: %@", ps);
+    return ps;
 }
 
 -(id)get_commentary {
@@ -27,12 +46,7 @@
 	return exercise;
 }
 
--(void)setWrittenContent:(NSString *)writtenContent {
-	self.instruction = writtenContent;
-	self.userId = @"1";
-}
-
-- (NSArray *)excludedPropertyNames {
+-(NSArray *)excludedPropertyNames {
 	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", nil];
 	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }

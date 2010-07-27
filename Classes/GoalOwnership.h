@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
-@interface GoalOwnership : NSManagedObject {
+@interface GoalOwnership : NSObject {
 	NSString *goalOwnershipId;
 	NSString *derivedDescription;
 	NSString *progress;
@@ -17,6 +16,7 @@
 	NSString *completionStatus;
 	NSString *remainingDaysText;
 	NSString *userId;
+	BOOL delayed;
 }
 
 @property (nonatomic, retain) NSString *goalOwnershipId;
@@ -29,5 +29,6 @@
 
 -(NSString *)main_text;
 -(NSString *)additional_text;
-
+-(void)markForDelayedSubmission;
+-(void)hasBeenSubmitted;
 @end

@@ -11,13 +11,13 @@
 
 @implementation ProgressController
 
-@synthesize description, new_progress, previous_progress, goalOwnership, data_source;
+@synthesize description, new_progress, previous_progress, goalOwnership;
 
 - (id)initWithGoal:(GoalOwnership *)goal {
     if (!(self = [super initWithNibName:nil bundle:nil]))
 		return nil;
 	
-	self.goalOwnership = goal;
+	goalOwnership = goal;
 	
     return self;
 }
@@ -26,7 +26,7 @@
 	[goalOwnership setProgress:[[NSNumber numberWithInt:[self.new_progress.text intValue] + [goalOwnership.progress intValue]] stringValue]];
 	NSLog(@"goal properties before update: %@", [goalOwnership progress]);
 	NSError *error = nil;
-	[[data_source moc] save:&error];
+	[[[[[UIApplication sharedApplication] delegate] data_source] moc] save:&error];
 	[goalOwnership updateRemote];
 	NSLog(@"goal properties after update: %@", [goalOwnership progress]);
 	[[self parentViewController] popViewControllerAnimated:YES];

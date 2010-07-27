@@ -15,41 +15,27 @@
 #import "Exercise.h"
 #import "LoaderCell.h"
 #import <dispatch/dispatch.h>
-#import "Reachability.h"
 
 @implementation RootViewController
 
-@synthesize data_source, lines_cell, tips_cell, goals_cell, exercises_cell, fetchedResultsController=fetchedResultsController_, managedObjectContext=managedObjectContext_;
+@synthesize lines_cell, tips_cell, goals_cell, exercises_cell;
 
 #pragma mark -
 #pragma mark View lifecycle
 
--(BOOL)lotd_is_reachable {
-	Reachability *r = [Reachability reachabilityWithHostName:[data_source server_location]];
-	
-	return [r isReachable] || [[data_source server_location] isEqualToString:@"http://localhost:3000/"];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	data_source = [[DataDelegate alloc] init];
-	[data_source initialize_data];
-	data_source.moc = [self managedObjectContext];
-	
-	[data_source attemptIdentification];
-	
-	lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
-	tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
-	exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
-	goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
+	self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
+	self.tips_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tips"] autorelease];
+	self.exercises_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exercises"] autorelease];
+	self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
 	[goals_cell retain];
 	
-	if ([self lotd_is_reachable]) {
-		[data_source loadDataSegmentOfType:@"lines" andAlertCell:lines_cell];
-		[data_source loadDataSegmentOfType:@"tips" andAlertCell:tips_cell];
-		[data_source loadDataSegmentOfType:@"exercises" andAlertCell:exercises_cell];
-	}
+	NSArray *loadable_data_types = [NSArray arrayWithObjects:@"lines", @"tips", @"exercises", nil];
+	
+	[[[[UIApplication sharedApplication] delegate] data_source] loadRemoteDataOfTypes:loadable_data_types forCellDelegate:self];
 }
 
 /*
@@ -108,7 +94,7 @@
 			cell = exercises_cell;
 		}
 	} else if (indexPath.section == 3) {
-		if (data_source.userId == nil) {
+		if ([[[[UIApplication sharedApplication] delegate] data_source] userId] == nil) {
 			cell = [tableView dequeueReusableCellWithIdentifier:@"log in"];
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"log in"] autorelease];
@@ -124,7 +110,7 @@
 		}
 	}
 	cell.selectionStyle = UITableViewCellSelectionStyleGray;
-	
+
     return cell;
 }
 
@@ -133,17 +119,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section < 3) {
-		InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[self tableView:tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] andDataSource:data_source];
+		ContentDelegate *source = [[[[UIApplication sharedApplication] delegate] data_source] performSelector:NSSelectorFromString([[self tableView:tableView cellForRowAtIndexPath:indexPath] reuseIdentifier])];
+		InspirationController *inspirationController = [[InspirationController alloc] initWithContentSource:source];
 		[self.navigationController pushViewController:inspirationController animated:YES];
 		[inspirationController release];
 	} else {
-		if (data_source.userId != nil) {
-			InspirationController *inspirationController = [[InspirationController alloc] initWithContentType:[[self tableView:tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] andDataSource:data_source];
+		if ([[[[UIApplication sharedApplication] delegate] data_source] userId] != nil) {
+			ContentDelegate *source = [[[[UIApplication sharedApplication] delegate] data_source] performSelector:NSSelectorFromString([[self tableView:tableView cellForRowAtIndexPath:indexPath] reuseIdentifier])];
+			InspirationController *inspirationController = [[InspirationController alloc] initWithContentSource:source];
 			[self.navigationController pushViewController:inspirationController animated:YES];
 			[inspirationController release];			
 		} else {
 			IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
-			[identificationController setData_source:data_source];
 			[self presentModalViewController:identificationController animated:YES];
 			[identificationController release];
 		}

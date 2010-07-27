@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class TipEntity;
 
-@interface Tip : NSManagedObject {
+@interface Tip : NSObject {
 	NSString *tipId;
 	NSString *advice;
 	NSString *recentComment;
@@ -30,9 +31,10 @@
 @property (nonatomic, retain) NSString *ratingCount;
 @property (nonatomic, retain) NSString *averageRating;
 @property (nonatomic, retain) NSString *userId;
--(NSString *)main_text;
--(NSString *)additional_text;
+
+-(id)initWithManagedObject:(NSManagedObject *)ps;
 -(id)get_commentary;
--(void)setWrittenContent:(NSString *)writtenContent;
--(void)saveInRequest;
+-(BOOL)matches:(NSManagedObject *)po;
+-(TipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
+
 @end

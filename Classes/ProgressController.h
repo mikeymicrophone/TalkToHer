@@ -15,14 +15,12 @@
 	IBOutlet UITextView *description;
 	IBOutlet UITextView *previous_progress;
 	GoalOwnership *goalOwnership;
-	DataDelegate *data_source;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *new_progress;
 @property (nonatomic, retain) IBOutlet UITextView *previous_progress;
 @property (nonatomic, retain) IBOutlet UITextView *description;
 @property (nonatomic, retain) GoalOwnership *goalOwnership;
-@property (nonatomic, retain) DataDelegate *data_source;
 
 -(IBAction)update;
 

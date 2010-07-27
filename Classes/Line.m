@@ -8,18 +8,19 @@
 
 #import "Line.h"
 #import "ObjectiveResourceConfig.h"
-
+#import "LineEntity.h"
 
 @implementation Line
 
 @synthesize lineId, userId, phrasing, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating;
 
--(NSString *)main_text {
-	return phrasing;
-}
-
--(NSString *)additional_text {
-	return @"";
+-(id)initWithManagedObject:(NSManagedObject *)ps {
+    [self init];
+    
+    phrasing = [ps phrasing];
+    userId = [ps userId];
+    
+    return self;
 }
 
 -(id)get_commentary {
@@ -29,9 +30,18 @@
 	return line;
 }
 
--(void)setWrittenContent:(NSString *)writtenContent {
-	self.phrasing = writtenContent;
-	self.userId = @"1";
+-(BOOL)matches:(NSManagedObject *)po {
+    return [phrasing isEqualToString:[po valueForKey:@"phrasing"]];
+}
+
+-(LineEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
+    LineEntity *ps = [[LineEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Line" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
+//    NSLog(@"lineId is a: %@ and is: %d, a %@", [lineId className], [lineId integerValue], [[lineId integerValue] className]);
+    [ps setValue:phrasing forKey:@"phrasing"];
+    [ps setValue:[NSNumber numberWithInt:[lineId integerValue]] forKey:@"lineId"];
+    [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
+    NSLog(@"persisting object: %@", ps);
+    return ps;
 }
 
 - (NSArray *)excludedPropertyNames {

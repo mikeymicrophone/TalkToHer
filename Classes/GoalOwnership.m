@@ -25,22 +25,11 @@
 	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
 
-- (void)awakeFromFetch {
-	[super awakeFromFetch];
-	NSLog(@"awake from fetch has been called");
-	derivedDescription = [self valueForKey:@"derivedDescription"];
-	progress = [self valueForKey:@"progress"];
-	complete = [self valueForKey:@"complete"];
-	completionStatus = [self valueForKey:@"completionStatus"];
-	remainingDaysText = [self valueForKey:@"remainingDaysText"];
-	userId = [self valueForKey:@"userId"];
+-(void)markForDelayedSubmission {
+	delayed = YES;
 }
 
-//-(void)setProgress:(NSString *)p {
-//	if (p != nil) {
-//		NSLog(@"progress setter called with: %@", p);
-//	}
-//	progress = p;
-//}
-
+-(void)hasBeenSubmitted {
+	delayed = NO;
+}
 @end

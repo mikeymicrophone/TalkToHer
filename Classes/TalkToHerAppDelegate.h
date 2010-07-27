@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-
+@class DataDelegate;
 
 @interface TalkToHerAppDelegate : NSObject <UIApplicationDelegate> {
-    
+	DataDelegate *data_source;
     UIWindow *window;
     UINavigationController *navigationController;
 	
@@ -21,6 +21,7 @@
     NSPersistentStoreCoordinator *persistentStoreCoordinator_;
 }
 
+@property (nonatomic, retain) DataDelegate *data_source;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 

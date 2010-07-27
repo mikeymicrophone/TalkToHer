@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40017F711FE4251001359B0 /* ContentDelegate.m */; };
 		E409694311F1154E0055459F /* ProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = E409694111F1154E0055459F /* ProgressController.m */; };
 		E409694411F1154E0055459F /* ProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E409694211F1154E0055459F /* ProgressController.xib */; };
 		E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */; };
@@ -87,6 +88,10 @@
 		E4C6AF4911D5522900068008 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4811D5522900068008 /* Tip.m */; };
 		E4C6AF4C11D5526800068008 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4B11D5526800068008 /* Exercise.m */; };
 		E4C6AF4F11D552BD00068008 /* GoalOwnership.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4E11D552BD00068008 /* GoalOwnership.m */; };
+		E4D8109911FE36AD0020AE8B /* LineEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8109611FE36AD0020AE8B /* LineEntity.m */; };
+		E4D8109A11FE36AD0020AE8B /* TipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8109811FE36AD0020AE8B /* TipEntity.m */; };
+		E4D8223011FD14B70014D28A /* ExerciseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8222F11FD14B70014D28A /* ExerciseEntity.m */; };
+		E4D8223311FD14CB0014D28A /* GoalOwnershipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */; };
 		E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +107,8 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TalkToHer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TalkToHer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E40017F611FE4251001359B0 /* ContentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentDelegate.h; sourceTree = "<group>"; };
+		E40017F711FE4251001359B0 /* ContentDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentDelegate.m; sourceTree = "<group>"; };
 		E409694011F1154E0055459F /* ProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressController.h; sourceTree = "<group>"; };
 		E409694111F1154E0055459F /* ProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressController.m; sourceTree = "<group>"; };
 		E409694211F1154E0055459F /* ProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgressController.xib; path = Classes/ProgressController.xib; sourceTree = "<group>"; };
@@ -241,6 +248,14 @@
 		E4C6AF4B11D5526800068008 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		E4C6AF4D11D552BD00068008 /* GoalOwnership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOwnership.h; sourceTree = "<group>"; };
 		E4C6AF4E11D552BD00068008 /* GoalOwnership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOwnership.m; sourceTree = "<group>"; };
+		E4D8109511FE36AD0020AE8B /* LineEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineEntity.h; sourceTree = "<group>"; };
+		E4D8109611FE36AD0020AE8B /* LineEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineEntity.m; sourceTree = "<group>"; };
+		E4D8109711FE36AD0020AE8B /* TipEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipEntity.h; sourceTree = "<group>"; };
+		E4D8109811FE36AD0020AE8B /* TipEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipEntity.m; sourceTree = "<group>"; };
+		E4D8222E11FD14B70014D28A /* ExerciseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseEntity.h; sourceTree = "<group>"; };
+		E4D8222F11FD14B70014D28A /* ExerciseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseEntity.m; sourceTree = "<group>"; };
+		E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOwnershipEntity.h; sourceTree = "<group>"; };
+		E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOwnershipEntity.m; sourceTree = "<group>"; };
 		E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDelegate.h; sourceTree = "<group>"; };
 		E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,38 +283,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* TalkToHerAppDelegate.h */,
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				E4A1589411E4E2A600A044D7 /* IdentificationController.h */,
-				E439369511D50DD300D6DED9 /* InspirationController.h */,
-				E4A1549D11DBFF5700A044D7 /* InspectionController.h */,
-				E4A1572E11DF989700A044D7 /* ContributionController.h */,
-				E409694011F1154E0055459F /* ProgressController.h */,
-				1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
-				E4A1589511E4E2A600A044D7 /* IdentificationController.m */,
-				E439369611D50DD300D6DED9 /* InspirationController.m */,
-				E4A1549E11DBFF5700A044D7 /* InspectionController.m */,
-				E4A1572F11DF989700A044D7 /* ContributionController.m */,
-				E409694111F1154E0055459F /* ProgressController.m */,
-				E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */,
-				E4C6AEC711D5421100068008 /* Line.h */,
-				E4C6AF4711D5522900068008 /* Tip.h */,
-				E4C6AF4A11D5526800068008 /* Exercise.h */,
-				E4C6AF4D11D552BD00068008 /* GoalOwnership.h */,
-				E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */,
-				E4C6AEC811D5421100068008 /* Line.m */,
-				E4C6AF4811D5522900068008 /* Tip.m */,
-				E4C6AF4B11D5526800068008 /* Exercise.m */,
-				E4C6AF4E11D552BD00068008 /* GoalOwnership.m */,
-				E40D0DEF11D9361B004CC712 /* InspirationCell.h */,
-				E40D0DF011D9361B004CC712 /* InspirationCell.m */,
-				E44065BF11EBB9F700A48898 /* LoaderCell.h */,
-				E44065C011EBB9F700A48898 /* LoaderCell.m */,
-				E4A158A311E4E49200A044D7 /* UserSession.h */,
-				E4A158A411E4E49200A044D7 /* UserSession.m */,
-				E4A158B411E4EA6D00A044D7 /* User.h */,
-				E4A158B511E4EA6D00A044D7 /* User.m */,
+				E40017F411FE3975001359B0 /* Delegates */,
+				E40017E311FE3922001359B0 /* Views */,
+				E40017E211FE391C001359B0 /* Models */,
+				E40017E111FE3915001359B0 /* Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -374,6 +361,84 @@
 				E435D8F211F7085F00A5061D /* AddressBook.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E40017E111FE3915001359B0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				E4A1589411E4E2A600A044D7 /* IdentificationController.h */,
+				E439369511D50DD300D6DED9 /* InspirationController.h */,
+				E4A1549D11DBFF5700A044D7 /* InspectionController.h */,
+				E4A1572E11DF989700A044D7 /* ContributionController.h */,
+				E409694011F1154E0055459F /* ProgressController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				E4A1589511E4E2A600A044D7 /* IdentificationController.m */,
+				E439369611D50DD300D6DED9 /* InspirationController.m */,
+				E4A1549E11DBFF5700A044D7 /* InspectionController.m */,
+				E4A1572F11DF989700A044D7 /* ContributionController.m */,
+				E409694111F1154E0055459F /* ProgressController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E40017E211FE391C001359B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E40017F511FE398F001359B0 /* Headers */,
+				E4C6AF4B11D5526800068008 /* Exercise.m */,
+				E4C6AF4E11D552BD00068008 /* GoalOwnership.m */,
+				E4C6AEC811D5421100068008 /* Line.m */,
+				E4C6AF4811D5522900068008 /* Tip.m */,
+				E4D8222F11FD14B70014D28A /* ExerciseEntity.m */,
+				E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */,
+				E4D8109611FE36AD0020AE8B /* LineEntity.m */,
+				E4D8109811FE36AD0020AE8B /* TipEntity.m */,
+				E4A158A411E4E49200A044D7 /* UserSession.m */,
+				E4A158B511E4EA6D00A044D7 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E40017E311FE3922001359B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E40D0DEF11D9361B004CC712 /* InspirationCell.h */,
+				E40D0DF011D9361B004CC712 /* InspirationCell.m */,
+				E44065BF11EBB9F700A48898 /* LoaderCell.h */,
+				E44065C011EBB9F700A48898 /* LoaderCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E40017F411FE3975001359B0 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* TalkToHerAppDelegate.h */,
+				1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */,
+				E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */,
+				E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */,
+				E40017F611FE4251001359B0 /* ContentDelegate.h */,
+				E40017F711FE4251001359B0 /* ContentDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		E40017F511FE398F001359B0 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6AEC711D5421100068008 /* Line.h */,
+				E4C6AF4711D5522900068008 /* Tip.h */,
+				E4C6AF4A11D5526800068008 /* Exercise.h */,
+				E4C6AF4D11D552BD00068008 /* GoalOwnership.h */,
+				E4D8222E11FD14B70014D28A /* ExerciseEntity.h */,
+				E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */,
+				E4D8109511FE36AD0020AE8B /* LineEntity.h */,
+				E4D8109711FE36AD0020AE8B /* TipEntity.h */,
+				E4A158A311E4E49200A044D7 /* UserSession.h */,
+				E4A158B411E4EA6D00A044D7 /* User.h */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 		E440663811EBFFAD00A48898 /* ASIHTTPRequest */ = {
@@ -691,6 +756,11 @@
 				E440665E11EC006300A48898 /* Reachability.m in Sources */,
 				E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */,
 				E409694311F1154E0055459F /* ProgressController.m in Sources */,
+				E4D8223011FD14B70014D28A /* ExerciseEntity.m in Sources */,
+				E4D8223311FD14CB0014D28A /* GoalOwnershipEntity.m in Sources */,
+				E4D8109911FE36AD0020AE8B /* LineEntity.m in Sources */,
+				E4D8109A11FE36AD0020AE8B /* TipEntity.m in Sources */,
+				E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

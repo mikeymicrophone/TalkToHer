@@ -8,28 +8,43 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "LoaderCell.h"
+@class LoaderCell;
+@class ContentDelegate;
 
 @interface DataDelegate : NSObject {
 	NSString *userId;
 	NSString *server_location;
 	NSDictionary *class_names;
-	NSManagedObjectContext *moc;
+	ContentDelegate *lines;
+	ContentDelegate *tips;
+	ContentDelegate *exercises;
+	ContentDelegate *goals;
+	BOOL connectionIsFresh;
 }
 
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *server_location;
 @property (nonatomic, retain) NSDictionary *class_names;
-@property (nonatomic, retain) NSManagedObjectContext *moc;
+@property (nonatomic, retain) ContentDelegate *lines;
+@property (nonatomic, retain) ContentDelegate *tips;
+@property (nonatomic, retain) ContentDelegate *exercises;
+@property (nonatomic, retain) ContentDelegate *goals;
 
--(void)initialize_data;
+-(void)initialize_constants;
+-(void)initialize_content;
 -(NSArray *)fetch_collection:(NSString *)type;
+-(NSString *)classNameFor:(NSString *)identifier;
 -(NSArray *)propertiesToFetchForType:(NSString *)type;
 -(NSArray *)unidentified_set_of_type:(NSString *)type;
--(void)addAndPersistData:(NSArray *)data ofType:(NSString *)type;
+-(void)persistData:(NSArray *)data ofType:(NSString *)type;
 -(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell;
--(NSManagedObject *)itemExistsInStore:(NSManagedObject *)item;
--(NSManagedObject *)item:(NSManagedObject *)i existsInSet:(NSArray *)us;
+-(NSManagedObject *)itemExistsInStore:(NSObject *)item;
+-(NSManagedObject *)item:(NSObject *)i existsInSet:(NSArray *)us;
 -(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name;
 -(void)attemptIdentification;
+-(void)attemptDelayedSubmissions;
+-(BOOL)lotd_is_reachable;
+-(void)loadRemoteDataOfTypes:(NSArray *)types forCellDelegate:(UITableViewController *)cell_controller;
+-(NSManagedObjectContext *)moc;
+
 @end

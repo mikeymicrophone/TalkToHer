@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString *main_text;
 @property (nonatomic, retain) NSString *additional_text;
 
+-(id)initWithContent:(NSObject *)c;
 +(CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width;
 
 @end

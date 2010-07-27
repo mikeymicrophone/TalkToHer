@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class LineEntity;
 
-@interface Line : NSManagedObject {
+@interface Line : NSObject {
 	NSString *lineId;
 	NSString *phrasing;
 	NSString *userId;
@@ -31,9 +32,9 @@
 @property (nonatomic, retain) NSString *ratingCount;
 @property (nonatomic, retain) NSString *averageRating;
 
--(NSString *)main_text;
--(NSString *)additional_text;
+-(id)initWithManagedObject:(NSManagedObject *)ps;
 -(id)get_commentary;
--(void)setWrittenContent:(NSString *)writtenContent;
--(void)saveInRequest;
+-(BOOL)matches:(NSManagedObject *)po;
+-(LineEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
+
 @end
