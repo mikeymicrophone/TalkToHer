@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class Tip;
 
 @interface TipEntity : NSManagedObject {
 	BOOL delayed;
 }
+-(Tip *)objectiveResource;
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(void)setWrittenContent:(NSString *)writtenContent;

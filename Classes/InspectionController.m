@@ -23,7 +23,7 @@
 }
 
 -(id)inspect_content:(id)contentObj {
-	return [contentObj get_commentary];
+	return [[contentObj objectiveResource] get_commentary];
 }
 
 #pragma mark -

@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class Line;
 
 @interface LineEntity : NSManagedObject {
 	BOOL delayed;
 }
 
+-(Line *)objectiveResource;
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(void)setWrittenContent:(NSString *)writtenContent;

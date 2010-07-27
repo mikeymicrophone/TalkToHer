@@ -33,6 +33,8 @@
 @property (nonatomic, retain) NSString *userId;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps;
+-(NSString *)main_text;
+-(NSString *)additional_text;
 -(id)get_commentary;
 -(BOOL)matches:(NSManagedObject *)po;
 -(TipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;

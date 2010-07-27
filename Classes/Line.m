@@ -19,8 +19,17 @@
     
     phrasing = [ps phrasing];
     userId = [ps userId];
+	lineId = [ps lineId];
     
     return self;
+}
+
+-(NSString *)main_text {
+	return [self phrasing];
+}
+
+-(NSString *)additional_text {
+	return @"";
 }
 
 -(id)get_commentary {

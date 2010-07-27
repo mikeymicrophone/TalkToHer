@@ -45,5 +45,6 @@
 
 -(void)displayRows:(NSInteger)rows {
 	self.displayed_amount = [NSNumber numberWithInt:[displayed_amount integerValue] + rows];
+	NSLog(@"displayed_amount: %@", displayed_amount);
 }
 @end

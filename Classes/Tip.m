@@ -18,6 +18,7 @@
     
     advice = [ps advice];
     userId = [ps userId];
+	tipId = [ps tipId];
     
     return self;
 }
@@ -39,6 +40,14 @@
 	Tip *tip = [Tip findRemote:[self tipId]];
 	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
 	return tip;
+}
+
+-(NSString *)main_text {
+	return [self advice];
+}
+
+-(NSString *)additional_text {
+	return @"";
 }
 
 - (NSArray *)excludedPropertyNames {

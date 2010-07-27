@@ -10,6 +10,7 @@
 #import "Exercise.h"
 
 @implementation ExerciseEntity
+
 -(NSString *)main_text {
 	return [self moniker];
 }
@@ -32,6 +33,10 @@
     [e createRemote];
     [self setValue:[NSNumber numberWithInt:[[e exerciseId] integerValue]] forKey:@"exerciseId"];
     [e release];
+}
+
+-(Exercise *)objectiveResource {
+	return [[Exercise alloc] initWithManagedObject:self];
 }
 
 -(NSString *)getRemoteClassIdName {

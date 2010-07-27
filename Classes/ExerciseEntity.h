@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class Exercise;
 
 @interface ExerciseEntity : NSManagedObject {
 	BOOL delayed;
 }
-
+-(Exercise *)objectiveResource;
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(void)setWrittenContent:(NSString *)writtenContent;

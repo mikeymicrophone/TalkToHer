@@ -175,7 +175,7 @@
 			if ([[content_source loaded_amount] integerValue] > 0) {
 				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:displayed_rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 			}
-			[[self tableView:tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
+			[[tableView dequeueReusableCellWithIdentifier:@"more"] setSelected:NO animated:YES];
 		} else if (indexPath.row == 1) {
 			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[content_source content_type]];
 			[self presentModalViewController:contributionController animated:YES];

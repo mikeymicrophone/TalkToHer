@@ -19,6 +19,7 @@
     instruction = [ps instruction];
 	moniker = [ps moniker];
     userId = [ps userId];
+	exerciseId = [ps exerciseId];
     
     return self;
 }
@@ -35,6 +36,14 @@
     [ps setValue:[NSNumber numberWithInt:[exerciseId integerValue]] forKey:@"exerciseId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
     return ps;
+}
+
+-(NSString *)main_text {
+	return [self moniker];
+}
+
+-(NSString *)additional_text {
+	return [self instruction];
 }
 
 -(id)get_commentary {

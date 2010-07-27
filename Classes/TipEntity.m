@@ -10,6 +10,7 @@
 #import "Tip.h"
 
 @implementation TipEntity
+
 -(NSString *)main_text {
 	return [self advice];
 }
@@ -31,6 +32,10 @@
     [t createRemote];
     [self setValue:[NSNumber numberWithInt:[[t tipId] integerValue]] forKey:@"tipId"];
     [t release];
+}
+
+-(Tip *)objectiveResource {
+	return [[Tip alloc] initWithManagedObject:self];
 }
 
 -(NSString *)getRemoteClassIdName {

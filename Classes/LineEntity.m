@@ -34,6 +34,10 @@
     [l release];
 }
 
+-(Line *)objectiveResource {
+	return [[Line alloc] initWithManagedObject:self];
+}
+
 -(NSString *)getRemoteClassIdName {
     return @"lineId";
 }
