@@ -46,5 +46,6 @@
 -(BOOL)lotd_is_reachable;
 -(void)loadRemoteDataOfTypes:(NSArray *)types forCellDelegate:(UITableViewController *)cell_controller;
 -(NSManagedObjectContext *)moc;
+-(void)increment:(NSString *)type;
 
 @end

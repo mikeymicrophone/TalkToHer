@@ -29,7 +29,6 @@
 	[data_source attemptIdentification];
 	[data_source initialize_constants];
 	[data_source initialize_content];
-	NSLog(@"data source initialized.");
     
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];

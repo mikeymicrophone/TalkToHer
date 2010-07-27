@@ -29,9 +29,7 @@
 -(BOOL)createRemote {
     Tip *t = [[Tip alloc] initWithManagedObject:self];
     [t createRemote];
-    NSLog(@"just created tip on server");
     [self setValue:[NSNumber numberWithInt:[[t tipId] integerValue]] forKey:@"tipId"];
-    NSLog(@"set tipId: %@", self);
     [t release];
 }
 

@@ -30,9 +30,7 @@
 -(BOOL)createRemote {
     Line *l = [[Line alloc] initWithManagedObject:self];
     [l createRemote];
-    NSLog(@"just created line on server");
     [self setValue:[NSNumber numberWithInt:[[l lineId] integerValue]] forKey:@"lineId"];
-    NSLog(@"set lineId: %@", self);
     [l release];
 }
 

@@ -20,7 +20,7 @@
 	[self setContentType:cType];
 	[self prepare_content];
 	
-	heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
+	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
 	heading.textAlignment = UITextAlignmentCenter;
 	if ([cType isEqualToString:@"Exercise"]) {
 		heading.text = @"Sharing: an Exercise";
@@ -39,7 +39,7 @@
 -(void)prepare_content {
 	NSManagedObjectContext *moc = [[[UIApplication sharedApplication] delegate] managedObjectContext];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
-	content = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:moc];
+	self.content = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:moc];
 }
 
 -(IBAction)submit_content {
@@ -47,23 +47,18 @@
 	if ([contentType isEqualToString:@"Exercise"]) {
 		[content setMoniker:exercise_name.text];
 	}
-	NSLog(@"content about to be saved: %@", content);
-//	[content retain];
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.submission", NULL);
 	dispatch_async(queue, ^{
-		NSLog(@"content about to be saved (in queue): %@", content);
-		if ([[[self parentViewController] bottomViewController] lotd_is_reachable]) {
+		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
 			[content createRemote];
 		} else {
 			[content markForDelayedSubmission];
 		}
 		NSError *error = nil;
-        NSLog(@"about to save moc");
 		if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
-        NSLog(@"saved moc");
+		[[[[UIApplication sharedApplication] delegate] data_source] increment:contentType];
 	});
-//	[content release];
 	dispatch_release(queue);
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
@@ -125,6 +120,5 @@
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end

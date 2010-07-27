@@ -28,11 +28,9 @@
 
 -(TipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
     TipEntity *ps = [[TipEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Tip" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
-	//    NSLog(@"lineId is a: %@ and is: %d, a %@", [lineId className], [lineId integerValue], [[lineId integerValue] className]);
     [ps setValue:advice forKey:@"advice"];
     [ps setValue:[NSNumber numberWithInt:[tipId integerValue]] forKey:@"tipId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-    NSLog(@"persisting object: %@", ps);
     return ps;
 }
 

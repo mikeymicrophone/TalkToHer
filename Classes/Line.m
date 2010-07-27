@@ -36,12 +36,10 @@
 
 -(LineEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
     LineEntity *ps = [[LineEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Line" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
-//    NSLog(@"lineId is a: %@ and is: %d, a %@", [lineId className], [lineId integerValue], [[lineId integerValue] className]);
     [ps setValue:phrasing forKey:@"phrasing"];
     [ps setValue:[NSNumber numberWithInt:[lineId integerValue]] forKey:@"lineId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
     NSLog(@"persisting object: %@", ps);
-    return ps;
 }
 
 - (NSArray *)excludedPropertyNames {

@@ -18,10 +18,13 @@
 	self.content_page = [NSNumber numberWithInt:1];
 	self.displayed_amount = [NSNumber numberWithInt:3];
 	self.content_type = klass;
-	self.content = [[[[UIApplication sharedApplication] delegate] data_source] fetch_collection:klass];
-	self.loaded_amount = [NSNumber numberWithInt:[self.content count]];
-	NSLog(@"content of %@: %@", [self content_type], [self content]);
+	[self update_content];
 	return self;
+}
+
+-(void)update_content {
+	self.content = [[[[UIApplication sharedApplication] delegate] data_source] fetch_collection:content_type];
+	self.loaded_amount = [NSNumber numberWithInt:[content count]];
 }
 
 -(NSInteger)undisplayed_row_count {

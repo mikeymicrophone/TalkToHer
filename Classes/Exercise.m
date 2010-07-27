@@ -30,12 +30,10 @@
 
 -(ExerciseEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
     ExerciseEntity *ps = [[ExerciseEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Exercise" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
-	//    NSLog(@"lineId is a: %@ and is: %d, a %@", [lineId className], [lineId integerValue], [[lineId integerValue] className]);
     [ps setValue:instruction forKey:@"instruction"];
 	[ps setValue:moniker forKey:@"moniker"];
     [ps setValue:[NSNumber numberWithInt:[exerciseId integerValue]] forKey:@"exerciseId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-    NSLog(@"persisting object: %@", ps);
     return ps;
 }
 

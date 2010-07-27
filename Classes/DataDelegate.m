@@ -43,7 +43,6 @@
 }
 
 -(NSArray *)fetch_collection:(NSString *)type {
-	NSLog(@"entering DataDelegate fetch_collection");
 	NSEntityDescription *e = [NSEntityDescription entityForName:type inManagedObjectContext:[self moc]];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
 
@@ -57,23 +56,12 @@
 	NSError *error = nil;
 	NSArray *results = [[self moc] executeFetchRequest:f error:&error];
 	[f release];
-	NSLog(@"class_names: %@, type: %@, keys %@", class_names, type, [class_names allKeys]);
-	[[self performSelector:NSSelectorFromString([[class_names allKeysForObject:type] objectAtIndex:0])] addObjectsFromArray:results];
-	NSLog(@"exiting  DataDelegate fetch_collection");
 	return results;
 }
 
 -(NSArray *)unidentified_set_of_type:(NSString *)type {
-	NSLog(@"entering DataDelegate unidentified_set_of_type: %@", type);
-	if (class_names == nil ) { 
-		NSLog(@"no class_names");
-	} else {
-		NSLog(@"class_names: %@", class_names);
-		NSLog(@"class_names type is %@", [class_names className]); 
-	}
 	NSEntityDescription *e = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:[self moc]];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
-
 	[f setEntity:e];
 	[f setPropertiesToFetch:[self propertiesToFetchForType:[class_names objectForKey:type]]];
 	[f setPredicate:[NSPredicate predicateWithFormat:[[NSClassFromString([class_names objectForKey:type]) getRemoteClassIdName] stringByAppendingFormat:@" == %d", nil]]];
@@ -81,8 +69,6 @@
 	NSError *error = nil;
 	NSArray *results = [[self moc] executeFetchRequest:f error:&error];
 	[f release];
-
-	NSLog(@"exiting  DataDelegate unidentified_set_of_type");
 	return results;
 }
 
@@ -101,7 +87,6 @@
 }
 
 -(void)persistData:(NSArray *)data ofType:(NSString *)type {
-	NSLog(@"entering DataDelegate persistData:ofType");
 	NSArray *unidentified_set = [self unidentified_set_of_type:type];
 
 	for (NSObject *c in data) {
@@ -112,7 +97,7 @@
 			NSManagedObject *identifiable = [self item:c existsInSet:unidentified_set];
 			if (identifiable) {
                 // this object is in the db without an id
-				[identifiable setValue:[c getRemoteId] forKey:[c getRemoteClassIdName]];
+				[identifiable setValue:[NSNumber numberWithInt:[[c getRemoteId] integerValue]] forKey:[c getRemoteClassIdName]];
 			} else {
 				[c persistantSelfInMoc:[self moc]];
 			}
@@ -121,11 +106,9 @@
     
     NSError *error = nil;
     if (![[self moc] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
-	NSLog(@"exiting  DataDelegate persistData:ofType");
 }
 
 -(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell {
-	NSLog(@"entering DataDelegate loadDataSegmentOfType:andAlertCell");
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.fetch", NULL);
 	dispatch_async(queue, ^{
@@ -148,15 +131,14 @@
 			[cell stop_spinning];
 			if (!(content == nil || [content count] == 0)) {
 				[self persistData:content ofType:type];
+				[[[[UIApplication sharedApplication] delegate] data_source] increment:[class_names objectForKey:type]];
 			}
 		});
 	});
 	dispatch_release(queue);
-	NSLog(@"exiting  DataDelegate loadDataSegmentOfType:andAlertCell");
 }
 
 -(NSManagedObject *)itemExistsInStore:(NSObject *)item {
-//	NSLog(@"entering DataDelegate itemExistsInStore");
     NSEntityDescription *e;
     if ([[[[item class] superclass] className] isEqualToString:@"NSManagedObject"]) {
         e = [item entity];
@@ -175,12 +157,10 @@
 	NSManagedObject *exists = nil;
 	if ([results count] > 0)
 		exists = [results objectAtIndex:0];
-//	NSLog(@"exiting  DataDelegate itemExistsInStore");	
 	return exists;
 }
 
 -(NSManagedObject *)item:(NSObject *)i existsInSet:(NSArray *)us {
-	NSLog(@"entering DataDelegate item:existsInSet");
 	NSManagedObject *matched = nil;
 	for (NSManagedObject *c in us) {
 		if ([i matches:c]) {
@@ -188,7 +168,6 @@
 			break;
 		}
 	}
-	NSLog(@"exiting  DataDelegate item:existsInSet");
 	return matched;
 }
 
@@ -204,7 +183,6 @@
 }
 
 -(void)attemptIdentification {
-	NSLog(@"entering DataDelegate attemptIdentification");
 	NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[self moc]];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
 	[f setEntity:e];
@@ -216,11 +194,9 @@
 	
 	if ([results count] > 0)
 		self.userId = [[results objectAtIndex:0] valueForKey:@"userId"];
-	NSLog(@"exiting  DataDelegate attemptIdentification");
 }
 
 -(void)attemptDelayedSubmissions {
-	NSLog(@"entering DataDelegate attemptDelayedSubmissions");
 	NSArray *classes = [class_names allValues];
 	for (NSString *klass in classes) {
 		NSEntityDescription *e = [NSEntityDescription entityForName:klass inManagedObjectContext:[self moc]];
@@ -242,15 +218,7 @@
 	}
 	
 	NSError *mocSaveError = nil;
-    if (![[self moc] save:&mocSaveError]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
-        NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]);
-    }
-	NSLog(@"exiting  DataDelegate attemptDelayedSubmissions");
+    if (![[self moc] save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }
 }
 
 -(BOOL)lotd_is_reachable {
@@ -274,6 +242,16 @@
 
 -(NSManagedObjectContext *)moc {
 	[[[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+-(void)increment:(NSString *)type {
+	if ([type isEqualToString:@"Line"]) {
+		[lines update_content];
+	} else if ([type isEqualToString:@"Tip"]) {
+		[tips update_content];
+	} else if ([type isEqualToString:@"Exercise"]) {
+		[exercises update_content];
+	}
 }
 
 @end

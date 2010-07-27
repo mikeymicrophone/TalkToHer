@@ -30,9 +30,7 @@
 -(BOOL)createRemote {
     Exercise *e = [[Exercise alloc] initWithManagedObject:self];
     [e createRemote];
-    NSLog(@"just created exercise on server");
     [self setValue:[NSNumber numberWithInt:[[e exerciseId] integerValue]] forKey:@"exerciseId"];
-    NSLog(@"set exerciseId: %@", self);
     [e release];
 }
 

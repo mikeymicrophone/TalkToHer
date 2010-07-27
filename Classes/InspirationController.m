@@ -28,7 +28,6 @@
 	
 	self.content_source = source;
 	
-	NSLog(@"initialized inspiration controller");
 	return self;
 }
 
@@ -84,8 +83,6 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"cell for index path: %@", indexPath);
-    
 	UITableViewCell *cell;
 	
 	if (indexPath.section == 1) {
@@ -125,7 +122,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"height for index path: %@", indexPath);
 	if (indexPath.section == 0) {
 		id content = [self contentForIndexPath:indexPath];
 		return [InspirationCell cellHeightForMainText:[content main_text]
@@ -137,9 +133,6 @@
 }
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"content for %@", indexPath);
-	NSLog(@"content source: %@", content_source);
-	NSLog(@"content of %@: %@", [content_source content_type], [content_source content]);
 	return [[content_source content] objectAtIndex:[indexPath indexAtPosition:1]];
 }
 
@@ -204,7 +197,6 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	NSLog(@"memory warning: inspiration controller");
     
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
