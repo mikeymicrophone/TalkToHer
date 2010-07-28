@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+@class GoalOwnershipEntity;
 
 @interface GoalOwnership : NSObject {
 	NSString *goalOwnershipId;
@@ -31,4 +33,5 @@
 -(NSString *)additional_text;
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
+-(GoalOwnershipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
 @end

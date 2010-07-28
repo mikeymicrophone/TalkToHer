@@ -7,6 +7,9 @@
 //
 
 #import "GoalOwnership.h"
+#import "GoalOwnershipEntity.h"
+#import "Response.h"
+#import "Connection.h"
 
 @implementation GoalOwnership
 
@@ -18,6 +21,17 @@
 
 -(NSString *)additional_text {
 	return [[completionStatus stringByAppendingString:@"\n"] stringByAppendingString:remainingDaysText];
+}
+
+-(GoalOwnershipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
+    GoalOwnershipEntity *ps = [[GoalOwnershipEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"GoalOwnership" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
+    [ps setValue:derivedDescription forKey:@"derivedDescription"];
+	[ps setValue:progress forKey:@"progress"];
+	[ps setValue:[NSNumber numberWithInt:[complete integerValue]] forKey:@"complete"];
+	[ps setValue:completionStatus forKey:@"completionStatus"];
+	[ps setValue:remainingDaysText forKey:@"remainingDaysText"];
+    [ps setValue:[NSNumber numberWithInt:[goalOwnershipId integerValue]] forKey:@"goalOwnershipId"];
+    [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 }
 
 -(NSArray *)excludedPropertyNames {
@@ -32,4 +46,18 @@
 -(void)hasBeenSubmitted {
 	delayed = NO;
 }
+
++ (NSArray *)findAllForUserWithId:(NSString *)personId {
+    NSString *goalsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
+						  [self getRemoteSite],
+						   @"users",
+						   personId,
+						   [self getRemoteCollectionName],
+						   [self getRemoteProtocolExtension]];
+	
+    Response *res = [Connection get:goalsPath withUser:[[self class] getRemoteUser] 
+						andPassword:[[self class] getRemotePassword]];
+    return [self allFromXMLData:res.body];
+}
+
 @end

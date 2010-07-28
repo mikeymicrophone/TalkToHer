@@ -128,7 +128,7 @@
 			ContentDelegate *source = [[[[UIApplication sharedApplication] delegate] data_source] performSelector:NSSelectorFromString([[self tableView:tableView cellForRowAtIndexPath:indexPath] reuseIdentifier])];
 			InspirationController *inspirationController = [[InspirationController alloc] initWithContentSource:source];
 			[self.navigationController pushViewController:inspirationController animated:YES];
-			[inspirationController release];			
+			[inspirationController release];
 		} else {
 			IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
 			[self presentModalViewController:identificationController animated:YES];

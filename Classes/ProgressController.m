@@ -17,8 +17,8 @@
     if (!(self = [super initWithNibName:nil bundle:nil]))
 		return nil;
 	
-	goalOwnership = goal;
-	
+	self.goalOwnership = goal;
+
     return self;
 }
 

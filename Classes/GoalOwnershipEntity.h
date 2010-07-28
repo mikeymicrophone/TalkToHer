@@ -13,4 +13,7 @@
 
 }
 
+-(NSString *)main_text;
+-(NSString *)additional_text;
+
 @end

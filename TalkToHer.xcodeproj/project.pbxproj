@@ -14,6 +14,7 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40017F711FE4251001359B0 /* ContentDelegate.m */; };
+		E4001B4311FF8B8B001359B0 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4001B4211FF8B8B001359B0 /* UserEntity.m */; };
 		E409694311F1154E0055459F /* ProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = E409694111F1154E0055459F /* ProgressController.m */; };
 		E409694411F1154E0055459F /* ProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E409694211F1154E0055459F /* ProgressController.xib */; };
 		E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */; };
@@ -109,6 +110,8 @@
 		8D1107310486CEB800E47090 /* TalkToHer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TalkToHer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E40017F611FE4251001359B0 /* ContentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentDelegate.h; sourceTree = "<group>"; };
 		E40017F711FE4251001359B0 /* ContentDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentDelegate.m; sourceTree = "<group>"; };
+		E4001B4111FF8B8B001359B0 /* UserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEntity.h; sourceTree = "<group>"; };
+		E4001B4211FF8B8B001359B0 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
 		E409694011F1154E0055459F /* ProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressController.h; sourceTree = "<group>"; };
 		E409694111F1154E0055459F /* ProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressController.m; sourceTree = "<group>"; };
 		E409694211F1154E0055459F /* ProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgressController.xib; path = Classes/ProgressController.xib; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 				E4D8109811FE36AD0020AE8B /* TipEntity.m */,
 				E4A158A411E4E49200A044D7 /* UserSession.m */,
 				E4A158B511E4EA6D00A044D7 /* User.m */,
+				E4001B4211FF8B8B001359B0 /* UserEntity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -427,6 +431,7 @@
 		E40017F511FE398F001359B0 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E4001B4111FF8B8B001359B0 /* UserEntity.h */,
 				E4C6AEC711D5421100068008 /* Line.h */,
 				E4C6AF4711D5522900068008 /* Tip.h */,
 				E4C6AF4A11D5526800068008 /* Exercise.h */,
@@ -761,6 +766,7 @@
 				E4D8109911FE36AD0020AE8B /* LineEntity.m in Sources */,
 				E4D8109A11FE36AD0020AE8B /* TipEntity.m in Sources */,
 				E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */,
+				E4001B4311FF8B8B001359B0 /* UserEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

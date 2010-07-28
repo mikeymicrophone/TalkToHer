@@ -11,4 +11,16 @@
 
 @implementation GoalOwnershipEntity
 
+-(NSString *)main_text {
+	return [self derivedDescription];
+}
+
+-(NSString *)additional_text {
+	return [[[self completionStatus] stringByAppendingString:@"\n"] stringByAppendingString:[self remainingDaysText]];
+}
+
+-(NSString *)getRemoteClassIdName {
+    return @"goalOwnershipId";
+}
+
 @end

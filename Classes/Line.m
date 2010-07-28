@@ -48,7 +48,6 @@
     [ps setValue:phrasing forKey:@"phrasing"];
     [ps setValue:[NSNumber numberWithInt:[lineId integerValue]] forKey:@"lineId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-    NSLog(@"persisting object: %@", ps);
 }
 
 - (NSArray *)excludedPropertyNames {

@@ -11,6 +11,7 @@
 #import <dispatch/dispatch.h>
 #import "ContentDelegate.h"
 #import "Reachability.h"
+#import "GoalOwnership.h"
 
 @implementation DataDelegate
 
@@ -49,7 +50,7 @@
 	[f setEntity:e];
 	[f setFetchBatchSize:30];
 	if ([type isEqualToString:@"GoalOwnership"]) {
-		[f setPredicate:[NSPredicate predicateWithFormat:@"userId == %d", userId]];
+		[f setPredicate:[NSPredicate predicateWithFormat:@"userId == %d", [userId integerValue]]];
 	}
 	[f setPropertiesToFetch:[self propertiesToFetchForType:type]];
     
@@ -119,11 +120,9 @@
 		for (int i = 0; i < 4; i++) {
 			if (content == nil || [content count] == 0) {
 				if ([type isEqualToString:@"goals"]) {
-					[ObjectiveResourceConfig setSite:[server_location stringByAppendingFormat:@"users/%d/", [[self userId] integerValue]]];
-				}
-				content = [NSClassFromString([class_names objectForKey:type]) findAllRemote];
-				if ([type isEqualToString:@"goals"]) {
-					[ObjectiveResourceConfig setSite:server_location];
+					content = [GoalOwnership findAllForUserWithId:[[[[UIApplication sharedApplication] delegate] data_source] userId]];
+				} else {
+					content = [NSClassFromString([class_names objectForKey:type]) findAllRemote];
 				}
 			}
 		}
@@ -175,7 +174,7 @@
 	self.userId = user_id;
 	NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[self moc]];
 	NSManagedObject *userObject = [NSEntityDescription insertNewObjectForEntityForName:[e name] inManagedObjectContext:[self moc]];
-	[userObject setValue:user_id forKey:@"userId"];
+	[userObject setValue:[NSNumber numberWithInt:[user_id integerValue]] forKey:@"userId"];
 	[userObject setValue:user_name forKey:@"username"];
 	
 	NSError *error = nil;
@@ -192,8 +191,10 @@
 	NSArray *results = [[self moc] executeFetchRequest:f error:&error];
 	[f release];
 	
-	if ([results count] > 0)
+	if ([results count] > 0) {
 		self.userId = [[results objectAtIndex:0] valueForKey:@"userId"];
+		[self loadDataSegmentOfType:@"goals" andAlertCell:[[[[[UIApplication sharedApplication] delegate] navigationController] bottomViewController] goals_cell]];
+	}
 }
 
 -(void)attemptDelayedSubmissions {

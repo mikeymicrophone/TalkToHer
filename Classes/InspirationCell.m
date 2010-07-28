@@ -26,8 +26,8 @@
 					[c className], [c performSelector:NSSelectorFromString([c getRemoteClassIdName])]]]))
 		return nil;
 	
-	main_text = [c main_text];
-	additional_text = [c additional_text];
+	self.main_text = [c main_text];
+	self.additional_text = [c additional_text];
 	
 	return self;
 }
