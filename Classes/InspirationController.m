@@ -20,7 +20,7 @@
 
 @implementation InspirationController
 
-@synthesize content_source;
+@synthesize content_source, more_button;
 
 -(id)initWithContentSource:(ContentDelegate *)source {
 	if (![super initWithNibName:nil bundle:nil])
@@ -94,7 +94,8 @@
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				UIImageView *show_more = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
 				show_more.center = cell.center;
-				[cell addSubview:show_more];				
+				[cell addSubview:show_more];
+				self.more_button = cell;
 			}
 		} else if (indexPath.row == 1) {
 			static NSString *CellIdentifier = @"write";
@@ -175,7 +176,7 @@
 			if ([[content_source loaded_amount] integerValue] > 0) {
 				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:displayed_rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 			}
-			[[tableView dequeueReusableCellWithIdentifier:@"more"] setSelected:NO animated:YES];
+			[more_button setSelected:NO animated:YES];
 		} else if (indexPath.row == 1) {
 			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[content_source content_type]];
 			[self presentModalViewController:contributionController animated:YES];

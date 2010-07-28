@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* TalkToHerAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 468}}";
 			sepNavSelRange = "{567, 0}";
 			sepNavVisRange = "{0, 1087}";
 		};
 	};
 	1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2371, 2730}}";
+			sepNavIntBoundsRect = "{{0, 0}, {2371, 2756}}";
 			sepNavSelRange = "{4170, 34}";
-			sepNavVisRange = "{0, 1040}";
+			sepNavVisRange = "{7406, 698}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* TalkToHer */ = {
@@ -29,7 +29,7 @@
 	};
 	28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{545, 0}";
 			sepNavVisRange = "{0, 772}";
 		};
@@ -555,6 +555,11 @@
 			E4001C6911FFE9E9001359B0 /* PBXTextBookmark */ = E4001C6911FFE9E9001359B0 /* PBXTextBookmark */;
 			E4001C6A11FFE9E9001359B0 /* PBXTextBookmark */ = E4001C6A11FFE9E9001359B0 /* PBXTextBookmark */;
 			E4001C6B11FFE9E9001359B0 /* PBXTextBookmark */ = E4001C6B11FFE9E9001359B0 /* PBXTextBookmark */;
+			E4001C6E11FFEA29001359B0 /* PBXTextBookmark */ = E4001C6E11FFEA29001359B0 /* PBXTextBookmark */;
+			E4001C6F11FFEA29001359B0 /* PBXTextBookmark */ = E4001C6F11FFEA29001359B0 /* PBXTextBookmark */;
+			E4001C7211FFEAE3001359B0 /* PBXTextBookmark */ = E4001C7211FFEAE3001359B0 /* PBXTextBookmark */;
+			E4001C7311FFEAE3001359B0 /* PBXTextBookmark */ = E4001C7311FFEAE3001359B0 /* PBXTextBookmark */;
+			E4001C7411FFEAE3001359B0 /* PBXTextBookmark */ = E4001C7411FFEAE3001359B0 /* PBXTextBookmark */;
 			E4007A3011FC10D1006CF771 = E4007A3011FC10D1006CF771 /* PBXTextBookmark */;
 			E435DB9D11F8F2B800A5061D = E435DB9D11F8F2B800A5061D /* PBXTextBookmark */;
 			E435DB9E11F8F2B800A5061D = E435DB9E11F8F2B800A5061D /* PBXTextBookmark */;
@@ -577,7 +582,7 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{156, 0}";
 			sepNavVisRange = "{0, 362}";
 		};
@@ -594,7 +599,7 @@
 	};
 	E40017F611FE4251001359B0 /* ContentDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 462}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{745, 26}";
 			sepNavVisRange = "{0, 779}";
 		};
@@ -623,7 +628,7 @@
 		rLen = 0;
 		rLoc = 381;
 		rType = 0;
-		vrLen = 886;
+		vrLen = 733;
 		vrLoc = 0;
 	};
 	E40017FD11FE520B001359B0 /* PBXTextBookmark */ = {
@@ -671,7 +676,7 @@
 		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
 		name = "InspirationController.h: 19";
 		rLen = 0;
-		rLoc = 385;
+		rLoc = 476;
 		rType = 0;
 		vrLen = 467;
 		vrLoc = 0;
@@ -701,7 +706,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 149";
 		rLen = 0;
-		rLoc = 4418;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 1877;
 		vrLoc = 3555;
@@ -869,7 +874,7 @@
 		comments = "'difference' undeclared (first use in this function)";
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		rLen = 1;
-		rLoc = 157;
+		rLoc = 158;
 		rType = 1;
 	};
 	E400182B11FE5E92001359B0 /* PBXTextBookmark */ = {
@@ -877,7 +882,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 150";
 		rLen = 0;
-		rLoc = 4422;
+		rLoc = 4460;
 		rType = 0;
 		vrLen = 702;
 		vrLoc = 4021;
@@ -897,7 +902,7 @@
 		comments = "'available_content_amount' undeclared (first use in this function)";
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		rLen = 1;
-		rLoc = 109;
+		rLoc = 110;
 		rType = 1;
 	};
 	E400183011FE5EBC001359B0 /* PBXTextBookmark */ = {
@@ -905,7 +910,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 111";
 		rLen = 0;
-		rLoc = 2789;
+		rLoc = 2827;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 2614;
@@ -945,7 +950,7 @@
 		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
 		name = "InspirationController.h: 19";
 		rLen = 0;
-		rLoc = 385;
+		rLoc = 476;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 0;
@@ -1015,7 +1020,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 174";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 5867;
 		rType = 0;
 		vrLen = 2186;
 		vrLoc = 3937;
@@ -1075,7 +1080,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 178";
 		rLen = 0;
-		rLoc = 6032;
+		rLoc = 6028;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 5607;
@@ -1293,7 +1298,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 174";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 5867;
 		rType = 0;
 		vrLen = 2079;
 		vrLoc = 4062;
@@ -1303,7 +1308,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1550;
+		rLoc = 1563;
 		rType = 0;
 		vrLen = 1284;
 		vrLoc = 697;
@@ -1323,7 +1328,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1550;
+		rLoc = 1563;
 		rType = 0;
 		vrLen = 1284;
 		vrLoc = 697;
@@ -1373,7 +1378,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1550;
+		rLoc = 1563;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 725;
@@ -1383,7 +1388,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 137";
 		rLen = 0;
-		rLoc = 3972;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 3209;
@@ -1403,7 +1408,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 137";
 		rLen = 0;
-		rLoc = 3972;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 3209;
@@ -2118,7 +2123,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 136";
 		rLen = 0;
-		rLoc = 3405;
+		rLoc = 3443;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 2810;
@@ -2128,7 +2133,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 125";
 		rLen = 0;
-		rLoc = 3405;
+		rLoc = 3443;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 2937;
@@ -2138,7 +2143,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 125";
 		rLen = 0;
-		rLoc = 3405;
+		rLoc = 3443;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 2937;
@@ -2165,7 +2170,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 137";
 		rLen = 0;
-		rLoc = 3938;
+		rLoc = 3976;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 3188;
@@ -2225,7 +2230,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 137";
 		rLen = 0;
-		rLoc = 3938;
+		rLoc = 3976;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 3188;
@@ -2275,7 +2280,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 137";
 		rLen = 0;
-		rLoc = 3938;
+		rLoc = 3976;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 3188;
@@ -2335,7 +2340,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 137";
 		rLen = 0;
-		rLoc = 3938;
+		rLoc = 3976;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 2128;
@@ -2365,7 +2370,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 31";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1053;
 		vrLoc = 252;
@@ -2375,7 +2380,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 138";
 		rLen = 0;
-		rLoc = 3937;
+		rLoc = 3975;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 2830;
@@ -2385,7 +2390,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 87";
 		rLen = 0;
-		rLoc = 1776;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 1405;
 		vrLoc = 1626;
@@ -2395,7 +2400,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 128";
 		rLen = 0;
-		rLoc = 3465;
+		rLoc = 3503;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 2869;
@@ -2405,7 +2410,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 140";
 		rLen = 0;
-		rLoc = 3937;
+		rLoc = 3975;
 		rType = 0;
 		vrLen = 1164;
 		vrLoc = 3378;
@@ -2475,7 +2480,7 @@
 		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
 		name = "InspirationController.h: 19";
 		rLen = 0;
-		rLoc = 385;
+		rLoc = 476;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 0;
@@ -2485,7 +2490,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 140";
 		rLen = 0;
-		rLoc = 3937;
+		rLoc = 3975;
 		rType = 0;
 		vrLen = 1164;
 		vrLoc = 3378;
@@ -2495,7 +2500,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3937;
+		rLoc = 3975;
 		rType = 0;
 		vrLen = 1209;
 		vrLoc = 3382;
@@ -2505,7 +2510,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3937;
+		rLoc = 3975;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 3382;
@@ -2605,7 +2610,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 29";
 		rLen = 0;
-		rLoc = 643;
+		rLoc = 656;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 833;
@@ -2615,7 +2620,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 29";
 		rLen = 0;
-		rLoc = 643;
+		rLoc = 656;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 236;
@@ -2625,7 +2630,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1109;
+		rLoc = 1122;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 782;
@@ -2635,7 +2640,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 62";
 		rLen = 0;
-		rLoc = 1131;
+		rLoc = 1144;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 734;
@@ -2645,7 +2650,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 78";
 		rLen = 0;
-		rLoc = 1557;
+		rLoc = 1570;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 749;
@@ -2655,7 +2660,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 113";
 		rLen = 0;
-		rLoc = 2863;
+		rLoc = 2901;
 		rType = 0;
 		vrLen = 1468;
 		vrLoc = 2501;
@@ -2684,7 +2689,7 @@
 		isa = PBXTextBookmark;
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		rLen = 13;
-		rLoc = 2850;
+		rLoc = 2888;
 		rType = 0;
 	};
 	E40019DB11FF523C001359B0 /* PBXTextBookmark */ = {
@@ -2692,7 +2697,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 113";
 		rLen = 0;
-		rLoc = 2856;
+		rLoc = 2894;
 		rType = 0;
 		vrLen = 1431;
 		vrLoc = 2573;
@@ -2702,7 +2707,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 113";
 		rLen = 0;
-		rLoc = 2856;
+		rLoc = 2894;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 2720;
@@ -2721,7 +2726,7 @@
 		isa = PBXTextBookmark;
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		rLen = 13;
-		rLoc = 5408;
+		rLoc = 5446;
 		rType = 0;
 	};
 	E40019E111FF599C001359B0 /* PBXTextBookmark */ = {
@@ -2729,7 +2734,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 174";
 		rLen = 0;
-		rLoc = 5415;
+		rLoc = 5453;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 5252;
@@ -2739,7 +2744,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 113";
 		rLen = 0;
-		rLoc = 2856;
+		rLoc = 2894;
 		rType = 0;
 		vrLen = 1498;
 		vrLoc = 2720;
@@ -2867,7 +2872,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 174";
 		rLen = 0;
-		rLoc = 5415;
+		rLoc = 5453;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 5252;
@@ -3067,7 +3072,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 199";
 		rLen = 0;
-		rLoc = 6945;
+		rLoc = 6941;
 		rType = 0;
 		vrLen = 266;
 		vrLoc = 6631;
@@ -3164,7 +3169,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 110";
 		rLen = 0;
-		rLoc = 2830;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 1815;
@@ -3174,7 +3179,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 133";
 		rLen = 0;
-		rLoc = 3769;
+		rLoc = 3807;
 		rType = 0;
 		vrLen = 1114;
 		vrLoc = 3224;
@@ -3184,7 +3189,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 143";
 		rLen = 0;
-		rLoc = 4042;
+		rLoc = 4080;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 3754;
@@ -3194,7 +3199,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1549;
+		rLoc = 1562;
 		rType = 0;
 		vrLen = 1338;
 		vrLoc = 1134;
@@ -3254,7 +3259,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1549;
+		rLoc = 1562;
 		rType = 0;
 		vrLen = 1266;
 		vrLoc = 1134;
@@ -3264,7 +3269,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 155";
 		rLen = 0;
-		rLoc = 4313;
+		rLoc = 4351;
 		rType = 0;
 		vrLen = 1865;
 		vrLoc = 4914;
@@ -3274,7 +3279,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 155";
 		rLen = 0;
-		rLoc = 4313;
+		rLoc = 4351;
 		rType = 0;
 		vrLen = 1865;
 		vrLoc = 4914;
@@ -3324,7 +3329,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 30";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 764;
@@ -3334,7 +3339,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 30";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 1078;
@@ -3344,7 +3349,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 30";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 426;
@@ -3374,7 +3379,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1515;
+		rLoc = 1528;
 		rType = 0;
 		vrLen = 1679;
 		vrLoc = 1647;
@@ -3441,7 +3446,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1515;
+		rLoc = 1528;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 490;
@@ -3451,7 +3456,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 75";
 		rLen = 0;
-		rLoc = 1485;
+		rLoc = 1498;
 		rType = 0;
 		vrLen = 1215;
 		vrLoc = 635;
@@ -3461,7 +3466,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 87";
 		rLen = 0;
-		rLoc = 1801;
+		rLoc = 1814;
 		rType = 0;
 		vrLen = 1636;
 		vrLoc = 1549;
@@ -3471,7 +3476,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 76";
 		rLen = 0;
-		rLoc = 1493;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 1167;
@@ -3491,7 +3496,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 76";
 		rLen = 0;
-		rLoc = 1493;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1193;
 		vrLoc = 490;
@@ -3501,7 +3506,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 30";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 520;
@@ -3511,7 +3516,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 126";
 		rLen = 0;
-		rLoc = 3465;
+		rLoc = 3503;
 		rType = 0;
 		vrLen = 1274;
 		vrLoc = 2843;
@@ -3521,7 +3526,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 126";
 		rLen = 0;
-		rLoc = 3465;
+		rLoc = 3503;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 0;
@@ -3561,7 +3566,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 126";
 		rLen = 0;
-		rLoc = 3465;
+		rLoc = 3503;
 		rType = 0;
 		vrLen = 836;
 		vrLoc = 3;
@@ -3571,7 +3576,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 143";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 3377;
@@ -3581,7 +3586,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1493;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1388;
 		vrLoc = 1007;
@@ -3591,7 +3596,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 77";
 		rLen = 0;
-		rLoc = 1146;
+		rLoc = 1159;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 796;
@@ -3601,7 +3606,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 63";
 		rLen = 0;
-		rLoc = 1146;
+		rLoc = 1159;
 		rType = 0;
 		vrLen = 1369;
 		vrLoc = 784;
@@ -3611,7 +3616,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 89";
 		rLen = 0;
-		rLoc = 1801;
+		rLoc = 1814;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 1753;
@@ -3621,7 +3626,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 70";
 		rLen = 0;
-		rLoc = 1366;
+		rLoc = 1379;
 		rType = 0;
 		vrLen = 1267;
 		vrLoc = 1188;
@@ -3631,7 +3636,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 30";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 782;
 		vrLoc = 3;
@@ -3671,7 +3676,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 150";
 		rLen = 91;
-		rLoc = 4098;
+		rLoc = 4136;
 		rType = 0;
 		vrLen = 1833;
 		vrLoc = 4043;
@@ -3711,7 +3716,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 154";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3921;
 		rType = 0;
 		vrLen = 1697;
 		vrLoc = 3644;
@@ -3721,7 +3726,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 140";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3921;
 		rType = 0;
 		vrLen = 1669;
 		vrLoc = 3938;
@@ -3731,7 +3736,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 178";
 		rLen = 0;
-		rLoc = 5612;
+		rLoc = 5650;
 		rType = 0;
 		vrLen = 2095;
 		vrLoc = 4098;
@@ -3741,7 +3746,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 178";
 		rLen = 0;
-		rLoc = 5612;
+		rLoc = 5650;
 		rType = 0;
 		vrLen = 2189;
 		vrLoc = 4559;
@@ -3771,7 +3776,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 178";
 		rLen = 0;
-		rLoc = 5612;
+		rLoc = 5650;
 		rType = 0;
 		vrLen = 2034;
 		vrLoc = 4723;
@@ -4008,7 +4013,7 @@
 	};
 	E4001B4111FF8B8B001359B0 /* UserEntity.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 506}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{246, 0}";
 			sepNavVisRange = "{0, 255}";
 		};
@@ -4546,7 +4551,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 30";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 669;
@@ -4556,7 +4561,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 30";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 519;
@@ -4566,7 +4571,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 3602;
@@ -4587,7 +4592,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 139;
+		rLoc = 140;
 		rType = 1;
 	};
 	E4001BE611FFD656001359B0 /* PBXTextBookmark */ = {
@@ -4595,7 +4600,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 217;
 		vrLoc = 3776;
@@ -4605,7 +4610,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 217;
 		vrLoc = 3776;
@@ -4615,7 +4620,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 217;
 		vrLoc = 3776;
@@ -4625,7 +4630,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 1708;
 		vrLoc = 1877;
@@ -4635,7 +4640,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 87";
 		rLen = 0;
-		rLoc = 1801;
+		rLoc = 1814;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 730;
@@ -4645,7 +4650,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 87";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1444;
 		rType = 0;
 		vrLen = 1696;
 		vrLoc = 1402;
@@ -4655,7 +4660,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 74";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1444;
 		rType = 0;
 		vrLen = 1655;
 		vrLoc = 1475;
@@ -4665,7 +4670,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 141";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 279;
 		vrLoc = 3820;
@@ -4675,7 +4680,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 74";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1444;
 		rType = 0;
 		vrLen = 1679;
 		vrLoc = 1938;
@@ -4685,7 +4690,7 @@
 		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
 		name = "InspirationController.h: 19";
 		rLen = 0;
-		rLoc = 385;
+		rLoc = 476;
 		rType = 0;
 		vrLen = 470;
 		vrLoc = 0;
@@ -4695,7 +4700,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 87";
 		rLen = 0;
-		rLoc = 1801;
+		rLoc = 1814;
 		rType = 0;
 		vrLen = 1777;
 		vrLoc = 1942;
@@ -4725,7 +4730,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 119";
 		rLen = 0;
-		rLoc = 3289;
+		rLoc = 3327;
 		rType = 0;
 		vrLen = 1151;
 		vrLoc = 3131;
@@ -4765,7 +4770,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 87";
 		rLen = 0;
-		rLoc = 1801;
+		rLoc = 1814;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 48;
@@ -4812,7 +4817,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 161;
 		vrLoc = 3766;
@@ -4849,7 +4854,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 161;
 		vrLoc = 3766;
@@ -4869,7 +4874,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 139";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 3889;
 		rType = 0;
 		vrLen = 161;
 		vrLoc = 3766;
@@ -4889,7 +4894,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 87";
 		rLen = 0;
-		rLoc = 1801;
+		rLoc = 1814;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 1604;
@@ -4899,7 +4904,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 185";
 		rLen = 0;
-		rLoc = 6064;
+		rLoc = 6060;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 4759;
@@ -5272,6 +5277,56 @@
 		vrLen = 737;
 		vrLoc = 180;
 	};
+	E4001C6E11FFEA29001359B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */;
+		name = "GoalOwnershipEntity.m: 35";
+		rLen = 0;
+		rLoc = 932;
+		rType = 0;
+		vrLen = 224;
+		vrLoc = 527;
+	};
+	E4001C6F11FFEA29001359B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E409694111F1154E0055459F /* ProgressController.m */;
+		name = "ProgressController.m: 21";
+		rLen = 0;
+		rLoc = 459;
+		rType = 0;
+		vrLen = 375;
+		vrLoc = 314;
+	};
+	E4001C7211FFEAE3001359B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
+		name = "InspirationController.h: 19";
+		rLen = 0;
+		rLoc = 448;
+		rType = 0;
+		vrLen = 561;
+		vrLoc = 0;
+	};
+	E4001C7311FFEAE3001359B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 30";
+		rLen = 0;
+		rLoc = 681;
+		rType = 0;
+		vrLen = 1098;
+		vrLoc = 149;
+	};
+	E4001C7411FFEAE3001359B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 179";
+		rLen = 0;
+		rLoc = 5665;
+		rType = 0;
+		vrLen = 2081;
+		vrLoc = 4456;
+	};
 	E4007A3011FC10D1006CF771 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
@@ -5284,7 +5339,7 @@
 	};
 	E409694011F1154E0055459F /* ProgressController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{671, 0}";
 			sepNavVisRange = "{0, 698}";
 			sepNavWindowFrame = "{{19, 214}, {933, 559}}";
@@ -5292,14 +5347,14 @@
 	};
 	E409694111F1154E0055459F /* ProgressController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {999, 780}}";
+			sepNavIntBoundsRect = "{{0, 0}, {999, 767}}";
 			sepNavSelRange = "{459, 0}";
 			sepNavVisRange = "{314, 375}";
 		};
 	};
 	E40D0DEF11D9361B004CC712 /* InspirationCell.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{412, 0}";
 			sepNavVisRange = "{0, 526}";
 		};
@@ -5496,16 +5551,16 @@
 	E439369511D50DD300D6DED9 /* InspirationController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
-			sepNavSelRange = "{385, 0}";
-			sepNavVisRange = "{0, 470}";
+			sepNavSelRange = "{448, 0}";
+			sepNavVisRange = "{0, 561}";
 		};
 	};
 	E439369611D50DD300D6DED9 /* InspirationController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{731, 52}\";\n            s = 0;\n        },\n                {\n            r = \"{786, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{871, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{954, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1045, 86}\";\n            s = 0;\n        },\n                {\n            r = \"{1227, 17}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 7238}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {938, 2886}}";
-			sepNavSelRange = "{3452, 0}";
-			sepNavVisRange = "{3367, 161}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{744, 52}\";\n            s = 0;\n        },\n                {\n            r = \"{799, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{884, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{967, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1058, 86}\";\n            s = 0;\n        },\n                {\n            r = \"{1240, 17}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 7234}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1230, 2418}}";
+			sepNavSelRange = "{5266, 0}";
+			sepNavVisRange = "{4057, 2081}";
 			sepNavWindowFrame = "{{134, 109}, {933, 559}}";
 		};
 	};
@@ -5514,7 +5569,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 109";
 		rLen = 0;
-		rLoc = 1876;
+		rLoc = 1889;
 		rType = 0;
 		vrLen = 1741;
 		vrLoc = 3090;
@@ -5725,7 +5780,7 @@
 	};
 	E4A1549D11DBFF5700A044D7 /* InspectionController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 483}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{208, 21}";
 			sepNavVisRange = "{0, 371}";
 		};
@@ -5733,37 +5788,37 @@
 	E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{4790, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{4841, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{4891, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 5583}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {876, 2431}}";
+			sepNavIntBoundsRect = "{{0, 0}, {876, 2626}}";
 			sepNavSelRange = "{558, 0}";
-			sepNavVisRange = "{4544, 982}";
+			sepNavVisRange = "{44, 815}";
 		};
 	};
 	E4A1572E11DF989700A044D7 /* ContributionController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{638, 0}";
 			sepNavVisRange = "{0, 733}";
 		};
 	};
 	E4A1572F11DF989700A044D7 /* ContributionController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {938, 1716}}";
-			sepNavSelRange = "{690, 0}";
-			sepNavVisRange = "{599, 504}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 1573}}";
+			sepNavSelRange = "{2178, 0}";
+			sepNavVisRange = "{1245, 1286}";
 		};
 	};
 	E4A1589411E4E2A600A044D7 /* IdentificationController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{668, 0}";
 			sepNavVisRange = "{0, 756}";
 		};
 	};
 	E4A1589511E4E2A600A044D7 /* IdentificationController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {950, 1677}}";
-			sepNavSelRange = "{3064, 0}";
-			sepNavVisRange = "{2769, 451}";
+			sepNavIntBoundsRect = "{{0, 0}, {845, 1716}}";
+			sepNavSelRange = "{1317, 0}";
+			sepNavVisRange = "{638, 1407}";
 			sepNavWindowFrame = "{{19, 214}, {933, 559}}";
 		};
 	};
@@ -5776,7 +5831,7 @@
 	};
 	E4A158A411E4E49200A044D7 /* UserSession.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 483}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{231, 0}";
 			sepNavVisRange = "{0, 238}";
 		};
@@ -5856,14 +5911,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 1131}}";
 			sepNavSelRange = "{1830, 24}";
-			sepNavVisRange = "{1338, 1485}";
+			sepNavVisRange = "{1338, 1448}";
 		};
 	};
 	E4C6AE9211D5415400068008 /* NSObject+ObjectiveResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1125, 4758}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 4745}}";
 			sepNavSelRange = "{6628, 20}";
-			sepNavVisRange = "{2665, 1061}";
+			sepNavVisRange = "{2709, 1016}";
 		};
 	};
 	E4C6AE9511D5415400068008 /* ConnectionManager.m */ = {
@@ -5898,20 +5953,20 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 741}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{383, 956}";
+			sepNavVisRange = "{33, 827}";
 		};
 	};
 	E4C6AEC711D5421100068008 /* Line.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 559}}";
 			sepNavSelRange = "{1042, 0}";
-			sepNavVisRange = "{14, 1133}";
+			sepNavVisRange = "{31, 1116}";
 			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
 	};
 	E4C6AEC811D5421100068008 /* Line.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1153, 871}}";
+			sepNavIntBoundsRect = "{{0, 0}, {824, 923}}";
 			sepNavSelRange = "{494, 0}";
 			sepNavVisRange = "{132, 830}";
 		};
@@ -5920,7 +5975,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 559}}";
 			sepNavSelRange = "{1012, 0}";
-			sepNavVisRange = "{27, 1111}";
+			sepNavVisRange = "{30, 1107}";
 		};
 	};
 	E4C6AF4811D5522900068008 /* Tip.m */ = {
@@ -5934,14 +5989,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 598}}";
 			sepNavSelRange = "{1152, 0}";
-			sepNavVisRange = "{77, 1185}";
+			sepNavVisRange = "{135, 1126}";
 		};
 	};
 	E4C6AF4B11D5526800068008 /* Exercise.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1237, 806}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1237, 858}}";
 			sepNavSelRange = "{561, 0}";
-			sepNavVisRange = "{0, 1226}";
+			sepNavVisRange = "{220, 1220}";
 		};
 	};
 	E4C6AF4D11D552BD00068008 /* GoalOwnership.h */ = {
@@ -5968,23 +6023,23 @@
 	};
 	E4D8109611FE36AD0020AE8B /* LineEntity.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 741}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 754}}";
 			sepNavSelRange = "{877, 0}";
 			sepNavVisRange = "{165, 752}";
 		};
 	};
 	E4D8109711FE36AD0020AE8B /* TipEntity.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 481}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
 			sepNavSelRange = "{533, 0}";
 			sepNavVisRange = "{0, 539}";
 		};
 	};
 	E4D8109811FE36AD0020AE8B /* TipEntity.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 741}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 754}}";
 			sepNavSelRange = "{854, 0}";
-			sepNavVisRange = "{180, 737}";
+			sepNavVisRange = "{207, 745}";
 		};
 	};
 	E4D8222E11FD14B70014D28A /* ExerciseEntity.h */ = {
@@ -5997,8 +6052,8 @@
 	E4D8222F11FD14B70014D28A /* ExerciseEntity.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 780}}";
-			sepNavSelRange = "{1050, 0}";
-			sepNavVisRange = "{338, 860}";
+			sepNavSelRange = "{1012, 0}";
+			sepNavVisRange = "{279, 893}";
 		};
 	};
 	E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */ = {
@@ -6010,22 +6065,22 @@
 	};
 	E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {838, 507}}";
-			sepNavSelRange = "{670, 0}";
-			sepNavVisRange = "{43, 899}";
+			sepNavIntBoundsRect = "{{0, 0}, {938, 507}}";
+			sepNavSelRange = "{932, 0}";
+			sepNavVisRange = "{527, 224}";
 		};
 	};
 	E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {938, 624}}";
-			sepNavSelRange = "{1718, 0}";
-			sepNavVisRange = "{1275, 463}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 676}}";
+			sepNavSelRange = "{872, 0}";
+			sepNavVisRange = "{332, 1406}";
 			sepNavWindowFrame = "{{38, 193}, {933, 559}}";
 		};
 	};
 	E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1202, 3289}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1881, 3276}}";
 			sepNavSelRange = "{3867, 0}";
 			sepNavVisRange = "{3135, 1410}";
 			sepNavWindowFrame = "{{61, 172}, {933, 559}}";
