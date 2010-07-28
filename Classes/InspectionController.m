@@ -123,7 +123,6 @@
 			[cell setAdditional_text:[content recentComment]];
 		}
 	}
-//	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	
     return cell;
 }

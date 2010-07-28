@@ -8,6 +8,7 @@
 
 #import "TalkToHerAppDelegate.h"
 #import "RootViewController.h"
+#import "DataDelegate.h"
 
 @implementation TalkToHerAppDelegate
 
@@ -17,10 +18,6 @@
 
 #pragma mark -
 #pragma mark Application lifecycle
-
-- (void)awakeFromNib {
-    RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     

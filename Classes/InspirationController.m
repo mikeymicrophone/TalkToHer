@@ -17,6 +17,7 @@
 #import "ContributionController.h"
 #import "ProgressController.h"
 #import "DataDelegate.h"
+#import "ContentDelegate.h"
 
 @implementation InspirationController
 

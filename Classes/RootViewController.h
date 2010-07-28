@@ -16,12 +16,7 @@
 	LoaderCell *tips_cell;
 	LoaderCell *goals_cell;
 	LoaderCell *exercises_cell;
-
-@private
-	NSManagedObjectContext *managedObjectContext_;
 }
-
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, retain) LoaderCell *lines_cell;
 @property (nonatomic, retain) LoaderCell *tips_cell;
