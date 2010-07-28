@@ -100,6 +100,7 @@
 				UIImageView *show_more = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
 				show_more.center = cell.center;
 				[cell addSubview:show_more];
+                [show_more release];
 				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 				self.more_button = cell;
 			}
@@ -112,6 +113,7 @@
 				UIImageView *write_one = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"write"]];
 				write_one.center = cell.center;
 				[cell addSubview:write_one];
+                [write_one release];
 				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 			}			
 		}

@@ -29,13 +29,13 @@
 			[moniker isEqualToString:[po valueForKey:@"moniker"]];
 }
 
--(ExerciseEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
+-(void)persistInMoc:(NSManagedObjectContext *)moc {
     ExerciseEntity *ps = [[ExerciseEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Exercise" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
     [ps setValue:instruction forKey:@"instruction"];
 	[ps setValue:moniker forKey:@"moniker"];
     [ps setValue:[NSNumber numberWithInt:[exerciseId integerValue]] forKey:@"exerciseId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-    return ps;
+    [ps release];
 }
 
 -(NSString *)main_text {

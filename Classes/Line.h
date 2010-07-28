@@ -37,6 +37,6 @@
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(BOOL)matches:(NSManagedObject *)po;
--(LineEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
+-(void)persistInMoc:(NSManagedObjectContext *)moc;
 
 @end

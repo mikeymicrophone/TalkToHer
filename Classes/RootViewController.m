@@ -113,6 +113,7 @@
 				UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login"]];
 				image.center = cell.center;
 				[cell addSubview:image];
+                [image release];
 			}
 		} else {
 			cell = [tableView dequeueReusableCellWithIdentifier:@"goals"];

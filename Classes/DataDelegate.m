@@ -101,7 +101,7 @@
                 // this object is in the db without an id
 				[identifiable setValue:[NSNumber numberWithInt:[[c getRemoteId] integerValue]] forKey:[c getRemoteClassIdName]];
 			} else {
-				[c persistantSelfInMoc:[self moc]];
+				[c persistInMoc:[self moc]];
 			}
 		}
 	}
@@ -210,9 +210,11 @@
 		NSArray *results = [[self moc] executeFetchRequest:f error:&error];
 		[f release];
 		
+		NSLog(@"to submit: %@", results);
+		
 		for (NSManagedObject *o in results) {
 			NSError *saveError = nil;
-			[o saveRemoteWithResponse:&saveError];
+			[[o objectiveResource] createRemoteWithResponse:&saveError];
 			if (!saveError) {
 				[o hasBeenSubmitted];
 			}

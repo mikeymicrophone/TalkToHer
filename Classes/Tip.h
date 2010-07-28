@@ -37,6 +37,6 @@
 -(NSString *)additional_text;
 -(id)get_commentary;
 -(BOOL)matches:(NSManagedObject *)po;
--(TipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
+-(void)persistInMoc:(NSManagedObjectContext *)moc;
 
 @end

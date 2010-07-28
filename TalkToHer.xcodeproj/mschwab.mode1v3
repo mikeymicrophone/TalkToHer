@@ -271,7 +271,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspectionController.m</string>
+								<string>LineEntity.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,18 +322,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspectionController.m</string>
+										<string>LineEntity.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4EAD9571200D16400F246DA</string>
+										<string>E4EAD9971200E34500F246DA</string>
 										<key>history</key>
 										<array>
-											<string>E4001CFD12000438001359B0</string>
 											<string>E4001D341200AAA9001359B0</string>
 											<string>E4001D351200AAA9001359B0</string>
 											<string>E4001D361200AAA9001359B0</string>
-											<string>E4001D691200BE25001359B0</string>
 											<string>E4001D6A1200BE25001359B0</string>
 											<string>E4001D6B1200BE25001359B0</string>
 											<string>E4001D6C1200BE25001359B0</string>
@@ -343,7 +341,14 @@
 											<string>E4EAD9291200CE4500F246DA</string>
 											<string>E4EAD9401200CFE500F246DA</string>
 											<string>E4EAD9481200D0D000F246DA</string>
-											<string>E4EAD94E1200D11400F246DA</string>
+											<string>E4EAD96B1200DF0300F246DA</string>
+											<string>E4EAD96C1200DF0300F246DA</string>
+											<string>E4EAD96D1200DF0300F246DA</string>
+											<string>E4EAD96E1200DF0300F246DA</string>
+											<string>E4EAD96F1200DF0300F246DA</string>
+											<string>E4EAD9701200DF0300F246DA</string>
+											<string>E4EAD9901200E31F00F246DA</string>
+											<string>E4EAD9911200E31F00F246DA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -541,7 +546,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E4EAD9581200D16400F246DA</string>
+		<string>E4EAD9981200E34500F246DA</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E4EAD92D1200CE4500F246DA</string>
 		<string>E4EAD92E1200CE4500F246DA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -787,7 +793,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>GoalOwnership.m</string>
+										<string>DataDelegate.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -845,8 +851,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>E4001C2811FFDF1F001359B0</string>
-				<string>E4001C2911FFDF1F001359B0</string>
+				<string>E4EAD9651200DDB300F246DA</string>
+				<string>E4EAD9661200DDB300F246DA</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

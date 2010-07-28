@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme>
+   <BuildAction
+      buildConfiguration = "Debug">
+   </BuildAction>
+   <TestAction>
+   </TestAction>
+   <LaunchAction
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedAnalysisToolIdentifier = "/Xcode4/Applications/Instruments.app/Contents/Resources/templates/Leaks.tracetemplate"
+      analysisToolsServiceExtensionIdentifier = "Xcode.InstrumentsService">
+      <BuildableProductRunnable>
+         <BuildableProductReference
+            BuildableProductIdentifier = "TalkToHer.app">
+         </BuildableProductReference>
+/>
+      </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+</Scheme>

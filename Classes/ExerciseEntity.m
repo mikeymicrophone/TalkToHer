@@ -53,7 +53,7 @@
 }
 
 -(void)hasBeenSubmitted {
-	delayed = NO;
+	[self setValue:[NSNumber numberWithInt:0] forKey:@"delayed"];
 }
 
 @end

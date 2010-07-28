@@ -72,12 +72,11 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//	if ([MFMessageComposeViewController canSendText] || YES) {
-//		return 5;
-//	} else {
-//		return 4;
-//	}
-	return 5;
+	if ([MFMessageComposeViewController canSendText] || YES) {
+		return 5;
+	} else {
+		return 4;
+	}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

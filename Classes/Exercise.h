@@ -40,6 +40,6 @@
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(BOOL)matches:(NSManagedObject *)po;
--(ExerciseEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
+-(void)persistInMoc:(NSManagedObjectContext *)moc;
 
 @end

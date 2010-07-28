@@ -27,12 +27,12 @@
     return [advice isEqualToString:[po valueForKey:@"advice"]];
 }
 
--(TipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
+-(void)persistInMoc:(NSManagedObjectContext *)moc {
     TipEntity *ps = [[TipEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Tip" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
     [ps setValue:advice forKey:@"advice"];
     [ps setValue:[NSNumber numberWithInt:[tipId integerValue]] forKey:@"tipId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-    return ps;
+    [ps release];
 }
 
 -(id)get_commentary {

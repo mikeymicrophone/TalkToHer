@@ -37,7 +37,7 @@
 	return [[completionStatus stringByAppendingString:@"\n"] stringByAppendingString:remainingDaysText];
 }
 
--(GoalOwnershipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc {
+-(void)persistInMoc:(NSManagedObjectContext *)moc {
     GoalOwnershipEntity *ps = [[GoalOwnershipEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"GoalOwnership" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
     [ps setValue:derivedDescription forKey:@"derivedDescription"];
 	[ps setValue:progress forKey:@"progress"];
@@ -46,6 +46,7 @@
 	[ps setValue:remainingDaysText forKey:@"remainingDaysText"];
     [ps setValue:[NSNumber numberWithInt:[goalOwnershipId integerValue]] forKey:@"goalOwnershipId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
+    [ps release];
 }
 
 -(NSArray *)excludedPropertyNames {

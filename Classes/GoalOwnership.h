@@ -34,5 +34,5 @@
 -(NSString *)additional_text;
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
--(GoalOwnershipEntity *)persistantSelfInMoc:(NSManagedObjectContext *)moc;
+-(void)persistInMoc:(NSManagedObjectContext *)moc;
 @end
