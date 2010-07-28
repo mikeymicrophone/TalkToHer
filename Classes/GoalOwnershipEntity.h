@@ -17,5 +17,6 @@
 -(NSString *)main_text;
 -(NSString *)additional_text;
 -(GoalOwnership *)objectiveResource;
+-(void)updateWith:(GoalOwnership *)g;
 
 @end

@@ -39,6 +39,11 @@
 	return [[Exercise alloc] initWithManagedObject:self];
 }
 
+-(void)updateWith:(Exercise *)e {
+	[self setMoniker:[e moniker]];
+	[self setInstruction:[e instruction]];
+}
+
 -(NSString *)getRemoteClassIdName {
     return @"exerciseId";
 }

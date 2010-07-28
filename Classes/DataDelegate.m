@@ -94,6 +94,7 @@
 		NSManagedObject *e = [self itemExistsInStore:c];
 		if (e) {  
 			// this object is already in the CoreData db and should be updated
+			[e updateWith:c];
 		} else {
 			NSManagedObject *identifiable = [self item:c existsInSet:unidentified_set];
 			if (identifiable) {

@@ -38,6 +38,10 @@
 	return [[Line alloc] initWithManagedObject:self];
 }
 
+-(void)updateWith:(Line *)l {
+	[self setPhrasing:[l phrasing]];
+}
+
 -(NSString *)getRemoteClassIdName {
     return @"lineId";
 }

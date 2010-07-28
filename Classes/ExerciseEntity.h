@@ -20,5 +20,5 @@
 -(BOOL)matches:(NSManagedObject *)po;
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
-
+-(void)updateWith:(Exercise *)e;
 @end

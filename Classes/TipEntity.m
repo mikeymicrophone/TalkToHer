@@ -38,6 +38,10 @@
 	return [[Tip alloc] initWithManagedObject:self];
 }
 
+-(void)updateWith:(Tip *)t {
+	[self setAdvice:[t advice]];
+}
+
 -(NSString *)getRemoteClassIdName {
     return @"tipId";
 }

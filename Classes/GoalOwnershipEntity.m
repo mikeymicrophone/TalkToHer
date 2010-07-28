@@ -27,4 +27,12 @@
 	return [[GoalOwnership alloc] initWithManagedObject:self];
 }
 
+-(void)updateWith:(GoalOwnership *)g {
+	[self setDerivedDescription:[g derivedDescription]];
+	[self setProgress:[g progress]];
+	[self setComplete:[NSNumber numberWithInt:[[g complete] integerValue]]];
+	[self setCompletionStatus:[g completionStatus]];
+	[self setRemainingDaysText:[g remainingDaysText]];
+}
+
 @end
