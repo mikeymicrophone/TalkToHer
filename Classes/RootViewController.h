@@ -23,4 +23,6 @@
 @property (nonatomic, retain) LoaderCell *goals_cell;
 @property (nonatomic, retain) LoaderCell *exercises_cell;
 
+-(LoaderCell *)cellForContent:(NSString *)type;
+
 @end

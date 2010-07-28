@@ -31,6 +31,11 @@
 	}
 }
 
+-(void)download_more {
+	[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:[[[[[[UIApplication sharedApplication] delegate] data_source] class_names] allKeysForObject:content_type] objectAtIndex:0]
+																		 andAlertCell:[[[[[UIApplication sharedApplication] delegate] navigationController] bottomViewController] cellForContent:content_type]];
+}
+
 -(NSInteger)undisplayed_row_count {
 	return [loaded_amount integerValue] - [displayed_amount integerValue];
 }

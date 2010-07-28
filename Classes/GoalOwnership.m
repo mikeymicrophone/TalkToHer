@@ -9,7 +9,7 @@
 #import "GoalOwnership.h"
 #import "GoalOwnershipEntity.h"
 #import "Response.h"
-#import "Connection.h"
+#import "ORConnection.h"
 
 @implementation GoalOwnership
 
@@ -69,7 +69,7 @@
 						   [self getRemoteCollectionName],
 						   [self getRemoteProtocolExtension]];
 	
-    Response *res = [Connection get:goalsPath withUser:[[self class] getRemoteUser] 
+    Response *res = [ORConnection get:goalsPath withUser:[[self class] getRemoteUser] 
 						andPassword:[[self class] getRemotePassword]];
     return [self allFromXMLData:res.body];
 }

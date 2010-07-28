@@ -36,6 +36,20 @@
 	[[[[UIApplication sharedApplication] delegate] data_source] loadRemoteDataOfTypes:loadable_data_types forCellDelegate:self];
 }
 
+-(LoaderCell *)cellForContent:(NSString *)type {
+	LoaderCell *c;
+	if ([type isEqualToString:@"Line"]) {
+		c = lines_cell;
+	} else if ([type isEqualToString:@"Tip"]) {
+		c = tips_cell;
+	} else if ([type isEqualToString:@"Exercise"]) {
+		c = exercises_cell;
+	} else if ([type isEqualToString:@"GoalOwnership"]) {
+		c = goals_cell;
+	}
+	return c;
+}
+
 /*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

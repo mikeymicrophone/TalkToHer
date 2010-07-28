@@ -8,6 +8,8 @@
 
 #import "InspectionController.h"
 #import "InspirationCell.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMessageComposeViewController.h>
 
 @implementation InspectionController
 
@@ -18,7 +20,7 @@
 		return nil;
 	
 	[self setContent:[self inspect_content:contentObj]];
-	[self.view setAllowsSelection:NO];
+
 	return self;
 }
 
@@ -70,7 +72,12 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+//	if ([MFMessageComposeViewController canSendText] || YES) {
+//		return 5;
+//	} else {
+//		return 4;
+//	}
+	return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -93,6 +100,7 @@
 			[cell setMain_text:[content main_text]];
 			[cell setAdditional_text:[content additional_text]];
 		}
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 1) {
 		CellIdentifier = @"rating";
 		
@@ -103,6 +111,7 @@
 			[cell setMain_text:[content averageRating]];
 			[cell setAdditional_text:[content ratingCount]];
 		}
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 2) {
 		CellIdentifier = @"tags";
 		
@@ -112,6 +121,7 @@
 			[cell setMain_text:[content tagCount]];
 			[cell setAdditional_text:[content recentTags]];
 		}
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
     } else if (indexPath.section == 3) {
 		CellIdentifier = @"comments";
 		
@@ -122,6 +132,17 @@
 			[cell setMain_text:[content commentCount]];
 			[cell setAdditional_text:[content recentComment]];
 		}
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	} else if (indexPath.section == 4) {
+		CellIdentifier = @"text_message";
+		
+		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+
+			[cell setMain_text:@"send as a text"];
+			[cell setAdditional_text:@""];
+		}		
 	}
 	
     return cell;
@@ -145,6 +166,10 @@
 		height = [InspirationCell cellHeightForMainText:[content commentCount]
 											 additional:[content recentComment]
 												  width:[[self view] frame].size.width];
+	} else if (indexPath.section == 4) {
+		height = [InspirationCell cellHeightForMainText:@"send as a text"
+											 additional:@""
+												  width:[[self view] frame].size.width];
 	}
 	return height;
 }
@@ -153,14 +178,20 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+	NSLog(@"index: %@", indexPath);
+	if (indexPath.section == 4) {
+		MFMessageComposeViewController *textController = [[MFMessageComposeViewController alloc] init];
+		NSLog(@"text controller: %@", textController);
+		textController.body = [content main_text];
+		textController.messageComposeDelegate = self;
+		
+		[self presentModalViewController:textController animated:YES];
+		[textController release];
+	}
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -

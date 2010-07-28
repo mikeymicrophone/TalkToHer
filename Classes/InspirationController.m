@@ -77,7 +77,11 @@
 	if (section == 0) {
 		length = [content_source display_amount];
 	} else if (section == 1) {
-		length = 2;
+		if ([[content_source content_type] isEqualToString:@"GoalOwnership"]) {
+			length = 1;
+		} else {
+			length = 2;
+		}
 	}
 	return length;
 }
@@ -90,12 +94,13 @@
 		if (indexPath.row == 0) {
 			static NSString *CellIdentifier = @"more";
 			
-			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			cell = more_button;//[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				UIImageView *show_more = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
 				show_more.center = cell.center;
 				[cell addSubview:show_more];
+				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 				self.more_button = cell;
 			}
 		} else if (indexPath.row == 1) {
@@ -106,7 +111,8 @@
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				UIImageView *write_one = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"write"]];
 				write_one.center = cell.center;
-				[cell addSubview:write_one];				
+				[cell addSubview:write_one];
+				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 			}			
 		}
 	} else if ([indexPath indexAtPosition:1] < [[content_source loaded_amount] integerValue]) {
@@ -174,9 +180,12 @@
 			
 			[tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
 			if ([[content_source loaded_amount] integerValue] > 0) {
-				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:displayed_rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:displayed_rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 			}
 			[more_button setSelected:NO animated:YES];
+			if (undisplayed_rows < 10) {
+				[content_source download_more];
+			}
 		} else if (indexPath.row == 1) {
 			ContributionController *contributionController = [[ContributionController alloc] initWithContentType:[content_source content_type]];
 			[self presentModalViewController:contributionController animated:YES];
@@ -198,6 +207,7 @@
 			}
 		}
 	}
+	[more_button setSelected:NO animated:YES];
 }
 
 #pragma mark -

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-
-@interface InspectionController : UITableViewController {
+@interface InspectionController : UITableViewController <MFMailComposeViewControllerDelegate> {
 	id content;
 }
 

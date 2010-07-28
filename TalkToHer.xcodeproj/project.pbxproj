@@ -15,6 +15,10 @@
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40017F711FE4251001359B0 /* ContentDelegate.m */; };
 		E4001B4311FF8B8B001359B0 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4001B4211FF8B8B001359B0 /* UserEntity.m */; };
+		E4001D1F12006E6B001359B0 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1D12006E6B001359B0 /* icon.png */; };
+		E4001D2012006E6B001359B0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1E12006E6B001359B0 /* icon@2x.png */; };
+		E4001D2412006F25001359B0 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D2312006F25001359B0 /* default.png */; };
+		E4001D431200BB28001359B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4001D421200BB28001359B0 /* MessageUI.framework */; };
 		E409694311F1154E0055459F /* ProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = E409694111F1154E0055459F /* ProgressController.m */; };
 		E409694411F1154E0055459F /* ProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E409694211F1154E0055459F /* ProgressController.xib */; };
 		E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */; };
@@ -40,7 +44,6 @@
 		E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666911EC00C800A48898 /* libz.1.2.3.dylib */; };
 		E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */; };
 		E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
-		E440687111EE591D00A48898 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E440687011EE591D00A48898 /* Icon.png */; };
 		E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */; };
 		E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1549F11DBFF5700A044D7 /* InspectionController.xib */; };
 		E4A1573111DF989700A044D7 /* ContributionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1572F11DF989700A044D7 /* ContributionController.m */; };
@@ -80,7 +83,7 @@
 		E4C6AEBD11D5415400068008 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9511D5415400068008 /* ConnectionManager.m */; };
 		E4C6AEBE11D5415400068008 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9711D5415400068008 /* ConnectionDelegate.m */; };
 		E4C6AEBF11D5415400068008 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9911D5415400068008 /* NSHTTPURLResponse+Error.m */; };
-		E4C6AEC011D5415400068008 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9B11D5415400068008 /* Connection.m */; };
+		E4C6AEC011D5415400068008 /* ORConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9B11D5415400068008 /* ORConnection.m */; };
 		E4C6AEC111D5415400068008 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9D11D5415400068008 /* Response.m */; };
 		E4C6AEC211D5415400068008 /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9F11D5415400068008 /* NSMutableURLRequest+ResponseType.m */; };
 		E4C6AEC311D5415400068008 /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEA111D5415400068008 /* NSError+Error.m */; };
@@ -112,6 +115,10 @@
 		E40017F711FE4251001359B0 /* ContentDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentDelegate.m; sourceTree = "<group>"; };
 		E4001B4111FF8B8B001359B0 /* UserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEntity.h; sourceTree = "<group>"; };
 		E4001B4211FF8B8B001359B0 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
+		E4001D1D12006E6B001359B0 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E4001D1E12006E6B001359B0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E4001D2312006F25001359B0 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		E4001D421200BB28001359B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E409694011F1154E0055459F /* ProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressController.h; sourceTree = "<group>"; };
 		E409694111F1154E0055459F /* ProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressController.m; sourceTree = "<group>"; };
 		E409694211F1154E0055459F /* ProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgressController.xib; path = Classes/ProgressController.xib; sourceTree = "<group>"; };
@@ -152,7 +159,6 @@
 		E440666911EC00C800A48898 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Content.xcdatamodel; path = Classes/Content.xcdatamodel; sourceTree = "<group>"; };
 		E44066D911ED057000A48898 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E440687011EE591D00A48898 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E4A1549D11DBFF5700A044D7 /* InspectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionController.h; sourceTree = "<group>"; };
 		E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionController.m; sourceTree = "<group>"; };
 		E4A1549F11DBFF5700A044D7 /* InspectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspectionController.xib; path = Classes/InspectionController.xib; sourceTree = "<group>"; };
@@ -232,8 +238,8 @@
 		E4C6AE9711D5415400068008 /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
 		E4C6AE9811D5415400068008 /* NSHTTPURLResponse+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPURLResponse+Error.h"; sourceTree = "<group>"; };
 		E4C6AE9911D5415400068008 /* NSHTTPURLResponse+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPURLResponse+Error.m"; sourceTree = "<group>"; };
-		E4C6AE9A11D5415400068008 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
-		E4C6AE9B11D5415400068008 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		E4C6AE9A11D5415400068008 /* ORConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORConnection.h; sourceTree = "<group>"; };
+		E4C6AE9B11D5415400068008 /* ORConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORConnection.m; sourceTree = "<group>"; };
 		E4C6AE9C11D5415400068008 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		E4C6AE9D11D5415400068008 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
 		E4C6AE9E11D5415400068008 /* NSMutableURLRequest+ResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ResponseType.h"; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */,
 				E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */,
 				E435D8F311F7085F00A5061D /* AddressBook.framework in Frameworks */,
+				E4001D431200BB28001359B0 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +333,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E440687011EE591D00A48898 /* Icon.png */,
+				E4001D2312006F25001359B0 /* default.png */,
+				E4001D1D12006E6B001359B0 /* icon.png */,
+				E4001D1E12006E6B001359B0 /* icon@2x.png */,
 				E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */,
 				E419E35D11F016E000F400DD /* exercises.png */,
 				E419E37111F01A1F00F400DD /* tips.png */,
@@ -362,6 +371,7 @@
 				E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */,
 				E44066D911ED057000A48898 /* CoreData.framework */,
 				E435D8F211F7085F00A5061D /* AddressBook.framework */,
+				E4001D421200BB28001359B0 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -618,8 +628,8 @@
 				E4C6AE9711D5415400068008 /* ConnectionDelegate.m */,
 				E4C6AE9811D5415400068008 /* NSHTTPURLResponse+Error.h */,
 				E4C6AE9911D5415400068008 /* NSHTTPURLResponse+Error.m */,
-				E4C6AE9A11D5415400068008 /* Connection.h */,
-				E4C6AE9B11D5415400068008 /* Connection.m */,
+				E4C6AE9A11D5415400068008 /* ORConnection.h */,
+				E4C6AE9B11D5415400068008 /* ORConnection.m */,
 				E4C6AE9C11D5415400068008 /* Response.h */,
 				E4C6AE9D11D5415400068008 /* Response.m */,
 				E4C6AE9E11D5415400068008 /* NSMutableURLRequest+ResponseType.h */,
@@ -685,7 +695,6 @@
 				E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */,
 				E4A1573211DF989700A044D7 /* ContributionController.xib in Resources */,
 				E4A1589811E4E2A600A044D7 /* IdentificationController.xib in Resources */,
-				E440687111EE591D00A48898 /* Icon.png in Resources */,
 				E419E36211F016E000F400DD /* exercises.png in Resources */,
 				E419E36411F016E000F400DD /* lines.png in Resources */,
 				E419E36811F0182500F400DD /* goals.png in Resources */,
@@ -694,6 +703,9 @@
 				E419E37D11F0224800F400DD /* more.png in Resources */,
 				E419E38111F0236E00F400DD /* write.png in Resources */,
 				E409694411F1154E0055459F /* ProgressController.xib in Resources */,
+				E4001D1F12006E6B001359B0 /* icon.png in Resources */,
+				E4001D2012006E6B001359B0 /* icon@2x.png in Resources */,
+				E4001D2412006F25001359B0 /* default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,7 +747,7 @@
 				E4C6AEBD11D5415400068008 /* ConnectionManager.m in Sources */,
 				E4C6AEBE11D5415400068008 /* ConnectionDelegate.m in Sources */,
 				E4C6AEBF11D5415400068008 /* NSHTTPURLResponse+Error.m in Sources */,
-				E4C6AEC011D5415400068008 /* Connection.m in Sources */,
+				E4C6AEC011D5415400068008 /* ORConnection.m in Sources */,
 				E4C6AEC111D5415400068008 /* Response.m in Sources */,
 				E4C6AEC211D5415400068008 /* NSMutableURLRequest+ResponseType.m in Sources */,
 				E4C6AEC311D5415400068008 /* NSError+Error.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import "ContributionController.h"
+#import "TalkToHerAppDelegate.h"
+#import "DataDelegate.h"
 #import <dispatch/dispatch.h>
 
 @implementation ContributionController
@@ -40,6 +42,7 @@
 	NSManagedObjectContext *moc = [[[UIApplication sharedApplication] delegate] managedObjectContext];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
 	self.content = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:moc];
+	[content setValue:[NSNumber numberWithInt:[[[[[UIApplication sharedApplication] delegate] data_source] userId] integerValue]] forKey:@"userId"];
 }
 
 -(IBAction)submit_content {
@@ -74,27 +77,9 @@
 }
 
 /*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
 

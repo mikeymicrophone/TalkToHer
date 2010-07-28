@@ -49,22 +49,6 @@
 	[additional_text drawInRect:r withFont:textFont lineBreakMode:UILineBreakModeWordWrap];
 }
 
-//- (id)initWithFrame:(CGRect)frame {
-//	if (self = [super initWithFrame:frame])
-//	{
-//		self.opaque = YES;
-//		self.backgroundColor = [UIColor whiteColor];
-//	}
-//	return self;
-//}
-//
-//- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-//    if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-//        // Initialization code
-//    }
-//    return self;
-//}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 	if (selected) {
 		if ([type isEqualToString:@"LineEntity"]) {
@@ -79,11 +63,7 @@
 	} else {
 		self.backgroundColor = [UIColor whiteColor];
 	}
-
-	
-//    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+	[super setSelected:selected animated:animated];
 }
 
 - (void)dealloc {
