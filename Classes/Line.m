@@ -17,9 +17,9 @@
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
     
-    phrasing = [ps phrasing];
-    userId = [ps userId];
-	lineId = [ps lineId];
+    self.phrasing = [ps phrasing];
+    self.userId = [ps userId];
+	self.lineId = [ps lineId];
     
     return self;
 }

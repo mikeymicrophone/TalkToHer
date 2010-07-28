@@ -7,7 +7,7 @@
 //
 
 #import "GoalOwnershipEntity.h"
-
+#import "GoalOwnership.h"
 
 @implementation GoalOwnershipEntity
 
@@ -21,6 +21,10 @@
 
 -(NSString *)getRemoteClassIdName {
     return @"goalOwnershipId";
+}
+
+-(GoalOwnership *)objectiveResource {
+	return [[GoalOwnership alloc] initWithManagedObject:self];
 }
 
 @end

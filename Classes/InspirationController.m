@@ -182,7 +182,7 @@
 			[contributionController release];
 		}
 	} else {
-		if ([[content_source content_type] isEqualToString:@"goals"]) {
+		if ([[content_source content_type] isEqualToString:@"GoalOwnership"]) {
 			ProgressController *progressController = [[ProgressController alloc] initWithGoal:[self contentForIndexPath:indexPath]];
 			[self.navigationController pushViewController:progressController animated:YES];
 			[progressController release];

@@ -16,9 +16,9 @@
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
     
-    advice = [ps advice];
-    userId = [ps userId];
-	tipId = [ps tipId];
+    self.advice = [ps advice];
+    self.userId = [ps userId];
+	self.tipId = [ps tipId];
     
     return self;
 }

@@ -15,6 +15,20 @@
 
 @synthesize goalOwnershipId, derivedDescription, progress, complete, completionStatus, remainingDaysText, userId;
 
+-(id)initWithManagedObject:(NSManagedObject *)ps {
+    [self init];
+    
+    self.derivedDescription = [ps derivedDescription];
+	self.progress = [ps progress];
+	self.complete = [ps complete];
+	self.completionStatus = [ps completionStatus];
+	self.remainingDaysText = [ps remainingDaysText];
+    self.userId = [ps userId];
+	self.goalOwnershipId = [ps goalOwnershipId];
+
+    return self;
+}
+
 -(NSString *)main_text {
 	return derivedDescription;
 }

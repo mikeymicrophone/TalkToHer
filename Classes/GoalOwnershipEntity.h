@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class GoalOwnership;
 
 @interface GoalOwnershipEntity : NSManagedObject {
 
@@ -15,5 +16,6 @@
 
 -(NSString *)main_text;
 -(NSString *)additional_text;
+-(GoalOwnership *)objectiveResource;
 
 @end

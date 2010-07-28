@@ -16,10 +16,10 @@
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
     
-    instruction = [ps instruction];
-	moniker = [ps moniker];
-    userId = [ps userId];
-	exerciseId = [ps exerciseId];
+    self.instruction = [ps instruction];
+	self.moniker = [ps moniker];
+    self.userId = [ps userId];
+	self.exerciseId = [ps exerciseId];
     
     return self;
 }
