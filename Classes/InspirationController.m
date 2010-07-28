@@ -118,7 +118,6 @@
 			cell = [[[InspirationCell alloc] initWithContent:content] autorelease];
 		}
 	}
-	cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	
     return cell;
 }

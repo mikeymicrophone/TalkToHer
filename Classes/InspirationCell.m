@@ -10,7 +10,7 @@
 
 @implementation InspirationCell
 
-@synthesize main_text, additional_text;
+@synthesize main_text, additional_text, type;
 
 + (CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width {
 	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];
@@ -26,8 +26,10 @@
 					[c className], [c performSelector:NSSelectorFromString([c getRemoteClassIdName])]]]))
 		return nil;
 	
+	self.type = [c className];
 	self.main_text = [c main_text];
 	self.additional_text = [c additional_text];
+	self.selectionStyle = UITableViewCellSelectionStyleNone;
 	
 	return self;
 }
@@ -47,25 +49,39 @@
 	[additional_text drawInRect:r withFont:textFont lineBreakMode:UILineBreakModeWordWrap];
 }
 
-- (id)initWithFrame:(CGRect)frame {
-	if (self = [super initWithFrame:frame])
-	{
-		self.opaque = YES;
-		self.backgroundColor = [UIColor whiteColor];
-	}
-	return self;
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-        // Initialization code
-    }
-    return self;
-}
+//- (id)initWithFrame:(CGRect)frame {
+//	if (self = [super initWithFrame:frame])
+//	{
+//		self.opaque = YES;
+//		self.backgroundColor = [UIColor whiteColor];
+//	}
+//	return self;
+//}
+//
+//- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+//    if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
+//        // Initialization code
+//    }
+//    return self;
+//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+	if (selected) {
+		if ([type isEqualToString:@"LineEntity"]) {
+			self.backgroundColor = [UIColor colorWithRed:0.815686274509804 green:0.705882352941177 blue:0.223529411764706 alpha:0.4];
+		} else if ([type isEqualToString:@"TipEntity"]) {
+			self.backgroundColor = [UIColor colorWithRed:0.666666666666667 green:0.0352941176470588 blue:0.0862745098039216 alpha:0.4];
+		} else if ([type isEqualToString:@"ExerciseEntity"]) {
+			self.backgroundColor = [UIColor colorWithRed:0.105882352941176 green:0.384313725490196 blue:0.196078431372549 alpha:0.4];
+		} else if ([type isEqualToString:@"GoalOwnershipEntity"]) {
+			self.backgroundColor = [UIColor colorWithRed:0.164705882352941 green:0.392156862745098 blue:0.556862745098039 alpha:0.4];
+		}
+	} else {
+		self.backgroundColor = [UIColor whiteColor];
+	}
 
-    [super setSelected:selected animated:animated];
+	
+//    [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }

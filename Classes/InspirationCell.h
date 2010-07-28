@@ -12,10 +12,12 @@
 @interface InspirationCell : UITableViewCell {
 	NSString *main_text;
 	NSString *additional_text;
+	NSString *type;
 }
 
 @property (nonatomic, retain) NSString *main_text;
 @property (nonatomic, retain) NSString *additional_text;
+@property (nonatomic, retain) NSString *type;
 
 -(id)initWithContent:(NSObject *)c;
 +(CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width;
