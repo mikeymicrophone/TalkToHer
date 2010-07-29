@@ -66,6 +66,10 @@
 		[login_button removeFromSuperview];
 		email_heading = [[UILabel alloc] initWithFrame:CGRectMake(171, 99, 70, 21)];
 		email_heading.text = @"email";
+		email_heading.textColor = [UIColor whiteColor];
+		email_heading.shadowColor = [UIColor blackColor];
+		email_heading.opaque = NO;
+		email_heading.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 		
 		email_field = [[UITextField alloc] initWithFrame:CGRectMake(20, 98, 136, 31)];
 		email_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
@@ -96,6 +100,10 @@
 		NSString *user_id = nextResponse;
 		[[[[UIApplication sharedApplication] delegate] data_source] setMyUserId:user_id forUsername:username];
 	}	
+}
+
+-(IBAction)cancel {
+	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {

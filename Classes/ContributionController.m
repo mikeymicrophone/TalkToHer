@@ -24,6 +24,11 @@
 	
 	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
 	heading.textAlignment = UITextAlignmentCenter;
+	heading.textColor = [UIColor whiteColor];
+	heading.shadowColor = [UIColor blackColor];
+	heading.opaque = NO;
+	heading.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+	
 	if ([cType isEqualToString:@"Exercise"]) {
 		heading.text = @"Sharing: an Exercise";
 		

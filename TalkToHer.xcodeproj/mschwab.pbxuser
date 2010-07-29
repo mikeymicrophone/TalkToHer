@@ -37,10 +37,10 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1645, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{1730, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1813, 85}\";\n            s = 0;\n        },\n                {\n            r = \"{1901, 83}\";\n            s = 0;\n        },\n                {\n            r = \"{2080, 14}\";\n            s = 0;\n        },\n                {\n            r = \"{2216, 15}\";\n            s = 0;\n        },\n                {\n            r = \"{2324, 15}\";\n            s = 0;\n        },\n                {\n            r = \"{5107, 177}\";\n            s = 0;\n        },\n                {\n            r = \"{5310, 133}\";\n            s = 0;\n        },\n                {\n            r = \"{5463, 22}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 5493}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1510, 1846}}";
-			sepNavSelRange = "{1619, 0}";
-			sepNavVisRange = "{3179, 1618}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1645, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{1730, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1813, 85}\";\n            s = 0;\n        },\n                {\n            r = \"{1901, 83}\";\n            s = 0;\n        },\n                {\n            r = \"{2080, 14}\";\n            s = 0;\n        },\n                {\n            r = \"{2216, 15}\";\n            s = 0;\n        },\n                {\n            r = \"{2324, 15}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 5625}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1510, 2080}}";
+			sepNavSelRange = "{5109, 0}";
+			sepNavVisRange = "{3780, 1473}";
 			sepNavWindowFrame = "{{15, 214}, {933, 559}}";
 		};
 	};
@@ -153,6 +153,19 @@
 			E4EAD9AC1200F8AC00F246DA /* PBXTextBookmark */ = E4EAD9AC1200F8AC00F246DA /* PBXTextBookmark */;
 			E4EAD9AD1200F8AC00F246DA /* PBXBookmark */ = E4EAD9AD1200F8AC00F246DA /* PBXBookmark */;
 			E4EAD9AE1200F8AC00F246DA /* PBXTextBookmark */ = E4EAD9AE1200F8AC00F246DA /* PBXTextBookmark */;
+			E4EAD9ED1201067C00F246DA /* PBXTextBookmark */ = E4EAD9ED1201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9EE1201067C00F246DA /* PBXTextBookmark */ = E4EAD9EE1201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9EF1201067C00F246DA /* PBXTextBookmark */ = E4EAD9EF1201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F01201067C00F246DA /* PBXTextBookmark */ = E4EAD9F01201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F11201067C00F246DA /* PBXTextBookmark */ = E4EAD9F11201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F21201067C00F246DA /* PBXTextBookmark */ = E4EAD9F21201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F31201067C00F246DA /* PBXTextBookmark */ = E4EAD9F31201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F41201067C00F246DA /* PBXTextBookmark */ = E4EAD9F41201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F51201067C00F246DA /* PBXTextBookmark */ = E4EAD9F51201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F61201067C00F246DA /* PBXTextBookmark */ = E4EAD9F61201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F71201067C00F246DA /* PBXTextBookmark */ = E4EAD9F71201067C00F246DA /* PBXTextBookmark */;
+			E4EAD9F81201067C00F246DA /* PBXTextBookmark */ = E4EAD9F81201067C00F246DA /* PBXTextBookmark */;
+			E4EADA04120106BF00F246DA /* PBXTextBookmark */ = E4EADA04120106BF00F246DA /* PBXTextBookmark */;
 		};
 		sourceControlManager = E439365211D453CE00D6DED9 /* Source Control */;
 		userBuildSettings = {
@@ -221,7 +234,7 @@
 		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
 		name = "InspirationController.m: 187";
 		rLen = 0;
-		rLoc = 5967;
+		rLoc = 6364;
 		rType = 0;
 		vrLen = 1668;
 		vrLoc = 5419;
@@ -356,9 +369,9 @@
 	};
 	E409694111F1154E0055459F /* ProgressController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {999, 767}}";
-			sepNavSelRange = "{459, 0}";
-			sepNavVisRange = "{314, 375}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 858}}";
+			sepNavSelRange = "{1131, 0}";
+			sepNavVisRange = "{431, 1125}";
 		};
 	};
 	E40D0DEF11D9361B004CC712 /* InspirationCell.h */ = {
@@ -439,17 +452,17 @@
 	};
 	E439369511D50DD300D6DED9 /* InspirationController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 475}}";
 			sepNavSelRange = "{448, 0}";
 			sepNavVisRange = "{0, 561}";
 		};
 	};
 	E439369611D50DD300D6DED9 /* InspirationController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{772, 52}\";\n            s = 0;\n        },\n                {\n            r = \"{827, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{912, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{995, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1086, 86}\";\n            s = 0;\n        },\n                {\n            r = \"{1268, 17}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 7555}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1209, 2704}}";
-			sepNavSelRange = "{5568, 0}";
-			sepNavVisRange = "{5020, 1668}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1169, 52}\";\n            s = 0;\n        },\n                {\n            r = \"{1224, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{1309, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1392, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1483, 86}\";\n            s = 0;\n        },\n                {\n            r = \"{1665, 17}\";\n            s = 0;\n        },\n                {\n            r = \"{1804, 15}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8079}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 3354}}";
+			sepNavSelRange = "{1074, 0}";
+			sepNavVisRange = "{299, 885}";
 			sepNavWindowFrame = "{{134, 109}, {933, 559}}";
 		};
 	};
@@ -656,37 +669,38 @@
 	};
 	E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1089, 3107}}";
-			sepNavSelRange = "{1674, 97}";
-			sepNavVisRange = "{0, 904}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{675, 232}\";\n            s = 0;\n        },\n                {\n            r = \"{911, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{996, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1079, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1170, 86}\";\n            s = 0;\n        },\n                {\n            r = \"{1259, 292}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 6607}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 2626}}";
+			sepNavSelRange = "{5702, 0}";
+			sepNavVisRange = "{47, 668}";
 		};
 	};
 	E4A1572E11DF989700A044D7 /* ContributionController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 498}}";
 			sepNavSelRange = "{638, 0}";
 			sepNavVisRange = "{0, 733}";
 		};
 	};
 	E4A1572F11DF989700A044D7 /* ContributionController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1089, 1638}}";
-			sepNavSelRange = "{241, 0}";
-			sepNavVisRange = "{0, 1161}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 1456}}";
+			sepNavSelRange = "{3064, 0}";
+			sepNavVisRange = "{2481, 970}";
 		};
 	};
 	E4A1589411E4E2A600A044D7 /* IdentificationController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 458}}";
-			sepNavSelRange = "{668, 0}";
-			sepNavVisRange = "{0, 756}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 498}}";
+			sepNavSelRange = "{727, 0}";
+			sepNavVisRange = "{0, 775}";
 		};
 	};
 	E4A1589511E4E2A600A044D7 /* IdentificationController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {845, 1716}}";
-			sepNavSelRange = "{1317, 0}";
-			sepNavVisRange = "{638, 1407}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 1807}}";
+			sepNavSelRange = "{2307, 210}";
+			sepNavVisRange = "{2045, 1700}";
 			sepNavWindowFrame = "{{19, 214}, {933, 559}}";
 		};
 	};
@@ -850,7 +864,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1153, 780}}";
 			sepNavSelRange = "{1407, 0}";
-			sepNavVisRange = "{962, 719}";
+			sepNavVisRange = "{488, 1204}";
 		};
 	};
 	E4C6AF4711D5522900068008 /* Tip.h */ = {
@@ -935,7 +949,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1089, 780}}";
 			sepNavSelRange = "{1012, 0}";
-			sepNavVisRange = "{0, 942}";
+			sepNavVisRange = "{83, 970}";
 		};
 	};
 	E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */ = {
@@ -962,9 +976,9 @@
 	};
 	E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1160, 3445}}";
-			sepNavSelRange = "{4182, 0}";
-			sepNavVisRange = "{3684, 526}";
+			sepNavIntBoundsRect = "{{0, 0}, {1881, 3523}}";
+			sepNavSelRange = "{353, 67}";
+			sepNavVisRange = "{8451, 842}";
 			sepNavWindowFrame = "{{61, 172}, {933, 559}}";
 		};
 	};
@@ -1133,7 +1147,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 187";
 		rLen = 0;
-		rLoc = 5893;
+		rLoc = 5844;
 		rType = 0;
 		vrLen = 1302;
 		vrLoc = 5058;
@@ -1193,7 +1207,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 184";
 		rLen = 0;
-		rLoc = 5834;
+		rLoc = 5785;
 		rType = 0;
 		vrLen = 1361;
 		vrLoc = 4781;
@@ -1203,7 +1217,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 184";
 		rLen = 0;
-		rLoc = 5834;
+		rLoc = 5785;
 		rType = 0;
 		vrLen = 1361;
 		vrLoc = 4781;
@@ -1213,7 +1227,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 184";
 		rLen = 0;
-		rLoc = 5772;
+		rLoc = 5740;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 4872;
@@ -1233,7 +1247,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 194";
 		rLen = 0;
-		rLoc = 6165;
+		rLoc = 6116;
 		rType = 0;
 		vrLen = 1409;
 		vrLoc = 5038;
@@ -1340,7 +1354,7 @@
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
 		name = "DataDelegate.m: 213";
 		rLen = 0;
-		rLoc = 8142;
+		rLoc = 8103;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 7629;
@@ -1350,7 +1364,7 @@
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
 		name = "DataDelegate.m: 217";
 		rLen = 0;
-		rLoc = 8240;
+		rLoc = 8201;
 		rType = 0;
 		vrLen = 1173;
 		vrLoc = 7664;
@@ -1360,7 +1374,7 @@
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
 		name = "DataDelegate.m: 217";
 		rLen = 0;
-		rLoc = 8247;
+		rLoc = 8208;
 		rType = 0;
 		vrLen = 1174;
 		vrLoc = 7628;
@@ -1380,7 +1394,7 @@
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
 		name = "DataDelegate.m: 217";
 		rLen = 0;
-		rLoc = 8247;
+		rLoc = 8208;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 7664;
@@ -1390,7 +1404,7 @@
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
 		name = "DataDelegate.m: 217";
 		rLen = 0;
-		rLoc = 8247;
+		rLoc = 8208;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 7745;
@@ -1400,7 +1414,7 @@
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
 		name = "DataDelegate.m: 217";
 		rLen = 0;
-		rLoc = 8247;
+		rLoc = 8208;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 7992;
@@ -1420,7 +1434,7 @@
 		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
 		name = "DataDelegate.m: 219";
 		rLen = 0;
-		rLoc = 8300;
+		rLoc = 8261;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 7992;
@@ -1478,5 +1492,135 @@
 		rType = 0;
 		vrLen = 942;
 		vrLoc = 0;
+	};
+	E4EAD9ED1201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4D8222F11FD14B70014D28A /* ExerciseEntity.m */;
+		name = "ExerciseEntity.m: 44";
+		rLen = 0;
+		rLoc = 1012;
+		rType = 0;
+		vrLen = 970;
+		vrLoc = 83;
+	};
+	E4EAD9EE1201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C6AEC811D5421100068008 /* Line.m */;
+		name = "Line.m: 51";
+		rLen = 0;
+		rLoc = 1407;
+		rType = 0;
+		vrLen = 1204;
+		vrLoc = 488;
+	};
+	E4EAD9EF1201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 166";
+		rLen = 0;
+		rLoc = 5476;
+		rType = 0;
+		vrLen = 1473;
+		vrLoc = 4147;
+	};
+	E4EAD9F01201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 208";
+		rLen = 0;
+		rLoc = 6556;
+		rType = 0;
+		vrLen = 1522;
+		vrLoc = 47;
+	};
+	E4EAD9F11201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
+		name = "DataDelegate.m: 18";
+		rLen = 67;
+		rLoc = 353;
+		rType = 0;
+		vrLen = 842;
+		vrLoc = 8451;
+	};
+	E4EAD9F21201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E409694111F1154E0055459F /* ProgressController.m */;
+		name = "ProgressController.m: 41";
+		rLen = 0;
+		rLoc = 1131;
+		rType = 0;
+		vrLen = 1125;
+		vrLoc = 431;
+	};
+	E4EAD9F31201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369511D50DD300D6DED9 /* InspirationController.h */;
+		name = "InspirationController.h: 19";
+		rLen = 0;
+		rLoc = 448;
+		rType = 0;
+		vrLen = 561;
+		vrLoc = 0;
+	};
+	E4EAD9F41201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 38";
+		rLen = 0;
+		rLoc = 1074;
+		rType = 0;
+		vrLen = 1183;
+		vrLoc = 299;
+	};
+	E4EAD9F51201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1589411E4E2A600A044D7 /* IdentificationController.h */;
+		name = "IdentificationController.h: 29";
+		rLen = 0;
+		rLoc = 727;
+		rType = 0;
+		vrLen = 775;
+		vrLoc = 0;
+	};
+	E4EAD9F61201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1589511E4E2A600A044D7 /* IdentificationController.m */;
+		name = "IdentificationController.m: 69";
+		rLen = 210;
+		rLoc = 2307;
+		rType = 0;
+		vrLen = 1700;
+		vrLoc = 2045;
+	};
+	E4EAD9F71201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1572E11DF989700A044D7 /* ContributionController.h */;
+		name = "ContributionController.h: 25";
+		rLen = 0;
+		rLoc = 638;
+		rType = 0;
+		vrLen = 733;
+		vrLoc = 0;
+	};
+	E4EAD9F81201067C00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1572F11DF989700A044D7 /* ContributionController.m */;
+		name = "ContributionController.m: 92";
+		rLen = 0;
+		rLoc = 3064;
+		rType = 0;
+		vrLen = 990;
+		vrLoc = 2481;
+	};
+	E4EADA04120106BF00F246DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1572F11DF989700A044D7 /* ContributionController.m */;
+		name = "ContributionController.m: 89";
+		rLen = 0;
+		rLoc = 3064;
+		rType = 0;
+		vrLen = 970;
+		vrLoc = 2481;
 	};
 }
