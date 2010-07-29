@@ -33,7 +33,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	description.text = [goalOwnership derivedDescription];
-	if ([goalOwnership progress]) {
+	description.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
+	description.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+	previous_progress.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+	plus.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+	if (![[goalOwnership progress] isEqualToString:@""]) {
 		previous_progress.text = [goalOwnership progress];
 	} else {
 		previous_progress.text = @"0";

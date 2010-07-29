@@ -123,6 +123,10 @@
 			E4C0D8351201D17F006AB8AF /* PBXTextBookmark */ = E4C0D8351201D17F006AB8AF /* PBXTextBookmark */;
 			E4C0D8371201D1A6006AB8AF /* PBXTextBookmark */ = E4C0D8371201D1A6006AB8AF /* PBXTextBookmark */;
 			E4C0D83A1201D1E8006AB8AF /* PBXTextBookmark */ = E4C0D83A1201D1E8006AB8AF /* PBXTextBookmark */;
+			E4C0D84A1201DC00006AB8AF /* PBXTextBookmark */ = E4C0D84A1201DC00006AB8AF /* PBXTextBookmark */;
+			E4C0D84B1201DC00006AB8AF /* PBXTextBookmark */ = E4C0D84B1201DC00006AB8AF /* PBXTextBookmark */;
+			E4C0D84C1201DC00006AB8AF /* PBXTextBookmark */ = E4C0D84C1201DC00006AB8AF /* PBXTextBookmark */;
+			E4C0D84D1201DC00006AB8AF /* PBXTextBookmark */ = E4C0D84D1201DC00006AB8AF /* PBXTextBookmark */;
 			E4EAD9281200CE4500F246DA = E4EAD9281200CE4500F246DA /* PBXTextBookmark */;
 			E4EAD9291200CE4500F246DA = E4EAD9291200CE4500F246DA /* PBXTextBookmark */;
 			E4EAD9481200D0D000F246DA = E4EAD9481200D0D000F246DA /* PBXTextBookmark */;
@@ -340,9 +344,9 @@
 	E439369611D50DD300D6DED9 /* InspirationController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1169, 52}\";\n            s = 0;\n        },\n                {\n            r = \"{1224, 82}\";\n            s = 0;\n        },\n                {\n            r = \"{1309, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1392, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1483, 86}\";\n            s = 0;\n        },\n                {\n            r = \"{1665, 17}\";\n            s = 0;\n        },\n                {\n            r = \"{1804, 15}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8153}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1251, 2886}}";
-			sepNavSelRange = "{4251, 0}";
-			sepNavVisRange = "{5503, 1732}";
+			sepNavIntBoundsRect = "{{0, 0}, {1251, 2795}}";
+			sepNavSelRange = "{3838, 0}";
+			sepNavVisRange = "{4099, 1478}";
 			sepNavWindowFrame = "{{134, 109}, {933, 559}}";
 		};
 	};
@@ -963,6 +967,46 @@
 		vrLen = 1215;
 		vrLoc = 798;
 	};
+	E4C0D84A1201DC00006AB8AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C0D7F31201C2A6006AB8AF /* GoalSettingController.m */;
+		name = "GoalSettingController.m: 42";
+		rLen = 0;
+		rLoc = 1203;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 798;
+	};
+	E4C0D84B1201DC00006AB8AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */;
+		name = "GoalOwnershipEntity.m: 27";
+		rLen = 0;
+		rLoc = 569;
+		rType = 0;
+		vrLen = 937;
+		vrLoc = 0;
+	};
+	E4C0D84C1201DC00006AB8AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 160";
+		rLen = 0;
+		rLoc = 4251;
+		rType = 0;
+		vrLen = 1909;
+		vrLoc = 4357;
+	};
+	E4C0D84D1201DC00006AB8AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E439369611D50DD300D6DED9 /* InspirationController.m */;
+		name = "InspirationController.m: 145";
+		rLen = 0;
+		rLoc = 4251;
+		rType = 0;
+		vrLen = 1478;
+		vrLoc = 4512;
+	};
 	E4C6AE5C11D5415400068008 /* NSObject+PropertySupport.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {969, 1248}}";
@@ -1194,7 +1238,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1089, 507}}";
 			sepNavSelRange = "{569, 0}";
-			sepNavVisRange = "{0, 942}";
+			sepNavVisRange = "{0, 937}";
 		};
 	};
 	E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {

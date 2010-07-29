@@ -14,6 +14,7 @@
 	IBOutlet UITextField *new_progress;
 	IBOutlet UITextView *description;
 	IBOutlet UITextView *previous_progress;
+	IBOutlet UITextView *plus;
 	GoalOwnership *goalOwnership;
 }
 
