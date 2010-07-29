@@ -32,6 +32,10 @@
 	return @"";
 }
 
+-(NSString *)full_text {
+	return [self phrasing];
+}
+
 -(id)get_commentary {
 	[ObjectiveResourceConfig setProtocolExtension:@"/inspect_content"];
 	Line *line = [Line findRemote:[self lineId]];

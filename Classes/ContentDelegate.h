@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CoreData/CoreData.h>
 
 @interface ContentDelegate : NSObject {
 	NSNumber *loaded_amount;
@@ -15,6 +15,7 @@
 	NSNumber *content_page;
 	NSString *content_type;
 	NSMutableArray *content;
+	NSMutableArray *order;
 }
 
 @property (nonatomic, retain) NSNumber *loaded_amount;
@@ -22,10 +23,13 @@
 @property (nonatomic, retain) NSNumber *content_page;
 @property (nonatomic, retain) NSString *content_type;
 @property (nonatomic, retain) NSMutableArray *content;
+@property (nonatomic, retain) NSMutableArray *order;
 
 -(id)initWithContentType:(NSString *)klass;
 -(NSInteger)undisplayed_row_count;
 -(void)displayRows:(NSInteger)rows;
 -(NSInteger)display_amount;
-
+-(NSManagedObject *)objectAtIndex:(NSInteger)index;
+-(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length;
+-(void)insertNewContent:(NSManagedObject *)c;
 @end

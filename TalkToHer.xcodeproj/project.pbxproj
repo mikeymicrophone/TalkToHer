@@ -52,6 +52,9 @@
 		E4A1589811E4E2A600A044D7 /* IdentificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1589611E4E2A600A044D7 /* IdentificationController.xib */; };
 		E4A158A511E4E49200A044D7 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A158A411E4E49200A044D7 /* UserSession.m */; };
 		E4A158B611E4EA6D00A044D7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A158B511E4EA6D00A044D7 /* User.m */; };
+		E4C0D7F51201C2A6006AB8AF /* GoalSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D7F31201C2A6006AB8AF /* GoalSettingController.m */; };
+		E4C0D7F61201C2A6006AB8AF /* GoalSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0D7F41201C2A6006AB8AF /* GoalSettingController.xib */; };
+		E4C0D80D1201C628006AB8AF /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D80C1201C628006AB8AF /* Goal.m */; };
 		E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
 		E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
 		E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
@@ -172,6 +175,11 @@
 		E4A158A411E4E49200A044D7 /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
 		E4A158B411E4EA6D00A044D7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E4A158B511E4EA6D00A044D7 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E4C0D7F21201C2A6006AB8AF /* GoalSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalSettingController.h; sourceTree = "<group>"; };
+		E4C0D7F31201C2A6006AB8AF /* GoalSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalSettingController.m; sourceTree = "<group>"; };
+		E4C0D7F41201C2A6006AB8AF /* GoalSettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GoalSettingController.xib; path = Classes/GoalSettingController.xib; sourceTree = "<group>"; };
+		E4C0D80B1201C628006AB8AF /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		E4C0D80C1201C628006AB8AF /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 		E4C6ACCD11D514F000068008 /* InspirationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspirationController.xib; path = Views/InspirationController.xib; sourceTree = "<group>"; };
 		E4C6ACCE11D514F000068008 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		E4C6ACCF11D514F000068008 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
@@ -348,6 +356,7 @@
 				E4A1589611E4E2A600A044D7 /* IdentificationController.xib */,
 				E4A1549F11DBFF5700A044D7 /* InspectionController.xib */,
 				E4C6ACCD11D514F000068008 /* InspirationController.xib */,
+				E4C0D7F41201C2A6006AB8AF /* GoalSettingController.xib */,
 				E409694211F1154E0055459F /* ProgressController.xib */,
 				E4C6ACCE11D514F000068008 /* MainWindow.xib */,
 				E4C6ACCF11D514F000068008 /* RootViewController.xib */,
@@ -384,12 +393,14 @@
 				E439369511D50DD300D6DED9 /* InspirationController.h */,
 				E4A1549D11DBFF5700A044D7 /* InspectionController.h */,
 				E4A1572E11DF989700A044D7 /* ContributionController.h */,
+				E4C0D7F21201C2A6006AB8AF /* GoalSettingController.h */,
 				E409694011F1154E0055459F /* ProgressController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				E4A1589511E4E2A600A044D7 /* IdentificationController.m */,
 				E439369611D50DD300D6DED9 /* InspirationController.m */,
 				E4A1549E11DBFF5700A044D7 /* InspectionController.m */,
 				E4A1572F11DF989700A044D7 /* ContributionController.m */,
+				E4C0D7F31201C2A6006AB8AF /* GoalSettingController.m */,
 				E409694111F1154E0055459F /* ProgressController.m */,
 			);
 			name = Controllers;
@@ -410,6 +421,7 @@
 				E4A158A411E4E49200A044D7 /* UserSession.m */,
 				E4A158B511E4EA6D00A044D7 /* User.m */,
 				E4001B4211FF8B8B001359B0 /* UserEntity.m */,
+				E4C0D80C1201C628006AB8AF /* Goal.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -441,6 +453,7 @@
 		E40017F511FE398F001359B0 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E4C0D80B1201C628006AB8AF /* Goal.h */,
 				E4001B4111FF8B8B001359B0 /* UserEntity.h */,
 				E4C6AEC711D5421100068008 /* Line.h */,
 				E4C6AF4711D5522900068008 /* Tip.h */,
@@ -706,6 +719,7 @@
 				E4001D1F12006E6B001359B0 /* icon.png in Resources */,
 				E4001D2012006E6B001359B0 /* icon@2x.png in Resources */,
 				E4001D2412006F25001359B0 /* default.png in Resources */,
+				E4C0D7F61201C2A6006AB8AF /* GoalSettingController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +793,8 @@
 				E4D8109A11FE36AD0020AE8B /* TipEntity.m in Sources */,
 				E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */,
 				E4001B4311FF8B8B001359B0 /* UserEntity.m in Sources */,
+				E4C0D7F51201C2A6006AB8AF /* GoalSettingController.m in Sources */,
+				E4C0D80D1201C628006AB8AF /* Goal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

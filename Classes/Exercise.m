@@ -46,6 +46,10 @@
 	return [self instruction];
 }
 
+-(NSString *)full_text {
+	return [self instruction];
+}
+
 -(id)get_commentary {
 	[ObjectiveResourceConfig setProtocolExtension:@"/inspect_content"];
 	Exercise *exercise = [Exercise findRemote:[self exerciseId]];

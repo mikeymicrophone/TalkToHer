@@ -36,6 +36,7 @@
 -(id)get_commentary;
 -(NSString *)main_text;
 -(NSString *)additional_text;
+-(NSString *)full_text;
 -(BOOL)matches:(NSManagedObject *)po;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
 

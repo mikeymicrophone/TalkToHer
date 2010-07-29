@@ -65,7 +65,7 @@
 		}
 		NSError *error = nil;
 		if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
-		[[[[UIApplication sharedApplication] delegate] data_source] increment:contentType];
+		[[[[UIApplication sharedApplication] delegate] data_source] insertNewElement:content];
 	});
 	dispatch_release(queue);
 	

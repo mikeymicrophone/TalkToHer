@@ -157,7 +157,7 @@
 
 - (id)contentForIndexPath:(NSIndexPath *)indexPath {
 	if ([indexPath indexAtPosition:1] < [[content_source loaded_amount] integerValue]) {
-		return [[content_source content] objectAtIndex:[indexPath indexAtPosition:1]];
+		return [content_source objectAtIndex:[indexPath indexAtPosition:1]];
 	} else {
 		return nil;
 	}

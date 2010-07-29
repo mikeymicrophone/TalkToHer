@@ -258,4 +258,16 @@
 	}
 }
 
+-(void)insertNewElement:(NSManagedObject *)e {
+	if ([[e className] isEqualToString:@"LineEntity"]) {
+		[lines insertNewContent:e];
+	} else if ([[e className] isEqualToString:@"TipEntity"]) {
+		[tips insertNewContent:e];
+	} else if ([[e className] isEqualToString:@"ExerciseEntity"]) {
+		[exercises insertNewContent:e];
+	} else if ([[e className] isEqualToString:@"GoalOwnershipEntity"]) {
+		[goals insertNewContent:e];
+	}
+}
+
 @end

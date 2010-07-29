@@ -50,6 +50,10 @@
 	return @"";
 }
 
+-(NSString *)full_text {
+	return [self advice];
+}
+
 - (NSArray *)excludedPropertyNames {
 	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", nil];
 	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];

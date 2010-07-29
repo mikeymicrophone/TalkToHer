@@ -8,6 +8,7 @@
 
 #import "InspectionController.h"
 #import "InspirationCell.h"
+#import "GoalSettingController.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 
@@ -73,9 +74,9 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	if ([MFMessageComposeViewController canSendText] || YES) {
-		return 5;
+		return 6;
 	} else {
-		return 4;
+		return 5;
 	}
 }
 
@@ -133,6 +134,22 @@
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 4) {
+		CellIdentifier = @"goal_setting";
+		
+		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			
+			[cell setMain_text:@"set a goal"];
+			if ([[content className] isEqualToString:@"Line"]) {
+				[cell setAdditional_text:@"to try this line"];
+			} else if ([[content className] isEqualToString:@"Tip"]) {
+				[cell setAdditional_text:@"to use this tip"];
+			} else if ([[content className] isEqualToString:@"Exercise"]) {
+				[cell setAdditional_text:@"to do this exercise"];
+			}
+		}
+	}else if (indexPath.section == 5) {
 		CellIdentifier = @"text_message";
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -166,6 +183,10 @@
 											 additional:[content recentComment]
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 4) {
+		height = [InspirationCell cellHeightForMainText:@"set a goal"
+											 additional:@"to do this exercise"
+												  width:[[self view] frame].size.width];
+	} else if (indexPath.section == 5) {
 		height = [InspirationCell cellHeightForMainText:@"send as a text"
 											 additional:@""
 												  width:[[self view] frame].size.width];
@@ -177,14 +198,17 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"index: %@", indexPath);
-	if (indexPath.section == 4) {
+	if (indexPath.section == 5) {
 		MFMessageComposeViewController *textController = [[MFMessageComposeViewController alloc] init];
 		textController.body = [content main_text];
 		textController.messageComposeDelegate = self;
 		
 		[self presentModalViewController:textController animated:YES];
 		[textController release];
+	} else if (indexPath.section == 4) {
+		GoalSettingController *goalSettingController = [[GoalSettingController alloc] initWithObjective:content];
+		
+		[self.navigationController pushViewController:goalSettingController animated:YES];
 	}
 }
 

@@ -11,7 +11,7 @@
 
 @implementation ContentDelegate
 
-@synthesize loaded_amount, displayed_amount, content_page, content_type, content;
+@synthesize loaded_amount, displayed_amount, content_page, content_type, content, order;
 
 -(id)initWithContentType:(NSString *)klass {
 	self = [super init];
@@ -19,7 +19,17 @@
 	self.displayed_amount = [NSNumber numberWithInt:3];
 	self.content_type = klass;
 	[self update_content];
+	self.order = [self generateRandomizedArrayOfLength:loaded_amount];
 	return self;
+}
+
+-(void)insertNewContent:(NSManagedObject *)c {
+	[content insertObject:c atIndex:[displayed_amount integerValue]];
+	[self displayRows:1];
+}
+
+-(NSManagedObject *)objectAtIndex:(NSInteger)index {
+	[content objectAtIndex:index];
 }
 
 -(void)update_content {
@@ -50,5 +60,17 @@
 
 -(void)displayRows:(NSInteger)rows {
 	self.displayed_amount = [NSNumber numberWithInt:[displayed_amount integerValue] + rows];
+}
+
+-(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length {
+	NSMutableArray *indices = [NSMutableArray arrayWithObjects:0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, nil];
+	NSUInteger count = [indices count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        int nElements = count - i;
+        int n = (arc4random() % nElements) + i;
+        [indices exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+	return indices;
 }
 @end

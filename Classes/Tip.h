@@ -35,6 +35,7 @@
 -(id)initWithManagedObject:(NSManagedObject *)ps;
 -(NSString *)main_text;
 -(NSString *)additional_text;
+-(NSString *)full_text;
 -(id)get_commentary;
 -(BOOL)matches:(NSManagedObject *)po;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
