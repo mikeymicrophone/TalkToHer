@@ -209,7 +209,7 @@
 			[self.navigationController pushViewController:progressController animated:YES];
 			[progressController release];
 		} else {
-			if (![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"]) {
+			if ((![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"]) && [[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
 				InspectionController *inspectionController = [[InspectionController alloc] initWithContent:[self contentForIndexPath:indexPath]];
 
 				[self.navigationController pushViewController:inspectionController animated:YES];

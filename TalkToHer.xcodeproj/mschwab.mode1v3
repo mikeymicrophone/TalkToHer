@@ -271,7 +271,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ContributionController.m</string>
+								<string>DataDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,16 +322,15 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ContributionController.m</string>
+										<string>DataDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4EADA04120106BF00F246DA</string>
+										<string>E4EADA3312010EEC00F246DA</string>
 										<key>history</key>
 										<array>
 											<string>E4001D351200AAA9001359B0</string>
 											<string>E4001D361200AAA9001359B0</string>
-											<string>E4001D6A1200BE25001359B0</string>
 											<string>E4001D6B1200BE25001359B0</string>
 											<string>E4001D6C1200BE25001359B0</string>
 											<string>E4001D6D1200BE25001359B0</string>
@@ -348,14 +347,17 @@
 											<string>E4EAD9EE1201067C00F246DA</string>
 											<string>E4EAD9EF1201067C00F246DA</string>
 											<string>E4EAD9F01201067C00F246DA</string>
-											<string>E4EAD9F11201067C00F246DA</string>
 											<string>E4EAD9F21201067C00F246DA</string>
 											<string>E4EAD9F31201067C00F246DA</string>
-											<string>E4EAD9F41201067C00F246DA</string>
-											<string>E4EAD9F51201067C00F246DA</string>
-											<string>E4EAD9F61201067C00F246DA</string>
 											<string>E4EAD9F71201067C00F246DA</string>
-											<string>E4EAD96C1200DF0300F246DA</string>
+											<string>E4EADA0912010A0700F246DA</string>
+											<string>E4EADA0A12010A0700F246DA</string>
+											<string>E4EADA0C12010A0700F246DA</string>
+											<string>E4EADA1F12010CC200F246DA</string>
+											<string>E4EADA2612010D7A00F246DA</string>
+											<string>E4EADA2712010D7A00F246DA</string>
+											<string>E4EADA2F12010E6A00F246DA</string>
+											<string>E4EADA3012010E6A00F246DA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -553,14 +555,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E4EADA001201067C00F246DA</string>
+		<string>E4EADA3212010E6A00F246DA</string>
 		<string>E4EADA011201067C00F246DA</string>
 		<string>E4EADA021201067C00F246DA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>E4EADA031201067C00F246DA</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>E4EADA031201067C00F246DA</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1276 723 0 0 1280 778 </string>

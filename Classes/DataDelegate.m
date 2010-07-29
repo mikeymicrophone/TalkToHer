@@ -19,7 +19,7 @@
 
 -(void)initialize_constants {
 	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", nil];//] @"Line", @"Line", @"Tip", @"Tip", @"Exercise", @"Exercise", @"GoalOwnership", @"GoalOwnership", nil];
-	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
+	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
 	[ObjectiveResourceConfig setSite:server_location];
 	connectionIsFresh = NO;
 }
@@ -121,7 +121,7 @@
 		for (int i = 0; i < 4; i++) {
 			if (content == nil || [content count] == 0) {
 				if ([type isEqualToString:@"goals"]) {
-					content = [GoalOwnership findAllForUserWithId:[[[[UIApplication sharedApplication] delegate] data_source] userId]];
+					content = [GoalOwnership findAllForUserWithId:userId];
 				} else {
 					content = [NSClassFromString([class_names objectForKey:type]) findAllRemote];
 				}
@@ -131,7 +131,7 @@
 			[cell stop_spinning];
 			if (!(content == nil || [content count] == 0)) {
 				[self persistData:content ofType:type];
-				[[[[UIApplication sharedApplication] delegate] data_source] increment:[class_names objectForKey:type]];
+				[self increment:[class_names objectForKey:type]];
 			}
 		});
 	});
@@ -172,7 +172,6 @@
 }
 
 -(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name {
-	self.userId = user_id;
 	NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[self moc]];
 	NSManagedObject *userObject = [NSEntityDescription insertNewObjectForEntityForName:[e name] inManagedObjectContext:[self moc]];
 	[userObject setValue:[NSNumber numberWithInt:[user_id integerValue]] forKey:@"userId"];
@@ -180,6 +179,7 @@
 	
 	NSError *error = nil;
     if (![[self moc] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
+	[self attemptIdentification];
 }
 
 -(void)attemptIdentification {
@@ -253,6 +253,8 @@
 		[tips update_content];
 	} else if ([type isEqualToString:@"Exercise"]) {
 		[exercises update_content];
+	} else if ([type isEqualToString:@"GoalOwnership"]) {
+		[goals update_content];
 	}
 }
 

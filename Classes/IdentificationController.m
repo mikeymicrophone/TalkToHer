@@ -35,7 +35,7 @@
 		if (response == nil) {
 			[self get_identity:username_field.text];
 			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
-			[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:@"goals" andAlertCell:c];
+//			[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:@"goals" andAlertCell:c];
 		}
 	});
 	dispatch_release(queue);
