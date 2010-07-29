@@ -19,7 +19,7 @@
 	self.displayed_amount = [NSNumber numberWithInt:3];
 	self.content_type = klass;
 	[self update_content];
-	self.order = [self generateRandomizedArrayOfLength:loaded_amount];
+	self.order = [self generateRandomizedArrayOfLength:[loaded_amount integerValue]];
 	return self;
 }
 
@@ -29,7 +29,7 @@
 }
 
 -(NSManagedObject *)objectAtIndex:(NSInteger)index {
-	[content objectAtIndex:index];
+	[content objectAtIndex:[[order objectAtIndex:index] integerValue]];
 }
 
 -(void)update_content {
@@ -63,7 +63,7 @@
 }
 
 -(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length {
-	NSMutableArray *indices = [NSMutableArray arrayWithObjects:0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, nil];
+	NSMutableArray *indices = [self ascendingArrayOfLength:length];
 	NSUInteger count = [indices count];
     for (NSUInteger i = 0; i < count; ++i) {
         // Select a random element between i and end of array to swap with.
@@ -71,6 +71,14 @@
         int n = (arc4random() % nElements) + i;
         [indices exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
+	return indices;
+}
+
+-(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length {
+	NSMutableArray *indices = [[NSMutableArray alloc] init];
+	for (NSInteger j = 0; j < length; j++) {
+		[indices insertObject:[NSNumber numberWithInt:j] atIndex:j];
+	}
 	return indices;
 }
 @end

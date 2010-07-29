@@ -31,5 +31,6 @@
 -(NSInteger)display_amount;
 -(NSManagedObject *)objectAtIndex:(NSInteger)index;
 -(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length;
+-(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length;
 -(void)insertNewContent:(NSManagedObject *)c;
 @end

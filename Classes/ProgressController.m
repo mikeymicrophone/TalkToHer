@@ -28,6 +28,8 @@
 	[[[[[UIApplication sharedApplication] delegate] data_source] moc] save:&error];
 	[[goalOwnership objectiveResource] updateRemote];
 	[[self parentViewController] popViewControllerAnimated:YES];
+//	[[[[[UIApplication sharedApplication] delegate] data_source] goals] download_more];
+//	[[[[self parentViewController] topViewController] tableView] reloadData];
 }
 
 - (void)viewDidLoad {
