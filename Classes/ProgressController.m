@@ -32,8 +32,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.description.text = [goalOwnership derivedDescription];
-	self.previous_progress.text = [goalOwnership progress];
+	description.text = [goalOwnership derivedDescription];
+	if ([goalOwnership progress]) {
+		previous_progress.text = [goalOwnership progress];
+	} else {
+		previous_progress.text = @"0";
+	}
+	[new_progress becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +52,10 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.description = nil;
+	self.previous_progress = nil;
+	self.new_progress = nil;
+	self.goalOwnership = nil;
 }
 
 - (void)dealloc {

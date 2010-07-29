@@ -210,8 +210,6 @@
 		NSArray *results = [[self moc] executeFetchRequest:f error:&error];
 		[f release];
 		
-		NSLog(@"to submit: %@", results);
-		
 		for (NSManagedObject *o in results) {
 			NSError *saveError = nil;
 			[[o objectiveResource] createRemoteWithResponse:&saveError];

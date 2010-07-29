@@ -115,11 +115,10 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-	[email_field release];
-	[email_heading release];
-	[username_field release];
-	[password_field release];
-    // e.g. self.myOutlet = nil;
+	self.email_field = nil;
+	self.email_heading = nil;
+	self.username_field = nil;
+	self.password_field = nil;
 }
 
 - (void)dealloc {

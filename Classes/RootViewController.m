@@ -163,6 +163,10 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+	self.lines_cell = nil;
+	self.goals_cell = nil;
+	self.tips_cell = nil;
+	self.exercises_cell = nil;
 }
 
 - (void)dealloc {

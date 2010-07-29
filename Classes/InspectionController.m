@@ -180,7 +180,6 @@
 	NSLog(@"index: %@", indexPath);
 	if (indexPath.section == 4) {
 		MFMessageComposeViewController *textController = [[MFMessageComposeViewController alloc] init];
-		NSLog(@"text controller: %@", textController);
 		textController.body = [content main_text];
 		textController.messageComposeDelegate = self;
 		
@@ -206,6 +205,7 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+	self.content = nil;
 }
 
 - (void)dealloc {

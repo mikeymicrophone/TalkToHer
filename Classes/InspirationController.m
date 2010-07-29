@@ -28,6 +28,16 @@
 		return nil;
 	
 	self.content_source = source;
+	
+	if ([[content_source content_type] isEqualToString:@"Line"]) {
+		self.title = @"Lines";
+	} else if ([[content_source content_type] isEqualToString:@"Tip"]) {
+		self.title = @"Tips";
+	} else if ([[content_source content_type] isEqualToString:@"Exercise"]) {
+		self.title = @"Exercises";
+	} else if ([[content_source content_type] isEqualToString:@"GoalOwnership"]) {
+		self.title = @"Goals";
+	}
 
 	return self;
 }
@@ -225,6 +235,8 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+	self.content_source = nil;
+	self.more_button = nil;
 }
 
 - (void)dealloc {
