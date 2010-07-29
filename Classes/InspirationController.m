@@ -55,11 +55,13 @@
     [super viewWillAppear:animated];
 }
 */
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (BOOL)canBecomeFirstResponder {
+    return YES;
 }
-*/
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+}
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -77,6 +79,11 @@
 
 #pragma mark -
 #pragma mark Table view data source
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	[content_source reorder_content];
+	[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;

@@ -270,7 +270,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ContributionController.m</string>
+								<string>InspirationController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,18 +321,19 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ContributionController.m</string>
+										<string>InspirationController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4C0D8DC12020437006AB8AF</string>
+										<string>E4C0D8FA120207DB006AB8AF</string>
 										<key>history</key>
 										<array>
 											<string>E4C0D8D712020437006AB8AF</string>
 											<string>E4C0D8D812020437006AB8AF</string>
 											<string>E4C0D8D912020437006AB8AF</string>
 											<string>E4C0D8DA12020437006AB8AF</string>
-											<string>E4C0D8DB12020437006AB8AF</string>
+											<string>E4C0D8E01202056F006AB8AF</string>
+											<string>E4C0D8E11202056F006AB8AF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -530,13 +531,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E4C0D8DD12020437006AB8AF</string>
+		<string>E4C0D8F9120207AD006AB8AF</string>
 		<string>E4C0D8071201C2C9006AB8AF</string>
 		<string>E4C0D8091201C2C9006AB8AF</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>E439365011D453CE00D6DED9</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1276 723 0 0 1280 778 </string>
