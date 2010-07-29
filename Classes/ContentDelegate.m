@@ -19,17 +19,18 @@
 	self.displayed_amount = [NSNumber numberWithInt:3];
 	self.content_type = klass;
 	[self update_content];
-	self.order = [self generateRandomizedArrayOfLength:[loaded_amount integerValue]];
+	[self reorder_content];
 	return self;
 }
 
--(void)insertNewContent:(NSManagedObject *)c {
-	[content insertObject:c atIndex:[displayed_amount integerValue]];
+-(void)insertNewContent {
+	[self update_content];
+	[order insertObject:[NSNumber numberWithInt:[content count] - 1] atIndex:[displayed_amount integerValue]];
 	[self displayRows:1];
 }
 
 -(NSManagedObject *)objectAtIndex:(NSInteger)index {
-	[content objectAtIndex:[[order objectAtIndex:index] integerValue]];
+	return [content objectAtIndex:[[order objectAtIndex:index] integerValue]];
 }
 
 -(void)update_content {
@@ -39,6 +40,10 @@
 	} else {
 		self.loaded_amount = [NSNumber numberWithInt:0];
 	}
+}
+
+-(void)reorder_content {
+	self.order = [self generateRandomizedArrayOfLength:[loaded_amount integerValue]];
 }
 
 -(void)download_more {

@@ -32,5 +32,8 @@
 -(NSManagedObject *)objectAtIndex:(NSInteger)index;
 -(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length;
 -(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length;
--(void)insertNewContent:(NSManagedObject *)c;
+-(void)update_content;
+-(void)reorder_content;
+-(void)download_more;
+-(void)insertNewContent;
 @end

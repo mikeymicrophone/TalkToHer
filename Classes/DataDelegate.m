@@ -260,13 +260,13 @@
 
 -(void)insertNewElement:(NSManagedObject *)e {
 	if ([[e className] isEqualToString:@"LineEntity"]) {
-		[lines insertNewContent:e];
+		[lines insertNewContent];
 	} else if ([[e className] isEqualToString:@"TipEntity"]) {
-		[tips insertNewContent:e];
+		[tips insertNewContent];
 	} else if ([[e className] isEqualToString:@"ExerciseEntity"]) {
-		[exercises insertNewContent:e];
+		[exercises insertNewContent];
 	} else if ([[e className] isEqualToString:@"GoalOwnershipEntity"]) {
-		[goals insertNewContent:e];
+		[goals insertNewContent];
 	}
 }
 
