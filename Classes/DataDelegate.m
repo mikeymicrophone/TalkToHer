@@ -17,6 +17,9 @@
 
 @synthesize userId, server_location, class_names, lines, tips, exercises, goals;
 
+#pragma mark -
+#pragma mark initialization
+
 -(void)initialize_constants {
 	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", nil];//] @"Line", @"Line", @"Tip", @"Tip", @"Exercise", @"Exercise", @"GoalOwnership", @"GoalOwnership", nil];
 	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
@@ -31,22 +34,13 @@
 	self.goals = [[ContentDelegate alloc] initWithContentType:@"GoalOwnership"];
 }
 
--(NSString *)classNameFor:(NSString *)identifier {
-	return [class_names objectForKey:identifier];
-}
-
--(void)loadRemoteDataOfTypes:(NSArray *)types forCellDelegate:(UITableViewController *)cell_controller {
-	if ([self lotd_is_reachable]) {
-		[self loadDataSegmentOfType:@"lines" andAlertCell:[cell_controller lines_cell]];
-		[self loadDataSegmentOfType:@"tips" andAlertCell:[cell_controller tips_cell]];
-		[self loadDataSegmentOfType:@"exercises" andAlertCell:[cell_controller exercises_cell]];
-	}	
-}
+#pragma mark -
+#pragma mark fetching from core data
 
 -(NSArray *)fetch_collection:(NSString *)type {
 	NSEntityDescription *e = [NSEntityDescription entityForName:type inManagedObjectContext:[self moc]];
 	NSFetchRequest *f = [[NSFetchRequest alloc] init];
-
+	
 	[f setEntity:e];
 	[f setFetchBatchSize:30];
 	[f setPredicate:[NSPredicate predicateWithFormat:@"hidden == %d", 0]];
@@ -58,54 +52,15 @@
 	return results;
 }
 
--(NSArray *)unidentified_set_of_type:(NSString *)type {
-	NSEntityDescription *e = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:[self moc]];
-	NSFetchRequest *f = [[NSFetchRequest alloc] init];
-	[f setEntity:e];
-	[f setPropertiesToFetch:[self propertiesToFetchForType:[class_names objectForKey:type]]];
-	[f setPredicate:[NSPredicate predicateWithFormat:[[NSClassFromString([class_names objectForKey:type]) getRemoteClassIdName] stringByAppendingFormat:@" == %d", nil]]];
+#pragma mark -
+#pragma mark downloading
 
-	NSError *error = nil;
-	NSArray *results = [[self moc] executeFetchRequest:f error:&error];
-	[f release];
-	return results;
-}
-
--(NSArray *)propertiesToFetchForType:(NSString *)type {
-	NSArray *properties;
-	if (type == @"Line") {
-		properties = [NSArray arrayWithObjects:@"phrasing", @"lineId", nil];
-	} else if (type == @"Tip") {
-		properties = [NSArray arrayWithObjects:@"advice", @"tipId", nil];
-	} else if (type == @"Exercise") {
-		properties = [NSArray arrayWithObjects:@"instruction", @"moniker", @"exerciseId", nil];
-	} else if (type == @"GoalOwnership") {
-		properties = [NSArray arrayWithObjects:@"goalOwnershipId", @"derivedDescription", @"complete", @"progress", @"completionStatus", @"remainingDaysText", @"repetitions", nil];
-	}
-   return properties;
-}
-
--(void)persistData:(NSArray *)data ofType:(NSString *)type {
-	NSArray *unidentified_set = [self unidentified_set_of_type:type];
-
-	for (NSObject *c in data) {
-		NSManagedObject *e = [self itemExistsInStore:c];
-		if (e) {  
-			// this object is already in the CoreData db and should be updated
-			[e updateWith:c];
-		} else {
-			NSManagedObject *identifiable = [self item:c existsInSet:unidentified_set];
-			if (identifiable) {
-                // this object is in the db without an id
-				[identifiable setValue:[NSNumber numberWithInt:[[c getRemoteId] integerValue]] forKey:[c getRemoteClassIdName]];
-			} else {
-				[c persistInMoc:[self moc]];
-			}
-		}
-	}
-    
-    NSError *error = nil;
-    if (![[self moc] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
+-(void)loadRemoteDataOfTypes:(NSArray *)types forCellDelegate:(UITableViewController *)cell_controller {
+	if ([self lotd_is_reachable]) {
+		[self loadDataSegmentOfType:@"lines" andAlertCell:[cell_controller lines_cell]];
+		[self loadDataSegmentOfType:@"tips" andAlertCell:[cell_controller tips_cell]];
+		[self loadDataSegmentOfType:@"exercises" andAlertCell:[cell_controller exercises_cell]];
+	}	
 }
 
 -(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell {
@@ -134,6 +89,32 @@
 		});
 	});
 	dispatch_release(queue);
+}
+
+#pragma mark -
+#pragma mark persistence and uniqueness
+
+-(void)persistData:(NSArray *)data ofType:(NSString *)type {
+	NSArray *unidentified_set = [self unidentified_set_of_type:type];
+	
+	for (NSObject *c in data) {
+		NSManagedObject *e = [self itemExistsInStore:c];
+		if (e) {  
+			// this object is already in the CoreData db and should be updated
+			[e updateWith:c];
+		} else {
+			NSManagedObject *identifiable = [self item:c existsInSet:unidentified_set];
+			if (identifiable) {
+                // this object is in the db without an id
+				[identifiable setValue:[NSNumber numberWithInt:[[c getRemoteId] integerValue]] forKey:[c getRemoteClassIdName]];
+			} else {
+				[c persistInMoc:[self moc]];
+			}
+		}
+	}
+    
+    NSError *error = nil;
+    if (![[self moc] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
 }
 
 -(NSManagedObject *)itemExistsInStore:(NSObject *)item {
@@ -169,6 +150,26 @@
 	return matched;
 }
 
+-(NSArray *)unidentified_set_of_type:(NSString *)type {
+	NSEntityDescription *e = [NSEntityDescription entityForName:[class_names objectForKey:type] inManagedObjectContext:[self moc]];
+	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+	[f setEntity:e];
+	[f setPropertiesToFetch:[self propertiesToFetchForType:[class_names objectForKey:type]]];
+	[f setPredicate:[NSPredicate predicateWithFormat:[[NSClassFromString([class_names objectForKey:type]) getRemoteClassIdName] stringByAppendingFormat:@" == %d", nil]]];
+	
+	NSError *error = nil;
+	NSArray *results = [[self moc] executeFetchRequest:f error:&error];
+	[f release];
+	return results;
+}
+
+-(NSManagedObjectContext *)moc {
+	[[[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+#pragma mark -
+#pragma mark identity control
+
 -(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name {
 	NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[self moc]];
 	NSManagedObject *userObject = [NSEntityDescription insertNewObjectForEntityForName:[e name] inManagedObjectContext:[self moc]];
@@ -195,6 +196,9 @@
 		[self loadDataSegmentOfType:@"goals" andAlertCell:[[[[[UIApplication sharedApplication] delegate] navigationController] bottomViewController] goals_cell]];
 	}
 }
+
+#pragma mark -
+#pragma mark connectivity control
 
 -(void)attemptDelayedSubmissions {
 	NSArray *classes = [class_names allValues];
@@ -240,9 +244,8 @@
 	return currentlyReachable;
 }
 
--(NSManagedObjectContext *)moc {
-	[[[UIApplication sharedApplication] delegate] managedObjectContext];
-}
+#pragma mark -
+#pragma mark content adjustment
 
 -(void)increment:(NSString *)type {
 	if ([type isEqualToString:@"Line"]) {
@@ -266,6 +269,27 @@
 	} else if ([[e className] isEqualToString:@"GoalOwnershipEntity"]) {
 		[goals insertNewContent];
 	}
+}
+
+#pragma mark -
+#pragma mark schema information
+
+-(NSString *)classNameFor:(NSString *)identifier {
+	return [class_names objectForKey:identifier];
+}
+
+-(NSArray *)propertiesToFetchForType:(NSString *)type {
+	NSArray *properties;
+	if (type == @"Line") {
+		properties = [NSArray arrayWithObjects:@"phrasing", @"lineId", nil];
+	} else if (type == @"Tip") {
+		properties = [NSArray arrayWithObjects:@"advice", @"tipId", nil];
+	} else if (type == @"Exercise") {
+		properties = [NSArray arrayWithObjects:@"instruction", @"moniker", @"exerciseId", nil];
+	} else if (type == @"GoalOwnership") {
+		properties = [NSArray arrayWithObjects:@"goalOwnershipId", @"derivedDescription", @"complete", @"progress", @"completionStatus", @"remainingDaysText", @"repetitions", nil];
+	}
+	return properties;
 }
 
 @end
