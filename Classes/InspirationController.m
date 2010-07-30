@@ -28,6 +28,7 @@
 		return nil;
 	
 	self.content_source = source;
+	self.tableView.contentMode =  UIViewContentModeRedraw;
 	
 	if ([[content_source content_type] isEqualToString:@"Line"]) {
 		self.title = @"Lines";
@@ -146,6 +147,7 @@
 			hide_gesture.direction = UISwipeGestureRecognizerDirectionLeft;
 			[cell addGestureRecognizer:hide_gesture];
 			[hide_gesture release];
+			cell.contentMode =  UIViewContentModeRedraw;
 		}
 	}
 	

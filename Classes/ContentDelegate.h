@@ -32,8 +32,8 @@
 -(void)displayRows:(NSInteger)rows;
 -(NSInteger)display_amount;
 -(NSManagedObject *)objectAtIndex:(NSInteger)index;
--(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length;
--(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length;
+-(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length startingWith:(NSInteger)start;
+-(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length startingWith:(NSInteger)start;
 -(NSMutableArray *)shuffledArrayWithArray:(NSMutableArray *)array;
 -(void)load_content;
 -(void)update_content;
@@ -41,6 +41,5 @@
 -(void)download_more;
 -(void)insertNewContent;
 -(void)removeOrderedIndex:(NSInteger)index;
--(NSMutableArray *)orderArrayWithoutTopIndices:(NSInteger)removedAmount;
--(NSNumber *)largestValueInArray:(NSMutableArray *)array;
+-(NSMutableArray *)orderArrayWithoutNoncontiguousIndices;
 @end

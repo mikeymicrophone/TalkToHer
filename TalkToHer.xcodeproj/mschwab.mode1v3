@@ -274,14 +274,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
-									<integer>2</integer>
-									<integer>1</integer>
+									<integer>51</integer>
+									<integer>31</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 24}, {104, 664}}</string>
+							<string>{{0, 301}, {104, 664}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -318,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspirationCell.m</string>
+								<string>InspirationController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,14 +325,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspirationCell.m</string>
+										<string>InspirationController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4C0DC5012035CD5006AB8AF</string>
+										<string>E4C0DCFC12039B8E006AB8AF</string>
 										<key>history</key>
 										<array>
-											<string>E4C0D8D912020437006AB8AF</string>
 											<string>E4C0D98812025861006AB8AF</string>
 											<string>E4C0D98E12025861006AB8AF</string>
 											<string>E4C0D9A212025AF4006AB8AF</string>
@@ -341,15 +339,19 @@
 											<string>E4C0D9AE12025BAA006AB8AF</string>
 											<string>E4C0D9C21202623D006AB8AF</string>
 											<string>E4C0D9E0120264B5006AB8AF</string>
-											<string>E4C0DBAC12034807006AB8AF</string>
 											<string>E4C0DBB7120349B1006AB8AF</string>
 											<string>E4C0DBB8120349B1006AB8AF</string>
 											<string>E4C0DBB9120349B1006AB8AF</string>
 											<string>E4C0DBBA120349B1006AB8AF</string>
 											<string>E4C0DBBB120349B1006AB8AF</string>
-											<string>E4C0DBD812034E4B006AB8AF</string>
-											<string>E4C0DBE912035017006AB8AF</string>
-											<string>E4C0DBEA12035017006AB8AF</string>
+											<string>E4C0DC53120363A1006AB8AF</string>
+											<string>E4C0DC7F12036606006AB8AF</string>
+											<string>E4C0DC8412036752006AB8AF</string>
+											<string>E4C0DC9012037511006AB8AF</string>
+											<string>E4C0DCA41203859B006AB8AF</string>
+											<string>E4C0DCE01203991F006AB8AF</string>
+											<string>E4C0DCE51203999F006AB8AF</string>
+											<string>E4C0DC8E12037511006AB8AF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -552,6 +554,7 @@
 		<string>E4C0D8091201C2C9006AB8AF</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
+		<string>E4C0DC9312037511006AB8AF</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
@@ -579,7 +582,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspirationController.m</string>
+								<string>ContentDelegate.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -790,14 +793,12 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspirationController.m</string>
+										<string>ContentDelegate.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -818,6 +819,8 @@
 							<string>212pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

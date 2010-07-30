@@ -24,24 +24,15 @@
 	return self;
 }
 
--(void)insertNewContent {
-	[self update_content];
-	[self.order insertObject:[NSNumber numberWithInt:[content count] - 1] atIndex:[displayed_amount integerValue]];
-	[self displayRows:1];
-}
-
--(void)removeOrderedIndex:(NSInteger)index {
-	[self.order removeObjectAtIndex:index];
-	[self displayRows:-1];
-	self.hidden_amount = [NSNumber numberWithInt:[hidden_amount integerValue] + 1];
-}
+#pragma mark -
+#pragma mark content delivery
 
 -(NSManagedObject *)objectAtIndex:(NSInteger)index {
 //	NSLog(@"order: %@", self.order);
 //	NSLog(@"content: %@", self.content);
 	if (!order) {
 		NSLog(@"re-setting order");
-		self.order = [self generateRandomizedArrayOfLength:[content count] - [hidden_amount integerValue]];
+		self.order = [self generateRandomizedArrayOfLength:[content count] - [hidden_amount integerValue] startingWith:0];
 	}
 	return [content objectAtIndex:[[self.order objectAtIndex:index] integerValue]];
 }
@@ -53,30 +44,40 @@
 		self.loaded_amount = [NSNumber numberWithInt:[content count]];
 	} else {
 		self.loaded_amount = [NSNumber numberWithInt:0];
-	}	
+	}
 }
 
 -(void)update_content {
 	[self load_content];
-	self.order = [self orderArrayWithoutTopIndices:[self.hidden_amount integerValue]];
+	self.order = [self arrayWithoutNoncontiguousIndices:[self arrayWithoutNoncontiguousIndices:order]];
+	NSInteger amount_of_new_content = [loaded_amount integerValue] - [order count];
+	[order addObjectsFromArray:[self generateRandomizedArrayOfLength:amount_of_new_content startingWith:[order count]]];
 	self.hidden_amount = [NSNumber numberWithInt:0];
 }
+
+#pragma mark -
+#pragma mark content order control
 
 -(void)reorder_content {
 	if ([self.order count] == [loaded_amount integerValue] - [hidden_amount integerValue]) {
 		self.order = [self shuffledArrayWithArray:order];
 	} else {
-		self.order = nil;
-		self.order = [self generateRandomizedArrayOfLength:[loaded_amount integerValue]];
+		self.order = [self generateRandomizedArrayOfLength:[loaded_amount integerValue] startingWith:0];
 	}
-	[order retain];
 //	NSLog(@"order: %@, retain count %d", self.order, [self.order retainCount]);
 }
 
+#pragma mark -
+#pragma mark content amount control
+
 -(void)download_more {
+	NSLog(@"downloading content");
 	[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:[[[[[[UIApplication sharedApplication] delegate] data_source] class_names] allKeysForObject:content_type] objectAtIndex:0]
 																		 andAlertCell:[[[[[UIApplication sharedApplication] delegate] navigationController] bottomViewController] cellForContent:content_type]];
 }
+
+#pragma mark -
+#pragma mark number of rows control
 
 -(NSInteger)undisplayed_row_count {
 	return ([loaded_amount integerValue] - [displayed_amount integerValue]) - [hidden_amount integerValue];
@@ -95,14 +96,33 @@
 //	NSLog(@"displayed amount:%@", displayed_amount);
 }
 
--(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length {
-	NSMutableArray *indices = [self ascendingArrayOfLength:length];
+#pragma mark content creation aftermath
+
+-(void)insertNewContent {
+	[self update_content];
+	[self.order insertObject:[NSNumber numberWithInt:[content count] - 1] atIndex:[displayed_amount integerValue]];
+	[self displayRows:1];
+}
+
+#pragma mark content hiding aftermath
+
+-(void)removeOrderedIndex:(NSInteger)index {
+	[self.order removeObjectAtIndex:index];
+	[self displayRows:-1];
+	self.hidden_amount = [NSNumber numberWithInt:[hidden_amount integerValue] + 1];
+}
+
+#pragma mark -
+#pragma mark order array generation
+
+-(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length startingWith:(NSInteger)start {
+	NSMutableArray *indices = [self ascendingArrayOfLength:length startingWith:start];
 	return [self shuffledArrayWithArray:indices];
 }
 
--(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length {
+-(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length startingWith:(NSInteger)start {
 	NSMutableArray *indices = [[NSMutableArray alloc] init];
-	for (NSInteger j = 0; j < length; j++) {
+	for (NSInteger j = start; j < length; j++) {
 		[indices insertObject:[NSNumber numberWithInt:j] atIndex:j];
 	}
 	return indices;
@@ -118,21 +138,19 @@
 	return array;	
 }
 
--(NSMutableArray *)orderArrayWithoutTopIndices:(NSInteger)removedAmount {
-	NSNumber *highest = [self largestValueInArray:self.order];
-	for (NSInteger i = 0; i < removedAmount; i++) {
-		[self.order removeObject:[NSNumber numberWithInt:[highest integerValue] - i]];
-	}
-}
+#pragma mark -
+#pragma mark order array adjustment
 
--(NSNumber *)largestValueInArray:(NSMutableArray *)array {
-	NSNumber *highest = [NSNumber numberWithInt:0];
-	for (NSNumber *num in array) {
-		if ([num integerValue] > [highest integerValue]) {
-			highest = num;
-		}
+-(NSMutableArray *)arrayWithoutNoncontiguousIndices:(NSArray *)array {
+	NSInteger length = [array count];
+	NSMutableArray *indices = [NSMutableArray arrayWithCapacity:length];
+	for (NSInteger i = 0; i < length; i++) {
+		[indices insertObject:[NSNumber numberWithInt:[array indexOfObject:[NSNumber numberWithInt:i]]] atIndex:i];
 	}
-	return highest;
+	
+	[indices removeObject:nil];
+	NSLog(@"indices: %@", indices);
+	return indices;
 }
 
 @end

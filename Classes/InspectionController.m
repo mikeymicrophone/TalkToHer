@@ -17,9 +17,10 @@
 @synthesize content;
 
 -(id)initWithContent:(id)contentObj {
-	if (![super initWithStyle:UITableViewStylePlain])
+	if (![super initWithStyle:UITableViewStyleGrouped])
 		return nil;
 	
+	[self tableView].backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 	[self setContent:[self inspect_content:contentObj]];
 
 	return self;
@@ -198,6 +199,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
 	if (indexPath.section == 5) {
 		MFMessageComposeViewController *textController = [[MFMessageComposeViewController alloc] init];
 		textController.body = [content main_text];
@@ -229,10 +231,10 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
-	self.content = nil;
 }
 
 - (void)dealloc {
+	self.content = nil;
     [super dealloc];
 }
 
