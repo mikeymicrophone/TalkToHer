@@ -15,14 +15,14 @@
 + (CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width {
 	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];
 	UIFont *textFont = [UIFont fontWithName:@"TrebuchetMS" size:15];
-	CGSize main_size = [mtext sizeWithFont:captionFont constrainedToSize:CGSizeMake(width-10.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
-	CGSize additional_size = [additional sizeWithFont:textFont constrainedToSize:CGSizeMake(width-10.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+	CGSize main_size = [mtext sizeWithFont:captionFont constrainedToSize:CGSizeMake(width-30.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+	CGSize additional_size = [additional sizeWithFont:textFont constrainedToSize:CGSizeMake(width-30.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
 
 	return main_size.height + additional_size.height + 15.0;
 }
 
 -(id)initWithContent:(NSObject *)c {
-	if (!(self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"%@_%@",
+	if (!(self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[NSString stringWithFormat:@"%@_%@",
 					[c className], [c performSelector:NSSelectorFromString([c getRemoteClassIdName])]]]))
 		return nil;
 	
@@ -34,32 +34,45 @@
 	return self;
 }
 
+
+
 - (void)drawRect:(CGRect)rect
 {
-	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];
-	UIFont *textFont = [UIFont fontWithName:@"TrebuchetMS" size:15];
+	[super drawRect:rect];
 
 	CGRect f = [self bounds];
-	CGSize cs = [main_text sizeWithFont:captionFont constrainedToSize:CGSizeMake(f.size.width-10.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+	CGSize cs = [main_text sizeWithFont:[UIFont fontWithName:@"TrebuchetMS" size:18] constrainedToSize:CGSizeMake(f.size.width-30.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
 	
-	CGRect c = CGRectMake(5.0, 5.0, f.size.width-10.0, cs.height+5.0);
-	[main_text drawInRect:c withFont:captionFont lineBreakMode:UILineBreakModeWordWrap];
-
-	CGRect r = CGRectMake(5.0, cs.height+10.0, f.size.width-10.0, f.size.height-cs.height-15.0);
-	[additional_text drawInRect:r withFont:textFont lineBreakMode:UILineBreakModeWordWrap];
+	UILabel *main = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, f.size.width-30, cs.height+5)];
+	main.text = main_text;
+	main.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
+	main.lineBreakMode = UILineBreakModeWordWrap;
+	main.numberOfLines = 12;
+	main.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	[self addSubview:main];
+	
+	UILabel *addl = [[UILabel alloc] initWithFrame:CGRectMake(15.0, cs.height+10.0, f.size.width-30.0, f.size.height-cs.height-15.0)];
+	addl.text = additional_text;
+	addl.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
+	addl.lineBreakMode = UILineBreakModeWordWrap;
+	addl.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	addl.numberOfLines = 12;
+	[self addSubview:addl];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+	UIColor *c;
 	if (selected) {
 		if ([type isEqualToString:@"LineEntity"]) {
-			self.backgroundColor = [UIColor colorWithRed:0.815686274509804 green:0.705882352941177 blue:0.223529411764706 alpha:0.4];
+			c = [UIColor colorWithRed:0.983725490196078 green:0.964509803921569 blue:0.6980392156862745 alpha:1];
 		} else if ([type isEqualToString:@"TipEntity"]) {
-			self.backgroundColor = [UIColor colorWithRed:0.666666666666667 green:0.0352941176470588 blue:0.0862745098039216 alpha:0.4];
+			c = [UIColor colorWithRed:0.815686274509804 green:0.486274509803922 blue:0.517647058823529 alpha:1];
 		} else if ([type isEqualToString:@"ExerciseEntity"]) {
-			self.backgroundColor = [UIColor colorWithRed:0.105882352941176 green:0.384313725490196 blue:0.196078431372549 alpha:0.4];
+			c = [UIColor colorWithRed:0.447058823529412 green:0.698039215686274 blue:0.447058823529412 alpha:1];
 		} else if ([type isEqualToString:@"GoalOwnershipEntity"]) {
-			self.backgroundColor = [UIColor colorWithRed:0.164705882352941 green:0.392156862745098 blue:0.556862745098039 alpha:0.4];
+			c = [UIColor colorWithRed:0.411764705882353 green:0.505882352941176 blue:0.72156862745098 alpha:1];
 		}
+		self.backgroundColor = c;
 	} else {
 		self.backgroundColor = [UIColor whiteColor];
 	}

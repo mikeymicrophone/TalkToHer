@@ -67,6 +67,7 @@
 		email_heading = [[UILabel alloc] initWithFrame:CGRectMake(171, 99, 70, 21)];
 		email_heading.text = @"email";
 		email_heading.textColor = [UIColor whiteColor];
+		email_heading.font = [UIFont fontWithName:@"TrebuchetMS" size:17];
 		email_heading.shadowColor = [UIColor blackColor];
 		email_heading.opaque = NO;
 		email_heading.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];

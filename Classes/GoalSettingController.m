@@ -53,8 +53,7 @@
 			heading.text = @"Setting a goal: to try a line";
 		} else if ([objectiveType isEqualToString:@"Tip"]) {
 			heading.text = @"Setting a goal: to use a tip";
-		}
-			
+		}	
 	}
     return self;
 }

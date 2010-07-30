@@ -24,7 +24,7 @@
 @synthesize content_source, more_button;
 
 -(id)initWithContentSource:(ContentDelegate *)source {
-	if (![super initWithNibName:nil bundle:nil])
+	if (![super initWithNibName:@"InspirationController" bundle:nil])
 		return nil;
 	
 	self.content_source = source;
@@ -92,7 +92,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSInteger length;
 	if (section == 0) {
-		NSLog(@"rows in section: %d; loaded_amount: %@; displayed_amount: %@; hidden_amount: %@", [content_source display_amount], [content_source loaded_amount], [content_source displayed_amount], [content_source hidden_amount]);
+//		NSLog(@"rows in section: %d; loaded_amount: %@; displayed_amount: %@; hidden_amount: %@", [content_source display_amount], [content_source loaded_amount], [content_source displayed_amount], [content_source hidden_amount]);
 		length = [content_source display_amount];
 	} else if (section == 1) {
 		if ([[content_source content_type] isEqualToString:@"GoalOwnership"]) {
