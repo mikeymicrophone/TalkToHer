@@ -12,6 +12,7 @@
 @interface ContentDelegate : NSObject {
 	NSNumber *loaded_amount;
 	NSNumber *displayed_amount;
+	NSNumber *hidden_amount;
 	NSNumber *content_page;
 	NSString *content_type;
 	NSMutableArray *content;
@@ -20,6 +21,7 @@
 
 @property (nonatomic, retain) NSNumber *loaded_amount;
 @property (nonatomic, retain) NSNumber *displayed_amount;
+@property (nonatomic, retain) NSNumber *hidden_amount;
 @property (nonatomic, retain) NSNumber *content_page;
 @property (nonatomic, retain) NSString *content_type;
 @property (nonatomic, retain) NSMutableArray *content;
@@ -32,8 +34,13 @@
 -(NSManagedObject *)objectAtIndex:(NSInteger)index;
 -(NSMutableArray *)generateRandomizedArrayOfLength:(NSInteger)length;
 -(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length;
+-(NSMutableArray *)shuffledArrayWithArray:(NSMutableArray *)array;
+-(void)load_content;
 -(void)update_content;
 -(void)reorder_content;
 -(void)download_more;
 -(void)insertNewContent;
+-(void)removeOrderedIndex:(NSInteger)index;
+-(NSMutableArray *)orderArrayWithoutTopIndices:(NSInteger)removedAmount;
+-(NSNumber *)largestValueInArray:(NSMutableArray *)array;
 @end

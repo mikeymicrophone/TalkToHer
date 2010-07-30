@@ -25,6 +25,7 @@
 	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
 	heading.textAlignment = UITextAlignmentCenter;
 	heading.textColor = [UIColor whiteColor];
+	heading.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
 	heading.shadowColor = [UIColor blackColor];
 	heading.opaque = NO;
 	heading.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
@@ -35,7 +36,7 @@
 		exercise_name = [[UITextField alloc] initWithFrame:CGRectMake(21, 150, 166, 31)];
 		exercise_name.borderStyle = UITextBorderStyleRoundedRect;
 		exercise_name.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-		exercise_name.font = [UIFont systemFontOfSize:11];
+		exercise_name.font = [UIFont fontWithName:@"TrebuchetMS" size:13];
 		exercise_name.placeholder = @"name of exercise";
 	} else {
 		heading.text = [NSString stringWithFormat:@"Sharing: a %@", cType];
@@ -93,6 +94,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[self.view addSubview:heading];
 	[self.view addSubview:exercise_name];
+	self.writtenContent.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
 	[[self writtenContent] becomeFirstResponder];
 }
 

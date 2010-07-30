@@ -13,7 +13,7 @@
 
 @implementation GoalOwnership
 
-@synthesize goalOwnershipId, derivedDescription, progress, complete, completionStatus, remainingDaysText, userId;
+@synthesize goalOwnershipId, derivedDescription, progress, complete, completionStatus, remainingDaysText, repetitions, userId;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
@@ -25,6 +25,7 @@
 	self.remainingDaysText = [ps remainingDaysText];
     self.userId = [ps userId];
 	self.goalOwnershipId = [ps goalOwnershipId];
+	self.repetitions = [ps repetitions];
 
     return self;
 }
@@ -50,7 +51,7 @@
 }
 
 -(NSArray *)excludedPropertyNames {
-	NSArray *exclusions = [NSArray arrayWithObjects:@"derivedDescription", @"completionStatus", @"remainingDaysText", nil];
+	NSArray *exclusions = [NSArray arrayWithObjects:@"derivedDescription", @"completionStatus", @"remainingDaysText", @"repetitions", nil];
 	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
 

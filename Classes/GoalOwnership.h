@@ -17,6 +17,7 @@
 	NSString *complete;
 	NSString *completionStatus;
 	NSString *remainingDaysText;
+	NSString *repetitions;
 	NSString *userId;
 	BOOL delayed;
 }
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSString *complete;
 @property (nonatomic, retain) NSString *completionStatus;
 @property (nonatomic, retain) NSString *remainingDaysText;
+@property (nonatomic, retain) NSString *repetitions;
 @property (nonatomic, retain) NSString *userId;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps;

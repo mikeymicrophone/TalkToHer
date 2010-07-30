@@ -24,5 +24,6 @@
 @property (nonatomic, retain) LoaderCell *exercises_cell;
 
 -(LoaderCell *)cellForContent:(NSString *)type;
-
+-(IBAction)goToSite;
+-(IBAction)about;
 @end

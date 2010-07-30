@@ -42,6 +42,7 @@
 		self.heading = [[UILabel alloc] initWithFrame:CGRectMake(6,5,308,21)];
 		heading.textAlignment = UITextAlignmentCenter;
 		heading.textColor = [UIColor whiteColor];
+		heading.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
 		heading.shadowColor = [UIColor blackColor];
 		heading.opaque = NO;
 		heading.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
@@ -60,6 +61,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	description.text = text;
+	description.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
 	description.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 	[self.view addSubview:heading];
 	[repetitions becomeFirstResponder];

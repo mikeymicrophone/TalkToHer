@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "InspirationController.h"
 #import "IdentificationController.h"
+#import "InfoController.h"
 #import "DataDelegate.h"
 #import "Line.h"
 #import "Tip.h"
@@ -48,6 +49,15 @@
 		c = goals_cell;
 	}
 	return c;
+}
+
+-(IBAction)goToSite {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://lineoftheday.com"]];
+}
+
+-(IBAction)about {
+	InfoController *infoController = [[InfoController alloc] initWithNibName:nil bundle:nil];
+	[self presentModalViewController:infoController animated:YES];
 }
 
 /*

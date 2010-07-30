@@ -92,6 +92,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSInteger length;
 	if (section == 0) {
+		NSLog(@"rows in section: %d; loaded_amount: %@; displayed_amount: %@; hidden_amount: %@", [content_source display_amount], [content_source loaded_amount], [content_source displayed_amount], [content_source hidden_amount]);
 		length = [content_source display_amount];
 	} else if (section == 1) {
 		if ([[content_source content_type] isEqualToString:@"GoalOwnership"]) {
@@ -141,10 +142,51 @@
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithContent:content] autorelease];
+			UISwipeGestureRecognizer *hide_gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+			hide_gesture.direction = UISwipeGestureRecognizerDirectionLeft;
+			[cell addGestureRecognizer:hide_gesture];
+			[hide_gesture release];
 		}
 	}
 	
     return cell;
+}
+
+- (void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+	// hide the row immediately
+	NSIndexPath *cellPathToRemove = [self.tableView indexPathForRowAtPoint:[recognizer locationInView:self.tableView]];
+	NSArray *indexPaths = [NSArray arrayWithObject:cellPathToRemove];
+	
+	[self.tableView beginUpdates];
+	[self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
+	
+	// remove the index from the ordering array so it won't be shown on a reorder
+	[content_source removeOrderedIndex:cellPathToRemove.row];
+	[self.tableView endUpdates];
+	
+	// mark the content as hidden so it won't be shown again
+	NSString *identifier = [[recognizer view] reuseIdentifier];
+	
+	NSRange r = [identifier rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"_"]];
+	
+	NSInteger content_id = [[identifier substringFromIndex:r.location + 1] integerValue];
+	
+	NSString *content_id_type = [NSClassFromString([content_source content_type]) getRemoteClassIdName];
+	
+	NSEntityDescription *e = [NSEntityDescription entityForName:[content_source content_type] inManagedObjectContext:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+	
+	[f setEntity:e];
+	[f setPredicate:[NSPredicate predicateWithFormat:[content_id_type stringByAppendingFormat:@" == %d", content_id]]];
+	[f setPropertiesToFetch:[NSArray arrayWithObject:content_id_type]];
+    
+	NSError *error = nil;
+	NSArray *results = [[[[UIApplication sharedApplication] delegate] managedObjectContext] executeFetchRequest:f error:&error];
+	[f release];
+	
+	[[results objectAtIndex:0] setValue:[NSNumber numberWithInt:1] forKey:@"hidden"];
+	
+	[[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

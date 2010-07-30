@@ -23,13 +23,16 @@
 }
 
 -(IBAction)update {
-	[goalOwnership setProgress:[[NSNumber numberWithInt:[self.new_progress.text intValue] + [goalOwnership.progress intValue]] stringValue]];
+	[goalOwnership setProgress:[[NSNumber numberWithInt:[self.new_progress.text integerValue] + [goalOwnership.progress integerValue]] stringValue]];
+	[goalOwnership setCompletionStatus:[NSString stringWithFormat:@"%@%% complete", [NSNumber numberWithFloat:100*[[goalOwnership progress] floatValue] / [[goalOwnership repetitions] floatValue]]]];
 	NSError *error = nil;
 	[[[[[UIApplication sharedApplication] delegate] data_source] moc] save:&error];
 	[[goalOwnership objectiveResource] updateRemote];
 	[[self parentViewController] popViewControllerAnimated:YES];
-//	[[[[[UIApplication sharedApplication] delegate] data_source] goals] download_more];
-//	[[[[self parentViewController] topViewController] tableView] reloadData];
+	
+	[[[[[UIApplication sharedApplication] delegate] data_source] goals] update_content];
+	NSLog(@"nav controller: %@", [[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView]);
+	[[[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView] reloadData];
 }
 
 - (void)viewDidLoad {

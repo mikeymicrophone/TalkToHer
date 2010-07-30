@@ -33,6 +33,7 @@
 	[self setComplete:[NSNumber numberWithInt:[[g complete] integerValue]]];
 	[self setCompletionStatus:[g completionStatus]];
 	[self setRemainingDaysText:[g remainingDaysText]];
+	[self setRepetitions:[NSNumber numberWithInt:[[g repetitions] integerValue]]];
 }
 
 @end

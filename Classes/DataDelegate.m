@@ -49,9 +49,7 @@
 
 	[f setEntity:e];
 	[f setFetchBatchSize:30];
-	if ([type isEqualToString:@"GoalOwnership"]) {
-		[f setPredicate:[NSPredicate predicateWithFormat:@"userId == %d", [userId integerValue]]];
-	}
+	[f setPredicate:[NSPredicate predicateWithFormat:@"hidden == %d", 0]];
 	[f setPropertiesToFetch:[self propertiesToFetchForType:type]];
     
 	NSError *error = nil;
@@ -82,7 +80,7 @@
 	} else if (type == @"Exercise") {
 		properties = [NSArray arrayWithObjects:@"instruction", @"moniker", @"exerciseId", nil];
 	} else if (type == @"GoalOwnership") {
-		properties = [NSArray arrayWithObjects:@"goalOwnershipId", @"derivedDescription", @"complete", @"progress", @"completionStatus", @"remainingDaysText", nil];
+		properties = [NSArray arrayWithObjects:@"goalOwnershipId", @"derivedDescription", @"complete", @"progress", @"completionStatus", @"remainingDaysText", @"repetitions", nil];
 	}
    return properties;
 }
