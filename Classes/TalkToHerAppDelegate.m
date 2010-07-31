@@ -33,6 +33,9 @@
     return YES;
 }
 
+-(NSString *)userIsLoggedIn {
+	return [data_source userId];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*

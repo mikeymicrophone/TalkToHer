@@ -7,6 +7,7 @@
 //
 
 #import "InspectionController.h"
+#import "IdentificationController.h"
 #import "InspirationCell.h"
 #import "GoalSettingController.h"
 #import "Rating.h"
@@ -109,15 +110,27 @@
 			[cell setMain_text:[content averageRating]];
 			[cell setAdditional_text:[content ratingCount]];
 			
-			UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
-			slider.maximumValue = 5.0;
-//			slider.tag = [[content getRemoteId] integerValue];
-			[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
-			[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
-			[cell addSubview:slider];
-			
-			rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
-			[cell addSubview:rating];
+			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
+				UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
+				slider.maximumValue = 5.0;
+				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
+				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
+				[cell addSubview:slider];
+				
+				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
+				[cell addSubview:rating];				
+			} else {
+				UIButton *log_in_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+				log_in_button.frame = CGRectMake(80, 15, 210, 30);
+				log_in_button.titleLabel.frame = CGRectMake(5, 5, 200, 20);
+				log_in_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:13];
+				log_in_button.titleLabel.textColor = [UIColor scrollViewTexturedBackgroundColor];
+				log_in_button.titleLabel.text = @"Log in to rate, tag, and comment";
+				log_in_button.titleLabel.hidden = NO;
+				
+				[log_in_button addTarget:self action:@selector(log_in) forControlEvents:UIControlEventTouchUpInside];
+				[cell addSubview:log_in_button];
+			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 2) {
@@ -247,6 +260,12 @@
 		[r markForDelayedSubmission];
 	}
 
+}
+
+-(void)log_in {
+	IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
+	[self presentModalViewController:identificationController animated:YES];
+	[identificationController release];
 }
 
 #pragma mark -

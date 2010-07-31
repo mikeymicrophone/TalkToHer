@@ -25,6 +25,10 @@
 
 	UITableView *s = [[[self parentViewController] bottomViewController] tableView];
 	LoaderCell *c = [[[self parentViewController] bottomViewController] goals_cell];
+	
+	if ([[[[self parentViewController] topViewController] className] isEqualToString:@"InspectionController"]) {
+		UITableView *s = [[[self parentViewController] topViewController] tableView];
+	}
 
 	dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
 	dispatch_async(queue, ^{

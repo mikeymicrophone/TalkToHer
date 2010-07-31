@@ -21,5 +21,5 @@
 
 -(void)ratingReady:(id)sender;
 -(void)ratingChanged:(id)sender;
-
+-(void)log_in;
 @end
