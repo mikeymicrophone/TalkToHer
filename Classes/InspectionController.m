@@ -17,10 +17,9 @@
 @synthesize content;
 
 -(id)initWithContent:(id)contentObj {
-	if (![super initWithStyle:UITableViewStyleGrouped])
+	if (![super initWithNibName:@"InspectionController" bundle:nil])
 		return nil;
-	
-	[self tableView].backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+
 	[self setContent:[self inspect_content:contentObj]];
 
 	return self;
@@ -74,7 +73,7 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	if ([MFMessageComposeViewController canSendText] || YES) {
+	if ([MFMessageComposeViewController canSendText]) {
 		return 6;
 	} else {
 		return 5;
@@ -96,10 +95,7 @@
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-			
-			[cell setMain_text:[content main_text]];
-			[cell setAdditional_text:[content additional_text]];
+			cell = [[[InspirationCell alloc] initWithContent:content] autorelease];
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 1) {
@@ -107,7 +103,7 @@
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			
 			[cell setMain_text:[content averageRating]];
 			[cell setAdditional_text:[content ratingCount]];
@@ -118,7 +114,7 @@
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			[cell setMain_text:[content tagCount]];
 			[cell setAdditional_text:[content recentTags]];
 		}
@@ -128,18 +124,18 @@
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			
 			[cell setMain_text:[content commentCount]];
 			[cell setAdditional_text:[content recentComment]];
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 4) {
-		CellIdentifier = @"goal_setting";
+		CellIdentifier = @"goal setting";
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			
 			[cell setMain_text:@"set a goal"];
 			if ([[content className] isEqualToString:@"Line"]) {
@@ -151,14 +147,13 @@
 			}
 		}
 	}else if (indexPath.section == 5) {
-		CellIdentifier = @"text_message";
+		CellIdentifier = @"text message";
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 
 			[cell setMain_text:@"send as a text"];
-			[cell setAdditional_text:@""];
 		}		
 	}
 	
@@ -189,7 +184,7 @@
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 5) {
 		height = [InspirationCell cellHeightForMainText:@"send as a text"
-											 additional:@""
+											 additional:@"2"
 												  width:[[self view] frame].size.width];
 	}
 	return height;
@@ -199,7 +194,6 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
 	if (indexPath.section == 5) {
 		MFMessageComposeViewController *textController = [[MFMessageComposeViewController alloc] init];
 		textController.body = [content main_text];

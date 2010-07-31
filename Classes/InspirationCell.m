@@ -61,18 +61,16 @@
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-	UIColor *c;
 	if (selected) {
 		if ([type isEqualToString:@"LineEntity"]) {
-			c = [UIColor colorWithRed:0.983725490196078 green:0.964509803921569 blue:0.6980392156862745 alpha:1];
+			self.backgroundColor = [UIColor colorWithRed:0.983725490196078 green:0.964509803921569 blue:0.6980392156862745 alpha:1];
 		} else if ([type isEqualToString:@"TipEntity"]) {
-			c = [UIColor colorWithRed:0.815686274509804 green:0.486274509803922 blue:0.517647058823529 alpha:1];
+			self.backgroundColor = [UIColor colorWithRed:0.815686274509804 green:0.486274509803922 blue:0.517647058823529 alpha:1];
 		} else if ([type isEqualToString:@"ExerciseEntity"]) {
-			c = [UIColor colorWithRed:0.447058823529412 green:0.698039215686274 blue:0.447058823529412 alpha:1];
+			self.backgroundColor = [UIColor colorWithRed:0.447058823529412 green:0.698039215686274 blue:0.447058823529412 alpha:1];
 		} else if ([type isEqualToString:@"GoalOwnershipEntity"]) {
-			c = [UIColor colorWithRed:0.411764705882353 green:0.505882352941176 blue:0.72156862745098 alpha:1];
+			self.backgroundColor = [UIColor colorWithRed:0.411764705882353 green:0.505882352941176 blue:0.72156862745098 alpha:1];
 		}
-		self.backgroundColor = c;
 	} else {
 		self.backgroundColor = [UIColor whiteColor];
 	}
