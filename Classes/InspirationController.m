@@ -28,7 +28,6 @@
 		return nil;
 	
 	self.content_source = source;
-	self.tableView.contentMode =  UIViewContentModeRedraw;
 	
 	if ([[content_source content_type] isEqualToString:@"Line"]) {
 		self.title = @"Lines";

@@ -13,6 +13,8 @@
 	NSString *main_text;
 	NSString *additional_text;
 	NSString *type;
+	UILabel *main;
+	UILabel *addl;
 }
 
 @property (nonatomic, retain) NSString *main_text;
@@ -20,6 +22,7 @@
 @property (nonatomic, retain) NSString *type;
 
 -(id)initWithContent:(NSObject *)c;
+-(void)addLabels;
 +(CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width;
 
 @end
