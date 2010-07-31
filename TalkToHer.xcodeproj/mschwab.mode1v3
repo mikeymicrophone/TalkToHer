@@ -252,7 +252,7 @@
 						<dict>
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
-								<real>104</real>
+								<real>138</real>
 							</array>
 							<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 							<array>
@@ -265,18 +265,17 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {104, 664}}</string>
+							<string>{{0, 0}, {138, 664}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -288,11 +287,11 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {121, 682}}</string>
+						<string>{{0, 0}, {155, 682}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
-							<real>104</real>
+							<real>138</real>
 						</array>
 						<key>RubberWindowFrame</key>
 						<string>-1 55 1276 723 0 0 1280 778 </string>
@@ -300,7 +299,7 @@
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
 					<key>Proportion</key>
-					<string>121pt</string>
+					<string>155pt</string>
 				</dict>
 				<dict>
 					<key>Dock</key>
@@ -313,7 +312,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspirationCell.m</string>
+								<string>DataDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +320,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspirationCell.m</string>
+										<string>DataDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4C0DF261204AC36006AB8AF</string>
+										<string>E4C0DF941204CFF5006AB8AF</string>
 										<key>history</key>
 										<array>
 											<string>E4C0D98812025861006AB8AF</string>
@@ -333,17 +332,26 @@
 											<string>E4C0D9A212025AF4006AB8AF</string>
 											<string>E4C0D9AC12025BAA006AB8AF</string>
 											<string>E4C0D9AE12025BAA006AB8AF</string>
-											<string>E4C0D9C21202623D006AB8AF</string>
 											<string>E4C0DBB8120349B1006AB8AF</string>
 											<string>E4C0DBB9120349B1006AB8AF</string>
 											<string>E4C0DBBA120349B1006AB8AF</string>
-											<string>E4C0DDAA120403BA006AB8AF</string>
 											<string>E4C0DE1612047C84006AB8AF</string>
-											<string>E4C0DE31120487C2006AB8AF</string>
-											<string>E4C0DEE31204A723006AB8AF</string>
-											<string>E4C0DF031204A991006AB8AF</string>
-											<string>E4C0DF251204AC36006AB8AF</string>
-											<string>E4C0DF161204AB6B006AB8AF</string>
+											<string>E4C0DF491204C8BE006AB8AF</string>
+											<string>E4C0DF4A1204C8BE006AB8AF</string>
+											<string>E4C0DF4B1204C8BE006AB8AF</string>
+											<string>E4C0DF4C1204C8BE006AB8AF</string>
+											<string>E4C0DF4D1204C8BE006AB8AF</string>
+											<string>E4C0DF4F1204C8BE006AB8AF</string>
+											<string>E4C0DF541204C8BE006AB8AF</string>
+											<string>E4C0DF801204CF81006AB8AF</string>
+											<string>E4C0DF811204CF81006AB8AF</string>
+											<string>E4C0DF821204CF81006AB8AF</string>
+											<string>E4C0DF831204CF81006AB8AF</string>
+											<string>E4C0DF841204CF81006AB8AF</string>
+											<string>E4C0DF851204CF81006AB8AF</string>
+											<string>E4C0DF861204CF81006AB8AF</string>
+											<string>E4C0DF871204CF81006AB8AF</string>
+											<string>E4C0DF881204CF81006AB8AF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -355,7 +363,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1150, 525}}</string>
+								<string>{{0, 0}, {1116, 525}}</string>
 								<key>RubberWindowFrame</key>
 								<string>-1 55 1276 723 0 0 1280 778 </string>
 							</dict>
@@ -375,7 +383,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 530}, {1150, 152}}</string>
+								<string>{{0, 530}, {1116, 152}}</string>
 								<key>RubberWindowFrame</key>
 								<string>-1 55 1276 723 0 0 1280 778 </string>
 							</dict>
@@ -386,7 +394,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1150pt</string>
+					<string>1116pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -546,8 +554,9 @@
 		<string>E4C0D8071201C2C9006AB8AF</string>
 		<string>E4C0D8091201C2C9006AB8AF</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>E439365011D453CE00D6DED9</string>
+		<string>E4C0DF571204C8BE006AB8AF</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
+		<string>E439365011D453CE00D6DED9</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
@@ -574,7 +583,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspirationController.m</string>
+								<string>RatingEntity.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -643,7 +652,7 @@
 			<key>WindowToolGUID</key>
 			<string>E439365011D453CE00D6DED9</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -790,7 +799,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspirationController.m</string>
+										<string>&lt;No Editor&gt;</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>

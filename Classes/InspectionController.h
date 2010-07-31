@@ -11,11 +11,15 @@
 
 @interface InspectionController : UITableViewController <MFMailComposeViewControllerDelegate> {
 	id content;
+	UILabel *rating;
 }
 
 @property (nonatomic, retain) id content;
 
 -(id)initWithContent:(id)contentObj;
 -(id)inspect_content:(id)contentObj;
+
+-(void)ratingReady:(id)sender;
+-(void)ratingChanged:(id)sender;
 
 @end

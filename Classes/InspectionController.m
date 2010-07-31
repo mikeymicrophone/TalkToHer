@@ -9,6 +9,7 @@
 #import "InspectionController.h"
 #import "InspirationCell.h"
 #import "GoalSettingController.h"
+#import "Rating.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 
@@ -107,6 +108,16 @@
 			
 			[cell setMain_text:[content averageRating]];
 			[cell setAdditional_text:[content ratingCount]];
+			
+			UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
+			slider.maximumValue = 5.0;
+//			slider.tag = [[content getRemoteId] integerValue];
+			[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
+			[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
+			[cell addSubview:slider];
+			
+			rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
+			[cell addSubview:rating];
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 2) {
@@ -209,8 +220,33 @@
 	}
 }
 
+#pragma mark -
+#pragma mark sms controller delegate
+
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark rating control
+
+-(void)ratingChanged:(UISlider *)sender {
+	rating.text = [NSString stringWithFormat:@"%.1f", [sender value]];
+}
+
+-(void)ratingReady:(UISlider *)sender {
+	Rating *r = [[Rating alloc] init];
+	r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)[sender value] * 10];
+	r.targetId = [content getRemoteId];
+	r.targetType = [content className];
+	r.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+	
+	if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+		[r createRemote];
+	} else {
+		[r markForDelayedSubmission];
+	}
+
 }
 
 #pragma mark -

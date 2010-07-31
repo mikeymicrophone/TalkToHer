@@ -22,7 +22,7 @@
 
 -(void)initialize_constants {
 	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", nil];//] @"Line", @"Line", @"Tip", @"Tip", @"Exercise", @"Exercise", @"GoalOwnership", @"GoalOwnership", nil];
-	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
+	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
 	[ObjectiveResourceConfig setSite:server_location];
 	connectionIsFresh = NO;
 }

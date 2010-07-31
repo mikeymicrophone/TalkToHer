@@ -58,6 +58,8 @@
 		E4C0DB3512031D0A006AB8AF /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DB3312031D0A006AB8AF /* InfoController.m */; };
 		E4C0DB3612031D0A006AB8AF /* InfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DB3412031D0A006AB8AF /* InfoController.xib */; };
 		E4C0DEDD1204A654006AB8AF /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DEDC1204A654006AB8AF /* text.png */; };
+		E4C0DF3E1204C11D006AB8AF /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DF3D1204C11D006AB8AF /* Rating.m */; };
+		E4C0DF411204C1AF006AB8AF /* RatingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DF401204C1AF006AB8AF /* RatingEntity.m */; };
 		E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
 		E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
 		E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
@@ -187,6 +189,10 @@
 		E4C0DB3312031D0A006AB8AF /* InfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoController.m; sourceTree = "<group>"; };
 		E4C0DB3412031D0A006AB8AF /* InfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoController.xib; path = Classes/InfoController.xib; sourceTree = "<group>"; };
 		E4C0DEDC1204A654006AB8AF /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
+		E4C0DF3C1204C11D006AB8AF /* Rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
+		E4C0DF3D1204C11D006AB8AF /* Rating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rating.m; sourceTree = "<group>"; };
+		E4C0DF3F1204C1AF006AB8AF /* RatingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingEntity.h; sourceTree = "<group>"; };
+		E4C0DF401204C1AF006AB8AF /* RatingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingEntity.m; sourceTree = "<group>"; };
 		E4C6ACCD11D514F000068008 /* InspirationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspirationController.xib; path = Views/InspirationController.xib; sourceTree = "<group>"; };
 		E4C6ACCE11D514F000068008 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		E4C6ACCF11D514F000068008 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
@@ -433,6 +439,8 @@
 				E4A158B511E4EA6D00A044D7 /* User.m */,
 				E4001B4211FF8B8B001359B0 /* UserEntity.m */,
 				E4C0D80C1201C628006AB8AF /* Goal.m */,
+				E4C0DF3D1204C11D006AB8AF /* Rating.m */,
+				E4C0DF401204C1AF006AB8AF /* RatingEntity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -464,6 +472,7 @@
 		E40017F511FE398F001359B0 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E4C0DF3C1204C11D006AB8AF /* Rating.h */,
 				E4C0D80B1201C628006AB8AF /* Goal.h */,
 				E4001B4111FF8B8B001359B0 /* UserEntity.h */,
 				E4C6AEC711D5421100068008 /* Line.h */,
@@ -473,6 +482,7 @@
 				E4D8222E11FD14B70014D28A /* ExerciseEntity.h */,
 				E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */,
 				E4D8109511FE36AD0020AE8B /* LineEntity.h */,
+				E4C0DF3F1204C1AF006AB8AF /* RatingEntity.h */,
 				E4D8109711FE36AD0020AE8B /* TipEntity.h */,
 				E4A158A311E4E49200A044D7 /* UserSession.h */,
 				E4A158B411E4EA6D00A044D7 /* User.h */,
@@ -809,6 +819,8 @@
 				E4C0D7F51201C2A6006AB8AF /* GoalSettingController.m in Sources */,
 				E4C0D80D1201C628006AB8AF /* Goal.m in Sources */,
 				E4C0DB3512031D0A006AB8AF /* InfoController.m in Sources */,
+				E4C0DF3E1204C11D006AB8AF /* Rating.m in Sources */,
+				E4C0DF411204C1AF006AB8AF /* RatingEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
