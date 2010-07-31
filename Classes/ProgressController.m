@@ -28,11 +28,10 @@
 	NSError *error = nil;
 	[[[[[UIApplication sharedApplication] delegate] data_source] moc] save:&error];
 	[[goalOwnership objectiveResource] updateRemote];
-	[[self parentViewController] popViewControllerAnimated:YES];
-	
+	[[self parentViewController] popToRootViewControllerAnimated:YES];	
 	[[[[[UIApplication sharedApplication] delegate] data_source] goals] update_content];
-	NSLog(@"nav controller: %@", [[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView]);
-	[[[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView] reloadData];
+//	[[[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView] reloadData];
+//	[[[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView] setNeedsDisplay];
 }
 
 - (void)viewDidLoad {
