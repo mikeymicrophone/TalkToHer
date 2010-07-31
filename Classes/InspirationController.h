@@ -12,11 +12,9 @@
 
 @interface InspirationController : UITableViewController {
 	ContentDelegate *content_source;
-	UITableViewCell *more_button;
 }
 
 @property (nonatomic, retain) ContentDelegate *content_source;
-@property (nonatomic, retain) UITableViewCell *more_button;
 
 -(id)initWithContentSource:(ContentDelegate *)source;
 -(id)contentForIndexPath:(NSIndexPath *)indexPath;

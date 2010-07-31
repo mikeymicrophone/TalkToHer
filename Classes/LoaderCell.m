@@ -15,15 +15,16 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
 		self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+		self.coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self reuseIdentifier]]];
+
 		CGPoint center;
 		center.x = 290;
 		center.y = 23;
-		[self.spinner setCenter:center];
-		[self addSubview:self.spinner];
+		[spinner setCenter:center];
+		[self addSubview:spinner];
 		
-		self.coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:reuseIdentifier]];
 		coloredLabel.center = self.center;
-		[self addSubview:self.coloredLabel];
+		[self addSubview:coloredLabel];		
     }
     return self;
 }

@@ -16,6 +16,7 @@
 	LoaderCell *tips_cell;
 	LoaderCell *goals_cell;
 	LoaderCell *exercises_cell;
+	IBOutlet UIButton *site;
 }
 
 @property (nonatomic, retain) LoaderCell *lines_cell;

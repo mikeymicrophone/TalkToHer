@@ -21,7 +21,7 @@
 
 @implementation InspirationController
 
-@synthesize content_source, more_button;
+@synthesize content_source;
 
 -(id)initWithContentSource:(ContentDelegate *)source {
 	if (![super initWithNibName:@"InspirationController" bundle:nil])
@@ -113,15 +113,14 @@
 		if (indexPath.row == 0) {
 			static NSString *CellIdentifier = @"more";
 			
-			cell = more_button;//[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				UIImageView *show_more = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
 				show_more.center = cell.center;
 				[cell addSubview:show_more];
                 [show_more release];
-				cell.selectionStyle = UITableViewCellSelectionStyleGray;
-				self.more_button = cell;
+				cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			}
 		} else if (indexPath.row == 1) {
 			static NSString *CellIdentifier = @"write";
@@ -147,7 +146,7 @@
 			hide_gesture.direction = UISwipeGestureRecognizerDirectionLeft;
 			[cell addGestureRecognizer:hide_gesture];
 			[hide_gesture release];
-			cell.contentMode =  UIViewContentModeRedraw;
+			cell.contentMode = UIViewContentModeRedraw;
 		}
 	}
 	
@@ -245,7 +244,7 @@
 			if ([[content_source loaded_amount] integerValue] > 0) {
 				[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:displayed_rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 			}
-			[more_button setSelected:NO animated:YES];
+
 			if (undisplayed_rows < 10) {
 				[content_source download_more];
 			}
@@ -270,7 +269,6 @@
 			}
 		}
 	}
-	[more_button setSelected:NO animated:YES];
 }
 
 #pragma mark -
@@ -287,7 +285,6 @@
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 	self.content_source = nil;
-	self.more_button = nil;
 }
 
 - (void)dealloc {

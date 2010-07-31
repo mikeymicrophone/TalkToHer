@@ -57,6 +57,7 @@
 		E4C0D80D1201C628006AB8AF /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D80C1201C628006AB8AF /* Goal.m */; };
 		E4C0DB3512031D0A006AB8AF /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DB3312031D0A006AB8AF /* InfoController.m */; };
 		E4C0DB3612031D0A006AB8AF /* InfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DB3412031D0A006AB8AF /* InfoController.xib */; };
+		E4C0DEDD1204A654006AB8AF /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DEDC1204A654006AB8AF /* text.png */; };
 		E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
 		E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
 		E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
@@ -185,6 +186,7 @@
 		E4C0DB3212031D0A006AB8AF /* InfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoController.h; sourceTree = "<group>"; };
 		E4C0DB3312031D0A006AB8AF /* InfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoController.m; sourceTree = "<group>"; };
 		E4C0DB3412031D0A006AB8AF /* InfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoController.xib; path = Classes/InfoController.xib; sourceTree = "<group>"; };
+		E4C0DEDC1204A654006AB8AF /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 		E4C6ACCD11D514F000068008 /* InspirationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspirationController.xib; path = Views/InspirationController.xib; sourceTree = "<group>"; };
 		E4C6ACCE11D514F000068008 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		E4C6ACCF11D514F000068008 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				E419E36D11F0199500F400DD /* login.png */,
 				E419E38011F0236E00F400DD /* write.png */,
 				E419E37C11F0224800F400DD /* more.png */,
+				E4C0DEDC1204A654006AB8AF /* text.png */,
 				E4A1573011DF989700A044D7 /* ContributionController.xib */,
 				E4A1589611E4E2A600A044D7 /* IdentificationController.xib */,
 				E4C0DB3412031D0A006AB8AF /* InfoController.xib */,
@@ -729,6 +732,7 @@
 				E4001D2412006F25001359B0 /* default.png in Resources */,
 				E4C0D7F61201C2A6006AB8AF /* GoalSettingController.xib in Resources */,
 				E4C0DB3612031D0A006AB8AF /* InfoController.xib in Resources */,
+				E4C0DEDD1204A654006AB8AF /* text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

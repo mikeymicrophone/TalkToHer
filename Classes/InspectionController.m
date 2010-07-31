@@ -152,8 +152,9 @@
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-
-			[cell setMain_text:@"send as a text"];
+			UIImageView *coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"text"]];
+			coloredLabel.center = cell.center;
+			[cell addSubview:coloredLabel];
 		}		
 	}
 	

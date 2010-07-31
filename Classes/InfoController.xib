@@ -54,6 +54,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<bool key="IBUIEditable">NO</bool>
 						<string type="base64-UTF8" key="IBUIText">VGFsa1RvSGVyIGhlbHBzIHlvdSBzdGFydCBjb252ZXJzYXRpb25zIGJ5IGdpdmluZyB5b3UgbGluZXMg
 dGhhdCB5b3UgY2FuIHVzZSB2ZXJiYXRpbS4gIE9yLCB1c2UgdGhlIG1hdGVyaWFsIHRvIGdldCB5b3Ug
 dGhpbmtpbmcgYW5kIGNvbWUgdXAgd2l0aCB5b3VyIG93biBsaW5lcy4KCi0tc2hha2UgdG8gc2h1ZmZs
