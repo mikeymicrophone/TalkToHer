@@ -836,6 +836,9 @@
 			E4C0DF991204D107006AB8AF /* PBXTextBookmark */ = E4C0DF991204D107006AB8AF /* PBXTextBookmark */;
 			E4C0DF9A1204D108006AB8AF /* PBXTextBookmark */ = E4C0DF9A1204D108006AB8AF /* PBXTextBookmark */;
 			E4C0DF9B1204D141006AB8AF /* PBXTextBookmark */ = E4C0DF9B1204D141006AB8AF /* PBXTextBookmark */;
+			E4C0DF9C1204D19C006AB8AF /* PBXTextBookmark */ = E4C0DF9C1204D19C006AB8AF /* PBXTextBookmark */;
+			E4C0DF9D1204D19C006AB8AF /* PBXTextBookmark */ = E4C0DF9D1204D19C006AB8AF /* PBXTextBookmark */;
+			E4C0DF9E1204D19C006AB8AF /* PBXTextBookmark */ = E4C0DF9E1204D19C006AB8AF /* PBXTextBookmark */;
 			E4EAD9281200CE4500F246DA = E4EAD9281200CE4500F246DA /* PBXTextBookmark */;
 			E4EAD9291200CE4500F246DA = E4EAD9291200CE4500F246DA /* PBXTextBookmark */;
 			E4EAD9481200D0D000F246DA = E4EAD9481200D0D000F246DA /* PBXTextBookmark */;
@@ -8031,9 +8034,9 @@
 	};
 	E4C0DF3D1204C11D006AB8AF /* Rating.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1195, 494}}";
-			sepNavSelRange = "{1118, 0}";
-			sepNavVisRange = "{527, 667}";
+			sepNavIntBoundsRect = "{{0, 0}, {1195, 546}}";
+			sepNavSelRange = "{1170, 0}";
+			sepNavVisRange = "{133, 1206}";
 		};
 	};
 	E4C0DF3F1204C1AF006AB8AF /* RatingEntity.h */ = {
@@ -8487,6 +8490,36 @@
 		vrLen = 1145;
 		vrLoc = 7146;
 	};
+	E4C0DF9C1204D19C006AB8AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */;
+		name = "DataDelegate.m: 224";
+		rLen = 150;
+		rLoc = 7819;
+		rType = 0;
+		vrLen = 929;
+		vrLoc = 7513;
+	};
+	E4C0DF9D1204D19C006AB8AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C0DF3D1204C11D006AB8AF /* Rating.m */;
+		name = "Rating.m: 33";
+		rLen = 0;
+		rLoc = 1015;
+		rType = 0;
+		vrLen = 1164;
+		vrLoc = 30;
+	};
+	E4C0DF9E1204D19C006AB8AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C0DF3D1204C11D006AB8AF /* Rating.m */;
+		name = "Rating.m: 36";
+		rLen = 0;
+		rLoc = 1170;
+		rType = 0;
+		vrLen = 1206;
+		vrLoc = 133;
+	};
 	E4C6AE5C11D5415400068008 /* NSObject+PropertySupport.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {969, 1248}}";
@@ -8731,9 +8764,9 @@
 	};
 	E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2042, 3861}}";
-			sepNavSelRange = "{7147, 32}";
-			sepNavVisRange = "{7146, 1145}";
+			sepNavIntBoundsRect = "{{0, 0}, {2042, 4030}}";
+			sepNavSelRange = "{7819, 150}";
+			sepNavVisRange = "{7513, 929}";
 			sepNavWindowFrame = "{{61, 172}, {933, 559}}";
 		};
 	};

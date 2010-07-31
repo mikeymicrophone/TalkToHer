@@ -33,6 +33,9 @@
     [ps setValue:[NSNumber numberWithInt:[ratingId integerValue]] forKey:@"ratingId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 	[ps markForDelayedSubmission];
+	
+	NSError *mocSaveError = nil;
+    if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }
     [ps release];
 }
 @end
