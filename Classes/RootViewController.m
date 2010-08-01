@@ -223,7 +223,6 @@
 	self.goals_cell = nil;
 	self.tips_cell = nil;
 	self.exercises_cell = nil;
-	[site release];
 }
 
 - (void)dealloc {

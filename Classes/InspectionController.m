@@ -24,7 +24,7 @@
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
 		return nil;
 
-	[self setContent:[self inspect_content:contentObj]];
+	[self setContent:contentObj];
 
 	return self;
 }

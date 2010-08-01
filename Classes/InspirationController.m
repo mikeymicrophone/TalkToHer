@@ -26,7 +26,7 @@
 -(id)initWithContentSource:(ContentDelegate *)source {
 	if (![super initWithNibName:@"InspirationController" bundle:nil])
 		return nil;
-	
+
 	self.content_source = source;
 	
 	if ([[content_source content_type] isEqualToString:@"Line"]) {
@@ -92,7 +92,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSInteger length;
 	if (section == 0) {
-//		NSLog(@"rows in section: %d; loaded_amount: %@; displayed_amount: %@; hidden_amount: %@", [content_source display_amount], [content_source loaded_amount], [content_source displayed_amount], [content_source hidden_amount]);
 		length = [content_source display_amount];
 	} else if (section == 1) {
 		if ([[content_source content_type] isEqualToString:@"GoalOwnership"]) {
@@ -259,10 +258,22 @@
 			[progressController release];
 		} else {
 			if ((![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"]) && [[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-				InspectionController *inspectionController = [[InspectionController alloc] initWithContent:[self contentForIndexPath:indexPath]];
-
-				[self.navigationController pushViewController:inspectionController animated:YES];
-				[inspectionController release];
+				
+				dispatch_queue_t queue;
+				queue = dispatch_queue_create("com.talktoher.inspect", NULL);
+				dispatch_async(queue, ^{
+//					dispatch_async(dispatch_get_main_queue(), ^{
+////						[[self tableView:tableView cellForRowAtIndexPath:indexPath] start_spinning];
+//					});
+					NSObject *inspected_content = [[[self contentForIndexPath:indexPath] objectiveResource] get_commentary];
+					InspectionController *inspectionController = [[InspectionController alloc] initWithContent:inspected_content];
+					dispatch_async(dispatch_get_main_queue(), ^{
+						[self.navigationController pushViewController:inspectionController animated:YES];
+						[inspectionController release];						
+					});
+				});
+				dispatch_release(queue);				
+				
 			} else {
 				[[self tableView:tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
 			}
@@ -283,11 +294,11 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
-	self.content_source = nil;
 }
 
 - (void)dealloc {
     [super dealloc];
+	self.content_source = nil;
 }
 
 @end

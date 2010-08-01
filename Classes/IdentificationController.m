@@ -27,7 +27,7 @@
 	LoaderCell *c = [[[self parentViewController] bottomViewController] goals_cell];
 	
 	if ([[[[self parentViewController] topViewController] className] isEqualToString:@"InspectionController"]) {
-		UITableView *s = [[[self parentViewController] topViewController] tableView];
+		s = [[[self parentViewController] topViewController] tableView];
 	}
 
 	dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
@@ -38,7 +38,7 @@
 		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
 		if (response == nil) {
 			[self get_identity:username_field.text password:password_field.text];
-			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; [s setNeedsLayout]; });
+			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")] withRowAnimation:UITableViewRowAnimationBottom]; });
 //			[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:@"goals" andAlertCell:c];
 		}
 	});

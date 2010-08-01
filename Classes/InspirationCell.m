@@ -90,8 +90,6 @@
 
 - (void)dealloc {
     [super dealloc];
-	[main release];
-	[addl release];
 }
 
 @end
