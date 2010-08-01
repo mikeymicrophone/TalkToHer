@@ -266,6 +266,9 @@
 ////						[[self tableView:tableView cellForRowAtIndexPath:indexPath] start_spinning];
 //					});
 					NSObject *inspected_content = [[[self contentForIndexPath:indexPath] objectiveResource] get_commentary];
+					if (inspected_content == nil) {
+						inspected_content = [[NSClassFromString([[[self contentForIndexPath:indexPath] entity] name]) alloc] initWithManagedObject:[self contentForIndexPath:indexPath]];
+					}
 					InspectionController *inspectionController = [[InspectionController alloc] initWithContent:inspected_content];
 					dispatch_async(dispatch_get_main_queue(), ^{
 						[self.navigationController pushViewController:inspectionController animated:YES];

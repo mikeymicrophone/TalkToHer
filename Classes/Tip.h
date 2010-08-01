@@ -19,6 +19,7 @@
 	NSString *tagCount;
 	NSString *ratingCount;
 	NSString *averageRating;
+	NSString *myRating;
 	NSString *userId;
 }
 
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSString *ratingCount;
 @property (nonatomic, retain) NSString *averageRating;
 @property (nonatomic, retain) NSString *userId;
+@property (nonatomic, retain) NSString *myRating;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps;
 -(NSString *)main_text;

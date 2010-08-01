@@ -12,7 +12,7 @@
 
 @implementation Line
 
-@synthesize lineId, userId, phrasing, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating;
+@synthesize lineId, userId, phrasing, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, myRating;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
@@ -37,7 +37,7 @@
 }
 
 -(id)get_commentary {
-	[ObjectiveResourceConfig setProtocolExtension:@"/inspect_content"];
+	[ObjectiveResourceConfig setProtocolExtension:[NSString stringWithFormat:@"/inspect_content/%@", [[[UIApplication sharedApplication] delegate] userIsLoggedIn]]];
 	Line *line = [Line findRemote:[self lineId]];
 	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
 	return line;
@@ -56,7 +56,7 @@
 }
 
 - (NSArray *)excludedPropertyNames {
-	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", nil];
+	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", @"myRating", nil];
 	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
 

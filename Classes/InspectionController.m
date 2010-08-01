@@ -77,11 +77,11 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	if ([MFMessageComposeViewController canSendText]) {
+//	if ([MFMessageComposeViewController canSendText]) {
 		return 6;
-	} else {
-		return 5;
-	}
+//	} else {
+//		return 5;
+//	}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -118,6 +118,7 @@
 				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
 				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:slider];
+				slider.value = [[content myRating] integerValue] / 10.0;
 				
 				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
 				[cell addSubview:rating];				
@@ -196,30 +197,18 @@
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 4) {
-		CellIdentifier = @"goal setting";
+		CellIdentifier = @"set_a_goal";
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-			
-			[cell setMain_text:@"set a goal"];
-			if ([[content className] isEqualToString:@"Line"]) {
-				[cell setAdditional_text:@"to try this line"];
-			} else if ([[content className] isEqualToString:@"Tip"]) {
-				[cell setAdditional_text:@"to use this tip"];
-			} else if ([[content className] isEqualToString:@"Exercise"]) {
-				[cell setAdditional_text:@"to do this exercise"];
-			}
 		}
 	}else if (indexPath.section == 5) {
-		CellIdentifier = @"text message";
+		CellIdentifier = @"text";
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-			UIImageView *coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"text"]];
-			coloredLabel.center = cell.center;
-			[cell addSubview:coloredLabel];
 		}		
 	}
 	
@@ -236,22 +225,27 @@
 		height = [InspirationCell cellHeightForMainText:[content averageRating]
 											 additional:[content ratingCount]
 												  width:[[self view] frame].size.width];
+		if (height < 44) {
+			height = 44;
+		}
 	} else if (indexPath.section == 2) {
 		height = [InspirationCell cellHeightForMainText:[content tagCount]
 											 additional:[content recentTags]
 												  width:[[self view] frame].size.width];
+		if (height < 44) {
+			height = 44;
+		}
 	} else if (indexPath.section == 3) {
 		height = [InspirationCell cellHeightForMainText:[content commentCount]
 											 additional:[content recentComment]
 												  width:[[self view] frame].size.width];
+		if (height < 44) {
+			height = 44;
+		}
 	} else if (indexPath.section == 4) {
-		height = [InspirationCell cellHeightForMainText:@"set a goal"
-											 additional:@"to do this exercise"
-												  width:[[self view] frame].size.width];
+		height = 40;
 	} else if (indexPath.section == 5) {
-		height = [InspirationCell cellHeightForMainText:@"send as a text"
-											 additional:@"2"
-												  width:[[self view] frame].size.width];
+		height = 40;
 	}
 	return height;
 }

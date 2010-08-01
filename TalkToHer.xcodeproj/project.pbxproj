@@ -108,6 +108,7 @@
 		E4D8109A11FE36AD0020AE8B /* TipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8109811FE36AD0020AE8B /* TipEntity.m */; };
 		E4D8223011FD14B70014D28A /* ExerciseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8222F11FD14B70014D28A /* ExerciseEntity.m */; };
 		E4D8223311FD14CB0014D28A /* GoalOwnershipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */; };
+		E4DEA41A120615B700266C34 /* set_a_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA419120615B700266C34 /* set_a_goal.png */; };
 		E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -298,6 +299,7 @@
 		E4D8222F11FD14B70014D28A /* ExerciseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseEntity.m; sourceTree = "<group>"; };
 		E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOwnershipEntity.h; sourceTree = "<group>"; };
 		E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOwnershipEntity.m; sourceTree = "<group>"; };
+		E4DEA419120615B700266C34 /* set_a_goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set_a_goal.png; sourceTree = "<group>"; };
 		E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDelegate.h; sourceTree = "<group>"; };
 		E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -378,6 +380,7 @@
 				E419E38011F0236E00F400DD /* write.png */,
 				E419E37C11F0224800F400DD /* more.png */,
 				E4C0DEDC1204A654006AB8AF /* text.png */,
+				E4DEA419120615B700266C34 /* set_a_goal.png */,
 				E4A1573011DF989700A044D7 /* ContributionController.xib */,
 				E4A1589611E4E2A600A044D7 /* IdentificationController.xib */,
 				E4C0DB3412031D0A006AB8AF /* InfoController.xib */,
@@ -763,6 +766,7 @@
 				E4C0D7F61201C2A6006AB8AF /* GoalSettingController.xib in Resources */,
 				E4C0DB3612031D0A006AB8AF /* InfoController.xib in Resources */,
 				E4C0DEDD1204A654006AB8AF /* text.png in Resources */,
+				E4DEA41A120615B700266C34 /* set_a_goal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

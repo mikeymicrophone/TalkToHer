@@ -56,4 +56,32 @@
 	[self setValue:[NSNumber numberWithInt:0] forKey:@"delayed"];
 }
 
+-(NSString *)ratingCount {
+	return @"ratings unavailable while offline";
+}
+
+-(NSString *)commentCount {
+	return @"comment:";
+}
+
+-(NSString *)tagCount {
+	return @"tag:";
+}
+
+-(NSString *)recentTags {
+	return @"";
+}
+
+-(NSString *)recentComment {
+	return @"";
+}
+
+-(NSString *)averageRating {
+	return @"?.?";
+}
+
+-(NSString *)full_text {
+	return [self instruction];
+}
+
 @end
