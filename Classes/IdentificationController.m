@@ -23,12 +23,13 @@
 	user_session.username = username_field.text;
 	user_session.password = password_field.text;
 
-	UITableView *s = [[[self parentViewController] bottomViewController] tableView];
-//	LoaderCell *c = [[[self parentViewController] bottomViewController] goals_cell];
-	NSIndexSet *is = [NSIndexSet indexSetWithIndex:3];
+	UITableView *tableview = [[[self parentViewController] bottomViewController] tableView];
+	NSIndexSet *sections = [NSIndexSet indexSetWithIndex:3];
+
 	if ([[[[self parentViewController] topViewController] className] isEqualToString:@"InspectionController"]) {
-		s = [[[self parentViewController] topViewController] tableView];
-		is = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")];
+//		[sections release];
+		tableview = [[[self parentViewController] topViewController] tableView];
+		sections = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")];
 	}
 
 	dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
@@ -39,8 +40,7 @@
 		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
 		if (response == nil) {
 			[self get_identity:username_field.text password:password_field.text];
-			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadSections:is withRowAnimation:UITableViewRowAnimationBottom]; });
-//			[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:@"goals" andAlertCell:c];
+			dispatch_async(dispatch_get_main_queue(), ^{ [tableview reloadSections:sections withRowAnimation:UITableViewRowAnimationBottom]; });
 		}
 	});
 	dispatch_release(queue);

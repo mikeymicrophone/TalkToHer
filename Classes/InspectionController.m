@@ -153,11 +153,10 @@
 				
 				UIButton *tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				tag_button.frame = CGRectMake(275, 8, 24, 24);
-				tag_button.titleLabel.frame = CGRectMake(5, 3, 20, 15);
-				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:28];
-				tag_button.titleLabel.textColor = [UIColor scrollViewTexturedBackgroundColor];
-				tag_button.titleLabel.text = @"+";
-				tag_button.titleLabel.hidden = NO;
+				[tag_button setTitle:@"+" forState:nil];
+				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:30];
+				[tag_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
+				tag_button.titleLabel.frame = CGRectMake(4, -7, 16, 36);
 				
 				[tag_button addTarget:self action:@selector(tagReady) forControlEvents:UIControlEventTouchUpInside];
 				
@@ -184,11 +183,10 @@
 				
 				UIButton *comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				comment_button.frame = CGRectMake(275, 8, 24, 24);
-				comment_button.titleLabel.frame = CGRectMake(7, 3, 20, 20);
-				comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:26];
-				comment_button.titleLabel.textColor = [UIColor scrollViewTexturedBackgroundColor];
-				comment_button.titleLabel.text = @"!";
-				comment_button.titleLabel.hidden = NO;
+				comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:23];
+				[comment_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
+				[comment_button setTitle:@"!" forState:nil];
+				comment_button.titleLabel.frame = CGRectMake(8, -2, 9, 28);
 				
 				[comment_button addTarget:self action:@selector(commentReady) forControlEvents:UIControlEventTouchUpInside];
 				
@@ -315,18 +313,20 @@
 
 -(void)tagReady {
 	[tag_field resignFirstResponder];
-	Tag *t = [[Tag alloc] init];
-	t.concept = tag_field.text;
-	tag_field.text = @"";
-	t.targetId = [content getRemoteId];
-	t.targetType = [content className];
-	t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
-	
-	if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-		[t createRemote];
-	} else {
-		[t markForDelayedSubmission];
-	}	
+	if (!(tag_field.text == nil)) {
+		Tag *t = [[Tag alloc] init];
+		t.concept = tag_field.text;
+		tag_field.text = @"";
+		t.targetId = [content getRemoteId];
+		t.targetType = [content className];
+		t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+		
+		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+			[t createRemote];
+		} else {
+			[t markForDelayedSubmission];
+		}
+	}
 }
 
 #pragma mark -
@@ -334,18 +334,20 @@
 
 -(void)commentReady {
 	[comment_field resignFirstResponder];
-	Comment *c = [[Comment alloc] init];
-	c.text = comment_field.text;
-	comment_field.text = @"";
-	c.targetId = [content getRemoteId];
-	c.targetType = [content className];
-	c.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
-	
-	if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-		[c createRemote];
-	} else {
-		[c markForDelayedSubmission];
-	}	
+	if (!(comment_field.text == nil)) {
+		Comment *c = [[Comment alloc] init];
+		c.text = comment_field.text;
+		comment_field.text = @"";
+		c.targetId = [content getRemoteId];
+		c.targetType = [content className];
+		c.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+		
+		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+			[c createRemote];
+		} else {
+			[c markForDelayedSubmission];
+		}
+	}
 }
 
 #pragma mark -
