@@ -84,12 +84,13 @@
 	writtenContent.text = @"";
 }
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	writtenContent.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+	writtenContent.textColor = [UIColor whiteColor];
+	
 }
-*/
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self.view addSubview:heading];

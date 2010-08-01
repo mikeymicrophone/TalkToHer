@@ -67,8 +67,6 @@
 		
 		UserEntity *u = [results objectAtIndex:0];
 		
-		NSLog(@"url: %@", [NSString stringWithFormat:@"http://lineoftheday.com/user_sessions/iphone_login?user_session%%5Busername%%5D%%3D%@&user_session%%5Bpassword%%5D%%3D%@", [u username], [u password]]);
-		
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://lineoftheday.com/user_sessions/iphone_login?user_session%%5Busername%%5D%%3D%@&user_session%%5Bpassword%%5D%%3D%@", [u username], [u password]]]];
 	} else {
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://lineoftheday.com"]];
@@ -106,7 +104,6 @@
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-	NSLog(@"center: %f", site.center.x);
 	if (fromInterfaceOrientation == UIInterfaceOrientationPortrait || fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
 		lines_cell.coloredLabel.center = CGPointMake(100, lines_cell.coloredLabel.center.y);
 		tips_cell.coloredLabel.center = CGPointMake(170, lines_cell.coloredLabel.center.y);
@@ -226,6 +223,7 @@
 	self.goals_cell = nil;
 	self.tips_cell = nil;
 	self.exercises_cell = nil;
+	[site release];
 }
 
 - (void)dealloc {

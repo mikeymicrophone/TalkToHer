@@ -13,20 +13,24 @@
 @synthesize spinner, coloredLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-		self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-		self.coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self reuseIdentifier]]];
-
-		CGPoint center;
-		center.x = 290;
-		center.y = 23;
-		[spinner setCenter:center];
-		[self addSubview:spinner];
-		
-		coloredLabel.center = self.center;
-		[self addSubview:coloredLabel];		
-    }
+    if (!(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]))
+		return nil;
+	
+	[self addSpinner];
+	[self addColoredLabel];
     return self;
+}
+
+-(void)addColoredLabel {
+	self.coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self reuseIdentifier]]];
+	coloredLabel.center = self.center;
+	[self addSubview:coloredLabel];
+}
+
+-(void)addSpinner {
+	self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	spinner.center = CGPointMake(290, 23);
+	[self addSubview:spinner];	
 }
 
 -(void)stop_spinning {
@@ -37,15 +41,10 @@
 	[self.spinner startAnimating];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 - (void)dealloc {
     [super dealloc];
+	self.spinner = nil;
+	self.coloredLabel = nil;
 }
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoaderCell.h"
 
-
-@interface InspirationCell : UITableViewCell {
+@interface InspirationCell : LoaderCell {
 	NSString *main_text;
 	NSString *additional_text;
 	NSString *type;

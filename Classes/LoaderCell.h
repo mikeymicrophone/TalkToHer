@@ -18,5 +18,7 @@
 
 -(void)stop_spinning;
 -(void)start_spinning;
+-(void)addColoredLabel;
+-(void)addSpinner;
 
 @end
