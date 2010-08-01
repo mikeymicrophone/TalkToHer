@@ -17,7 +17,6 @@
 		E4001B4311FF8B8B001359B0 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4001B4211FF8B8B001359B0 /* UserEntity.m */; };
 		E4001D1F12006E6B001359B0 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1D12006E6B001359B0 /* icon.png */; };
 		E4001D2012006E6B001359B0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1E12006E6B001359B0 /* icon@2x.png */; };
-		E4001D2412006F25001359B0 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D2312006F25001359B0 /* default.png */; };
 		E4001D431200BB28001359B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4001D421200BB28001359B0 /* MessageUI.framework */; };
 		E409694311F1154E0055459F /* ProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = E409694111F1154E0055459F /* ProgressController.m */; };
 		E409694411F1154E0055459F /* ProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E409694211F1154E0055459F /* ProgressController.xib */; };
@@ -109,6 +108,7 @@
 		E4D8223011FD14B70014D28A /* ExerciseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8222F11FD14B70014D28A /* ExerciseEntity.m */; };
 		E4D8223311FD14CB0014D28A /* GoalOwnershipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */; };
 		E4DEA41A120615B700266C34 /* set_a_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA419120615B700266C34 /* set_a_goal.png */; };
+		E4DEA4B81206309800266C34 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA4B71206309800266C34 /* default.png */; };
 		E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -130,7 +130,6 @@
 		E4001B4211FF8B8B001359B0 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
 		E4001D1D12006E6B001359B0 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E4001D1E12006E6B001359B0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		E4001D2312006F25001359B0 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		E4001D421200BB28001359B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E409694011F1154E0055459F /* ProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressController.h; sourceTree = "<group>"; };
 		E409694111F1154E0055459F /* ProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressController.m; sourceTree = "<group>"; };
@@ -300,6 +299,7 @@
 		E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOwnershipEntity.h; sourceTree = "<group>"; };
 		E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOwnershipEntity.m; sourceTree = "<group>"; };
 		E4DEA419120615B700266C34 /* set_a_goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set_a_goal.png; sourceTree = "<group>"; };
+		E4DEA4B71206309800266C34 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDelegate.h; sourceTree = "<group>"; };
 		E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,7 +368,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E4001D2312006F25001359B0 /* default.png */,
 				E4001D1D12006E6B001359B0 /* icon.png */,
 				E4001D1E12006E6B001359B0 /* icon@2x.png */,
 				E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */,
@@ -391,6 +390,7 @@
 				E4C6ACCE11D514F000068008 /* MainWindow.xib */,
 				E4C6ACCF11D514F000068008 /* RootViewController.xib */,
 				8D1107310486CEB800E47090 /* TalkToHer-Info.plist */,
+				E4DEA4B71206309800266C34 /* default.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -762,11 +762,11 @@
 				E409694411F1154E0055459F /* ProgressController.xib in Resources */,
 				E4001D1F12006E6B001359B0 /* icon.png in Resources */,
 				E4001D2012006E6B001359B0 /* icon@2x.png in Resources */,
-				E4001D2412006F25001359B0 /* default.png in Resources */,
 				E4C0D7F61201C2A6006AB8AF /* GoalSettingController.xib in Resources */,
 				E4C0DB3612031D0A006AB8AF /* InfoController.xib in Resources */,
 				E4C0DEDD1204A654006AB8AF /* text.png in Resources */,
 				E4DEA41A120615B700266C34 /* set_a_goal.png in Resources */,
+				E4DEA4B81206309800266C34 /* default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

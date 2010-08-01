@@ -206,6 +206,7 @@
 			E4DEA4A512062E1500266C34 /* PBXTextBookmark */ = E4DEA4A512062E1500266C34 /* PBXTextBookmark */;
 			E4DEA4A612062E1500266C34 /* PBXTextBookmark */ = E4DEA4A612062E1500266C34 /* PBXTextBookmark */;
 			E4DEA4A712062E1500266C34 /* PBXTextBookmark */ = E4DEA4A712062E1500266C34 /* PBXTextBookmark */;
+			E4DEA4B61206308700266C34 /* PBXTextBookmark */ = E4DEA4B61206308700266C34 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E439365211D453CE00D6DED9 /* Source Control */;
 		userBuildSettings = {
@@ -1838,6 +1839,16 @@
 		vrLen = 1056;
 		vrLoc = 2199;
 	};
+	E4DEA4B61206308700266C34 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 205";
+		rLen = 0;
+		rLoc = 7511;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 7673;
+	};
 	E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1055, 676}}";
@@ -1848,9 +1859,9 @@
 	};
 	E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2161, 3939}}";
-			sepNavSelRange = "{2916, 0}";
-			sepNavVisRange = "{2199, 1056}";
+			sepNavIntBoundsRect = "{{0, 0}, {2161, 4030}}";
+			sepNavSelRange = "{2901, 0}";
+			sepNavVisRange = "{2171, 1040}";
 			sepNavWindowFrame = "{{61, 172}, {933, 559}}";
 		};
 	};
