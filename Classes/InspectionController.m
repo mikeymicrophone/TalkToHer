@@ -11,12 +11,13 @@
 #import "InspirationCell.h"
 #import "GoalSettingController.h"
 #import "Rating.h"
+#import "Tag.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 
 @implementation InspectionController
 
-@synthesize content;
+@synthesize content, tag_field;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -141,6 +142,27 @@
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			[cell setMain_text:[content tagCount]];
 			[cell setAdditional_text:[content recentTags]];
+			
+			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
+				self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
+				tag_field.borderStyle = UITextBorderStyleRoundedRect;
+				tag_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
+				tag_field.placeholder = @"separate, with, commas";
+				tag_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+				
+				UIButton *tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+				tag_button.frame = CGRectMake(275, 8, 24, 24);
+				tag_button.titleLabel.frame = CGRectMake(3, 3, 20, 15);
+				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:32];
+				tag_button.titleLabel.textColor = [UIColor scrollViewTexturedBackgroundColor];
+				tag_button.titleLabel.text = @"+";
+				tag_button.titleLabel.hidden = NO;
+				
+				[tag_button addTarget:self action:@selector(tagReady) forControlEvents:UIControlEventTouchUpInside];
+				
+				[cell addSubview:tag_field];
+				[cell addSubview:tag_button];
+			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
     } else if (indexPath.section == 3) {
@@ -249,7 +271,7 @@
 
 -(void)ratingReady:(UISlider *)sender {
 	Rating *r = [[Rating alloc] init];
-	r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)[sender value] * 10];
+	r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)([sender value] * 10)];
 	r.targetId = [content getRemoteId];
 	r.targetType = [content className];
 	r.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
@@ -259,13 +281,30 @@
 	} else {
 		[r markForDelayedSubmission];
 	}
-
 }
 
 -(void)log_in {
 	IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
 	[self presentModalViewController:identificationController animated:YES];
 	[identificationController release];
+}
+
+#pragma mark -
+#pragma mark tag control
+
+-(void)tagReady {
+	[tag_field resignFirstResponder];
+	Tag *t = [[Tag alloc] init];
+	t.concept = tag_field.text;
+	t.targetId = [content getRemoteId];
+	t.targetType = [content className];
+	t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+	
+	if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+		[t createRemote];
+	} else {
+		[t markForDelayedSubmission];
+	}	
 }
 
 #pragma mark -

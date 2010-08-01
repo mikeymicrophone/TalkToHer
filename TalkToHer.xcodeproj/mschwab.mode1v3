@@ -266,17 +266,20 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>E40017E211FE391C001359B0</string>
+								<string>E40017F511FE398F001359B0</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>20</integer>
+									<integer>17</integer>
+									<integer>5</integer>
+									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {138, 664}}</string>
+							<string>{{0, 70}, {138, 664}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -325,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4C0DFD21204D79F006AB8AF</string>
+										<string>E4C0E06A1204F85F006AB8AF</string>
 										<key>history</key>
 										<array>
 											<string>E4C0D98812025861006AB8AF</string>
@@ -339,20 +342,24 @@
 											<string>E4C0DF491204C8BE006AB8AF</string>
 											<string>E4C0DF4A1204C8BE006AB8AF</string>
 											<string>E4C0DF4B1204C8BE006AB8AF</string>
-											<string>E4C0DF4C1204C8BE006AB8AF</string>
 											<string>E4C0DF4D1204C8BE006AB8AF</string>
 											<string>E4C0DF4F1204C8BE006AB8AF</string>
-											<string>E4C0DF811204CF81006AB8AF</string>
 											<string>E4C0DF821204CF81006AB8AF</string>
 											<string>E4C0DF831204CF81006AB8AF</string>
-											<string>E4C0DF841204CF81006AB8AF</string>
 											<string>E4C0DF851204CF81006AB8AF</string>
 											<string>E4C0DF861204CF81006AB8AF</string>
-											<string>E4C0DF9C1204D19C006AB8AF</string>
-											<string>E4C0DFA11204D393006AB8AF</string>
 											<string>E4C0DFCF1204D79F006AB8AF</string>
-											<string>E4C0DFD01204D79F006AB8AF</string>
-											<string>E4C0DFD11204D79F006AB8AF</string>
+											<string>E4C0E0461204F394006AB8AF</string>
+											<string>E4C0E05C1204F7A4006AB8AF</string>
+											<string>E4C0E05D1204F7A4006AB8AF</string>
+											<string>E4C0E05E1204F7A4006AB8AF</string>
+											<string>E4C0E05F1204F7A4006AB8AF</string>
+											<string>E4C0E0601204F7A4006AB8AF</string>
+											<string>E4C0E0611204F7A4006AB8AF</string>
+											<string>E4C0E0621204F7A4006AB8AF</string>
+											<string>E4C0E0631204F7A4006AB8AF</string>
+											<string>E4C0E0641204F7A4006AB8AF</string>
+											<string>E4C0E0651204F7A4006AB8AF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -550,13 +557,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E4C0E06B1204F85F006AB8AF</string>
 		<string>E4C0DDEA120407C8006AB8AF</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E4C0D8071201C2C9006AB8AF</string>
 		<string>E4C0D8091201C2C9006AB8AF</string>
-		<string>E439365011D453CE00D6DED9</string>
-		<string>E4C0DF571204C8BE006AB8AF</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>E439365011D453CE00D6DED9</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
@@ -584,7 +591,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RatingEntity.m</string>
+								<string>TagEntity.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -653,7 +660,7 @@
 			<key>WindowToolGUID</key>
 			<string>E439365011D453CE00D6DED9</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -777,7 +784,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

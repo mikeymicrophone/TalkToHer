@@ -12,9 +12,11 @@
 @interface InspectionController : UITableViewController <MFMailComposeViewControllerDelegate> {
 	id content;
 	UILabel *rating;
+	UITextField *tag_field;
 }
 
 @property (nonatomic, retain) id content;
+@property (nonatomic, retain) UITextField *tag_field;
 
 -(id)initWithContent:(id)contentObj;
 -(id)inspect_content:(id)contentObj;
@@ -22,4 +24,5 @@
 -(void)ratingReady:(id)sender;
 -(void)ratingChanged:(id)sender;
 -(void)log_in;
+-(void)tagReady;
 @end

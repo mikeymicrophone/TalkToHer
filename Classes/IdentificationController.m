@@ -38,7 +38,7 @@
 		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
 		if (response == nil) {
 			[self get_identity:username_field.text];
-			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
+			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; [s setNeedsLayout]; });
 //			[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:@"goals" andAlertCell:c];
 		}
 	});
