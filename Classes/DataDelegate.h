@@ -40,7 +40,7 @@
 -(void)loadDataSegmentOfType:(NSString *)type andAlertCell:(LoaderCell *)cell;
 -(NSManagedObject *)itemExistsInStore:(NSObject *)item;
 -(NSManagedObject *)item:(NSObject *)i existsInSet:(NSArray *)us;
--(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name;
+-(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name withPassword:(NSString *)password;
 -(void)attemptIdentification;
 -(void)attemptDelayedSubmissions;
 -(BOOL)lotd_is_reachable;

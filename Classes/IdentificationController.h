@@ -27,5 +27,5 @@
 -(IBAction)log_in;
 -(IBAction)sign_up;
 -(IBAction)cancel;
--(void)get_identity:(NSString *)username;
+-(void)get_identity:(NSString *)username password:(NSString *)password;
 @end

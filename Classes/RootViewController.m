@@ -14,6 +14,7 @@
 #import "Line.h"
 #import "Tip.h"
 #import "Exercise.h"
+#import "UserEntity.h"
 #import "LoaderCell.h"
 #import <dispatch/dispatch.h>
 
@@ -52,7 +53,26 @@
 }
 
 -(IBAction)goToSite {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://lineoftheday.com"]];
+	if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
+		NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+		NSFetchRequest *f = [[NSFetchRequest alloc] init];
+		
+		[f setEntity:e];
+		[f setPredicate:[NSPredicate predicateWithFormat:@"userId == %d", [[[[UIApplication sharedApplication] delegate] userIsLoggedIn] integerValue]]];
+		[f setPropertiesToFetch:[NSArray arrayWithObjects:@"username", @"password", nil]];
+		
+		NSError *error = nil;
+		NSArray *results = [[[[UIApplication sharedApplication] delegate] managedObjectContext] executeFetchRequest:f error:&error];
+		[f release];
+		
+		UserEntity *u = [results objectAtIndex:0];
+		
+		NSLog(@"url: %@", [NSString stringWithFormat:@"http://lineoftheday.com/user_sessions/iphone_login?user_session%%5Busername%%5D%%3D%@&user_session%%5Bpassword%%5D%%3D%@", [u username], [u password]]);
+		
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://lineoftheday.com/user_sessions/iphone_login?user_session%%5Busername%%5D%%3D%@&user_session%%5Bpassword%%5D%%3D%@", [u username], [u password]]]];
+	} else {
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://lineoftheday.com"]];
+	}
 }
 
 -(IBAction)about {

@@ -170,11 +170,12 @@
 #pragma mark -
 #pragma mark identity control
 
--(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name {
+-(void)setMyUserId:(NSString *)user_id forUsername:(NSString *)user_name withPassword:(NSString *)password {
 	NSEntityDescription *e = [NSEntityDescription entityForName:@"User" inManagedObjectContext:[self moc]];
 	NSManagedObject *userObject = [NSEntityDescription insertNewObjectForEntityForName:[e name] inManagedObjectContext:[self moc]];
 	[userObject setValue:[NSNumber numberWithInt:[user_id integerValue]] forKey:@"userId"];
 	[userObject setValue:user_name forKey:@"username"];
+	[userObject setValue:password forKey:@"password"];
 	
 	NSError *error = nil;
     if (![[self moc] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }

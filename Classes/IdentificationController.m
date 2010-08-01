@@ -37,7 +37,7 @@
 		[user_session createRemoteWithResponse:&response];
 		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
 		if (response == nil) {
-			[self get_identity:username_field.text];
+			[self get_identity:username_field.text password:password_field.text];
 			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; [s setNeedsLayout]; });
 //			[[[[UIApplication sharedApplication] delegate] data_source] loadDataSegmentOfType:@"goals" andAlertCell:c];
 		}
@@ -60,7 +60,7 @@
 		dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
 		dispatch_async(queue, ^{
 			[user createRemote];
-			[self get_identity:username_field.text];
+			[self get_identity:username_field.text password:password_field.text];
 			dispatch_async(dispatch_get_main_queue(), ^{ [s reloadData]; });
 		});
 		dispatch_release(queue);
@@ -91,7 +91,7 @@
 	}
 }
 
--(void)get_identity:(NSString *)username {
+-(void)get_identity:(NSString *)username password:(NSString *)password {
 	NSString *path = [[[[[UIApplication sharedApplication] delegate] data_source] server_location] stringByAppendingString:@"users/"];
 	path = [path stringByAppendingString:username];
 	path = [path stringByAppendingString:@"/identity"];
@@ -103,7 +103,7 @@
 	if (!error) {
 		NSString *nextResponse = [nextRequest responseString];
 		NSString *user_id = nextResponse;
-		[[[[UIApplication sharedApplication] delegate] data_source] setMyUserId:user_id forUsername:username];
+		[[[[UIApplication sharedApplication] delegate] data_source] setMyUserId:user_id forUsername:username withPassword:password];
 	}	
 }
 
