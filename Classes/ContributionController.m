@@ -22,7 +22,7 @@
 	[self setContentType:cType];
 	[self prepare_content];
 	
-	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60,5,202,21)];
+	self.heading = [[UILabel alloc] initWithFrame:CGRectMake(60, 5, 202, 21)];
 	heading.textAlignment = UITextAlignmentCenter;
 	heading.textColor = [UIColor whiteColor];
 	heading.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
@@ -45,10 +45,15 @@
 }
 
 -(void)prepare_content {
-	NSManagedObjectContext *moc = [[[UIApplication sharedApplication] delegate] managedObjectContext];
-	NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
-	self.content = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:moc];
-	[content setValue:[NSNumber numberWithInt:[[[[[UIApplication sharedApplication] delegate] data_source] userId] integerValue]] forKey:@"userId"];
+	dispatch_queue_t queue;
+	queue = dispatch_queue_create("com.talktoher.submission", NULL);
+	dispatch_async(queue, ^{
+		NSManagedObjectContext *moc = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+		NSEntityDescription *entity = [NSEntityDescription entityForName:contentType inManagedObjectContext:moc];
+		self.content = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:moc];
+		[content setValue:[NSNumber numberWithInt:[[[[[UIApplication sharedApplication] delegate] data_source] userId] integerValue]] forKey:@"userId"];
+	});
+	dispatch_release(queue);	
 }
 
 -(IBAction)submit_content {

@@ -45,7 +45,8 @@
 }
 
 -(IBAction)lotd {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://lineoftheday.com"]];
+	[[[self parentViewController] bottomViewController] goToSite];
+//	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://lineoftheday.com"]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

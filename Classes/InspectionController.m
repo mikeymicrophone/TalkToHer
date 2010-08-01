@@ -77,11 +77,11 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//	if ([MFMessageComposeViewController canSendText]) {
+	if ([MFMessageComposeViewController canSendText]) {
 		return 6;
-//	} else {
-//		return 5;
-//	}
+	} else {
+		return 5;
+	}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -121,15 +121,17 @@
 				slider.value = [[content myRating] integerValue] / 10.0;
 				
 				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
-				[cell addSubview:rating];				
+				[cell addSubview:rating];
+				if ([[content myRating] integerValue] > 0) {
+					rating.text = [NSString stringWithFormat:@"%.1f", [[content myRating] integerValue] / 10.0];
+				}
 			} else {
 				UIButton *log_in_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				log_in_button.frame = CGRectMake(80, 15, 210, 30);
-				log_in_button.titleLabel.frame = CGRectMake(5, 5, 200, 20);
 				log_in_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:13];
-				log_in_button.titleLabel.textColor = [UIColor scrollViewTexturedBackgroundColor];
-				log_in_button.titleLabel.text = @"Log in to rate, tag, and comment";
-				log_in_button.titleLabel.hidden = NO;
+				[log_in_button setTitle:@"Log in to rate, tag, and comment" forState:nil];
+				[log_in_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
+				log_in_button.titleLabel.frame = CGRectMake(5, 5, 200, 20);
 				
 				[log_in_button addTarget:self action:@selector(log_in) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:log_in_button];
@@ -153,11 +155,10 @@
 				tag_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 				
 				UIButton *tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-				tag_button.frame = CGRectMake(275, 8, 24, 24);
+				tag_button.frame = CGRectMake(265, 3, 34, 34);
 				[tag_button setTitle:@"+" forState:nil];
 				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:30];
 				[tag_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
-				tag_button.titleLabel.frame = CGRectMake(4, -7, 16, 36);
 				
 				[tag_button addTarget:self action:@selector(tagReady) forControlEvents:UIControlEventTouchUpInside];
 				
@@ -183,11 +184,10 @@
 				comment_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 				
 				UIButton *comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-				comment_button.frame = CGRectMake(275, 8, 24, 24);
+				comment_button.frame = CGRectMake(265, 3, 34, 34);
 				comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:23];
 				[comment_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
 				[comment_button setTitle:@"!" forState:nil];
-				comment_button.titleLabel.frame = CGRectMake(8, -2, 9, 28);
 				
 				[comment_button addTarget:self action:@selector(commentReady) forControlEvents:UIControlEventTouchUpInside];
 				
@@ -262,9 +262,13 @@
 		[self presentModalViewController:textController animated:YES];
 		[textController release];
 	} else if (indexPath.section == 4) {
-		GoalSettingController *goalSettingController = [[GoalSettingController alloc] initWithObjective:content];
-		
-		[self.navigationController pushViewController:goalSettingController animated:YES];
+		if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
+			GoalSettingController *goalSettingController = [[GoalSettingController alloc] initWithObjective:content];			
+			[self.navigationController pushViewController:goalSettingController animated:YES];
+			[goalSettingController release];
+		} else {
+			[self log_in];
+		}
 	}
 }
 

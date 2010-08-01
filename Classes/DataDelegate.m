@@ -22,7 +22,7 @@
 
 -(void)initialize_constants {
 	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", @"Rating", @"ratings", @"Tag", @"tags", nil];//] @"Line", @"Line", @"Tip", @"Tip", @"Exercise", @"Exercise", @"GoalOwnership", @"GoalOwnership", nil];
-	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
+	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
 	[ObjectiveResourceConfig setSite:server_location];
 	connectionIsFresh = NO;
 }
@@ -73,10 +73,15 @@
 		});
 		for (int i = 0; i < 4; i++) {
 			if (content == nil || [content count] == 0) {
-				if ([type isEqualToString:@"goals"]) {
-					content = [GoalOwnership findAllForUserWithId:userId];
-				} else {
-					content = [NSClassFromString([class_names objectForKey:type]) findAllRemote];
+				@try {
+					if ([type isEqualToString:@"goals"]) {
+						content = [GoalOwnership findAllForUserWithId:userId];
+					} else {
+						content = [NSClassFromString([class_names objectForKey:type]) findAllRemote];
+					}
+				}
+				@catch (NSException *e) {
+					NSLog(@"server did not serve data");
 				}
 			}
 		}
