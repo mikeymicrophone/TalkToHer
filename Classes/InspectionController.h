@@ -13,10 +13,12 @@
 	id content;
 	UILabel *rating;
 	UITextField *tag_field;
+	UITextField *comment_field;
 }
 
 @property (nonatomic, retain) id content;
 @property (nonatomic, retain) UITextField *tag_field;
+@property (nonatomic, retain) UITextField *comment_field;
 
 -(id)initWithContent:(id)contentObj;
 -(id)inspect_content:(id)contentObj;
@@ -25,4 +27,5 @@
 -(void)ratingChanged:(id)sender;
 -(void)log_in;
 -(void)tagReady;
+-(void)commentReady;
 @end

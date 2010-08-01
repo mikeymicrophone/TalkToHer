@@ -62,6 +62,8 @@
 		E4C0DF411204C1AF006AB8AF /* RatingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DF401204C1AF006AB8AF /* RatingEntity.m */; };
 		E4C0E04B1204F40D006AB8AF /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E04A1204F40D006AB8AF /* Tag.m */; };
 		E4C0E04E1204F5AF006AB8AF /* TagEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E04D1204F5AF006AB8AF /* TagEntity.m */; };
+		E4C0E0B612050B2E006AB8AF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E0B512050B2E006AB8AF /* Comment.m */; };
+		E4C0E0B912050BFB006AB8AF /* CommentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E0B812050BFB006AB8AF /* CommentEntity.m */; };
 		E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
 		E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
 		E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
@@ -199,6 +201,10 @@
 		E4C0E04A1204F40D006AB8AF /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		E4C0E04C1204F5AF006AB8AF /* TagEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagEntity.h; sourceTree = "<group>"; };
 		E4C0E04D1204F5AF006AB8AF /* TagEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagEntity.m; sourceTree = "<group>"; };
+		E4C0E0B412050B2E006AB8AF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		E4C0E0B512050B2E006AB8AF /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		E4C0E0B712050BFB006AB8AF /* CommentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentEntity.h; sourceTree = "<group>"; };
+		E4C0E0B812050BFB006AB8AF /* CommentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentEntity.m; sourceTree = "<group>"; };
 		E4C6ACCD11D514F000068008 /* InspirationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspirationController.xib; path = Views/InspirationController.xib; sourceTree = "<group>"; };
 		E4C6ACCE11D514F000068008 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		E4C6ACCF11D514F000068008 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
@@ -449,6 +455,8 @@
 				E4C0DF3D1204C11D006AB8AF /* Rating.m */,
 				E4C0DF401204C1AF006AB8AF /* RatingEntity.m */,
 				E4C0E04D1204F5AF006AB8AF /* TagEntity.m */,
+				E4C0E0B512050B2E006AB8AF /* Comment.m */,
+				E4C0E0B812050BFB006AB8AF /* CommentEntity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -480,6 +488,7 @@
 		E40017F511FE398F001359B0 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E4C0E0B412050B2E006AB8AF /* Comment.h */,
 				E4C0E0491204F40D006AB8AF /* Tag.h */,
 				E4C0DF3C1204C11D006AB8AF /* Rating.h */,
 				E4C0D80B1201C628006AB8AF /* Goal.h */,
@@ -489,6 +498,7 @@
 				E4C6AF4A11D5526800068008 /* Exercise.h */,
 				E4C6AF4D11D552BD00068008 /* GoalOwnership.h */,
 				E4D8222E11FD14B70014D28A /* ExerciseEntity.h */,
+				E4C0E0B712050BFB006AB8AF /* CommentEntity.h */,
 				E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */,
 				E4D8109511FE36AD0020AE8B /* LineEntity.h */,
 				E4C0E04C1204F5AF006AB8AF /* TagEntity.h */,
@@ -833,6 +843,8 @@
 				E4C0DF411204C1AF006AB8AF /* RatingEntity.m in Sources */,
 				E4C0E04B1204F40D006AB8AF /* Tag.m in Sources */,
 				E4C0E04E1204F5AF006AB8AF /* TagEntity.m in Sources */,
+				E4C0E0B612050B2E006AB8AF /* Comment.m in Sources */,
+				E4C0E0B912050BFB006AB8AF /* CommentEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

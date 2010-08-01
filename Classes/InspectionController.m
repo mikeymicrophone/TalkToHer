@@ -12,12 +12,13 @@
 #import "GoalSettingController.h"
 #import "Rating.h"
 #import "Tag.h"
+#import "Comment.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 
 @implementation InspectionController
 
-@synthesize content, tag_field;
+@synthesize content, tag_field, comment_field;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -147,13 +148,13 @@
 				self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
 				tag_field.borderStyle = UITextBorderStyleRoundedRect;
 				tag_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
-				tag_field.placeholder = @"separate, with, commas";
+				tag_field.placeholder = @"separate, with commas";
 				tag_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 				
 				UIButton *tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				tag_button.frame = CGRectMake(275, 8, 24, 24);
-				tag_button.titleLabel.frame = CGRectMake(3, 3, 20, 15);
-				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:32];
+				tag_button.titleLabel.frame = CGRectMake(5, 3, 20, 15);
+				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:28];
 				tag_button.titleLabel.textColor = [UIColor scrollViewTexturedBackgroundColor];
 				tag_button.titleLabel.text = @"+";
 				tag_button.titleLabel.hidden = NO;
@@ -174,6 +175,26 @@
 			
 			[cell setMain_text:[content commentCount]];
 			[cell setAdditional_text:[content recentComment]];
+			
+			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
+				self.comment_field = [[UITextField alloc] initWithFrame:CGRectMake(118, 8, 140, 24)];
+				comment_field.borderStyle = UITextBorderStyleRoundedRect;
+				comment_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
+				comment_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+				
+				UIButton *comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+				comment_button.frame = CGRectMake(275, 8, 24, 24);
+				comment_button.titleLabel.frame = CGRectMake(7, 3, 20, 20);
+				comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:26];
+				comment_button.titleLabel.textColor = [UIColor scrollViewTexturedBackgroundColor];
+				comment_button.titleLabel.text = @"!";
+				comment_button.titleLabel.hidden = NO;
+				
+				[comment_button addTarget:self action:@selector(commentReady) forControlEvents:UIControlEventTouchUpInside];
+				
+				[cell addSubview:comment_field];
+				[cell addSubview:comment_button];
+			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	} else if (indexPath.section == 4) {
@@ -296,6 +317,7 @@
 	[tag_field resignFirstResponder];
 	Tag *t = [[Tag alloc] init];
 	t.concept = tag_field.text;
+	tag_field.text = @"";
 	t.targetId = [content getRemoteId];
 	t.targetType = [content className];
 	t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
@@ -304,6 +326,25 @@
 		[t createRemote];
 	} else {
 		[t markForDelayedSubmission];
+	}	
+}
+
+#pragma mark -
+#pragma mark comment control
+
+-(void)commentReady {
+	[comment_field resignFirstResponder];
+	Comment *c = [[Comment alloc] init];
+	c.text = comment_field.text;
+	comment_field.text = @"";
+	c.targetId = [content getRemoteId];
+	c.targetType = [content className];
+	c.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+	
+	if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+		[c createRemote];
+	} else {
+		[c markForDelayedSubmission];
 	}	
 }
 
