@@ -30,7 +30,7 @@
 	heading.opaque = NO;
 	heading.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 	
-	if ([cType isEqualToString:@"Exercise"]) {
+	if ([contentType isEqualToString:@"Exercise"]) {
 		heading.text = @"Sharing: an Exercise";
 		
 		exercise_name = [[UITextField alloc] initWithFrame:CGRectMake(21, 150, 166, 31)];
@@ -39,7 +39,7 @@
 		exercise_name.font = [UIFont fontWithName:@"TrebuchetMS" size:13];
 		exercise_name.placeholder = @"name of exercise";
 	} else {
-		heading.text = [NSString stringWithFormat:@"Sharing: a %@", cType];
+		heading.text = [NSString stringWithFormat:@"Sharing: a %@", contentType];
 	}
 	return self;
 }
@@ -89,7 +89,6 @@
 	
 	writtenContent.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 	writtenContent.textColor = [UIColor whiteColor];
-	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -114,6 +113,10 @@
 
 - (void)dealloc {
     [super dealloc];
+	self.heading = nil;
+	if (exercise_name) {
+		[exercise_name release];
+	}
 }
 
 @end

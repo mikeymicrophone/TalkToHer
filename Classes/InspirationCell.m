@@ -44,21 +44,30 @@
 -(void)addLabels {
 	CGRect f = [self bounds];
 	CGSize cs = [main_text sizeWithFont:[UIFont fontWithName:@"TrebuchetMS" size:18] constrainedToSize:CGSizeMake(f.size.width-30.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
-	
-	main = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, f.size.width-30, cs.height+5)];
-	main.text = main_text;
-	main.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
-	main.lineBreakMode = UILineBreakModeWordWrap;
-	main.numberOfLines = 100;
-	main.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+
+	if (main == nil) {
+		main = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, f.size.width-30, cs.height+5)];
+		main.text = main_text;
+		main.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
+		main.lineBreakMode = UILineBreakModeWordWrap;
+		main.numberOfLines = 100;
+		main.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	} else {
+		main.frame = CGRectMake(15, 5, f.size.width-30, cs.height+5);
+	}
+
 	[self addSubview:main];
 	
-	addl = [[UILabel alloc] initWithFrame:CGRectMake(15, cs.height+10, f.size.width-30, f.size.height-cs.height-15)];
-	addl.text = additional_text;
-	addl.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
-	addl.lineBreakMode = UILineBreakModeWordWrap;
-	addl.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-	addl.numberOfLines = 100;
+	if (addl == nil) {
+		addl = [[UILabel alloc] initWithFrame:CGRectMake(15, cs.height+10, f.size.width-30, f.size.height-cs.height-15)];
+		addl.text = additional_text;
+		addl.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
+		addl.lineBreakMode = UILineBreakModeWordWrap;
+		addl.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+		addl.numberOfLines = 100;
+	} else {
+		addl.frame = CGRectMake(15, cs.height+10, f.size.width-30, f.size.height-cs.height-15);
+	}
 	[self addSubview:addl];
 }
 
