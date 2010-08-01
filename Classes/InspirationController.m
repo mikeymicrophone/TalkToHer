@@ -257,18 +257,19 @@
 			[self.navigationController pushViewController:progressController animated:YES];
 			[progressController release];
 		} else {
-			if ((![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"]) && [[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-				
+			if ((![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"])) {
 				dispatch_queue_t queue;
 				queue = dispatch_queue_create("com.talktoher.inspect", NULL);
 				dispatch_async(queue, ^{
-//					dispatch_async(dispatch_get_main_queue(), ^{
-////						[[self tableView:tableView cellForRowAtIndexPath:indexPath] start_spinning];
-//					});
 					NSObject *inspected_content = [[[self contentForIndexPath:indexPath] objectiveResource] get_commentary];
 					if (inspected_content == nil) {
 						inspected_content = [[NSClassFromString([[[self contentForIndexPath:indexPath] entity] name]) alloc] initWithManagedObject:[self contentForIndexPath:indexPath]];
-						[inspected_content setRatingCount:@"details unavailable while not online"];
+						[inspected_content setAverageRating:@"details"];
+						[inspected_content setRatingCount:@"are unavailable while not online"];
+						[inspected_content setTagCount:@"but"];
+						[inspected_content setRecentTags:@"you can still rate, tag, and comment"];
+						[inspected_content setCommentCount:@"and"];
+						[inspected_content setRecentComment:@"it will all be uploaded later"];
 					}
 					InspectionController *inspectionController = [[InspectionController alloc] initWithContent:inspected_content];
 					dispatch_async(dispatch_get_main_queue(), ^{
@@ -276,8 +277,7 @@
 						[inspectionController release];						
 					});
 				});
-				dispatch_release(queue);				
-				
+				dispatch_release(queue);
 			} else {
 				[[self tableView:tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
 			}

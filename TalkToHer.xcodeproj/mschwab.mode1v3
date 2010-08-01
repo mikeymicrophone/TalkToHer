@@ -295,7 +295,7 @@
 							<real>138</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>4 55 1276 723 0 0 1280 778 </string>
+						<string>4 55 1190 723 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataDelegate.m</string>
+								<string>InspectionController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +321,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataDelegate.m</string>
+										<string>InspectionController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4DEA4A712062E1500266C34</string>
+										<string>E4DEA4DF12063F9000266C34</string>
 										<key>history</key>
 										<array>
 											<string>E4C0D9A212025AF4006AB8AF</string>
@@ -339,8 +339,6 @@
 											<string>E4C0DF4D1204C8BE006AB8AF</string>
 											<string>E4C0DF821204CF81006AB8AF</string>
 											<string>E4C0DF831204CF81006AB8AF</string>
-											<string>E4C0E05C1204F7A4006AB8AF</string>
-											<string>E4C0E05E1204F7A4006AB8AF</string>
 											<string>E4C0E0601204F7A4006AB8AF</string>
 											<string>E4C0E0771204FE91006AB8AF</string>
 											<string>E4C0E0791204FE91006AB8AF</string>
@@ -350,7 +348,6 @@
 											<string>E4C0E0D812050DFB006AB8AF</string>
 											<string>E4C0E0D912050DFB006AB8AF</string>
 											<string>E4C0E0DA12050DFB006AB8AF</string>
-											<string>E4C0E0DB12050DFB006AB8AF</string>
 											<string>E4C0E0DC12050DFB006AB8AF</string>
 											<string>E4C0E0DD12050DFB006AB8AF</string>
 											<string>E4C0E0DE12050DFB006AB8AF</string>
@@ -369,12 +366,15 @@
 											<string>E4DEA46A12061DEF00266C34</string>
 											<string>E4DEA46B12061DEF00266C34</string>
 											<string>E4DEA47412061EBD00266C34</string>
-											<string>E4DEA48A1206234F00266C34</string>
 											<string>E4DEA48B1206234F00266C34</string>
-											<string>E4DEA4A412062E1500266C34</string>
 											<string>E4DEA4A512062E1500266C34</string>
 											<string>E4DEA4A612062E1500266C34</string>
-											<string>E4DEA4891206234F00266C34</string>
+											<string>E4DEA4D312063E7A00266C34</string>
+											<string>E4DEA4D412063E7A00266C34</string>
+											<string>E4DEA4D512063E7A00266C34</string>
+											<string>E4DEA4D612063E7A00266C34</string>
+											<string>E4DEA4D712063E7A00266C34</string>
+											<string>E4DEA4D812063E7A00266C34</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -386,9 +386,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1116, 515}}</string>
+								<string>{{0, 0}, {1030, 515}}</string>
 								<key>RubberWindowFrame</key>
-								<string>4 55 1276 723 0 0 1280 778 </string>
+								<string>4 55 1190 723 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -406,9 +406,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 520}, {1116, 162}}</string>
+								<string>{{0, 520}, {1030, 162}}</string>
 								<key>RubberWindowFrame</key>
-								<string>4 55 1276 723 0 0 1280 778 </string>
+								<string>4 55 1190 723 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -417,7 +417,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1116pt</string>
+					<string>1030pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -572,15 +572,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E4DEA4E012063F9000266C34</string>
 		<string>E4DEA45312061BE900266C34</string>
 		<string>E4DEA44D12061BB200266C34</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>4 55 1276 723 0 0 1280 778 </string>
+	<string>4 55 1190 723 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

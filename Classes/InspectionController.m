@@ -203,13 +203,15 @@
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		}
+		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	}else if (indexPath.section == 5) {
 		CellIdentifier = @"text";
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		}		
+		}
+		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	}
 	
     return cell;
@@ -225,23 +227,14 @@
 		height = [InspirationCell cellHeightForMainText:[content averageRating]
 											 additional:[content ratingCount]
 												  width:[[self view] frame].size.width];
-		if (height < 44) {
-			height = 44;
-		}
 	} else if (indexPath.section == 2) {
 		height = [InspirationCell cellHeightForMainText:[content tagCount]
 											 additional:[content recentTags]
 												  width:[[self view] frame].size.width];
-		if (height < 44) {
-			height = 44;
-		}
 	} else if (indexPath.section == 3) {
 		height = [InspirationCell cellHeightForMainText:[content commentCount]
 											 additional:[content recentComment]
 												  width:[[self view] frame].size.width];
-		if (height < 44) {
-			height = 44;
-		}
 	} else if (indexPath.section == 4) {
 		height = 40;
 	} else if (indexPath.section == 5) {
@@ -287,17 +280,22 @@
 }
 
 -(void)ratingReady:(UISlider *)sender {
-	Rating *r = [[Rating alloc] init];
-	r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)([sender value] * 10)];
-	r.targetId = [content getRemoteId];
-	r.targetType = [content className];
-	r.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
-	
-	if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-		[r createRemote];
-	} else {
-		[r markForDelayedSubmission];
-	}
+	dispatch_queue_t queue;
+	queue = dispatch_queue_create("com.talktoher.submit", NULL);
+	dispatch_async(queue, ^{
+		Rating *r = [[Rating alloc] init];
+		r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)([sender value] * 10)];
+		r.targetId = [content getRemoteId];
+		r.targetType = [content className];
+		r.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+		
+		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+			[r createRemote];
+		} else {
+			[r persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+		}
+	});
+	dispatch_release(queue);
 }
 
 -(void)log_in {
@@ -312,18 +310,23 @@
 -(void)tagReady {
 	[tag_field resignFirstResponder];
 	if (!(tag_field.text == nil)) {
-		Tag *t = [[Tag alloc] init];
-		t.concept = tag_field.text;
-		tag_field.text = @"";
-		t.targetId = [content getRemoteId];
-		t.targetType = [content className];
-		t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
-		
-		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-			[t createRemote];
-		} else {
-			[t markForDelayedSubmission];
-		}
+		dispatch_queue_t queue;
+		queue = dispatch_queue_create("com.talktoher.submit", NULL);
+		dispatch_async(queue, ^{
+			Tag *t = [[Tag alloc] init];
+			t.concept = tag_field.text;
+			tag_field.text = @"";
+			t.targetId = [content getRemoteId];
+			t.targetType = [content className];
+			t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+			
+			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+				[t createRemote];
+			} else {
+				[t persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+			}			
+		});
+		dispatch_release(queue);
 	}
 }
 
@@ -333,18 +336,23 @@
 -(void)commentReady {
 	[comment_field resignFirstResponder];
 	if (!(comment_field.text == nil)) {
-		Comment *c = [[Comment alloc] init];
-		c.text = comment_field.text;
-		comment_field.text = @"";
-		c.targetId = [content getRemoteId];
-		c.targetType = [content className];
-		c.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
-		
-		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-			[c createRemote];
-		} else {
-			[c markForDelayedSubmission];
-		}
+		dispatch_queue_t queue;
+		queue = dispatch_queue_create("com.talktoher.submit", NULL);
+		dispatch_async(queue, ^{
+			Comment *c = [[Comment alloc] init];
+			c.text = comment_field.text;
+			comment_field.text = @"";
+			c.targetId = [content getRemoteId];
+			c.targetType = [content className];
+			c.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+			
+			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+				[c createRemote];
+			} else {
+				[c persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+			}
+		});
+		dispatch_release(queue);
 	}
 }
 
