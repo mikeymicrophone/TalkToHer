@@ -14,6 +14,7 @@
 	UILabel *rating;
 	UITextField *tag_field;
 	UITextField *comment_field;
+	BOOL updated;
 }
 
 @property (nonatomic, retain) id content;
@@ -28,4 +29,5 @@
 -(void)log_in;
 -(void)tagReady;
 -(void)commentReady;
+-(void)updateMetadata:(NSObject *)inspected_content;
 @end

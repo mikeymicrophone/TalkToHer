@@ -25,6 +25,7 @@
 		return nil;
 
 	[self setContent:contentObj];
+	updated = NO;
 
 	return self;
 }
@@ -138,6 +139,9 @@
 			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		if (!updated) {
+			[cell start_spinning];
+		}
 	} else if (indexPath.section == 2) {
 		CellIdentifier = @"tags";
 		
@@ -167,6 +171,9 @@
 			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		if (!updated) {
+			[cell start_spinning];
+		}		
     } else if (indexPath.section == 3) {
 		CellIdentifier = @"comments";
 		
@@ -196,6 +203,9 @@
 			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		if (!updated) {
+			[cell start_spinning];
+		}		
 	} else if (indexPath.section == 4) {
 		CellIdentifier = @"set_a_goal";
 		
@@ -241,6 +251,16 @@
 		height = 40;
 	}
 	return height;
+}
+
+-(void)updateMetadata:(NSObject *)inspected_content {
+	if (inspected_content == nil) {
+		
+	} else {
+		self.content = inspected_content;
+		updated = YES;
+		[[self tableView] reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")] withRowAnimation:UITableViewRowAnimationBottom];
+	}
 }
 
 #pragma mark -

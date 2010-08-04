@@ -859,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mike Schwab";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -866,6 +867,7 @@
 				GCC_PREFIX_HEADER = TalkToHer_Prefix.pch;
 				INFOPLIST_FILE = "TalkToHer-Info.plist";
 				PRODUCT_NAME = TalkToHer;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4BCEDF61-2580-46CC-8D03-47E2413108FB";
 			};
 			name = Debug;
 		};
@@ -873,11 +875,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mike Schwab";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TalkToHer_Prefix.pch;
 				INFOPLIST_FILE = "TalkToHer-Info.plist";
 				PRODUCT_NAME = TalkToHer;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4BCEDF61-2580-46CC-8D03-47E2413108FB";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
