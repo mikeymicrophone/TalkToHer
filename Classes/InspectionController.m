@@ -141,6 +141,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (!updated) {
 			[cell start_spinning];
+			[cell bringSubviewToFront:cell.spinner];
 		}
 	} else if (indexPath.section == 2) {
 		CellIdentifier = @"tags";
@@ -173,6 +174,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (!updated) {
 			[cell start_spinning];
+			[cell bringSubviewToFront:cell.spinner];
 		}		
     } else if (indexPath.section == 3) {
 		CellIdentifier = @"comments";
@@ -205,6 +207,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (!updated) {
 			[cell start_spinning];
+			[cell bringSubviewToFront:cell.spinner];
 		}		
 	} else if (indexPath.section == 4) {
 		CellIdentifier = @"set_a_goal";

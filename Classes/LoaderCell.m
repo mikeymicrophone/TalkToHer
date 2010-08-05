@@ -30,7 +30,7 @@
 -(void)addSpinner {
 	self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	spinner.center = CGPointMake(290, 23);
-	[self addSubview:spinner];	
+	[self addSubview:spinner];
 }
 
 -(void)stop_spinning {

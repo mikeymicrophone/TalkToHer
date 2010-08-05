@@ -265,14 +265,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>34</integer>
-									<integer>33</integer>
+									<integer>3</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspectionController.m</string>
+								<string>InspirationController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +321,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspectionController.m</string>
+										<string>InspirationController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4A881D0120A1156009A856F</string>
+										<string>E4A881FB120A8522009A856F</string>
 										<key>history</key>
 										<array>
 											<string>E4C0D9A212025AF4006AB8AF</string>
@@ -333,7 +333,6 @@
 											<string>E4C0D9AE12025BAA006AB8AF</string>
 											<string>E4C0DBB9120349B1006AB8AF</string>
 											<string>E4C0DBBA120349B1006AB8AF</string>
-											<string>E4C0DE1612047C84006AB8AF</string>
 											<string>E4C0DF491204C8BE006AB8AF</string>
 											<string>E4C0DF4B1204C8BE006AB8AF</string>
 											<string>E4C0DF4D1204C8BE006AB8AF</string>
@@ -352,9 +351,7 @@
 											<string>E4C0E0DE12050DFB006AB8AF</string>
 											<string>E4C0E0DF12050DFB006AB8AF</string>
 											<string>E47C290812053C3100C87EC3</string>
-											<string>E47C292F1205D1EB00C87EC3</string>
 											<string>E4DEA43312061BB200266C34</string>
-											<string>E4DEA43512061BB200266C34</string>
 											<string>E4DEA43612061BB200266C34</string>
 											<string>E4DEA43912061BB200266C34</string>
 											<string>E4DEA43A12061BB200266C34</string>
@@ -365,16 +362,19 @@
 											<string>E4DEA46B12061DEF00266C34</string>
 											<string>E4DEA47412061EBD00266C34</string>
 											<string>E4DEA48B1206234F00266C34</string>
-											<string>E4DEA4A512062E1500266C34</string>
 											<string>E4DEA4A612062E1500266C34</string>
 											<string>E4DEA4D412063E7A00266C34</string>
 											<string>E4DEA4D512063E7A00266C34</string>
 											<string>E4DEA4D612063E7A00266C34</string>
 											<string>E4A881B4120A0F21009A856F</string>
-											<string>E4A881C8120A1032009A856F</string>
 											<string>E4A881C9120A1032009A856F</string>
 											<string>E4A881CE120A1156009A856F</string>
-											<string>E4A881CF120A1156009A856F</string>
+											<string>E4A881E2120A814A009A856F</string>
+											<string>E4A881EF120A84C0009A856F</string>
+											<string>E4A881F0120A84C0009A856F</string>
+											<string>E4A881F1120A84C0009A856F</string>
+											<string>E4A881FA120A8522009A856F</string>
+											<string>E4A881F2120A84C0009A856F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -574,8 +574,8 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1190 723 0 0 1280 778 </string>

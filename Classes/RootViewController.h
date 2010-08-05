@@ -27,4 +27,5 @@
 -(LoaderCell *)cellForContent:(NSString *)type;
 -(IBAction)goToSite;
 -(IBAction)about;
+-(void)moveButtonsForOrientation:(UIInterfaceOrientation)interfaceOrientation;
 @end

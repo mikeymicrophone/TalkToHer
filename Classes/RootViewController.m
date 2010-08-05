@@ -38,6 +38,25 @@
 	[[[[UIApplication sharedApplication] delegate] data_source] loadRemoteDataOfTypes:loadable_data_types forCellDelegate:self];
 }
 
+/*
+ - (void)viewDidAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ }
+ */
+/*
+ - (void)viewWillDisappear:(BOOL)animated {
+ [super viewWillDisappear:animated];
+ }
+ */
+/*
+ - (void)viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
+ }
+*/
+
+#pragma mark -
+#pragma mark button control
+
 -(LoaderCell *)cellForContent:(NSString *)type {
 	LoaderCell *c;
 	if ([type isEqualToString:@"Line"]) {
@@ -78,11 +97,24 @@
 	[self presentModalViewController:infoController animated:YES];
 }
 
+#pragma mark -
+#pragma mark rotation control
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	return YES;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-	NSInteger fromInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-	if (fromInterfaceOrientation == UIInterfaceOrientationPortrait || fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+	[self moveButtonsForOrientation:self.interfaceOrientation];
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+	[self moveButtonsForOrientation:interfaceOrientation];
+}
+
+-(void)moveButtonsForOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
 		lines_cell.coloredLabel.center = CGPointMake(160, lines_cell.coloredLabel.center.y);
 		tips_cell.coloredLabel.center = CGPointMake(160, lines_cell.coloredLabel.center.y);
 		exercises_cell.coloredLabel.center = CGPointMake(160, lines_cell.coloredLabel.center.y);
@@ -107,54 +139,6 @@
 		
 		site.center = CGPointMake(400, site.center.y);
 	}	
-}
-
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-	if (fromInterfaceOrientation == UIInterfaceOrientationPortrait || fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-		lines_cell.coloredLabel.center = CGPointMake(100, lines_cell.coloredLabel.center.y);
-		tips_cell.coloredLabel.center = CGPointMake(170, lines_cell.coloredLabel.center.y);
-		exercises_cell.coloredLabel.center = CGPointMake(265, lines_cell.coloredLabel.center.y);
-		goals_cell.coloredLabel.center = CGPointMake(350, goals_cell.coloredLabel.center.y);
-		
-		lines_cell.spinner.center = CGPointMake(450, lines_cell.spinner.center.y);
-		tips_cell.spinner.center = CGPointMake(450, tips_cell.spinner.center.y);
-		exercises_cell.spinner.center = CGPointMake(450, exercises_cell.spinner.center.y);
-		goals_cell.spinner.center = CGPointMake(450, goals_cell.spinner.center.y);
-		
-		site.center = CGPointMake(400, site.center.y);
-	} else {
-		lines_cell.coloredLabel.center = CGPointMake(160, lines_cell.coloredLabel.center.y);
-		tips_cell.coloredLabel.center = CGPointMake(160, lines_cell.coloredLabel.center.y);
-		exercises_cell.coloredLabel.center = CGPointMake(160, lines_cell.coloredLabel.center.y);
-		goals_cell.coloredLabel.center = CGPointMake(160, goals_cell.coloredLabel.center.y);
-		
-		lines_cell.spinner.center = CGPointMake(290, lines_cell.spinner.center.y);
-		tips_cell.spinner.center = CGPointMake(290, tips_cell.spinner.center.y);
-		exercises_cell.spinner.center = CGPointMake(290, exercises_cell.spinner.center.y);
-		goals_cell.spinner.center = CGPointMake(290, goals_cell.spinner.center.y);
-		
-		site.center = CGPointMake(242, site.center.y);
-	}
 }
 
 #pragma mark -
