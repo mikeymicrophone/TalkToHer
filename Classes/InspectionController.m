@@ -26,7 +26,7 @@
 
 	[self setContent:contentObj];
 	updated = NO;
-
+	NSLog(@"initialized");
 	return self;
 }
 
@@ -93,7 +93,7 @@
 	
 	NSString *CellIdentifier;
 	InspirationCell *cell;
-	
+	NSLog(@"cell: %@", indexPath);
     // Configure the cell...
 	if (indexPath.section == 0) {
 		CellIdentifier = @"display";
@@ -110,8 +110,8 @@
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			
-			[cell setMain_text:[content averageRating]];
-			[cell setAdditional_text:[content ratingCount]];
+			[cell setMain_text:[content averageRatingText]];
+			[cell setAdditional_text:[content ratingCountText]];
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 				UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
@@ -119,13 +119,13 @@
 				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
 				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:slider];
-				slider.value = [[content myRating] integerValue] / 10.0;
+//				slider.value = [[content myRating] integerValue] / 10.0;
 				
 				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
 				[cell addSubview:rating];
-				if ([[content myRating] integerValue] > 0) {
-					rating.text = [NSString stringWithFormat:@"%.1f", [[content myRating] integerValue] / 10.0];
-				}
+//				if ([[content myRating] integerValue] > 0) {
+//					rating.text = [NSString stringWithFormat:@"%.1f", [[content myRating] integerValue] / 10.0];
+//				}
 			} else {
 				UIButton *log_in_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				log_in_button.frame = CGRectMake(80, 15, 210, 30);
@@ -149,8 +149,8 @@
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-			[cell setMain_text:[content tagCount]];
-			[cell setAdditional_text:[content recentTags]];
+			[cell setMain_text:@"noks"];//[content tagCount]];
+			[cell setAdditional_text:@"boks"];//[content recentTags]];
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 				self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
@@ -183,8 +183,10 @@
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			
-			[cell setMain_text:[content commentCount]];
-			[cell setAdditional_text:[content recentComment]];
+			[cell setMain_text:[content commentCountText]];
+			if ([[content comments] count] > 0) {
+				[cell setAdditional_text:[[[content comments] objectAtIndex:0] text]];//[content recentComment]];
+			}
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 				self.comment_field = [[UITextField alloc] initWithFrame:CGRectMake(118, 8, 140, 24)];
@@ -232,22 +234,25 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	CGFloat height;
+	NSLog(@"height: %@", indexPath);
 	if (indexPath.section == 0) {
 		height = [InspirationCell cellHeightForMainText:[content main_text]
 											 additional:[content additional_text]
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 1) {
-		height = [InspirationCell cellHeightForMainText:[content averageRating]
-											 additional:[content ratingCount]
+		height = [InspirationCell cellHeightForMainText:[content averageRatingText]
+											 additional:[content ratingCountText]
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 2) {
-		height = [InspirationCell cellHeightForMainText:[content tagCount]
-											 additional:[content recentTags]
+		height = [InspirationCell cellHeightForMainText:@"booya"//[content tagCount]
+											 additional:@"booya"//[content recentTags]
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 3) {
-		height = [InspirationCell cellHeightForMainText:[content commentCount]
-											 additional:[content recentComment]
+		NSLog(@"about to count comments");
+		height = [InspirationCell cellHeightForMainText:[content commentCountText]
+											 additional:@"booya"//[content recentComment]
 												  width:[[self view] frame].size.width];
+		NSLog(@"counted comments");
 	} else if (indexPath.section == 4) {
 		height = 40;
 	} else if (indexPath.section == 5) {

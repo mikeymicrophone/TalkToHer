@@ -22,4 +22,13 @@
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
 -(void)updateWith:(Line *)l;
+-(void)updateComments;
+-(void)updateRatings;
+-(void)updateTags;
+-(float)averageRating;
+-(NSString *)averageRatingText;
+-(NSInteger)ratingCount;
+-(NSString *)ratingCountText;
+-(NSInteger)commentCount;
+-(NSString *)commentCountText;
 @end

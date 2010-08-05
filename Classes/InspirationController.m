@@ -273,23 +273,16 @@
 			[progressController release];
 		} else {
 			if ((![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"])) {
-				NSObject *uninspected_content = [[NSClassFromString([[[self contentForIndexPath:indexPath] entity] name]) alloc] initWithManagedObject:[self contentForIndexPath:indexPath]];
-				[uninspected_content setAverageRating:@"details"];
-				[uninspected_content setRatingCount:@"are not downloaded yet"];
-				[uninspected_content setTagCount:@"but"];
-				[uninspected_content setRecentTags:@"you can still rate, tag, and comment"];
-				[uninspected_content setCommentCount:@"and"];
-				[uninspected_content setRecentComment:@"it will all be uploaded later"];
+				NSLog(@"the id is: %@", [[self contentForIndexPath:indexPath] getRemoteId]);
+				NSObject *uninspected_content = [self contentForIndexPath:indexPath];
 				
 				InspectionController *inspectionController = [[InspectionController alloc] initWithContent:uninspected_content];
 				[self.navigationController pushViewController:inspectionController animated:YES];
 				
 				dispatch_queue_t queue;
 				queue = dispatch_queue_create("com.talktoher.inspect", NULL);
-				dispatch_async(queue, ^{
-					NSObject *inspected_content = [[[self contentForIndexPath:indexPath] objectiveResource] get_commentary];
-					[inspectionController updateMetadata:inspected_content];
-				});
+				dispatch_async(queue, ^{ [uninspected_content updateComments]; });
+				dispatch_async(queue, ^{ [uninspected_content updateRatings]; });
 				dispatch_release(queue);
 				[inspectionController release];
 			} else {

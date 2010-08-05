@@ -9,6 +9,7 @@
 #import "Line.h"
 #import "ObjectiveResourceConfig.h"
 #import "LineEntity.h"
+#import "Comment.h"
 
 @implementation Line
 

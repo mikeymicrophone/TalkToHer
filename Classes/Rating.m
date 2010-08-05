@@ -8,6 +8,8 @@
 
 #import "Rating.h"
 #import "RatingEntity.h"
+#import "Response.h"
+#import "ORConnection.h"
 
 @implementation Rating
 
@@ -32,10 +34,27 @@
 	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
     [ps setValue:[NSNumber numberWithInt:[ratingId integerValue]] forKey:@"ratingId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-	[ps markForDelayedSubmission];
+	if ([ratingId integerValue] == 0) {
+		[ps markForDelayedSubmission];
+	}
+
 	
 	NSError *mocSaveError = nil;
     if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }
     [ps release];
 }
+
++ (NSArray *)findAllFor:(NSObject *)taggable {
+    NSString *tagsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
+							  [self getRemoteSite],
+							  [taggable getRemoteCollectionName],
+							  [taggable getRemoteId],
+							  [self getRemoteCollectionName],
+							  [self getRemoteProtocolExtension]];
+	
+    Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
+						  andPassword:[[self class] getRemotePassword]];
+    return [self allFromXMLData:res.body];
+}
+
 @end

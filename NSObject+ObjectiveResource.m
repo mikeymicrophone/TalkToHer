@@ -163,6 +163,10 @@ static NSString *_activeResourcePrefix = nil;
 	return [[self getRemoteElementName] stringByAppendingString:@"s"];
 }
 
+- (NSString *)getRemoteCollectionName {
+	return [[self class] getRemoteCollectionName];
+}
+
 + (NSString *)getRemoteElementPath:(NSString *)elementId {
 	return [NSString stringWithFormat:@"%@%@/%@%@", [self getRemoteSite], [self getRemoteCollectionName], elementId, [self getRemoteProtocolExtension]];
 }

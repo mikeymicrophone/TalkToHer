@@ -75,6 +75,7 @@ typedef enum {
 
 // Instance helpers for getting at commonly used class-level values
 - (NSString *)getRemoteCollectionPath;
+- (NSString *)getRemoteCollectionName;
 - (NSString *)convertToRemoteExpectedType;
 
 //Equality test for remote enabled objects based on class name and remote id

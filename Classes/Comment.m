@@ -9,6 +9,8 @@
 #import <CoreData/CoreData.h>
 #import "Comment.h"
 #import "CommentEntity.h"
+#import "Response.h"
+#import "ORConnection.h"
 
 @implementation Comment
 
@@ -32,12 +34,26 @@
 	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
     [ps setValue:[NSNumber numberWithInt:[commentId integerValue]] forKey:@"commentId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-	[ps markForDelayedSubmission];
+	if ([commentId integerValue] == 0) {
+		[ps markForDelayedSubmission];
+	}
 	
 	NSError *mocSaveError = nil;
     if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }
     [ps release];
 }
 
++ (NSArray *)findAllFor:(NSObject *)commendable {
+    NSString *commentsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
+						   [self getRemoteSite],
+						   [commendable getRemoteCollectionName],
+						   [commendable getRemoteId],
+						   [self getRemoteCollectionName],
+						   [self getRemoteProtocolExtension]];
+	
+    Response *res = [ORConnection get:commentsPath withUser:[[self class] getRemoteUser] 
+						  andPassword:[[self class] getRemotePassword]];
+    return [self allFromXMLData:res.body];
+}
 
 @end
