@@ -338,7 +338,7 @@
 		dispatch_async(queue, ^{
 			Tag *t = [[Tag alloc] init];
 			t.concept = tag_field.text;
-			tag_field.text = @"";
+			dispatch_async(dispatch_get_main_queue(), ^{ tag_field.text = @""; });
 			t.targetId = [content getRemoteId];
 			t.targetType = [content className];
 			t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
@@ -364,7 +364,7 @@
 		dispatch_async(queue, ^{
 			Comment *c = [[Comment alloc] init];
 			c.text = comment_field.text;
-			comment_field.text = @"";
+			dispatch_async(dispatch_get_main_queue(), ^{ comment_field.text = @""; });
 			c.targetId = [content getRemoteId];
 			c.targetType = [content className];
 			c.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
