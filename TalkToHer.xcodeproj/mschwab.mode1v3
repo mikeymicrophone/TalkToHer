@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspirationController.m</string>
+								<string>InspectionController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspirationController.m</string>
+										<string>InspectionController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E47ED3EF120CBBCB0011DA3E</string>
+										<string>E47ED3F6120CC01F0011DA3E</string>
 										<key>history</key>
 										<array>
 											<string>E47ED3D4120CB9520011DA3E</string>
@@ -337,9 +337,9 @@
 											<string>E47ED3D8120CB9520011DA3E</string>
 											<string>E47ED3D9120CB9520011DA3E</string>
 											<string>E47ED3E3120CBA790011DA3E</string>
-											<string>E47ED3ED120CBBCB0011DA3E</string>
 											<string>E47ED3EE120CBBCB0011DA3E</string>
-											<string>E47ED3E2120CBA790011DA3E</string>
+											<string>E47ED3F5120CC01F0011DA3E</string>
+											<string>E47ED3ED120CBBCB0011DA3E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -537,12 +537,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E47ED3F0120CBBCB0011DA3E</string>
+		<string>E47ED3F7120CC01F0011DA3E</string>
 		<string>E47ED24A120BB27C0011DA3E</string>
 		<string>E47ED244120BB2000011DA3E</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>E47ED3F8120CC01F0011DA3E</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>

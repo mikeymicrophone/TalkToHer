@@ -131,7 +131,7 @@
 				
 				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
 				[cell addSubview:rating];
-				if ([content myRating] > 0) {
+				if ([[content myRating] floatValue] > 0.0) {
 					rating.text = [NSString stringWithFormat:@"%.1f", [[content myRating] floatValue]];
 				}
 			} else {
