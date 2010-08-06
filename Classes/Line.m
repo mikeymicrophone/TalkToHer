@@ -13,7 +13,7 @@
 
 @implementation Line
 
-@synthesize lineId, userId, phrasing, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, myRating;
+@synthesize lineId, userId, phrasing;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
@@ -23,25 +23,6 @@
 	self.lineId = [ps lineId];
     
     return self;
-}
-
--(NSString *)main_text {
-	return [self phrasing];
-}
-
--(NSString *)additional_text {
-	return @"";
-}
-
--(NSString *)full_text {
-	return [self phrasing];
-}
-
--(id)get_commentary {
-	[ObjectiveResourceConfig setProtocolExtension:[NSString stringWithFormat:@"/inspect_content/%@", [[[UIApplication sharedApplication] delegate] userIsLoggedIn]]];
-	Line *line = [Line findRemote:[self lineId]];
-	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
-	return line;
 }
 
 -(BOOL)matches:(NSManagedObject *)po {
@@ -54,11 +35,6 @@
     [ps setValue:[NSNumber numberWithInt:[lineId integerValue]] forKey:@"lineId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
     [ps release];
-}
-
-- (NSArray *)excludedPropertyNames {
-	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", @"myRating", nil];
-	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
 
 @end

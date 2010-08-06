@@ -12,7 +12,7 @@
 
 @implementation Tip
 
-@synthesize tipId, advice, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, userId, myRating;
+@synthesize tipId, advice, userId;
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
     
@@ -33,30 +33,6 @@
     [ps setValue:[NSNumber numberWithInt:[tipId integerValue]] forKey:@"tipId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
     [ps release];
-}
-
--(id)get_commentary {
-	[ObjectiveResourceConfig setProtocolExtension:[NSString stringWithFormat:@"/inspect_content/%@", [[[UIApplication sharedApplication] delegate] userIsLoggedIn]]];
-	Tip *tip = [Tip findRemote:[self tipId]];
-	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
-	return tip;
-}
-
--(NSString *)main_text {
-	return [self advice];
-}
-
--(NSString *)additional_text {
-	return @"";
-}
-
--(NSString *)full_text {
-	return [self advice];
-}
-
-- (NSArray *)excludedPropertyNames {
-	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", @"myRating", nil];
-	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
 
 @end

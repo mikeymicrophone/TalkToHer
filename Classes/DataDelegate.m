@@ -21,7 +21,7 @@
 #pragma mark initialization
 
 -(void)initialize_constants {
-	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", @"Rating", @"ratings", @"Tag", @"tags", nil];//] @"Line", @"Line", @"Tip", @"Tip", @"Exercise", @"Exercise", @"GoalOwnership", @"GoalOwnership", nil];
+	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", @"Rating", @"ratings", @"Tag", @"tags", @"Comment", @"comments", nil];
 	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
 	[ObjectiveResourceConfig setSite:server_location];
 	connectionIsFresh = NO;
@@ -294,6 +294,12 @@
 		properties = [NSArray arrayWithObjects:@"instruction", @"moniker", @"exerciseId", nil];
 	} else if (type == @"GoalOwnership") {
 		properties = [NSArray arrayWithObjects:@"goalOwnershipId", @"derivedDescription", @"complete", @"progress", @"completionStatus", @"remainingDaysText", @"repetitions", nil];
+	} else if (type == @"Comment") {
+		properties = [NSArray arrayWithObjects:@"commentId", @"text", @"targetType", @"targetId", nil];
+	} else if (type == @"Rating") {
+		properties = [NSArray arrayWithObjects:@"ratingId", @"opinion", @"targetType", @"targetId", nil];
+	} else if (type == @"Tag") {
+
 	}
 	return properties;
 }

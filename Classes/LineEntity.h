@@ -25,10 +25,11 @@
 -(void)updateComments;
 -(void)updateRatings;
 -(void)updateTags;
+-(NSNumber *)myRating;
 -(float)averageRating;
 -(NSString *)averageRatingText;
 -(NSInteger)ratingCount;
 -(NSString *)ratingCountText;
--(NSInteger)commentCount;
+-(NSNumber *)commentCount;
 -(NSString *)commentCountText;
 @end

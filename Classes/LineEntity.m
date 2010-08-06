@@ -22,13 +22,29 @@
 	return @"";
 }
 
+-(NSNumber *)myRating {
+	RatingEntity *mine = nil;
+	for (RatingEntity *r in [self ratings]) {
+		if ([r userId] == [[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
+			mine = r;
+		}
+	}
+	NSNumber *rating;
+	if (mine) {
+		rating = [NSNumber numberWithFloat:[[mine opinion] floatValue] / 10.0];
+	} else {
+		rating = [NSNumber numberWithFloat:0.0];
+	}
+	return rating;
+}
+
 -(float)averageRating {
 	if ([self ratingCount] == 0) return 0.0;
 	float dividend = 0.0;
 	for (RatingEntity *r in [self ratings]) {
 		dividend += [[r opinion] floatValue];
 	}
-	return dividend/[self ratingCount];
+	return dividend/([self ratingCount]*10);
 }
 
 -(NSString *)averageRatingText {
@@ -42,17 +58,17 @@
 -(NSString *)ratingCountText {
 	NSString *txt = [NSString stringWithFormat:@"%d ratings", [self ratingCount]];
 	if ([self ratingCount] == 1) {
-		txt = [txt substringToIndex:[txt length] - 2];
+		txt = [txt substringToIndex:[txt length] - 1];
 	}
 	return txt;	
 }
 
--(NSInteger)commentCount {
-	return [[self comments] count];
+-(NSNumber *)commentCount {
+	return [NSNumber numberWithInt:[[self comments] count]];
 }
 
 -(NSString *)commentCountText {
-	NSString *txt = [NSString stringWithFormat:@"%d comments", [self commentCount]];
+	NSString *txt = [NSString stringWithFormat:@"%@ comments", [self commentCount]];
 	if ([self commentCount] == 1) {
 		txt = [txt substringToIndex:[txt length] - 1];
 	}
@@ -83,24 +99,15 @@
 }
 
 -(void)updateRatings {
-	NSArray *allRatings = [Rating findAllFor:self];
-	for (Rating *r in allRatings) {
-		[r persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
-	}	
+	[[[[UIApplication sharedApplication] delegate] data_source] persistData:[Rating findAllFor:self] ofType:@"ratings"];
 }
 
 -(void)updateComments {
-	NSArray *allComments = [Comment findAllFor:self];
-	for (Comment *c in allComments) {
-		[c persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
-	}
+	[[[[UIApplication sharedApplication] delegate] data_source] persistData:[Comment findAllFor:self] ofType:@"comments"];
 }
 
 -(void)updateTags {
-	NSArray *allTags = [Tag findAllFor:self];
-	for (Tag *t in allTags) {
-		[t persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
-	}
+	[[[[UIApplication sharedApplication] delegate] data_source] persistData:[Tag findAllFor:self] ofType:@"tags"];
 }
 
 -(NSString *)getRemoteCollectionName {

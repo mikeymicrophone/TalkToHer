@@ -25,8 +25,10 @@
 		return nil;
 
 	[self setContent:contentObj];
-	updated = NO;
-	NSLog(@"initialized");
+	comments_updated = NO;
+	tags_updated = NO;
+	ratings_updated = NO;
+
 	return self;
 }
 
@@ -86,14 +88,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+	NSInteger length;
+	if (section == 3) {
+		length = [[content commentCount] integerValue] + 1;
+	} else {
+		length = 1;
+	}
+    return length;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	NSString *CellIdentifier;
 	InspirationCell *cell;
-	NSLog(@"cell: %@", indexPath);
+
     // Configure the cell...
 	if (indexPath.section == 0) {
 		CellIdentifier = @"display";
@@ -119,13 +127,13 @@
 				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
 				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:slider];
-//				slider.value = [[content myRating] integerValue] / 10.0;
+				slider.value = [[content myRating] floatValue];
 				
 				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
 				[cell addSubview:rating];
-//				if ([[content myRating] integerValue] > 0) {
-//					rating.text = [NSString stringWithFormat:@"%.1f", [[content myRating] integerValue] / 10.0];
-//				}
+				if ([content myRating] > 0) {
+					rating.text = [NSString stringWithFormat:@"%.1f", [[content myRating] floatValue]];
+				}
 			} else {
 				UIButton *log_in_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				log_in_button.frame = CGRectMake(80, 15, 210, 30);
@@ -139,7 +147,7 @@
 			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		if (!updated) {
+		if (!ratings_updated) {
 			[cell start_spinning];
 			[cell bringSubviewToFront:cell.spinner];
 		}
@@ -172,45 +180,53 @@
 			}
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		if (!updated) {
+		if (!tags_updated) {
 			[cell start_spinning];
 			[cell bringSubviewToFront:cell.spinner];
 		}		
     } else if (indexPath.section == 3) {
-		CellIdentifier = @"comments";
-		
-		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (cell == nil) {
-			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		if (indexPath.row == 0) {
+			CellIdentifier = @"comments";
 			
-			[cell setMain_text:[content commentCountText]];
-			if ([[content comments] count] > 0) {
-				[cell setAdditional_text:[[[content comments] objectAtIndex:0] text]];//[content recentComment]];
+			cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+				
+				[cell setMain_text:[content commentCountText]];
+				
+				if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
+					self.comment_field = [[UITextField alloc] initWithFrame:CGRectMake(118, 8, 140, 24)];
+					comment_field.borderStyle = UITextBorderStyleRoundedRect;
+					comment_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
+					comment_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+					
+					UIButton *comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+					comment_button.frame = CGRectMake(265, 3, 34, 34);
+					comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:23];
+					[comment_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
+					[comment_button setTitle:@"!" forState:nil];
+					
+					[comment_button addTarget:self action:@selector(commentReady) forControlEvents:UIControlEventTouchUpInside];
+					
+					[cell addSubview:comment_field];
+					[cell addSubview:comment_button];
+				}
 			}
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			if (!comments_updated) {
+				[cell start_spinning];
+				[cell bringSubviewToFront:cell.spinner];
+			}
+		} else {
+			CommentEntity *comment = [[content comments] objectAtIndex:indexPath.row - 1];
+			NSString *identifier = [NSString stringWithFormat:@"CommentEntity_%@", [comment getRemoteId]];
 			
-			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
-				self.comment_field = [[UITextField alloc] initWithFrame:CGRectMake(118, 8, 140, 24)];
-				comment_field.borderStyle = UITextBorderStyleRoundedRect;
-				comment_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
-				comment_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
-				
-				UIButton *comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-				comment_button.frame = CGRectMake(265, 3, 34, 34);
-				comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:23];
-				[comment_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
-				[comment_button setTitle:@"!" forState:nil];
-				
-				[comment_button addTarget:self action:@selector(commentReady) forControlEvents:UIControlEventTouchUpInside];
-				
-				[cell addSubview:comment_field];
-				[cell addSubview:comment_button];
+			cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+			if (cell == nil) {
+				cell = [[[InspirationCell alloc] initWithContent:comment] autorelease];
 			}
 		}
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		if (!updated) {
-			[cell start_spinning];
-			[cell bringSubviewToFront:cell.spinner];
-		}		
+
 	} else if (indexPath.section == 4) {
 		CellIdentifier = @"set_a_goal";
 		
@@ -228,13 +244,13 @@
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	}
-	
+
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	CGFloat height;
-	NSLog(@"height: %@", indexPath);
+
 	if (indexPath.section == 0) {
 		height = [InspirationCell cellHeightForMainText:[content main_text]
 											 additional:[content additional_text]
@@ -244,15 +260,16 @@
 											 additional:[content ratingCountText]
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 2) {
-		height = [InspirationCell cellHeightForMainText:@"booya"//[content tagCount]
-											 additional:@"booya"//[content recentTags]
-												  width:[[self view] frame].size.width];
+		height = 44;
 	} else if (indexPath.section == 3) {
-		NSLog(@"about to count comments");
-		height = [InspirationCell cellHeightForMainText:[content commentCountText]
-											 additional:@"booya"//[content recentComment]
-												  width:[[self view] frame].size.width];
-		NSLog(@"counted comments");
+		if (indexPath.row == 0) {
+			height = 44;
+		} else {
+			CommentEntity *c = [[content comments] objectAtIndex:(indexPath.row - 1)];
+			height = [InspirationCell cellHeightForMainText:[c main_text]
+												 additional:[c additional_text]
+													  width:[[self view] frame].size.width];
+		}
 	} else if (indexPath.section == 4) {
 		height = 40;
 	} else if (indexPath.section == 5) {
@@ -261,13 +278,23 @@
 	return height;
 }
 
--(void)updateMetadata:(NSObject *)inspected_content {
-	if (inspected_content == nil) {
+-(void)updateMetadata:(NSArray *)updated_content {
+	if (updated_content == nil || [updated_content count] == 0) {
 		
 	} else {
-		self.content = inspected_content;
-		updated = YES;
-		[[self tableView] reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")] withRowAnimation:UITableViewRowAnimationBottom];
+		NSObject *firstElement = [updated_content objectAtIndex:0];
+		NSIndexSet *set;
+		if ([[firstElement className] isEqualToString:@"CommentEntity"]) {
+			comments_updated = YES;
+			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"3")];
+		} else if ([[firstElement className] isEqualToString:@"RatingEntity"]) {
+			ratings_updated = YES;
+			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1")];
+		} else if ([[firstElement className] isEqualToString:@"TagEntity"]) {
+			tags_updated = YES;
+			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2")];
+		}
+		[[self tableView] reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
 	}
 }
 
@@ -314,7 +341,7 @@
 		Rating *r = [[Rating alloc] init];
 		r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)([sender value] * 10)];
 		r.targetId = [content getRemoteId];
-		r.targetType = [content className];
+		r.targetType = [[content className] substringToIndex:[[content className] length] - 6];
 		r.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
 		
 		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
@@ -345,7 +372,7 @@
 			t.concept = tag_field.text;
 			dispatch_async(dispatch_get_main_queue(), ^{ tag_field.text = @""; });
 			t.targetId = [content getRemoteId];
-			t.targetType = [content className];
+			t.targetType = [[content className] substringToIndex:[[content className] length] - 6];
 			t.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
 			
 			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
@@ -371,7 +398,7 @@
 			c.text = comment_field.text;
 			dispatch_async(dispatch_get_main_queue(), ^{ comment_field.text = @""; });
 			c.targetId = [content getRemoteId];
-			c.targetType = [content className];
+			c.targetType = [[content className] substringToIndex:[[content className] length] - 6];
 			c.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
 			
 			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {

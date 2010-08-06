@@ -152,7 +152,7 @@
 		}
 	} else if ([indexPath indexAtPosition:1] < [[content_source loaded_amount] integerValue]) {
 		id content = [self contentForIndexPath:indexPath];
-		NSString *identifier = [NSString stringWithFormat:@"%@_%@", [content className], [content performSelector:NSSelectorFromString([content getRemoteClassIdName])]];
+		NSString *identifier = [NSString stringWithFormat:@"%@_%@", [content className], [content getRemoteId]];
 
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
 		if (cell == nil) {
@@ -273,7 +273,6 @@
 			[progressController release];
 		} else {
 			if ((![[[self contentForIndexPath:indexPath] getRemoteId] isEqualToString:@"0"])) {
-				NSLog(@"the id is: %@", [[self contentForIndexPath:indexPath] getRemoteId]);
 				NSObject *uninspected_content = [self contentForIndexPath:indexPath];
 				
 				InspectionController *inspectionController = [[InspectionController alloc] initWithContent:uninspected_content];
@@ -281,8 +280,18 @@
 				
 				dispatch_queue_t queue;
 				queue = dispatch_queue_create("com.talktoher.inspect", NULL);
-				dispatch_async(queue, ^{ [uninspected_content updateComments]; });
-				dispatch_async(queue, ^{ [uninspected_content updateRatings]; });
+				dispatch_async(queue, ^{
+					[uninspected_content updateComments];
+					dispatch_async(dispatch_get_main_queue(), ^{
+						[inspectionController updateMetadata:[uninspected_content comments]];
+					});
+				});
+				dispatch_async(queue, ^{
+					[uninspected_content updateRatings];
+					dispatch_async(dispatch_get_main_queue(), ^{
+						[inspectionController updateMetadata:[uninspected_content ratings]];
+					});
+				});
 				dispatch_release(queue);
 				[inspectionController release];
 			} else {

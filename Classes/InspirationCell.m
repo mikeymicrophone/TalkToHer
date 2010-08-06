@@ -23,7 +23,7 @@
 
 -(id)initWithContent:(NSObject *)c {
 	if (!(self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[NSString stringWithFormat:@"%@_%@",
-					[c className], [c performSelector:NSSelectorFromString([c getRemoteClassIdName])]]]))
+					[c className], [c getRemoteId]]]))
 		return nil;
 	
 	self.type = [c className];
@@ -35,8 +35,10 @@
 }
 
 -(void)layoutSubviews {
-	[main removeFromSuperview];
-	[addl removeFromSuperview];
+	if (main) {
+		[main removeFromSuperview];
+		[addl removeFromSuperview];
+	}
 	[super layoutSubviews];
 	[self addLabels];
 }

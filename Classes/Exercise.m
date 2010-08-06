@@ -12,7 +12,7 @@
 
 @implementation Exercise
 
-@synthesize exerciseId, moniker, instruction, recentComment, recentTags, commentCount, tagCount, ratingCount, averageRating, myRating, userId;
+@synthesize exerciseId, moniker, instruction, userId;
 -(id)initWithManagedObject:(NSManagedObject *)ps {
     [self init];
     
@@ -36,30 +36,6 @@
     [ps setValue:[NSNumber numberWithInt:[exerciseId integerValue]] forKey:@"exerciseId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
     [ps release];
-}
-
--(NSString *)main_text {
-	return [self moniker];
-}
-
--(NSString *)additional_text {
-	return [self instruction];
-}
-
--(NSString *)full_text {
-	return [self instruction];
-}
-
--(id)get_commentary {
-	[ObjectiveResourceConfig setProtocolExtension:[NSString stringWithFormat:@"/inspect_content/%@", [[[UIApplication sharedApplication] delegate] userIsLoggedIn]]];
-	Exercise *exercise = [Exercise findRemote:[self exerciseId]];
-	[ObjectiveResourceConfig setProtocolExtension:@".xml"];
-	return exercise;
-}
-
--(NSArray *)excludedPropertyNames {
-	NSArray *exclusions = [NSArray arrayWithObjects:@"commentCount", @"tagCount", @"ratingCount", @"recentComment", @"recentTags", @"averageRating", @"myRating", nil];
-	return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
 }
 
 @end

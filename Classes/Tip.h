@@ -13,32 +13,14 @@
 @interface Tip : NSObject {
 	NSString *tipId;
 	NSString *advice;
-	NSString *recentComment;
-	NSString *recentTags;
-	NSString *commentCount;
-	NSString *tagCount;
-	NSString *ratingCount;
-	NSString *averageRating;
-	NSString *myRating;
 	NSString *userId;
 }
 
 @property (nonatomic, retain) NSString *tipId;
 @property (nonatomic, retain) NSString *advice;
-@property (nonatomic, retain) NSString *recentComment;
-@property (nonatomic, retain) NSString *recentTags;
-@property (nonatomic, retain) NSString *commentCount;
-@property (nonatomic, retain) NSString *tagCount;
-@property (nonatomic, retain) NSString *ratingCount;
-@property (nonatomic, retain) NSString *averageRating;
 @property (nonatomic, retain) NSString *userId;
-@property (nonatomic, retain) NSString *myRating;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps;
--(NSString *)main_text;
--(NSString *)additional_text;
--(NSString *)full_text;
--(id)get_commentary;
 -(BOOL)matches:(NSManagedObject *)po;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
 

@@ -16,5 +16,6 @@
 -(Rating *)objectiveResource;
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
-
+-(BOOL)matches:(NSManagedObject *)po;
+-(void)updateWith:(Rating *)c;
 @end

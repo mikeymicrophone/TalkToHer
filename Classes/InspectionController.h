@@ -14,7 +14,9 @@
 	UILabel *rating;
 	UITextField *tag_field;
 	UITextField *comment_field;
-	BOOL updated;
+	BOOL comments_updated;
+	BOOL ratings_updated;
+	BOOL tags_updated;
 }
 
 @property (nonatomic, retain) id content;

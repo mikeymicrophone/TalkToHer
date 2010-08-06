@@ -14,31 +14,13 @@
 	NSString *lineId;
 	NSString *phrasing;
 	NSString *userId;
-	NSString *recentComment;
-	NSString *recentTags;
-	NSString *commentCount;
-	NSString *tagCount;
-	NSString *ratingCount;
-	NSString *averageRating;
-	NSString *myRating;
 }
 
 @property (nonatomic, retain) NSString *lineId;
 @property (nonatomic, retain) NSString *phrasing;
 @property (nonatomic, retain) NSString *userId;
-@property (nonatomic, retain) NSString *recentComment;
-@property (nonatomic, retain) NSString *recentTags;
-@property (nonatomic, retain) NSString *commentCount;
-@property (nonatomic, retain) NSString *tagCount;
-@property (nonatomic, retain) NSString *ratingCount;
-@property (nonatomic, retain) NSString *averageRating;
-@property (nonatomic, retain) NSString *myRating;
 
 -(id)initWithManagedObject:(NSManagedObject *)ps;
--(id)get_commentary;
--(NSString *)main_text;
--(NSString *)additional_text;
--(NSString *)full_text;
 -(BOOL)matches:(NSManagedObject *)po;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
 

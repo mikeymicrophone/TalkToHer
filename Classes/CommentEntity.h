@@ -14,8 +14,10 @@
 	BOOL delayed;
 }
 -(Comment *)objectiveResource;
+-(NSString *)main_text;
+-(NSString *)additional_text;	
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
-
-
+-(BOOL)matches:(NSManagedObject *)po;
+-(void)updateWith:(Comment *)c;
 @end
