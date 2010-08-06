@@ -101,7 +101,7 @@
 	
 	NSString *CellIdentifier;
 	InspirationCell *cell;
-
+	
     // Configure the cell...
 	if (indexPath.section == 0) {
 		CellIdentifier = @"display";
@@ -278,23 +278,22 @@
 	return height;
 }
 
--(void)updateMetadata:(NSArray *)updated_content {
-	if (updated_content == nil || [updated_content count] == 0) {
-		
+-(void)updateMetadata:(NSArray *)updated_content ofType:(NSString *)type {
+	if (updated_content == nil) {
+		updated_content = [NSArray arrayWithObjects:nil];
 	} else {
-		NSObject *firstElement = [updated_content objectAtIndex:0];
 		NSIndexSet *set;
-		if ([[firstElement className] isEqualToString:@"CommentEntity"]) {
+		if ([type isEqualToString:@"CommentEntity"]) {
 			comments_updated = YES;
-			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"3")];
-		} else if ([[firstElement className] isEqualToString:@"RatingEntity"]) {
+			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"3 1")];
+		} else if ([type isEqualToString:@"RatingEntity"]) {
 			ratings_updated = YES;
-			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1")];
-		} else if ([[firstElement className] isEqualToString:@"TagEntity"]) {
+			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
+		} else if ([type isEqualToString:@"TagEntity"]) {
 			tags_updated = YES;
-			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2")];
+			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2 1")];
 		}
-		[[self tableView] reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
+		[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
 	}
 }
 

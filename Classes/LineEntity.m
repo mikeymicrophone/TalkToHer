@@ -69,7 +69,7 @@
 
 -(NSString *)commentCountText {
 	NSString *txt = [NSString stringWithFormat:@"%@ comments", [self commentCount]];
-	if ([self commentCount] == 1) {
+	if ([[self commentCount] integerValue] == 1) {
 		txt = [txt substringToIndex:[txt length] - 1];
 	}
 	return txt;

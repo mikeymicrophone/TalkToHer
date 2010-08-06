@@ -441,25 +441,10 @@
 		E40017E211FE391C001359B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E47ED3C6120CB3DC0011DA3E /* Entities */,
+				E47ED3C5120CB3CF0011DA3E /* Resources */,
 				E40017F511FE398F001359B0 /* Headers */,
-				E4C6AF4B11D5526800068008 /* Exercise.m */,
-				E4C6AF4E11D552BD00068008 /* GoalOwnership.m */,
-				E4C6AEC811D5421100068008 /* Line.m */,
-				E4C6AF4811D5522900068008 /* Tip.m */,
-				E4D8222F11FD14B70014D28A /* ExerciseEntity.m */,
-				E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */,
-				E4D8109611FE36AD0020AE8B /* LineEntity.m */,
-				E4D8109811FE36AD0020AE8B /* TipEntity.m */,
 				E4A158A411E4E49200A044D7 /* UserSession.m */,
-				E4A158B511E4EA6D00A044D7 /* User.m */,
-				E4001B4211FF8B8B001359B0 /* UserEntity.m */,
-				E4C0D80C1201C628006AB8AF /* Goal.m */,
-				E4C0E04A1204F40D006AB8AF /* Tag.m */,
-				E4C0DF3D1204C11D006AB8AF /* Rating.m */,
-				E4C0DF401204C1AF006AB8AF /* RatingEntity.m */,
-				E4C0E04D1204F5AF006AB8AF /* TagEntity.m */,
-				E4C0E0B512050B2E006AB8AF /* Comment.m */,
-				E4C0E0B812050BFB006AB8AF /* CommentEntity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -491,24 +476,24 @@
 		E40017F511FE398F001359B0 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				E4C0E0B412050B2E006AB8AF /* Comment.h */,
-				E4C0E0491204F40D006AB8AF /* Tag.h */,
-				E4C0DF3C1204C11D006AB8AF /* Rating.h */,
-				E4C0D80B1201C628006AB8AF /* Goal.h */,
-				E4001B4111FF8B8B001359B0 /* UserEntity.h */,
 				E4C6AEC711D5421100068008 /* Line.h */,
 				E4C6AF4711D5522900068008 /* Tip.h */,
 				E4C6AF4A11D5526800068008 /* Exercise.h */,
 				E4C6AF4D11D552BD00068008 /* GoalOwnership.h */,
-				E4D8222E11FD14B70014D28A /* ExerciseEntity.h */,
-				E4C0E0B712050BFB006AB8AF /* CommentEntity.h */,
-				E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */,
+				E4C0E0B412050B2E006AB8AF /* Comment.h */,
+				E4C0E0491204F40D006AB8AF /* Tag.h */,
+				E4C0DF3C1204C11D006AB8AF /* Rating.h */,
+				E4C0D80B1201C628006AB8AF /* Goal.h */,
 				E4D8109511FE36AD0020AE8B /* LineEntity.h */,
+				E4D8109711FE36AD0020AE8B /* TipEntity.h */,
+				E4D8222E11FD14B70014D28A /* ExerciseEntity.h */,
+				E4D8223111FD14CB0014D28A /* GoalOwnershipEntity.h */,
+				E4C0E0B712050BFB006AB8AF /* CommentEntity.h */,
 				E4C0E04C1204F5AF006AB8AF /* TagEntity.h */,
 				E4C0DF3F1204C1AF006AB8AF /* RatingEntity.h */,
-				E4D8109711FE36AD0020AE8B /* TipEntity.h */,
-				E4A158A311E4E49200A044D7 /* UserSession.h */,
 				E4A158B411E4EA6D00A044D7 /* User.h */,
+				E4001B4111FF8B8B001359B0 /* UserEntity.h */,
+				E4A158A311E4E49200A044D7 /* UserSession.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -552,6 +537,37 @@
 				E440665D11EC006300A48898 /* Reachability.m */,
 			);
 			name = Reachability;
+			sourceTree = "<group>";
+		};
+		E47ED3C5120CB3CF0011DA3E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6AEC811D5421100068008 /* Line.m */,
+				E4C6AF4811D5522900068008 /* Tip.m */,
+				E4C6AF4B11D5526800068008 /* Exercise.m */,
+				E4C6AF4E11D552BD00068008 /* GoalOwnership.m */,
+				E4C0E0B512050B2E006AB8AF /* Comment.m */,
+				E4C0E04A1204F40D006AB8AF /* Tag.m */,
+				E4C0DF3D1204C11D006AB8AF /* Rating.m */,
+				E4A158B511E4EA6D00A044D7 /* User.m */,
+				E4C0D80C1201C628006AB8AF /* Goal.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E47ED3C6120CB3DC0011DA3E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E4D8222F11FD14B70014D28A /* ExerciseEntity.m */,
+				E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */,
+				E4D8109611FE36AD0020AE8B /* LineEntity.m */,
+				E4D8109811FE36AD0020AE8B /* TipEntity.m */,
+				E4001B4211FF8B8B001359B0 /* UserEntity.m */,
+				E4C0DF401204C1AF006AB8AF /* RatingEntity.m */,
+				E4C0E04D1204F5AF006AB8AF /* TagEntity.m */,
+				E4C0E0B812050BFB006AB8AF /* CommentEntity.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		E4C6AE5311D5415400068008 /* lib */ = {

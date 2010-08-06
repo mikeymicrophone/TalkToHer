@@ -33,7 +33,9 @@
 	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
     [ps setValue:[NSNumber numberWithInt:[tagId integerValue]] forKey:@"tagId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
-	[ps markForDelayedSubmission];
+	if ([tagId integerValue] == 0) {
+		[ps markForDelayedSubmission];
+	}
 	
 	NSError *mocSaveError = nil;
     if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }
