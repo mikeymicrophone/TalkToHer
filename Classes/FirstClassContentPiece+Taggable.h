@@ -10,5 +10,8 @@
 #import "FirstClassContentPiece.h"
 
 @interface FirstClassContentPiece (Taggable) 
+-(NSInteger)tagCount;
+-(NSString *)tagCountText;	
+-(NSString *)tagSummary;
 -(void)updateTags;
 @end

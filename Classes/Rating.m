@@ -44,15 +44,15 @@
     [ps release];
 }
 
-+ (NSArray *)findAllFor:(NSObject *)taggable {
-    NSString *tagsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
++ (NSArray *)findAllFor:(NSObject *)ratable {
+    NSString *ratingsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 							  [self getRemoteSite],
-							  [taggable getRemoteCollectionName],
-							  [taggable getRemoteId],
+							  [ratable getRemoteCollectionName],
+							  [ratable getRemoteId],
 							  [self getRemoteCollectionName],
 							  [self getRemoteProtocolExtension]];
 	
-    Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
+    Response *res = [ORConnection get:ratingsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
     return [self allFromXMLData:res.body];
 }

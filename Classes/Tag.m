@@ -9,6 +9,8 @@
 #import "Tag.h"
 #import "TagEntity.h"
 #import <CoreData/CoreData.h>
+#import "Response.h"
+#import "ORConnection.h"
 
 @implementation Tag
 
@@ -44,6 +46,19 @@
 	NSError *mocSaveError = nil;
     if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }
     [ps release];
+}
+
++ (NSArray *)findAllFor:(NSObject *)taggable {
+    NSString *tagsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
+						  [self getRemoteSite],
+						  [taggable getRemoteCollectionName],
+						  [taggable getRemoteId],
+						  [self getRemoteCollectionName],
+						  [self getRemoteProtocolExtension]];
+	
+    Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
+						  andPassword:[[self class] getRemotePassword]];
+    return [self allFromXMLData:res.body];
 }
 
 @end

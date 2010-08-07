@@ -45,6 +45,7 @@
 		E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
 		E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */; };
 		E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */; };
+		E444E87F120D346D009B8CA2 /* Concept.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E87E120D346D009B8CA2 /* Concept.m */; };
 		E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED3FB120CD3770011DA3E /* ConceptEntity.m */; };
 		E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */; };
 		E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */; };
@@ -180,6 +181,8 @@
 		E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirstClassContentPiece+Taggable.m"; sourceTree = "<group>"; };
 		E444E852120D3258009B8CA2 /* FirstClassContentPiece+Commendable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirstClassContentPiece+Commendable.h"; sourceTree = "<group>"; };
 		E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirstClassContentPiece+Commendable.m"; sourceTree = "<group>"; };
+		E444E87D120D346D009B8CA2 /* Concept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concept.h; sourceTree = "<group>"; };
+		E444E87E120D346D009B8CA2 /* Concept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Concept.m; sourceTree = "<group>"; };
 		E47ED3FA120CD3770011DA3E /* ConceptEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptEntity.h; sourceTree = "<group>"; };
 		E47ED3FB120CD3770011DA3E /* ConceptEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptEntity.m; sourceTree = "<group>"; };
 		E47ED3FF120CE1D70011DA3E /* FirstClassContentPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstClassContentPiece.h; sourceTree = "<group>"; };
@@ -492,6 +495,7 @@
 		E40017F511FE398F001359B0 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E444E87D120D346D009B8CA2 /* Concept.h */,
 				E47ED3FF120CE1D70011DA3E /* FirstClassContentPiece.h */,
 				E47ED3FA120CD3770011DA3E /* ConceptEntity.h */,
 				E4C6AEC711D5421100068008 /* Line.h */,
@@ -569,6 +573,7 @@
 				E4C0DF3D1204C11D006AB8AF /* Rating.m */,
 				E4A158B511E4EA6D00A044D7 /* User.m */,
 				E4C0D80C1201C628006AB8AF /* Goal.m */,
+				E444E87E120D346D009B8CA2 /* Concept.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */,
 				E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */,
 				E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */,
+				E444E87F120D346D009B8CA2 /* Concept.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

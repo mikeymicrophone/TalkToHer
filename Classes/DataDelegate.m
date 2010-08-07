@@ -298,7 +298,7 @@
 	} else if (type == @"Rating") {
 		properties = [NSArray arrayWithObjects:@"ratingId", @"opinion", @"targetType", @"targetId", nil];
 	} else if (type == @"Tag") {
-
+		properties = [NSArray arrayWithObjects:@"tagId", @"subjectId", @"subjectType", @"targetType", @"targetId", nil];
 	}
 	return properties;
 }

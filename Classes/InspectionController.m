@@ -157,8 +157,8 @@
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-			[cell setMain_text:@"noks"];//[content tagCount]];
-			[cell setAdditional_text:@"boks"];//[content recentTags]];
+			[cell setMain_text:[content tagCountText]];
+			[cell setAdditional_text:[content tagSummary]];
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 				self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
