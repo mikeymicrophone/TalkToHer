@@ -27,4 +27,6 @@
 	[self setValue:[NSNumber numberWithInt:0] forKey:@"delayed"];
 }
 
+-(void)updateWith:(Tag *)t {}
+
 @end

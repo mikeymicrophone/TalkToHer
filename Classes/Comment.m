@@ -44,6 +44,7 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)commendable {
+	NSLog(@"commendable: %@; id: %@", commendable, [commendable getRemoteId]);
     NSString *commentsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 						   [self getRemoteSite],
 						   [commendable getRemoteCollectionName],

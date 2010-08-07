@@ -17,7 +17,7 @@
 }
 
 -(NSString *)tagCountText {
-	NSString *txt = [NSString stringWithFormat:@"%d tags", [self ratingCount]];
+	NSString *txt = [NSString stringWithFormat:@"%d tags", [self tagCount]];
 	if ([self tagCount] == 1) {
 		txt = [txt substringToIndex:[txt length] - 1];
 	}

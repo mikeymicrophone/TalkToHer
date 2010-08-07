@@ -17,5 +17,5 @@
 -(Tag *)objectiveResource;
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
-
+-(void)updateWith:(Tag *)t;
 @end

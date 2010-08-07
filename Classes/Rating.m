@@ -45,6 +45,7 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)ratable {
+	NSLog(@"ratable: %@; id: %@", ratable, [ratable getRemoteId]);
     NSString *ratingsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 							  [self getRemoteSite],
 							  [ratable getRemoteCollectionName],

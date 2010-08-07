@@ -23,13 +23,15 @@
 	user_session.username = username_field.text;
 	user_session.password = password_field.text;
 
-	UITableView *tableview = [[[self parentViewController] bottomViewController] tableView];
+	UITableView *rootView = [[[self parentViewController] bottomViewController] tableView];
 	NSIndexSet *sections = [NSIndexSet indexSetWithIndex:3];
+	UITableView *inspectionView = nil;
+	NSIndexSet *inspectionSections = nil;
 
 	if ([[[[self parentViewController] topViewController] className] isEqualToString:@"InspectionController"]) {
 //		[sections release];
-		tableview = [[[self parentViewController] topViewController] tableView];
-		sections = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")];
+		inspectionView = [[[self parentViewController] topViewController] tableView];
+		inspectionSections = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")];
 	}
 
 	dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
@@ -40,7 +42,12 @@
 		[ObjectiveResourceConfig setRemoteProtocolExtension:@".xml"];
 		if (response == nil) {
 			[self get_identity:username_field.text password:password_field.text];
-			dispatch_async(dispatch_get_main_queue(), ^{ [tableview reloadSections:sections withRowAnimation:UITableViewRowAnimationBottom]; });
+			dispatch_async(dispatch_get_main_queue(), ^{
+				if (inspectionView) {
+					[inspectionView reloadSections:inspectionSections withRowAnimation:UITableViewRowAnimationBottom];
+				}
+				[rootView reloadSections:sections withRowAnimation:UITableViewRowAnimationBottom];
+			});
 		}
 	});
 	dispatch_release(queue);

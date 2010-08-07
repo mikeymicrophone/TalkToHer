@@ -279,7 +279,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 40}, {245, 650}}</string>
+							<string>{{0, 1}, {245, 650}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FirstClassContentPiece+Taggable.m</string>
+								<string>InspectionController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FirstClassContentPiece+Taggable.m</string>
+										<string>InspectionController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E444E8C5120D486C009B8CA2</string>
+										<string>E444E902120DC87B009B8CA2</string>
 										<key>history</key>
 										<array>
 											<string>E444E881120D3A6D009B8CA2</string>
@@ -337,20 +337,25 @@
 											<string>E444E88C120D4042009B8CA2</string>
 											<string>E444E88D120D4042009B8CA2</string>
 											<string>E444E88E120D4042009B8CA2</string>
-											<string>E444E88F120D4042009B8CA2</string>
 											<string>E444E890120D4042009B8CA2</string>
-											<string>E444E891120D4042009B8CA2</string>
-											<string>E444E892120D4042009B8CA2</string>
 											<string>E444E893120D4042009B8CA2</string>
-											<string>E444E894120D4042009B8CA2</string>
 											<string>E444E8A1120D46A9009B8CA2</string>
-											<string>E444E8A2120D46A9009B8CA2</string>
-											<string>E444E8A3120D46A9009B8CA2</string>
 											<string>E444E8A4120D46A9009B8CA2</string>
 											<string>E444E8A5120D46A9009B8CA2</string>
-											<string>E444E8A6120D46A9009B8CA2</string>
 											<string>E444E8C3120D486C009B8CA2</string>
-											<string>E444E8C4120D486C009B8CA2</string>
+											<string>E444E8D2120DC2FD009B8CA2</string>
+											<string>E444E8DA120DC3E7009B8CA2</string>
+											<string>E444E8DB120DC3E7009B8CA2</string>
+											<string>E444E8DC120DC3E7009B8CA2</string>
+											<string>E444E8DE120DC3E7009B8CA2</string>
+											<string>E444E8DF120DC3E7009B8CA2</string>
+											<string>E444E8E6120DC468009B8CA2</string>
+											<string>E444E8E7120DC468009B8CA2</string>
+											<string>E444E8EF120DC4FA009B8CA2</string>
+											<string>E444E8FE120DC87B009B8CA2</string>
+											<string>E444E8FF120DC87B009B8CA2</string>
+											<string>E444E900120DC87B009B8CA2</string>
+											<string>E444E901120DC87B009B8CA2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -548,7 +553,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E444E8C6120D486C009B8CA2</string>
+		<string>E444E903120DC87B009B8CA2</string>
 		<string>E444E87B120D3376009B8CA2</string>
 		<string>E444E87C120D3376009B8CA2</string>
 		<string>1CD10A99069EF8BA00B06720</string>

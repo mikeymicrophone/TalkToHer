@@ -49,6 +49,7 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)taggable {
+	NSLog(@"taggable: %@; id: %@", taggable, [taggable getRemoteId]);
     NSString *tagsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 						  [self getRemoteSite],
 						  [taggable getRemoteCollectionName],

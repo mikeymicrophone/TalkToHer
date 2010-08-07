@@ -130,6 +130,7 @@
 				slider.value = [[content myRating] floatValue];
 				
 				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
+				rating.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
 				[cell addSubview:rating];
 				if ([[content myRating] floatValue] > 0.0) {
 					rating.text = [NSString stringWithFormat:@"%.1f", [[content myRating] floatValue]];
@@ -260,7 +261,9 @@
 											 additional:[content ratingCountText]
 												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 2) {
-		height = 44;
+		height = [InspirationCell cellHeightForMainText:[content tagCountText]
+											 additional:[content tagSummary]
+												  width:[[self view] frame].size.width];
 	} else if (indexPath.section == 3) {
 		if (indexPath.row == 0) {
 			height = 44;
