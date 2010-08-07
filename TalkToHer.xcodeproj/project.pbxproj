@@ -44,6 +44,8 @@
 		E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */; };
 		E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
 		E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED3FB120CD3770011DA3E /* ConceptEntity.m */; };
+		E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */; };
+		E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */; };
 		E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */; };
 		E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1549F11DBFF5700A044D7 /* InspectionController.xib */; };
 		E4A1573111DF989700A044D7 /* ContributionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1572F11DF989700A044D7 /* ContributionController.m */; };
@@ -174,6 +176,10 @@
 		E44066D911ED057000A48898 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E47ED3FA120CD3770011DA3E /* ConceptEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptEntity.h; sourceTree = "<group>"; };
 		E47ED3FB120CD3770011DA3E /* ConceptEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptEntity.m; sourceTree = "<group>"; };
+		E47ED3FF120CE1D70011DA3E /* FirstClassContentPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstClassContentPiece.h; sourceTree = "<group>"; };
+		E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstClassContentPiece.m; sourceTree = "<group>"; };
+		E47ED402120CE2260011DA3E /* FirstClassContentPiece+Ratable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirstClassContentPiece+Ratable.h"; sourceTree = "<group>"; };
+		E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirstClassContentPiece+Ratable.m"; sourceTree = "<group>"; };
 		E4A1549D11DBFF5700A044D7 /* InspectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionController.h; sourceTree = "<group>"; };
 		E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionController.m; sourceTree = "<group>"; };
 		E4A1549F11DBFF5700A044D7 /* InspectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspectionController.xib; path = Classes/InspectionController.xib; sourceTree = "<group>"; };
@@ -331,10 +337,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E40017E111FE3915001359B0 /* Controllers */,
+				E40017E211FE391C001359B0 /* Models */,
 				E40017F411FE3975001359B0 /* Delegates */,
 				E40017E311FE3922001359B0 /* Views */,
-				E40017E211FE391C001359B0 /* Models */,
-				E40017E111FE3915001359B0 /* Controllers */,
+				E47ED3FE120CDD6E0011DA3E /* Categories */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -479,6 +486,7 @@
 		E40017F511FE398F001359B0 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E47ED3FF120CE1D70011DA3E /* FirstClassContentPiece.h */,
 				E47ED3FA120CD3770011DA3E /* ConceptEntity.h */,
 				E4C6AEC711D5421100068008 /* Line.h */,
 				E4C6AF4711D5522900068008 /* Tip.h */,
@@ -571,8 +579,18 @@
 				E4C0E04D1204F5AF006AB8AF /* TagEntity.m */,
 				E4C0E0B812050BFB006AB8AF /* CommentEntity.m */,
 				E47ED3FB120CD3770011DA3E /* ConceptEntity.m */,
+				E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		E47ED3FE120CDD6E0011DA3E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E47ED402120CE2260011DA3E /* FirstClassContentPiece+Ratable.h */,
+				E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		E4C6AE5311D5415400068008 /* lib */ = {
@@ -871,6 +889,8 @@
 				E4C0E0B612050B2E006AB8AF /* Comment.m in Sources */,
 				E4C0E0B912050BFB006AB8AF /* CommentEntity.m in Sources */,
 				E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */,
+				E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */,
+				E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

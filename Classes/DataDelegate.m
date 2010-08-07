@@ -101,7 +101,6 @@
 
 -(void)persistData:(NSArray *)data ofType:(NSString *)type {
 	NSArray *unidentified_set = [self unidentified_set_of_type:type];
-	
 	for (NSObject *c in data) {
 		NSManagedObject *e = [self itemExistsInStore:c];
 		if (e) {  

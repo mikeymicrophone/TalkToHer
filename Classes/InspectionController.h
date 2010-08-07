@@ -31,5 +31,5 @@
 -(void)log_in;
 -(void)tagReady;
 -(void)commentReady;
--(void)updateMetadata:(NSObject *)inspected_content ofType:(NSString *)type;
+-(void)updateMetadataOfType:(NSString *)type;
 @end

@@ -278,23 +278,20 @@
 	return height;
 }
 
--(void)updateMetadata:(NSArray *)updated_content ofType:(NSString *)type {
-	if (updated_content == nil) {
-		updated_content = [NSArray arrayWithObjects:nil];
-	} else {
-		NSIndexSet *set;
-		if ([type isEqualToString:@"CommentEntity"]) {
-			comments_updated = YES;
-			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"3 1")];
-		} else if ([type isEqualToString:@"RatingEntity"]) {
-			ratings_updated = YES;
-			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
-		} else if ([type isEqualToString:@"TagEntity"]) {
-			tags_updated = YES;
-			set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2 1")];
-		}
-		[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
+-(void)updateMetadataOfType:(NSString *)type {
+	NSIndexSet *set;
+	if ([type isEqualToString:@"CommentEntity"]) {
+		comments_updated = YES;
+		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"3 1")];
+	} else if ([type isEqualToString:@"RatingEntity"]) {
+		ratings_updated = YES;
+		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
+	} else if ([type isEqualToString:@"TagEntity"]) {
+		tags_updated = YES;
+		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2 1")];
 	}
+	[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
+	[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
 }
 
 #pragma mark -

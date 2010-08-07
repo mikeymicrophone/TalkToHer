@@ -283,13 +283,13 @@
 				dispatch_async(queue, ^{
 					[uninspected_content updateComments];
 					dispatch_async(dispatch_get_main_queue(), ^{
-						[inspectionController updateMetadata:[uninspected_content comments] ofType:@"CommentEntity"];
+						[inspectionController updateMetadataOfType:@"CommentEntity"];
 					});
 				});
 				dispatch_async(queue, ^{
 					[uninspected_content updateRatings];
 					dispatch_async(dispatch_get_main_queue(), ^{
-						[inspectionController updateMetadata:[uninspected_content ratings] ofType:@"RatingEntity"];
+						[inspectionController updateMetadataOfType:@"RatingEntity"];
 					});
 				});
 				dispatch_release(queue);

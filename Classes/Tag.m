@@ -12,7 +12,7 @@
 
 @implementation Tag
 
-@synthesize concept, targetType, targetId, tagId, userId;
+@synthesize concept, targetType, targetId, subjectType, subjectId, tagId, userId;
 
 -(Tag *)initWithManagedObject:(TagEntity *)ps {
 	[self init];
@@ -22,6 +22,8 @@
 	self.targetType = [ps targetType];
     self.userId = [ps userId];
 	self.tagId = [ps tagId];
+	self.subjectId = [ps subjectId];
+	self.subjectType = [ps subjectType];
     
     return self;	
 }
@@ -31,6 +33,8 @@
     [ps setValue:targetType	forKey:@"targetType"];
 	[ps setValue:concept forKey:@"concept"];
 	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
+    [ps setValue:subjectType	forKey:@"subjectType"];
+	[ps setValue:[NSNumber numberWithInt:[subjectId integerValue]] forKey:@"subjectId"];
     [ps setValue:[NSNumber numberWithInt:[tagId integerValue]] forKey:@"tagId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 	if ([tagId integerValue] == 0) {

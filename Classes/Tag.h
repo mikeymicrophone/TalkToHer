@@ -16,6 +16,8 @@
 	NSString *concept;
 	NSString *targetId;
 	NSString *targetType;
+	NSString *subjectId;
+	NSString *subjectType;
 }
 
 @property (nonatomic, retain) NSString *userId;
@@ -23,6 +25,9 @@
 @property (nonatomic, retain) NSString *concept;
 @property (nonatomic, retain) NSString *targetId;
 @property (nonatomic, retain) NSString *targetType;
+@property (nonatomic, retain) NSString *subjectId;
+@property (nonatomic, retain) NSString *subjectType;
+
 -(Tag *)initWithManagedObject:(TagEntity *)ps;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
 	

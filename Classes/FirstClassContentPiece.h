@@ -1,5 +1,5 @@
 //
-//  ConceptEntity.h
+//  FirstClassContentPiece.h
 //  TalkToHer
 //
 //  Created by Michael Schwab on 8/6/10.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface ConceptEntity : NSManagedObject {
-	
+@interface FirstClassContentPiece : NSManagedObject {
+
 }
 
 @end

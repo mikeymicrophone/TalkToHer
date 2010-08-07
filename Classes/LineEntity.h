@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "FirstClassContentPiece.h"
 @class Line;
 
-@interface LineEntity : NSManagedObject {
+@interface LineEntity : FirstClassContentPiece {
 	BOOL delayed;
 }
 
@@ -23,13 +24,7 @@
 -(void)hasBeenSubmitted;
 -(void)updateWith:(Line *)l;
 -(void)updateComments;
--(void)updateRatings;
 -(void)updateTags;
--(NSNumber *)myRating;
--(float)averageRating;
--(NSString *)averageRatingText;
--(NSInteger)ratingCount;
--(NSString *)ratingCountText;
 -(NSNumber *)commentCount;
 -(NSString *)commentCountText;
 @end
