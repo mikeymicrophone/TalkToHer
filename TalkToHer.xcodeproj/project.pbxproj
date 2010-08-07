@@ -43,6 +43,8 @@
 		E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666911EC00C800A48898 /* libz.1.2.3.dylib */; };
 		E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */; };
 		E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
+		E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */; };
+		E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */; };
 		E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED3FB120CD3770011DA3E /* ConceptEntity.m */; };
 		E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */; };
 		E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */; };
@@ -174,6 +176,10 @@
 		E440666911EC00C800A48898 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Content.xcdatamodel; path = Classes/Content.xcdatamodel; sourceTree = "<group>"; };
 		E44066D911ED057000A48898 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E444E84F120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirstClassContentPiece+Taggable.h"; sourceTree = "<group>"; };
+		E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirstClassContentPiece+Taggable.m"; sourceTree = "<group>"; };
+		E444E852120D3258009B8CA2 /* FirstClassContentPiece+Commendable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirstClassContentPiece+Commendable.h"; sourceTree = "<group>"; };
+		E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirstClassContentPiece+Commendable.m"; sourceTree = "<group>"; };
 		E47ED3FA120CD3770011DA3E /* ConceptEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptEntity.h; sourceTree = "<group>"; };
 		E47ED3FB120CD3770011DA3E /* ConceptEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptEntity.m; sourceTree = "<group>"; };
 		E47ED3FF120CE1D70011DA3E /* FirstClassContentPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstClassContentPiece.h; sourceTree = "<group>"; };
@@ -589,6 +595,10 @@
 			children = (
 				E47ED402120CE2260011DA3E /* FirstClassContentPiece+Ratable.h */,
 				E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */,
+				E444E84F120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.h */,
+				E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */,
+				E444E852120D3258009B8CA2 /* FirstClassContentPiece+Commendable.h */,
+				E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -891,6 +901,8 @@
 				E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */,
 				E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */,
 				E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */,
+				E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */,
+				E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

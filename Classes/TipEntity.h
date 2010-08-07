@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "FirstClassContentPiece.h"
 @class Tip;
 
-@interface TipEntity : NSManagedObject {
+@interface TipEntity : FirstClassContentPiece {
 	BOOL delayed;
 }
 -(Tip *)objectiveResource;
@@ -21,15 +22,5 @@
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
 -(void)updateWith:(Tip *)t;
--(void)updateComments;
--(void)updateRatings;
--(void)updateTags;
--(NSNumber *)myRating;
--(float)averageRating;
--(NSString *)averageRatingText;
--(NSInteger)ratingCount;
--(NSString *)ratingCountText;
--(NSNumber *)commentCount;
--(NSString *)commentCountText;
 
 @end

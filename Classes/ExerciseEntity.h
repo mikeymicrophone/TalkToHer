@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "FirstClassContentPiece.h"
 @class Exercise;
 
-@interface ExerciseEntity : NSManagedObject {
+@interface ExerciseEntity : FirstClassContentPiece {
 	BOOL delayed;
 }
 -(Exercise *)objectiveResource;
@@ -21,15 +22,4 @@
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
 -(void)updateWith:(Exercise *)e;
--(void)updateComments;
--(void)updateRatings;
--(void)updateTags;
--(NSNumber *)myRating;
--(float)averageRating;
--(NSString *)averageRatingText;
--(NSInteger)ratingCount;
--(NSString *)ratingCountText;
--(NSNumber *)commentCount;
--(NSString *)commentCountText;
-
 @end

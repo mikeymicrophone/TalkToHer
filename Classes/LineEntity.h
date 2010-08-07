@@ -23,8 +23,4 @@
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
 -(void)updateWith:(Line *)l;
--(void)updateComments;
--(void)updateTags;
--(NSNumber *)commentCount;
--(NSString *)commentCountText;
 @end

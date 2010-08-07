@@ -22,18 +22,6 @@
 	return @"";
 }
 
--(NSNumber *)commentCount {
-	return [NSNumber numberWithInt:[[self comments] count]];
-}
-
--(NSString *)commentCountText {
-	NSString *txt = [NSString stringWithFormat:@"%@ comments", [self commentCount]];
-	if ([[self commentCount] integerValue] == 1) {
-		txt = [txt substringToIndex:[txt length] - 1];
-	}
-	return txt;
-}
-
 -(void)setWrittenContent:(NSString *)writtenContent {
 	[self setPhrasing:writtenContent];
 }
@@ -55,14 +43,6 @@
 
 -(void)updateWith:(Line *)l {
 	[self setPhrasing:[l phrasing]];
-}
-
--(void)updateComments {
-	[[[[UIApplication sharedApplication] delegate] data_source] persistData:[Comment findAllFor:self] ofType:@"comments"];
-}
-
--(void)updateTags {
-	[[[[UIApplication sharedApplication] delegate] data_source] persistData:[Tag findAllFor:self] ofType:@"tags"];
 }
 
 -(NSString *)getRemoteCollectionName {
