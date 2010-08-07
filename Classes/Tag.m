@@ -49,7 +49,6 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)taggable {
-	NSLog(@"taggable: %@; id: %@", taggable, [taggable getRemoteId]);
     NSString *tagsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 						  [self getRemoteSite],
 						  [taggable getRemoteCollectionName],
@@ -59,7 +58,14 @@
 	
     Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
-    return [self allFromXMLData:res.body];
+    NSArray *tags;
+	@try {
+		tags = [self allFromXMLData:res.body];
+	}
+	@catch (NSException * e) {
+		tags = [NSArray array];
+	}
+	return tags;
 }
 
 @end

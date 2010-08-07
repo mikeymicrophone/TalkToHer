@@ -169,7 +169,7 @@
 				tag_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 				
 				UIButton *tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-				tag_button.frame = CGRectMake(265, 3, 34, 34);
+				tag_button.frame = CGRectMake(265, 3, 44, 44);
 				[tag_button setTitle:@"+" forState:nil];
 				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:30];
 				[tag_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
@@ -202,7 +202,7 @@
 					comment_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 					
 					UIButton *comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-					comment_button.frame = CGRectMake(265, 3, 34, 34);
+					comment_button.frame = CGRectMake(265, 3, 44, 44);
 					comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:23];
 					[comment_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
 					[comment_button setTitle:@"!" forState:nil];

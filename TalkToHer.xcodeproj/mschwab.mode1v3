@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspectionController.m</string>
+								<string>Tag.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspectionController.m</string>
+										<string>Tag.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E444E902120DC87B009B8CA2</string>
+										<string>E444E917120DD90D009B8CA2</string>
 										<key>history</key>
 										<array>
 											<string>E444E881120D3A6D009B8CA2</string>
@@ -347,15 +347,15 @@
 											<string>E444E8DA120DC3E7009B8CA2</string>
 											<string>E444E8DB120DC3E7009B8CA2</string>
 											<string>E444E8DC120DC3E7009B8CA2</string>
-											<string>E444E8DE120DC3E7009B8CA2</string>
-											<string>E444E8DF120DC3E7009B8CA2</string>
-											<string>E444E8E6120DC468009B8CA2</string>
 											<string>E444E8E7120DC468009B8CA2</string>
 											<string>E444E8EF120DC4FA009B8CA2</string>
 											<string>E444E8FE120DC87B009B8CA2</string>
-											<string>E444E8FF120DC87B009B8CA2</string>
 											<string>E444E900120DC87B009B8CA2</string>
-											<string>E444E901120DC87B009B8CA2</string>
+											<string>E444E90D120DD77B009B8CA2</string>
+											<string>E444E90E120DD77B009B8CA2</string>
+											<string>E444E915120DD90D009B8CA2</string>
+											<string>E444E916120DD90D009B8CA2</string>
+											<string>E444E90F120DD77B009B8CA2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -553,13 +553,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E444E903120DC87B009B8CA2</string>
+		<string>E444E918120DD90D009B8CA2</string>
 		<string>E444E87B120D3376009B8CA2</string>
 		<string>E444E87C120D3376009B8CA2</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>20 17 1237 709 0 0 1280 778 </string>

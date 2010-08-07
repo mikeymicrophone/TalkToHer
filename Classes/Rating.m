@@ -45,7 +45,6 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)ratable {
-	NSLog(@"ratable: %@; id: %@", ratable, [ratable getRemoteId]);
     NSString *ratingsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 							  [self getRemoteSite],
 							  [ratable getRemoteCollectionName],
@@ -55,7 +54,14 @@
 	
     Response *res = [ORConnection get:ratingsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
-    return [self allFromXMLData:res.body];
+	NSArray *ratings;
+	@try {
+		ratings = [self allFromXMLData:res.body];
+	}
+	@catch (NSException * e) {
+		ratings = [NSArray array];
+	}
+    return ratings;
 }
 
 @end
