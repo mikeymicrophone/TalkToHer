@@ -17,12 +17,14 @@
 	UISlider *slider;
 	UIButton *tag_button;
 	UIButton *comment_button;
-	BOOL comments_updated;
 	UIActivityIndicatorView *comment_spinner;
 	BOOL ratings_updated;
 	UIActivityIndicatorView *rating_spinner;
 	BOOL tags_updated;
 	UIActivityIndicatorView *tag_spinner;
+	NSInteger previous_ratings;
+	NSInteger previous_comments;
+	NSInteger previous_tags;
 }
 
 @property (nonatomic, retain) id content;

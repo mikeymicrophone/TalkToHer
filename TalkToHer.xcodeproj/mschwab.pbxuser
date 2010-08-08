@@ -303,6 +303,17 @@
 			E444E9D0120E2FC2009B8CA2 /* PBXTextBookmark */ = E444E9D0120E2FC2009B8CA2 /* PBXTextBookmark */;
 			E444E9D5120E3788009B8CA2 /* PBXTextBookmark */ = E444E9D5120E3788009B8CA2 /* PBXTextBookmark */;
 			E444E9D9120E37E3009B8CA2 /* PBXTextBookmark */ = E444E9D9120E37E3009B8CA2 /* PBXTextBookmark */;
+			E444E9DB120E4931009B8CA2 /* PBXTextBookmark */ = E444E9DB120E4931009B8CA2 /* PBXTextBookmark */;
+			E444E9E0120E4CF2009B8CA2 /* PBXTextBookmark */ = E444E9E0120E4CF2009B8CA2 /* PBXTextBookmark */;
+			E444E9E7120E4F72009B8CA2 /* PBXTextBookmark */ = E444E9E7120E4F72009B8CA2 /* PBXTextBookmark */;
+			E444E9E8120E4F72009B8CA2 /* XCBuildMessageTextBookmark */ = E444E9E8120E4F72009B8CA2 /* XCBuildMessageTextBookmark */;
+			E444E9E9120E4F72009B8CA2 /* PBXTextBookmark */ = E444E9E9120E4F72009B8CA2 /* PBXTextBookmark */;
+			E444E9F0120E51A6009B8CA2 /* PBXTextBookmark */ = E444E9F0120E51A6009B8CA2 /* PBXTextBookmark */;
+			E444E9F6120E53AC009B8CA2 /* PBXTextBookmark */ = E444E9F6120E53AC009B8CA2 /* PBXTextBookmark */;
+			E444E9F8120E54F7009B8CA2 /* PBXTextBookmark */ = E444E9F8120E54F7009B8CA2 /* PBXTextBookmark */;
+			E444E9F9120E54F7009B8CA2 /* XCBuildMessageTextBookmark */ = E444E9F9120E54F7009B8CA2 /* XCBuildMessageTextBookmark */;
+			E444E9FA120E54F7009B8CA2 /* PBXTextBookmark */ = E444E9FA120E54F7009B8CA2 /* PBXTextBookmark */;
+			E444E9FB120E5594009B8CA2 /* PBXTextBookmark */ = E444E9FB120E5594009B8CA2 /* PBXTextBookmark */;
 			E47ED41B120CE3E30011DA3E = E47ED41B120CE3E30011DA3E /* PBXTextBookmark */;
 			E47ED41C120CE3E30011DA3E = E47ED41C120CE3E30011DA3E /* PBXTextBookmark */;
 			E47ED41D120CE3E30011DA3E = E47ED41D120CE3E30011DA3E /* PBXTextBookmark */;
@@ -660,8 +671,8 @@
 	};
 	E444E84F120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {934, 463}}";
-			sepNavSelRange = "{295, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1043, 574}}";
+			sepNavSelRange = "{274, 22}";
 			sepNavVisRange = "{0, 373}";
 		};
 	};
@@ -740,7 +751,7 @@
 		fRef = E4A1549D11DBFF5700A044D7 /* InspectionController.h */;
 		name = "InspectionController.h: 34";
 		rLen = 0;
-		rLoc = 1221;
+		rLoc = 1282;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 0;
@@ -760,7 +771,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 293";
 		rLen = 0;
-		rLoc = 13283;
+		rLoc = 14033;
 		rType = 0;
 		vrLen = 1814;
 		vrLoc = 2875;
@@ -1184,7 +1195,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 161";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7305;
 		rType = 0;
 		vrLen = 1598;
 		vrLoc = 4488;
@@ -1540,7 +1551,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 265";
 		rLen = 0;
-		rLoc = 11500;
+		rLoc = 11440;
 		rType = 0;
 		vrLen = 1278;
 		vrLoc = 8847;
@@ -1550,7 +1561,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 133";
 		rLen = 0;
-		rLoc = 5939;
+		rLoc = 5915;
 		rType = 0;
 		vrLen = 1885;
 		vrLoc = 2782;
@@ -1560,7 +1571,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 205";
 		rLen = 0;
-		rLoc = 8958;
+		rLoc = 8934;
 		rType = 0;
 		vrLen = 1598;
 		vrLoc = 5987;
@@ -1580,7 +1591,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 205";
 		rLen = 0;
-		rLoc = 8958;
+		rLoc = 8934;
 		rType = 0;
 		vrLen = 1559;
 		vrLoc = 5987;
@@ -1710,7 +1721,7 @@
 		fRef = E4A1549D11DBFF5700A044D7 /* InspectionController.h */;
 		name = "InspectionController.h: 26";
 		rLen = 0;
-		rLoc = 1005;
+		rLoc = 1066;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 0;
@@ -1720,7 +1731,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 137";
 		rLen = 0;
-		rLoc = 5546;
+		rLoc = 5522;
 		rType = 0;
 		vrLen = 1869;
 		vrLoc = 2635;
@@ -1750,7 +1761,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 147";
 		rLen = 0;
-		rLoc = 5875;
+		rLoc = 5851;
 		rType = 0;
 		vrLen = 873;
 		vrLoc = 0;
@@ -1760,7 +1771,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 91";
 		rLen = 0;
-		rLoc = 3977;
+		rLoc = 3953;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 1578;
@@ -1780,7 +1791,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 91";
 		rLen = 0;
-		rLoc = 3977;
+		rLoc = 3953;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 1578;
@@ -1800,7 +1811,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 104";
 		rLen = 0;
-		rLoc = 4094;
+		rLoc = 4070;
 		rType = 0;
 		vrLen = 1460;
 		vrLoc = 2156;
@@ -1810,7 +1821,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 44";
 		rLen = 0;
-		rLoc = 1355;
+		rLoc = 1331;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 420;
@@ -1820,7 +1831,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 36";
 		rLen = 0;
-		rLoc = 1355;
+		rLoc = 1331;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 420;
@@ -1830,7 +1841,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 39";
 		rLen = 0;
-		rLoc = 1334;
+		rLoc = 1310;
 		rType = 0;
 		vrLen = 1486;
 		vrLoc = 420;
@@ -1840,7 +1851,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 96";
 		rLen = 0;
-		rLoc = 3367;
+		rLoc = 3343;
 		rType = 0;
 		vrLen = 1997;
 		vrLoc = 1452;
@@ -1850,7 +1861,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 105";
 		rLen = 0;
-		rLoc = 3993;
+		rLoc = 3969;
 		rType = 0;
 		vrLen = 2234;
 		vrLoc = 2042;
@@ -1860,7 +1871,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 104";
 		rLen = 0;
-		rLoc = 3918;
+		rLoc = 3894;
 		rType = 0;
 		vrLen = 2234;
 		vrLoc = 2042;
@@ -1870,7 +1881,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 104";
 		rLen = 0;
-		rLoc = 3918;
+		rLoc = 3894;
 		rType = 0;
 		vrLen = 2234;
 		vrLoc = 2042;
@@ -2109,7 +2120,7 @@
 		fRef = E4A1549D11DBFF5700A044D7 /* InspectionController.h */;
 		name = "InspectionController.h: 25";
 		rLen = 0;
-		rLoc = 645;
+		rLoc = 706;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 47;
@@ -2129,7 +2140,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 314";
 		rLen = 0;
-		rLoc = 12140;
+		rLoc = 12291;
 		rType = 0;
 		vrLen = 1424;
 		vrLoc = 11594;
@@ -2139,7 +2150,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 316";
 		rLen = 0;
-		rLoc = 12337;
+		rLoc = 12340;
 		rType = 0;
 		vrLen = 1742;
 		vrLoc = 11967;
@@ -2149,7 +2160,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 322";
 		rLen = 0;
-		rLoc = 12758;
+		rLoc = 12761;
 		rType = 0;
 		vrLen = 1745;
 		vrLoc = 12032;
@@ -2159,7 +2170,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 322";
 		rLen = 0;
-		rLoc = 12758;
+		rLoc = 12761;
 		rType = 0;
 		vrLen = 1761;
 		vrLoc = 12080;
@@ -2169,7 +2180,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 322";
 		rLen = 0;
-		rLoc = 12717;
+		rLoc = 12720;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 12177;
@@ -2179,7 +2190,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 327";
 		rLen = 0;
-		rLoc = 12944;
+		rLoc = 12947;
 		rType = 0;
 		vrLen = 1616;
 		vrLoc = 12359;
@@ -2189,7 +2200,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 327";
 		rLen = 2;
-		rLoc = 12453;
+		rLoc = 12456;
 		rType = 0;
 		vrLen = 1732;
 		vrLoc = 11695;
@@ -2199,7 +2210,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 327";
 		rLen = 0;
-		rLoc = 12944;
+		rLoc = 12947;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 11966;
@@ -2209,7 +2220,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 327";
 		rLen = 0;
-		rLoc = 12944;
+		rLoc = 12947;
 		rType = 0;
 		vrLen = 1732;
 		vrLoc = 12014;
@@ -2219,7 +2230,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 334";
 		rLen = 0;
-		rLoc = 13283;
+		rLoc = 14033;
 		rType = 0;
 		vrLen = 1659;
 		vrLoc = 12080;
@@ -2229,7 +2240,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 319";
 		rLen = 0;
-		rLoc = 12558;
+		rLoc = 12561;
 		rType = 0;
 		vrLen = 1439;
 		vrLoc = 11892;
@@ -2239,7 +2250,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 325";
 		rLen = 0;
-		rLoc = 12828;
+		rLoc = 12831;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 11964;
@@ -2249,7 +2260,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 321";
 		rLen = 0;
-		rLoc = 12668;
+		rLoc = 12671;
 		rType = 0;
 		vrLen = 1645;
 		vrLoc = 11966;
@@ -2259,7 +2270,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 328";
 		rLen = 0;
-		rLoc = 12939;
+		rLoc = 12942;
 		rType = 0;
 		vrLen = 1663;
 		vrLoc = 12014;
@@ -2269,7 +2280,7 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 327";
 		rLen = 0;
-		rLoc = 12854;
+		rLoc = 12857;
 		rType = 0;
 		vrLen = 1597;
 		vrLoc = 12080;
@@ -2279,10 +2290,118 @@
 		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
 		name = "InspectionController.m: 324";
 		rLen = 0;
-		rLoc = 12828;
+		rLoc = 12831;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 12177;
+	};
+	E444E9DB120E4931009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C0E04A1204F40D006AB8AF /* Tag.m */;
+		name = "Tag.m: 64";
+		rLen = 0;
+		rLoc = 2121;
+		rType = 0;
+		vrLen = 149;
+		vrLoc = 2051;
+	};
+	E444E9E0120E4CF2009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C0E04A1204F40D006AB8AF /* Tag.m */;
+		name = "Tag.m: 64";
+		rLen = 0;
+		rLoc = 2121;
+		rType = 0;
+		vrLen = 273;
+		vrLoc = 1919;
+	};
+	E444E9E7120E4F72009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549D11DBFF5700A044D7 /* InspectionController.h */;
+		name = "InspectionController.h: 19";
+		rLen = 0;
+		rLoc = 454;
+		rType = 0;
+		vrLen = 1061;
+		vrLoc = 44;
+	};
+	E444E9E8120E4F72009B8CA2 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'comments_updated' undeclared (first use in this function)";
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 26;
+		rType = 1;
+	};
+	E444E9E9120E4F72009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 27";
+		rLen = 0;
+		rLoc = 700;
+		rType = 0;
+		vrLen = 1184;
+		vrLoc = 147;
+	};
+	E444E9F0120E51A6009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 343";
+		rLen = 0;
+		rLoc = 13678;
+		rType = 0;
+		vrLen = 1274;
+		vrLoc = 12762;
+	};
+	E444E9F6120E53AC009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 349";
+		rLen = 0;
+		rLoc = 13902;
+		rType = 0;
+		vrLen = 1280;
+		vrLoc = 12827;
+	};
+	E444E9F8120E54F7009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4C0E04A1204F40D006AB8AF /* Tag.m */;
+		name = "Tag.m: 64";
+		rLen = 0;
+		rLoc = 2121;
+		rType = 0;
+		vrLen = 149;
+		vrLoc = 2051;
+	};
+	E444E9F9120E54F7009B8CA2 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'comments_updated' undeclared (first use in this function)";
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 239;
+		rType = 1;
+	};
+	E444E9FA120E54F7009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 241";
+		rLen = 107;
+		rLoc = 9437;
+		rType = 0;
+		vrLen = 381;
+		vrLoc = 9163;
+	};
+	E444E9FB120E5594009B8CA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */;
+		name = "InspectionController.m: 341";
+		rLen = 0;
+		rLoc = 13635;
+		rType = 0;
+		vrLen = 1225;
+		vrLoc = 12827;
 	};
 	E47ED3FA120CD3770011DA3E /* ConceptEntity.h */ = {
 		uiCtxt = {
@@ -2307,16 +2426,16 @@
 	};
 	E47ED402120CE2260011DA3E /* FirstClassContentPiece+Ratable.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {934, 486}}";
-			sepNavSelRange = "{426, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1043, 574}}";
+			sepNavSelRange = "{350, 25}";
 			sepNavVisRange = "{0, 432}";
 		};
 	};
 	E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {934, 780}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1043, 780}}";
 			sepNavSelRange = "{973, 272}";
-			sepNavVisRange = "{585, 810}";
+			sepNavVisRange = "{321, 1074}";
 		};
 	};
 	E47ED41B120CE3E30011DA3E /* PBXTextBookmark */ = {
@@ -2471,17 +2590,17 @@
 	};
 	E4A1549D11DBFF5700A044D7 /* InspectionController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {909, 598}}";
-			sepNavSelRange = "{645, 0}";
-			sepNavVisRange = "{47, 1066}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 624}}";
+			sepNavSelRange = "{454, 0}";
+			sepNavVisRange = "{44, 1061}";
 		};
 	};
 	E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1498, 232}\";\n            s = 0;\n        },\n                {\n            r = \"{1733, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1816, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1907, 86}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 17857}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {936, 6045}}";
-			sepNavSelRange = "{12346, 0}";
-			sepNavVisRange = "{11695, 1571}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1474, 232}\";\n            s = 0;\n        },\n                {\n            r = \"{1709, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1792, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1883, 86}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 18607}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {936, 6253}}";
+			sepNavSelRange = "{13153, 0}";
+			sepNavVisRange = "{12345, 1225}";
 		};
 	};
 	E4A1572E11DF989700A044D7 /* ContributionController.h */ = {
@@ -2620,7 +2739,7 @@
 	};
 	E4C0E04A1204F40D006AB8AF /* Tag.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1132, 858}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1132, 871}}";
 			sepNavSelRange = "{2121, 0}";
 			sepNavVisRange = "{2051, 149}";
 		};

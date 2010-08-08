@@ -326,7 +326,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E444E9D9120E37E3009B8CA2</string>
+										<string>E444E9FB120E5594009B8CA2</string>
 										<key>history</key>
 										<array>
 											<string>E444E900120DC87B009B8CA2</string>
@@ -337,9 +337,9 @@
 											<string>E444E988120E2349009B8CA2</string>
 											<string>E444E989120E2349009B8CA2</string>
 											<string>E444E98A120E2349009B8CA2</string>
-											<string>E444E98B120E2349009B8CA2</string>
 											<string>E444E98C120E2349009B8CA2</string>
-											<string>E444E9A9120E2790009B8CA2</string>
+											<string>E444E9E7120E4F72009B8CA2</string>
+											<string>E444E9E8120E4F72009B8CA2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -537,13 +537,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E444E9DA120E37E3009B8CA2</string>
+		<string>E444E9F7120E53AC009B8CA2</string>
 		<string>E444E87B120D3376009B8CA2</string>
 		<string>E444E87C120D3376009B8CA2</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>20 17 1237 709 0 0 1280 778 </string>
@@ -562,12 +562,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Tag.m</string>
+								<string>InspectionController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -636,7 +638,7 @@
 			<key>WindowToolGUID</key>
 			<string>E439365011D453CE00D6DED9</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -917,7 +919,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

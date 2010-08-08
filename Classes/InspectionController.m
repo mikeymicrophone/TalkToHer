@@ -25,7 +25,6 @@
 		return nil;
 
 	[self setContent:contentObj];
-	comments_updated = NO;
 	tags_updated = NO;
 	ratings_updated = NO;
 
@@ -239,11 +238,9 @@
 				}
 			}
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
-			if (!comments_updated) {
-				[cell start_spinning];
-				comment_spinner = [cell spinner];
-				[cell bringSubviewToFront:cell.spinner];
-			}
+			[cell start_spinning];
+			comment_spinner = [cell spinner];
+			[cell bringSubviewToFront:cell.spinner];
 		} else {
 			CommentEntity *comment = [[content comments] objectAtIndex:indexPath.row - 1];
 			NSString *identifier = [NSString stringWithFormat:@"CommentEntity_%@", [comment getRemoteId]];
@@ -308,11 +305,13 @@
 }
 
 -(void)updateMetadataOfType:(NSString *)type {
-	NSIndexSet *set;
+	if (previous_comments == nil) {
+		previous_comments = [[content commentCount] integerValue];
+		previous_ratings = [content ratingCount];
+		previous_tags = [content tagCount];
+	}
+	[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
 	if ([type isEqualToString:@"CommentEntity"]) {
-		comments_updated = YES;
-		NSInteger previous_comments = [[content commentCount] integerValue];
-		[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
 		NSInteger current_comments = [[content commentCount] integerValue];
 		if (current_comments > previous_comments) {
 			NSInteger new_comments = current_comments - previous_comments;
@@ -326,11 +325,32 @@
 		}
 		[comment_spinner stopAnimating];
 	} else if ([type isEqualToString:@"RatingEntity"]) {
-		ratings_updated = YES;
-		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
+		NSInteger current_ratings = [content ratingCount];
+		if (current_ratings > previous_ratings) {
+			ratings_updated = YES;
+			NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
+			[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
+		 } else {
+			[rating_spinner stopAnimating]; 
+		 }
 	} else if ([type isEqualToString:@"TagEntity"]) {
-		tags_updated = YES;
-		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2 1")];
+		NSInteger current_tags = [content tagCount];
+		if (current_tags > previous_tags) {
+			NSString *tag_in_progress = nil;
+			if ([tag_field isFirstResponder]) {
+				tag_in_progress = tag_field.text;
+				[tag_field resignFirstResponder];
+			}
+			tags_updated = YES;
+			NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2 1")];
+			[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
+			if (tag_in_progress) {
+				tag_field.text = tag_in_progress;
+				[tag_field becomeFirstResponder];
+			}
+		} else {
+			[tag_spinner stopAnimating];
+		}
 	}
 }
 
