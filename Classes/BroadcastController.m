@@ -1,4 +1,4 @@
-    //
+//
 //  BroadcastController.m
 //  TalkToHer
 //
@@ -7,7 +7,6 @@
 //
 
 #import "BroadcastController.h"
-
 
 @implementation BroadcastController
 
@@ -20,32 +19,32 @@
 	self.display = [[UILabel alloc] initWithFrame:self.view.frame];
 	display.text = broadcast;
 	display.lineBreakMode = UILineBreakModeWordWrap;
-	display.numberOfLines = 10;
+	display.numberOfLines = 20;
 	display.textAlignment = UITextAlignmentCenter;
-	NSLog(@"display1: %@", display);
 	display.textColor = [UIColor blackColor];
 	return self;
 }
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-	self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 480, 300)];
-}
-
-- (void)viewDidLoad {
+	self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
 	CGSize drawnSize = CGSizeMake(480, 500);
 	NSInteger fontSize;
-	NSLog(@"drawn: %f, view: %f", drawnSize.height, self.view.frame.size.height);
 	for (fontSize = 86; drawnSize.height > self.view.frame.size.width; fontSize--) {
 		drawnSize = [display.text sizeWithFont:[UIFont fontWithName:@"TrebuchetMS" size:fontSize] constrainedToSize:self.view.frame.size lineBreakMode:UILineBreakModeWordWrap];
-		NSLog(@"size: %@", NSStringFromCGSize(drawnSize));
 	}
 	display.font = [UIFont fontWithName:@"TrebuchetMS" size:fontSize];
-	NSLog(@"display2: %@", display);
-	[self.view addSubview:display];	
+	[self.view addSubview:display];
+	
+	UIButton *x = [UIButton buttonWithType:UIButtonTypeCustom];
+	[x setTitle:@"x" forState:UIControlStateNormal];
+	x.frame = CGRectMake(430, 250, 44, 44);
+	[x setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
+	[x addTarget:self action:@selector(dismissModalViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:x];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -65,10 +64,8 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end

@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BroadcastController.m</string>
+								<string>DataDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,17 +323,17 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BroadcastController.m</string>
+										<string>DataDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E444EA9E120E73BA009B8CA2</string>
+										<string>E444EAB8120E7A79009B8CA2</string>
 										<key>history</key>
 										<array>
 											<string>E444EA14120E6A25009B8CA2</string>
-											<string>E444EA74120E7125009B8CA2</string>
 											<string>E444EA75120E7125009B8CA2</string>
-											<string>E444EA76120E7125009B8CA2</string>
+											<string>E444EAB7120E7A79009B8CA2</string>
+											<string>E444EA74120E7125009B8CA2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -531,13 +531,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E444EA9F120E73BA009B8CA2</string>
+		<string>E444EAB6120E7A4E009B8CA2</string>
 		<string>E444E87B120D3376009B8CA2</string>
 		<string>E444E87C120D3376009B8CA2</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>20 17 1237 709 0 0 1280 778 </string>
