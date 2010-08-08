@@ -7,131 +7,129 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* TalkToHerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */; };
-		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
-		E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40017F711FE4251001359B0 /* ContentDelegate.m */; };
-		E4001B4311FF8B8B001359B0 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4001B4211FF8B8B001359B0 /* UserEntity.m */; };
-		E4001D1F12006E6B001359B0 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1D12006E6B001359B0 /* icon.png */; };
-		E4001D2012006E6B001359B0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1E12006E6B001359B0 /* icon@2x.png */; };
-		E4001D431200BB28001359B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4001D421200BB28001359B0 /* MessageUI.framework */; };
-		E409694311F1154E0055459F /* ProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = E409694111F1154E0055459F /* ProgressController.m */; };
-		E409694411F1154E0055459F /* ProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E409694211F1154E0055459F /* ProgressController.xib */; };
-		E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */; };
-		E419E36211F016E000F400DD /* exercises.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E35D11F016E000F400DD /* exercises.png */; };
-		E419E36411F016E000F400DD /* lines.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E35F11F016E000F400DD /* lines.png */; };
-		E419E36811F0182500F400DD /* goals.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E36711F0182500F400DD /* goals.png */; };
-		E419E36E11F0199500F400DD /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E36D11F0199500F400DD /* login.png */; };
-		E419E37211F01A1F00F400DD /* tips.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37111F01A1F00F400DD /* tips.png */; };
-		E419E37D11F0224800F400DD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37C11F0224800F400DD /* more.png */; };
-		E419E38111F0236E00F400DD /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E38011F0236E00F400DD /* write.png */; };
-		E435D8F311F7085F00A5061D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E435D8F211F7085F00A5061D /* AddressBook.framework */; };
-		E439369811D50DD300D6DED9 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E439369611D50DD300D6DED9 /* InspirationController.m */; };
-		E44065C111EBB9F700A48898 /* LoaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E44065C011EBB9F700A48898 /* LoaderCell.m */; };
-		E440665011EC002000A48898 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664111EC001F00A48898 /* ASIAuthenticationDialog.m */; };
-		E440665111EC002000A48898 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664411EC002000A48898 /* ASIDownloadCache.m */; };
-		E440665211EC002000A48898 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664611EC002000A48898 /* ASIFormDataRequest.m */; };
-		E440665311EC002000A48898 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664811EC002000A48898 /* ASIHTTPRequest.m */; };
-		E440665411EC002000A48898 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664C11EC002000A48898 /* ASIInputStream.m */; };
-		E440665511EC002000A48898 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664E11EC002000A48898 /* ASINetworkQueue.m */; };
-		E440665E11EC006300A48898 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E440665D11EC006300A48898 /* Reachability.m */; };
-		E440666611EC00AA00A48898 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666511EC00AA00A48898 /* CFNetwork.framework */; };
-		E440666811EC00B400A48898 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666711EC00B400A48898 /* MobileCoreServices.framework */; };
-		E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666911EC00C800A48898 /* libz.1.2.3.dylib */; };
-		E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */; };
-		E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
-		E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */; };
-		E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */; };
-		E444E87F120D346D009B8CA2 /* Concept.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E87E120D346D009B8CA2 /* Concept.m */; };
-		E444EA02120E5F05009B8CA2 /* broadcast.png in Resources */ = {isa = PBXBuildFile; fileRef = E444EA01120E5F05009B8CA2 /* broadcast.png */; };
-		E444EA0A120E606C009B8CA2 /* BroadcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = E444EA09120E606C009B8CA2 /* BroadcastController.m */; };
-		E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED3FB120CD3770011DA3E /* ConceptEntity.m */; };
-		E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */; };
-		E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */; };
-		E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */; };
-		E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1549F11DBFF5700A044D7 /* InspectionController.xib */; };
-		E4A1573111DF989700A044D7 /* ContributionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1572F11DF989700A044D7 /* ContributionController.m */; };
-		E4A1573211DF989700A044D7 /* ContributionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1573011DF989700A044D7 /* ContributionController.xib */; };
-		E4A1589711E4E2A600A044D7 /* IdentificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1589511E4E2A600A044D7 /* IdentificationController.m */; };
-		E4A1589811E4E2A600A044D7 /* IdentificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1589611E4E2A600A044D7 /* IdentificationController.xib */; };
-		E4A158A511E4E49200A044D7 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A158A411E4E49200A044D7 /* UserSession.m */; };
-		E4A158B611E4EA6D00A044D7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A158B511E4EA6D00A044D7 /* User.m */; };
-		E4C0D7F51201C2A6006AB8AF /* GoalSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D7F31201C2A6006AB8AF /* GoalSettingController.m */; };
-		E4C0D7F61201C2A6006AB8AF /* GoalSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0D7F41201C2A6006AB8AF /* GoalSettingController.xib */; };
-		E4C0D80D1201C628006AB8AF /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D80C1201C628006AB8AF /* Goal.m */; };
-		E4C0DB3512031D0A006AB8AF /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DB3312031D0A006AB8AF /* InfoController.m */; };
-		E4C0DB3612031D0A006AB8AF /* InfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DB3412031D0A006AB8AF /* InfoController.xib */; };
-		E4C0DEDD1204A654006AB8AF /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DEDC1204A654006AB8AF /* text.png */; };
-		E4C0DF3E1204C11D006AB8AF /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DF3D1204C11D006AB8AF /* Rating.m */; };
-		E4C0DF411204C1AF006AB8AF /* RatingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DF401204C1AF006AB8AF /* RatingEntity.m */; };
-		E4C0E04B1204F40D006AB8AF /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E04A1204F40D006AB8AF /* Tag.m */; };
-		E4C0E04E1204F5AF006AB8AF /* TagEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E04D1204F5AF006AB8AF /* TagEntity.m */; };
-		E4C0E0B612050B2E006AB8AF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E0B512050B2E006AB8AF /* Comment.m */; };
-		E4C0E0B912050BFB006AB8AF /* CommentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E0B812050BFB006AB8AF /* CommentEntity.m */; };
-		E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
-		E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
-		E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
-		E4C6ADE911D5290E00068008 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */; };
-		E4C6AEA511D5415400068008 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5811D5415400068008 /* NSString+InflectionSupport.m */; };
-		E4C6AEA611D5415400068008 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5A11D5415400068008 /* NSData+Additions.m */; };
-		E4C6AEA711D5415400068008 /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5C11D5415400068008 /* NSObject+PropertySupport.m */; };
-		E4C6AEA811D5415400068008 /* NSString+GSub.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5E11D5415400068008 /* NSString+GSub.m */; };
-		E4C6AEA911D5415400068008 /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6011D5415400068008 /* ObjectiveResourceDateFormatter.m */; };
-		E4C6AEAA11D5415400068008 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6511D5415400068008 /* NSObject+SBJSON.m */; };
-		E4C6AEAB11D5415400068008 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6711D5415400068008 /* NSString+SBJSON.m */; };
-		E4C6AEAC11D5415400068008 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6911D5415400068008 /* SBJSON.m */; };
-		E4C6AEAD11D5415400068008 /* NSArray+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6D11D5415400068008 /* NSArray+JSONSerializableSupport.m */; };
-		E4C6AEAE11D5415400068008 /* NSDictionary+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7111D5415400068008 /* NSDictionary+JSONSerializableSupport.m */; };
-		E4C6AEAF11D5415400068008 /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7311D5415400068008 /* NSObject+JSONSerializableSupport.m */; };
-		E4C6AEB011D5415400068008 /* NSDate+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7511D5415400068008 /* NSDate+Serialize.m */; };
-		E4C6AEB111D5415400068008 /* NSDictionary+KeyTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7711D5415400068008 /* NSDictionary+KeyTranslation.m */; };
-		E4C6AEB211D5415400068008 /* NSObject+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7911D5415400068008 /* NSObject+Serialize.m */; };
-		E4C6AEB311D5415400068008 /* NSString+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7B11D5415400068008 /* NSString+Serialize.m */; };
-		E4C6AEB411D5415400068008 /* NSNumber+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7F11D5415400068008 /* NSNumber+XMLSerializableSupport.m */; };
-		E4C6AEB511D5415400068008 /* FromXMLElementDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8111D5415400068008 /* FromXMLElementDelegate.m */; };
-		E4C6AEB611D5415400068008 /* NSArray+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8311D5415400068008 /* NSArray+XMLSerializableSupport.m */; };
-		E4C6AEB711D5415400068008 /* NSDate+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8511D5415400068008 /* NSDate+XMLSerializableSupport.m */; };
-		E4C6AEB811D5415400068008 /* NSDictionary+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8711D5415400068008 /* NSDictionary+XMLSerializableSupport.m */; };
-		E4C6AEB911D5415400068008 /* NSNull+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8911D5415400068008 /* NSNull+XMLSerializableSupport.m */; };
-		E4C6AEBA11D5415400068008 /* NSObject+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8B11D5415400068008 /* NSObject+XMLSerializableSupport.m */; };
-		E4C6AEBB11D5415400068008 /* NSString+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8D11D5415400068008 /* NSString+XMLSerializableSupport.m */; };
-		E4C6AEBC11D5415400068008 /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9211D5415400068008 /* NSObject+ObjectiveResource.m */; };
-		E4C6AEBD11D5415400068008 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9511D5415400068008 /* ConnectionManager.m */; };
-		E4C6AEBE11D5415400068008 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9711D5415400068008 /* ConnectionDelegate.m */; };
-		E4C6AEBF11D5415400068008 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9911D5415400068008 /* NSHTTPURLResponse+Error.m */; };
-		E4C6AEC011D5415400068008 /* ORConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9B11D5415400068008 /* ORConnection.m */; };
-		E4C6AEC111D5415400068008 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9D11D5415400068008 /* Response.m */; };
-		E4C6AEC211D5415400068008 /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9F11D5415400068008 /* NSMutableURLRequest+ResponseType.m */; };
-		E4C6AEC311D5415400068008 /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEA111D5415400068008 /* NSError+Error.m */; };
-		E4C6AEC411D5415400068008 /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEA411D5415400068008 /* ObjectiveResourceConfig.m */; };
-		E4C6AEC911D5421100068008 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEC811D5421100068008 /* Line.m */; };
-		E4C6AF4911D5522900068008 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4811D5522900068008 /* Tip.m */; };
-		E4C6AF4C11D5526800068008 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4B11D5526800068008 /* Exercise.m */; };
-		E4C6AF4F11D552BD00068008 /* GoalOwnership.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4E11D552BD00068008 /* GoalOwnership.m */; };
-		E4D8109911FE36AD0020AE8B /* LineEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8109611FE36AD0020AE8B /* LineEntity.m */; };
-		E4D8109A11FE36AD0020AE8B /* TipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8109811FE36AD0020AE8B /* TipEntity.m */; };
-		E4D8223011FD14B70014D28A /* ExerciseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8222F11FD14B70014D28A /* ExerciseEntity.m */; };
-		E4D8223311FD14CB0014D28A /* GoalOwnershipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */; };
-		E4DEA41A120615B700266C34 /* set_a_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA419120615B700266C34 /* set_a_goal.png */; };
-		E4DEA4B81206309800266C34 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA4B71206309800266C34 /* default.png */; };
-		E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */; };
+		E4CB910F120E915A00B8CCD6 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
+		E4CB9110120E915A00B8CCD6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
+		E4CB9111120E915A00B8CCD6 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
+		E4CB9112120E915A00B8CCD6 /* InspectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1549F11DBFF5700A044D7 /* InspectionController.xib */; };
+		E4CB9113120E915A00B8CCD6 /* ContributionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1573011DF989700A044D7 /* ContributionController.xib */; };
+		E4CB9114120E915A00B8CCD6 /* IdentificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4A1589611E4E2A600A044D7 /* IdentificationController.xib */; };
+		E4CB9115120E915A00B8CCD6 /* exercises.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E35D11F016E000F400DD /* exercises.png */; };
+		E4CB9116120E915A00B8CCD6 /* lines.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E35F11F016E000F400DD /* lines.png */; };
+		E4CB9117120E915A00B8CCD6 /* goals.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E36711F0182500F400DD /* goals.png */; };
+		E4CB9118120E915A00B8CCD6 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E36D11F0199500F400DD /* login.png */; };
+		E4CB9119120E915A00B8CCD6 /* tips.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37111F01A1F00F400DD /* tips.png */; };
+		E4CB911A120E915A00B8CCD6 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E37C11F0224800F400DD /* more.png */; };
+		E4CB911B120E915A00B8CCD6 /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = E419E38011F0236E00F400DD /* write.png */; };
+		E4CB911C120E915A00B8CCD6 /* ProgressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E409694211F1154E0055459F /* ProgressController.xib */; };
+		E4CB911D120E915A00B8CCD6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1D12006E6B001359B0 /* icon.png */; };
+		E4CB911E120E915A00B8CCD6 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1E12006E6B001359B0 /* icon@2x.png */; };
+		E4CB911F120E915A00B8CCD6 /* GoalSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0D7F41201C2A6006AB8AF /* GoalSettingController.xib */; };
+		E4CB9120120E915A00B8CCD6 /* InfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DB3412031D0A006AB8AF /* InfoController.xib */; };
+		E4CB9121120E915A00B8CCD6 /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DEDC1204A654006AB8AF /* text.png */; };
+		E4CB9122120E915A00B8CCD6 /* set_a_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA419120615B700266C34 /* set_a_goal.png */; };
+		E4CB9123120E915A00B8CCD6 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA4B71206309800266C34 /* default.png */; };
+		E4CB9124120E915A00B8CCD6 /* broadcast.png in Resources */ = {isa = PBXBuildFile; fileRef = E444EA01120E5F05009B8CA2 /* broadcast.png */; };
+		E4CB9126120E915A00B8CCD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		E4CB9127120E915A00B8CCD6 /* TalkToHerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */; };
+		E4CB9128120E915A00B8CCD6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		E4CB9129120E915A00B8CCD6 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E439369611D50DD300D6DED9 /* InspirationController.m */; };
+		E4CB912A120E915A00B8CCD6 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5811D5415400068008 /* NSString+InflectionSupport.m */; };
+		E4CB912B120E915A00B8CCD6 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5A11D5415400068008 /* NSData+Additions.m */; };
+		E4CB912C120E915A00B8CCD6 /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5C11D5415400068008 /* NSObject+PropertySupport.m */; };
+		E4CB912D120E915A00B8CCD6 /* NSString+GSub.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE5E11D5415400068008 /* NSString+GSub.m */; };
+		E4CB912E120E915A00B8CCD6 /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6011D5415400068008 /* ObjectiveResourceDateFormatter.m */; };
+		E4CB912F120E915A00B8CCD6 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6511D5415400068008 /* NSObject+SBJSON.m */; };
+		E4CB9130120E915A00B8CCD6 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6711D5415400068008 /* NSString+SBJSON.m */; };
+		E4CB9131120E915A00B8CCD6 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6911D5415400068008 /* SBJSON.m */; };
+		E4CB9132120E915A00B8CCD6 /* NSArray+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE6D11D5415400068008 /* NSArray+JSONSerializableSupport.m */; };
+		E4CB9133120E915A00B8CCD6 /* NSDictionary+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7111D5415400068008 /* NSDictionary+JSONSerializableSupport.m */; };
+		E4CB9134120E915A00B8CCD6 /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7311D5415400068008 /* NSObject+JSONSerializableSupport.m */; };
+		E4CB9135120E915A00B8CCD6 /* NSDate+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7511D5415400068008 /* NSDate+Serialize.m */; };
+		E4CB9136120E915A00B8CCD6 /* NSDictionary+KeyTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7711D5415400068008 /* NSDictionary+KeyTranslation.m */; };
+		E4CB9137120E915A00B8CCD6 /* NSObject+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7911D5415400068008 /* NSObject+Serialize.m */; };
+		E4CB9138120E915A00B8CCD6 /* NSString+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7B11D5415400068008 /* NSString+Serialize.m */; };
+		E4CB9139120E915A00B8CCD6 /* NSNumber+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE7F11D5415400068008 /* NSNumber+XMLSerializableSupport.m */; };
+		E4CB913A120E915A00B8CCD6 /* FromXMLElementDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8111D5415400068008 /* FromXMLElementDelegate.m */; };
+		E4CB913B120E915A00B8CCD6 /* NSArray+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8311D5415400068008 /* NSArray+XMLSerializableSupport.m */; };
+		E4CB913C120E915A00B8CCD6 /* NSDate+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8511D5415400068008 /* NSDate+XMLSerializableSupport.m */; };
+		E4CB913D120E915A00B8CCD6 /* NSDictionary+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8711D5415400068008 /* NSDictionary+XMLSerializableSupport.m */; };
+		E4CB913E120E915A00B8CCD6 /* NSNull+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8911D5415400068008 /* NSNull+XMLSerializableSupport.m */; };
+		E4CB913F120E915A00B8CCD6 /* NSObject+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8B11D5415400068008 /* NSObject+XMLSerializableSupport.m */; };
+		E4CB9140120E915A00B8CCD6 /* NSString+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE8D11D5415400068008 /* NSString+XMLSerializableSupport.m */; };
+		E4CB9141120E915A00B8CCD6 /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9211D5415400068008 /* NSObject+ObjectiveResource.m */; };
+		E4CB9142120E915A00B8CCD6 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9511D5415400068008 /* ConnectionManager.m */; };
+		E4CB9143120E915A00B8CCD6 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9711D5415400068008 /* ConnectionDelegate.m */; };
+		E4CB9144120E915A00B8CCD6 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9911D5415400068008 /* NSHTTPURLResponse+Error.m */; };
+		E4CB9145120E915A00B8CCD6 /* ORConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9B11D5415400068008 /* ORConnection.m */; };
+		E4CB9146120E915A00B8CCD6 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9D11D5415400068008 /* Response.m */; };
+		E4CB9147120E915A00B8CCD6 /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AE9F11D5415400068008 /* NSMutableURLRequest+ResponseType.m */; };
+		E4CB9148120E915A00B8CCD6 /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEA111D5415400068008 /* NSError+Error.m */; };
+		E4CB9149120E915A00B8CCD6 /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEA411D5415400068008 /* ObjectiveResourceConfig.m */; };
+		E4CB914A120E915A00B8CCD6 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AEC811D5421100068008 /* Line.m */; };
+		E4CB914B120E915A00B8CCD6 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4811D5522900068008 /* Tip.m */; };
+		E4CB914C120E915A00B8CCD6 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4B11D5526800068008 /* Exercise.m */; };
+		E4CB914D120E915A00B8CCD6 /* GoalOwnership.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6AF4E11D552BD00068008 /* GoalOwnership.m */; };
+		E4CB914E120E915A00B8CCD6 /* DataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */; };
+		E4CB914F120E915A00B8CCD6 /* InspirationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D0DF011D9361B004CC712 /* InspirationCell.m */; };
+		E4CB9150120E915A00B8CCD6 /* InspectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1549E11DBFF5700A044D7 /* InspectionController.m */; };
+		E4CB9151120E915A00B8CCD6 /* ContributionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1572F11DF989700A044D7 /* ContributionController.m */; };
+		E4CB9152120E915A00B8CCD6 /* IdentificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1589511E4E2A600A044D7 /* IdentificationController.m */; };
+		E4CB9153120E915A00B8CCD6 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A158A411E4E49200A044D7 /* UserSession.m */; };
+		E4CB9154120E915A00B8CCD6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A158B511E4EA6D00A044D7 /* User.m */; };
+		E4CB9155120E915A00B8CCD6 /* LoaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E44065C011EBB9F700A48898 /* LoaderCell.m */; };
+		E4CB9156120E915A00B8CCD6 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664111EC001F00A48898 /* ASIAuthenticationDialog.m */; };
+		E4CB9157120E915A00B8CCD6 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664411EC002000A48898 /* ASIDownloadCache.m */; };
+		E4CB9158120E915A00B8CCD6 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664611EC002000A48898 /* ASIFormDataRequest.m */; };
+		E4CB9159120E915A00B8CCD6 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664811EC002000A48898 /* ASIHTTPRequest.m */; };
+		E4CB915A120E915A00B8CCD6 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664C11EC002000A48898 /* ASIInputStream.m */; };
+		E4CB915B120E915A00B8CCD6 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E440664E11EC002000A48898 /* ASINetworkQueue.m */; };
+		E4CB915C120E915A00B8CCD6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E440665D11EC006300A48898 /* Reachability.m */; };
+		E4CB915D120E915A00B8CCD6 /* Content.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */; };
+		E4CB915E120E915A00B8CCD6 /* ProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = E409694111F1154E0055459F /* ProgressController.m */; };
+		E4CB915F120E915A00B8CCD6 /* ExerciseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8222F11FD14B70014D28A /* ExerciseEntity.m */; };
+		E4CB9160120E915A00B8CCD6 /* GoalOwnershipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8223211FD14CB0014D28A /* GoalOwnershipEntity.m */; };
+		E4CB9161120E915A00B8CCD6 /* LineEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8109611FE36AD0020AE8B /* LineEntity.m */; };
+		E4CB9162120E915A00B8CCD6 /* TipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8109811FE36AD0020AE8B /* TipEntity.m */; };
+		E4CB9163120E915A00B8CCD6 /* ContentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40017F711FE4251001359B0 /* ContentDelegate.m */; };
+		E4CB9164120E915A00B8CCD6 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4001B4211FF8B8B001359B0 /* UserEntity.m */; };
+		E4CB9165120E915A00B8CCD6 /* GoalSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D7F31201C2A6006AB8AF /* GoalSettingController.m */; };
+		E4CB9166120E915A00B8CCD6 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D80C1201C628006AB8AF /* Goal.m */; };
+		E4CB9167120E915A00B8CCD6 /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DB3312031D0A006AB8AF /* InfoController.m */; };
+		E4CB9168120E915A00B8CCD6 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DF3D1204C11D006AB8AF /* Rating.m */; };
+		E4CB9169120E915A00B8CCD6 /* RatingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0DF401204C1AF006AB8AF /* RatingEntity.m */; };
+		E4CB916A120E915A00B8CCD6 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E04A1204F40D006AB8AF /* Tag.m */; };
+		E4CB916B120E915A00B8CCD6 /* TagEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E04D1204F5AF006AB8AF /* TagEntity.m */; };
+		E4CB916C120E915A00B8CCD6 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E0B512050B2E006AB8AF /* Comment.m */; };
+		E4CB916D120E915A00B8CCD6 /* CommentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0E0B812050BFB006AB8AF /* CommentEntity.m */; };
+		E4CB916E120E915A00B8CCD6 /* ConceptEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED3FB120CD3770011DA3E /* ConceptEntity.m */; };
+		E4CB916F120E915A00B8CCD6 /* FirstClassContentPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */; };
+		E4CB9170120E915A00B8CCD6 /* FirstClassContentPiece+Ratable.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */; };
+		E4CB9171120E915A00B8CCD6 /* FirstClassContentPiece+Taggable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */; };
+		E4CB9172120E915A00B8CCD6 /* FirstClassContentPiece+Commendable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */; };
+		E4CB9173120E915A00B8CCD6 /* Concept.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E87E120D346D009B8CA2 /* Concept.m */; };
+		E4CB9174120E915A00B8CCD6 /* BroadcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = E444EA09120E606C009B8CA2 /* BroadcastController.m */; };
+		E4CB9176120E915A00B8CCD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		E4CB9177120E915A00B8CCD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		E4CB9178120E915A00B8CCD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		E4CB9179120E915A00B8CCD6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */; };
+		E4CB917A120E915A00B8CCD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666511EC00AA00A48898 /* CFNetwork.framework */; };
+		E4CB917B120E915A00B8CCD6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666711EC00B400A48898 /* MobileCoreServices.framework */; };
+		E4CB917C120E915A00B8CCD6 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666911EC00C800A48898 /* libz.1.2.3.dylib */; };
+		E4CB917D120E915A00B8CCD6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
+		E4CB917E120E915A00B8CCD6 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E435D8F211F7085F00A5061D /* AddressBook.framework */; };
+		E4CB917F120E915A00B8CCD6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4001D421200BB28001359B0 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TalkToHerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkToHerAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkToHerAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* TalkToHer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToHer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* TalkToHer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkToHer_Prefix.pch; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* TalkToHer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TalkToHer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E40017F611FE4251001359B0 /* ContentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentDelegate.h; sourceTree = "<group>"; };
 		E40017F711FE4251001359B0 /* ContentDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentDelegate.m; sourceTree = "<group>"; };
 		E4001B4111FF8B8B001359B0 /* UserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEntity.h; sourceTree = "<group>"; };
@@ -313,6 +311,8 @@
 		E4C6AF4B11D5526800068008 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		E4C6AF4D11D552BD00068008 /* GoalOwnership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOwnership.h; sourceTree = "<group>"; };
 		E4C6AF4E11D552BD00068008 /* GoalOwnership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOwnership.m; sourceTree = "<group>"; };
+		E4CB9183120E915A00B8CCD6 /* TalkToHer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToHer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CB9185120E915A00B8CCD6 /* TalkToHer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TalkToHer-Info.plist"; sourceTree = "<group>"; };
 		E4D8109511FE36AD0020AE8B /* LineEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineEntity.h; sourceTree = "<group>"; };
 		E4D8109611FE36AD0020AE8B /* LineEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineEntity.m; sourceTree = "<group>"; };
 		E4D8109711FE36AD0020AE8B /* TipEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipEntity.h; sourceTree = "<group>"; };
@@ -328,20 +328,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+		E4CB9175120E915A00B8CCD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
-				E4C6ADE911D5290E00068008 /* SystemConfiguration.framework in Frameworks */,
-				E440666611EC00AA00A48898 /* CFNetwork.framework in Frameworks */,
-				E440666811EC00B400A48898 /* MobileCoreServices.framework in Frameworks */,
-				E440666A11EC00C800A48898 /* libz.1.2.3.dylib in Frameworks */,
-				E44066DA11ED057000A48898 /* CoreData.framework in Frameworks */,
-				E435D8F311F7085F00A5061D /* AddressBook.framework in Frameworks */,
-				E4001D431200BB28001359B0 /* MessageUI.framework in Frameworks */,
+				E4CB9176120E915A00B8CCD6 /* Foundation.framework in Frameworks */,
+				E4CB9177120E915A00B8CCD6 /* UIKit.framework in Frameworks */,
+				E4CB9178120E915A00B8CCD6 /* CoreGraphics.framework in Frameworks */,
+				E4CB9179120E915A00B8CCD6 /* SystemConfiguration.framework in Frameworks */,
+				E4CB917A120E915A00B8CCD6 /* CFNetwork.framework in Frameworks */,
+				E4CB917B120E915A00B8CCD6 /* MobileCoreServices.framework in Frameworks */,
+				E4CB917C120E915A00B8CCD6 /* libz.1.2.3.dylib in Frameworks */,
+				E4CB917D120E915A00B8CCD6 /* CoreData.framework in Frameworks */,
+				E4CB917E120E915A00B8CCD6 /* AddressBook.framework in Frameworks */,
+				E4CB917F120E915A00B8CCD6 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +363,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* TalkToHer.app */,
+				E4CB9183120E915A00B8CCD6 /* TalkToHer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -414,8 +414,8 @@
 				E409694211F1154E0055459F /* ProgressController.xib */,
 				E4C6ACCE11D514F000068008 /* MainWindow.xib */,
 				E4C6ACCF11D514F000068008 /* RootViewController.xib */,
-				8D1107310486CEB800E47090 /* TalkToHer-Info.plist */,
 				E4DEA4B71206309800266C34 /* default.png */,
+				E4CB9185120E915A00B8CCD6 /* TalkToHer-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -762,13 +762,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* TalkToHer */ = {
+		E4CB910D120E915A00B8CCD6 /* TalkToHer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TalkToHer" */;
+			buildConfigurationList = E4CB9180120E915A00B8CCD6 /* Build configuration list for PBXNativeTarget "TalkToHer" */;
 			buildPhases = (
-				1D60588D0D05DD3D006BFB54 /* Resources */,
-				1D60588E0D05DD3D006BFB54 /* Sources */,
-				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				E4CB910E120E915A00B8CCD6 /* Resources */,
+				E4CB9125120E915A00B8CCD6 /* Sources */,
+				E4CB9175120E915A00B8CCD6 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -776,7 +776,7 @@
 			);
 			name = TalkToHer;
 			productName = TalkToHer;
-			productReference = 1D6058910D05DD3D006BFB54 /* TalkToHer.app */;
+			productReference = E4CB9183120E915A00B8CCD6 /* TalkToHer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -798,134 +798,171 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* TalkToHer */,
+				E4CB910D120E915A00B8CCD6 /* TalkToHer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+		E4CB910E120E915A00B8CCD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C6ACD011D514F000068008 /* InspirationController.xib in Resources */,
-				E4C6ACD111D514F000068008 /* MainWindow.xib in Resources */,
-				E4C6ACD211D514F000068008 /* RootViewController.xib in Resources */,
-				E4A154A111DBFF5700A044D7 /* InspectionController.xib in Resources */,
-				E4A1573211DF989700A044D7 /* ContributionController.xib in Resources */,
-				E4A1589811E4E2A600A044D7 /* IdentificationController.xib in Resources */,
-				E419E36211F016E000F400DD /* exercises.png in Resources */,
-				E419E36411F016E000F400DD /* lines.png in Resources */,
-				E419E36811F0182500F400DD /* goals.png in Resources */,
-				E419E36E11F0199500F400DD /* login.png in Resources */,
-				E419E37211F01A1F00F400DD /* tips.png in Resources */,
-				E419E37D11F0224800F400DD /* more.png in Resources */,
-				E419E38111F0236E00F400DD /* write.png in Resources */,
-				E409694411F1154E0055459F /* ProgressController.xib in Resources */,
-				E4001D1F12006E6B001359B0 /* icon.png in Resources */,
-				E4001D2012006E6B001359B0 /* icon@2x.png in Resources */,
-				E4C0D7F61201C2A6006AB8AF /* GoalSettingController.xib in Resources */,
-				E4C0DB3612031D0A006AB8AF /* InfoController.xib in Resources */,
-				E4C0DEDD1204A654006AB8AF /* text.png in Resources */,
-				E4DEA41A120615B700266C34 /* set_a_goal.png in Resources */,
-				E4DEA4B81206309800266C34 /* default.png in Resources */,
-				E444EA02120E5F05009B8CA2 /* broadcast.png in Resources */,
+				E4CB910F120E915A00B8CCD6 /* InspirationController.xib in Resources */,
+				E4CB9110120E915A00B8CCD6 /* MainWindow.xib in Resources */,
+				E4CB9111120E915A00B8CCD6 /* RootViewController.xib in Resources */,
+				E4CB9112120E915A00B8CCD6 /* InspectionController.xib in Resources */,
+				E4CB9113120E915A00B8CCD6 /* ContributionController.xib in Resources */,
+				E4CB9114120E915A00B8CCD6 /* IdentificationController.xib in Resources */,
+				E4CB9115120E915A00B8CCD6 /* exercises.png in Resources */,
+				E4CB9116120E915A00B8CCD6 /* lines.png in Resources */,
+				E4CB9117120E915A00B8CCD6 /* goals.png in Resources */,
+				E4CB9118120E915A00B8CCD6 /* login.png in Resources */,
+				E4CB9119120E915A00B8CCD6 /* tips.png in Resources */,
+				E4CB911A120E915A00B8CCD6 /* more.png in Resources */,
+				E4CB911B120E915A00B8CCD6 /* write.png in Resources */,
+				E4CB911C120E915A00B8CCD6 /* ProgressController.xib in Resources */,
+				E4CB911D120E915A00B8CCD6 /* icon.png in Resources */,
+				E4CB911E120E915A00B8CCD6 /* icon@2x.png in Resources */,
+				E4CB911F120E915A00B8CCD6 /* GoalSettingController.xib in Resources */,
+				E4CB9120120E915A00B8CCD6 /* InfoController.xib in Resources */,
+				E4CB9121120E915A00B8CCD6 /* text.png in Resources */,
+				E4CB9122120E915A00B8CCD6 /* set_a_goal.png in Resources */,
+				E4CB9123120E915A00B8CCD6 /* default.png in Resources */,
+				E4CB9124120E915A00B8CCD6 /* broadcast.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+		E4CB9125120E915A00B8CCD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* TalkToHerAppDelegate.m in Sources */,
-				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
-				E439369811D50DD300D6DED9 /* InspirationController.m in Sources */,
-				E4C6AEA511D5415400068008 /* NSString+InflectionSupport.m in Sources */,
-				E4C6AEA611D5415400068008 /* NSData+Additions.m in Sources */,
-				E4C6AEA711D5415400068008 /* NSObject+PropertySupport.m in Sources */,
-				E4C6AEA811D5415400068008 /* NSString+GSub.m in Sources */,
-				E4C6AEA911D5415400068008 /* ObjectiveResourceDateFormatter.m in Sources */,
-				E4C6AEAA11D5415400068008 /* NSObject+SBJSON.m in Sources */,
-				E4C6AEAB11D5415400068008 /* NSString+SBJSON.m in Sources */,
-				E4C6AEAC11D5415400068008 /* SBJSON.m in Sources */,
-				E4C6AEAD11D5415400068008 /* NSArray+JSONSerializableSupport.m in Sources */,
-				E4C6AEAE11D5415400068008 /* NSDictionary+JSONSerializableSupport.m in Sources */,
-				E4C6AEAF11D5415400068008 /* NSObject+JSONSerializableSupport.m in Sources */,
-				E4C6AEB011D5415400068008 /* NSDate+Serialize.m in Sources */,
-				E4C6AEB111D5415400068008 /* NSDictionary+KeyTranslation.m in Sources */,
-				E4C6AEB211D5415400068008 /* NSObject+Serialize.m in Sources */,
-				E4C6AEB311D5415400068008 /* NSString+Serialize.m in Sources */,
-				E4C6AEB411D5415400068008 /* NSNumber+XMLSerializableSupport.m in Sources */,
-				E4C6AEB511D5415400068008 /* FromXMLElementDelegate.m in Sources */,
-				E4C6AEB611D5415400068008 /* NSArray+XMLSerializableSupport.m in Sources */,
-				E4C6AEB711D5415400068008 /* NSDate+XMLSerializableSupport.m in Sources */,
-				E4C6AEB811D5415400068008 /* NSDictionary+XMLSerializableSupport.m in Sources */,
-				E4C6AEB911D5415400068008 /* NSNull+XMLSerializableSupport.m in Sources */,
-				E4C6AEBA11D5415400068008 /* NSObject+XMLSerializableSupport.m in Sources */,
-				E4C6AEBB11D5415400068008 /* NSString+XMLSerializableSupport.m in Sources */,
-				E4C6AEBC11D5415400068008 /* NSObject+ObjectiveResource.m in Sources */,
-				E4C6AEBD11D5415400068008 /* ConnectionManager.m in Sources */,
-				E4C6AEBE11D5415400068008 /* ConnectionDelegate.m in Sources */,
-				E4C6AEBF11D5415400068008 /* NSHTTPURLResponse+Error.m in Sources */,
-				E4C6AEC011D5415400068008 /* ORConnection.m in Sources */,
-				E4C6AEC111D5415400068008 /* Response.m in Sources */,
-				E4C6AEC211D5415400068008 /* NSMutableURLRequest+ResponseType.m in Sources */,
-				E4C6AEC311D5415400068008 /* NSError+Error.m in Sources */,
-				E4C6AEC411D5415400068008 /* ObjectiveResourceConfig.m in Sources */,
-				E4C6AEC911D5421100068008 /* Line.m in Sources */,
-				E4C6AF4911D5522900068008 /* Tip.m in Sources */,
-				E4C6AF4C11D5526800068008 /* Exercise.m in Sources */,
-				E4C6AF4F11D552BD00068008 /* GoalOwnership.m in Sources */,
-				E4E0B2D711D7BF9300C0D0A2 /* DataDelegate.m in Sources */,
-				E40D0DF111D9361B004CC712 /* InspirationCell.m in Sources */,
-				E4A154A011DBFF5700A044D7 /* InspectionController.m in Sources */,
-				E4A1573111DF989700A044D7 /* ContributionController.m in Sources */,
-				E4A1589711E4E2A600A044D7 /* IdentificationController.m in Sources */,
-				E4A158A511E4E49200A044D7 /* UserSession.m in Sources */,
-				E4A158B611E4EA6D00A044D7 /* User.m in Sources */,
-				E44065C111EBB9F700A48898 /* LoaderCell.m in Sources */,
-				E440665011EC002000A48898 /* ASIAuthenticationDialog.m in Sources */,
-				E440665111EC002000A48898 /* ASIDownloadCache.m in Sources */,
-				E440665211EC002000A48898 /* ASIFormDataRequest.m in Sources */,
-				E440665311EC002000A48898 /* ASIHTTPRequest.m in Sources */,
-				E440665411EC002000A48898 /* ASIInputStream.m in Sources */,
-				E440665511EC002000A48898 /* ASINetworkQueue.m in Sources */,
-				E440665E11EC006300A48898 /* Reachability.m in Sources */,
-				E44066D011ECF7BF00A48898 /* Content.xcdatamodel in Sources */,
-				E409694311F1154E0055459F /* ProgressController.m in Sources */,
-				E4D8223011FD14B70014D28A /* ExerciseEntity.m in Sources */,
-				E4D8223311FD14CB0014D28A /* GoalOwnershipEntity.m in Sources */,
-				E4D8109911FE36AD0020AE8B /* LineEntity.m in Sources */,
-				E4D8109A11FE36AD0020AE8B /* TipEntity.m in Sources */,
-				E40017F811FE4251001359B0 /* ContentDelegate.m in Sources */,
-				E4001B4311FF8B8B001359B0 /* UserEntity.m in Sources */,
-				E4C0D7F51201C2A6006AB8AF /* GoalSettingController.m in Sources */,
-				E4C0D80D1201C628006AB8AF /* Goal.m in Sources */,
-				E4C0DB3512031D0A006AB8AF /* InfoController.m in Sources */,
-				E4C0DF3E1204C11D006AB8AF /* Rating.m in Sources */,
-				E4C0DF411204C1AF006AB8AF /* RatingEntity.m in Sources */,
-				E4C0E04B1204F40D006AB8AF /* Tag.m in Sources */,
-				E4C0E04E1204F5AF006AB8AF /* TagEntity.m in Sources */,
-				E4C0E0B612050B2E006AB8AF /* Comment.m in Sources */,
-				E4C0E0B912050BFB006AB8AF /* CommentEntity.m in Sources */,
-				E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */,
-				E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */,
-				E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */,
-				E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */,
-				E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */,
-				E444E87F120D346D009B8CA2 /* Concept.m in Sources */,
-				E444EA0A120E606C009B8CA2 /* BroadcastController.m in Sources */,
+				E4CB9126120E915A00B8CCD6 /* main.m in Sources */,
+				E4CB9127120E915A00B8CCD6 /* TalkToHerAppDelegate.m in Sources */,
+				E4CB9128120E915A00B8CCD6 /* RootViewController.m in Sources */,
+				E4CB9129120E915A00B8CCD6 /* InspirationController.m in Sources */,
+				E4CB912A120E915A00B8CCD6 /* NSString+InflectionSupport.m in Sources */,
+				E4CB912B120E915A00B8CCD6 /* NSData+Additions.m in Sources */,
+				E4CB912C120E915A00B8CCD6 /* NSObject+PropertySupport.m in Sources */,
+				E4CB912D120E915A00B8CCD6 /* NSString+GSub.m in Sources */,
+				E4CB912E120E915A00B8CCD6 /* ObjectiveResourceDateFormatter.m in Sources */,
+				E4CB912F120E915A00B8CCD6 /* NSObject+SBJSON.m in Sources */,
+				E4CB9130120E915A00B8CCD6 /* NSString+SBJSON.m in Sources */,
+				E4CB9131120E915A00B8CCD6 /* SBJSON.m in Sources */,
+				E4CB9132120E915A00B8CCD6 /* NSArray+JSONSerializableSupport.m in Sources */,
+				E4CB9133120E915A00B8CCD6 /* NSDictionary+JSONSerializableSupport.m in Sources */,
+				E4CB9134120E915A00B8CCD6 /* NSObject+JSONSerializableSupport.m in Sources */,
+				E4CB9135120E915A00B8CCD6 /* NSDate+Serialize.m in Sources */,
+				E4CB9136120E915A00B8CCD6 /* NSDictionary+KeyTranslation.m in Sources */,
+				E4CB9137120E915A00B8CCD6 /* NSObject+Serialize.m in Sources */,
+				E4CB9138120E915A00B8CCD6 /* NSString+Serialize.m in Sources */,
+				E4CB9139120E915A00B8CCD6 /* NSNumber+XMLSerializableSupport.m in Sources */,
+				E4CB913A120E915A00B8CCD6 /* FromXMLElementDelegate.m in Sources */,
+				E4CB913B120E915A00B8CCD6 /* NSArray+XMLSerializableSupport.m in Sources */,
+				E4CB913C120E915A00B8CCD6 /* NSDate+XMLSerializableSupport.m in Sources */,
+				E4CB913D120E915A00B8CCD6 /* NSDictionary+XMLSerializableSupport.m in Sources */,
+				E4CB913E120E915A00B8CCD6 /* NSNull+XMLSerializableSupport.m in Sources */,
+				E4CB913F120E915A00B8CCD6 /* NSObject+XMLSerializableSupport.m in Sources */,
+				E4CB9140120E915A00B8CCD6 /* NSString+XMLSerializableSupport.m in Sources */,
+				E4CB9141120E915A00B8CCD6 /* NSObject+ObjectiveResource.m in Sources */,
+				E4CB9142120E915A00B8CCD6 /* ConnectionManager.m in Sources */,
+				E4CB9143120E915A00B8CCD6 /* ConnectionDelegate.m in Sources */,
+				E4CB9144120E915A00B8CCD6 /* NSHTTPURLResponse+Error.m in Sources */,
+				E4CB9145120E915A00B8CCD6 /* ORConnection.m in Sources */,
+				E4CB9146120E915A00B8CCD6 /* Response.m in Sources */,
+				E4CB9147120E915A00B8CCD6 /* NSMutableURLRequest+ResponseType.m in Sources */,
+				E4CB9148120E915A00B8CCD6 /* NSError+Error.m in Sources */,
+				E4CB9149120E915A00B8CCD6 /* ObjectiveResourceConfig.m in Sources */,
+				E4CB914A120E915A00B8CCD6 /* Line.m in Sources */,
+				E4CB914B120E915A00B8CCD6 /* Tip.m in Sources */,
+				E4CB914C120E915A00B8CCD6 /* Exercise.m in Sources */,
+				E4CB914D120E915A00B8CCD6 /* GoalOwnership.m in Sources */,
+				E4CB914E120E915A00B8CCD6 /* DataDelegate.m in Sources */,
+				E4CB914F120E915A00B8CCD6 /* InspirationCell.m in Sources */,
+				E4CB9150120E915A00B8CCD6 /* InspectionController.m in Sources */,
+				E4CB9151120E915A00B8CCD6 /* ContributionController.m in Sources */,
+				E4CB9152120E915A00B8CCD6 /* IdentificationController.m in Sources */,
+				E4CB9153120E915A00B8CCD6 /* UserSession.m in Sources */,
+				E4CB9154120E915A00B8CCD6 /* User.m in Sources */,
+				E4CB9155120E915A00B8CCD6 /* LoaderCell.m in Sources */,
+				E4CB9156120E915A00B8CCD6 /* ASIAuthenticationDialog.m in Sources */,
+				E4CB9157120E915A00B8CCD6 /* ASIDownloadCache.m in Sources */,
+				E4CB9158120E915A00B8CCD6 /* ASIFormDataRequest.m in Sources */,
+				E4CB9159120E915A00B8CCD6 /* ASIHTTPRequest.m in Sources */,
+				E4CB915A120E915A00B8CCD6 /* ASIInputStream.m in Sources */,
+				E4CB915B120E915A00B8CCD6 /* ASINetworkQueue.m in Sources */,
+				E4CB915C120E915A00B8CCD6 /* Reachability.m in Sources */,
+				E4CB915D120E915A00B8CCD6 /* Content.xcdatamodel in Sources */,
+				E4CB915E120E915A00B8CCD6 /* ProgressController.m in Sources */,
+				E4CB915F120E915A00B8CCD6 /* ExerciseEntity.m in Sources */,
+				E4CB9160120E915A00B8CCD6 /* GoalOwnershipEntity.m in Sources */,
+				E4CB9161120E915A00B8CCD6 /* LineEntity.m in Sources */,
+				E4CB9162120E915A00B8CCD6 /* TipEntity.m in Sources */,
+				E4CB9163120E915A00B8CCD6 /* ContentDelegate.m in Sources */,
+				E4CB9164120E915A00B8CCD6 /* UserEntity.m in Sources */,
+				E4CB9165120E915A00B8CCD6 /* GoalSettingController.m in Sources */,
+				E4CB9166120E915A00B8CCD6 /* Goal.m in Sources */,
+				E4CB9167120E915A00B8CCD6 /* InfoController.m in Sources */,
+				E4CB9168120E915A00B8CCD6 /* Rating.m in Sources */,
+				E4CB9169120E915A00B8CCD6 /* RatingEntity.m in Sources */,
+				E4CB916A120E915A00B8CCD6 /* Tag.m in Sources */,
+				E4CB916B120E915A00B8CCD6 /* TagEntity.m in Sources */,
+				E4CB916C120E915A00B8CCD6 /* Comment.m in Sources */,
+				E4CB916D120E915A00B8CCD6 /* CommentEntity.m in Sources */,
+				E4CB916E120E915A00B8CCD6 /* ConceptEntity.m in Sources */,
+				E4CB916F120E915A00B8CCD6 /* FirstClassContentPiece.m in Sources */,
+				E4CB9170120E915A00B8CCD6 /* FirstClassContentPiece+Ratable.m in Sources */,
+				E4CB9171120E915A00B8CCD6 /* FirstClassContentPiece+Taggable.m in Sources */,
+				E4CB9172120E915A00B8CCD6 /* FirstClassContentPiece+Commendable.m in Sources */,
+				E4CB9173120E915A00B8CCD6 /* Concept.m in Sources */,
+				E4CB9174120E915A00B8CCD6 /* BroadcastController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1D6058940D05DD3E006BFB54 /* Debug */ = {
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
+				MOMC_NO_WARNINGS = NO;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
+				"PROVISIONING_PROFILE[sdk=*]" = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
+				MOMC_NO_WARNINGS = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
+				"PROVISIONING_PROFILE[sdk=*]" = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+		E4CB9181120E915A00B8CCD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -941,7 +978,7 @@
 			};
 			name = Debug;
 		};
-		1D6058950D05DD3E006BFB54 /* Release */ = {
+		E4CB9182120E915A00B8CCD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -956,54 +993,23 @@
 			};
 			name = Release;
 		};
-		C01FCF4F08A954540054247B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
-				MOMC_NO_WARNINGS = NO;
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
-			};
-			name = Debug;
-		};
-		C01FCF5008A954540054247B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
-				MOMC_NO_WARNINGS = NO;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TalkToHer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1D6058940D05DD3E006BFB54 /* Debug */,
-				1D6058950D05DD3E006BFB54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TalkToHer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CB9180120E915A00B8CCD6 /* Build configuration list for PBXNativeTarget "TalkToHer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CB9181120E915A00B8CCD6 /* Debug */,
+				E4CB9182120E915A00B8CCD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

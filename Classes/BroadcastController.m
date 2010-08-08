@@ -33,8 +33,9 @@
 -(void)viewWillAppear:(BOOL)animated {
 	CGSize drawnSize = CGSizeMake(480, 500);
 	NSInteger fontSize;
-	for (fontSize = 86; drawnSize.height > self.view.frame.size.width; fontSize--) {
-		drawnSize = [display.text sizeWithFont:[UIFont fontWithName:@"TrebuchetMS" size:fontSize] constrainedToSize:self.view.frame.size lineBreakMode:UILineBreakModeWordWrap];
+	CGSize constrain = CGSizeMake(420, FLT_MAX);
+	for (fontSize = 86; drawnSize.height > 300; fontSize--) {
+		drawnSize = [display.text sizeWithFont:[UIFont fontWithName:@"TrebuchetMS" size:fontSize] constrainedToSize:constrain lineBreakMode:UILineBreakModeWordWrap];
 	}
 	display.font = [UIFont fontWithName:@"TrebuchetMS" size:fontSize];
 	[self.view addSubview:display];
@@ -58,7 +59,7 @@
 -(void)flashScreen {
 	self.view.alpha = 0.0;
 	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.65];
+	[UIView setAnimationDuration:3.65];
 	self.view.alpha = 1.0;
 	[UIView commitAnimations];
 }

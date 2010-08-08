@@ -37,4 +37,5 @@
 -(void)markForDelayedSubmission;
 -(void)hasBeenSubmitted;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
++(NSArray *)findAllForUserWithId:(NSString *)personId;
 @end
