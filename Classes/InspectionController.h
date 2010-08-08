@@ -14,14 +14,24 @@
 	UILabel *rating;
 	UITextField *tag_field;
 	UITextField *comment_field;
+	UISlider *slider;
+	UIButton *tag_button;
+	UIButton *comment_button;
 	BOOL comments_updated;
+	UIActivityIndicatorView *comment_spinner;
 	BOOL ratings_updated;
+	UIActivityIndicatorView *rating_spinner;
 	BOOL tags_updated;
+	UIActivityIndicatorView *tag_spinner;
 }
 
 @property (nonatomic, retain) id content;
 @property (nonatomic, retain) UITextField *tag_field;
 @property (nonatomic, retain) UITextField *comment_field;
+@property (nonatomic, retain) UISlider *slider;
+@property (nonatomic, retain) UILabel *rating;
+@property (nonatomic, retain) UIButton *tag_button;
+@property (nonatomic, retain) UIButton *comment_button;
 
 -(id)initWithContent:(id)contentObj;
 -(id)inspect_content:(id)contentObj;

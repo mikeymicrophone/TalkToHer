@@ -56,9 +56,9 @@
 						  andPassword:[[self class] getRemotePassword]];
 	NSArray *ratings;
 	@try {
-		ratings = [self allFromXMLData:res.body];
+		ratings = [self fromXMLData:res.body];
 	}
-	@catch (NSException * e) {
+	@catch (NSException *e) {
 		ratings = [NSArray array];
 	}
     return ratings;

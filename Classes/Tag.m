@@ -62,7 +62,7 @@
 	@try {
 		tags = [self allFromXMLData:res.body];
 	}
-	@catch (NSException * e) {
+	@catch (NSException *e) {
 		tags = [NSArray array];
 	}
 	return tags;

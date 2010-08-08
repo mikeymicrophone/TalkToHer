@@ -11,6 +11,7 @@
 #import "CommentEntity.h"
 #import "Response.h"
 #import "ORConnection.h"
+#import "Foundation/NSException.h"
 
 @implementation Comment
 
@@ -57,7 +58,7 @@
 	@try {
 		comments = [self allFromXMLData:res.body];
 	}
-	@catch (NSException * e) {
+	@catch (NSException *e) {
 		comments = [NSArray array];
 	}
     return comments;

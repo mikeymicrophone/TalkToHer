@@ -18,7 +18,7 @@
 
 @implementation InspectionController
 
-@synthesize content, tag_field, comment_field;
+@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -29,6 +29,15 @@
 	tags_updated = NO;
 	ratings_updated = NO;
 
+	self.slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
+	self.rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
+	self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
+	self.tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	tag_button.frame = CGRectMake(265, 3, 44, 44);
+	self.comment_field = [[UITextField alloc] initWithFrame:CGRectMake(118, 8, 140, 24)];
+	self.comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	comment_button.frame = CGRectMake(265, 3, 44, 44);	
+	
 	return self;
 }
 
@@ -47,12 +56,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 */
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -68,13 +71,41 @@
     [super viewDidDisappear:animated];
 }
 */
-/*
-// Override to allow orientations other than the default portrait orientation.
+
+#pragma mark -
+#pragma mark rotation control
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-*/
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+	[self moveButtonsForOrientation:self.interfaceOrientation];
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+	[self moveButtonsForOrientation:toInterfaceOrientation];
+}
+
+-(void)moveButtonsForOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+		slider.frame = CGRectMake(slider.frame.origin.x, slider.frame.origin.y, 180, slider.frame.size.height);
+		rating.frame = CGRectMake(273, rating.frame.origin.y, rating.frame.size.width, rating.frame.size.height);
+		tag_field.frame = CGRectMake(tag_field.frame.origin.x, tag_field.frame.origin.y, 180, tag_field.frame.size.height);
+		tag_button.frame = CGRectMake(265, tag_button.frame.origin.y, tag_button.frame.size.width, tag_button.frame.size.height);
+		comment_field.frame = CGRectMake(comment_field.frame.origin.x, comment_field.frame.origin.y, 140, comment_field.frame.size.height);
+		comment_button.frame = CGRectMake(265, comment_button.frame.origin.y, comment_button.frame.size.width, comment_button.frame.size.height);		
+	} else {
+		slider.frame = CGRectMake(slider.frame.origin.x, slider.frame.origin.y, 340, slider.frame.size.height);
+		rating.frame = CGRectMake(433, rating.frame.origin.y, rating.frame.size.width, rating.frame.size.height);
+		tag_field.frame = CGRectMake(tag_field.frame.origin.x, tag_field.frame.origin.y, 340, tag_field.frame.size.height);
+		tag_button.frame = CGRectMake(425, tag_button.frame.origin.y, tag_button.frame.size.width, tag_button.frame.size.height);
+		comment_field.frame = CGRectMake(comment_field.frame.origin.x, comment_field.frame.origin.y, 300, comment_field.frame.size.height);
+		comment_button.frame = CGRectMake(425, comment_button.frame.origin.y, comment_button.frame.size.width, comment_button.frame.size.height);
+	}
+	
+}
 
 #pragma mark -
 #pragma mark Table view data source
@@ -122,14 +153,12 @@
 			[cell setAdditional_text:[content ratingCountText]];
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
-				UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
 				slider.maximumValue = 5.0;
 				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
 				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:slider];
 				slider.value = [[content myRating] floatValue];
 				
-				rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
 				rating.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
 				[cell addSubview:rating];
 				if ([[content myRating] floatValue] > 0.0) {
@@ -150,6 +179,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (!ratings_updated) {
 			[cell start_spinning];
+			rating_spinner = [cell spinner];
 			[cell bringSubviewToFront:cell.spinner];
 		}
 	} else if (indexPath.section == 2) {
@@ -162,14 +192,11 @@
 			[cell setAdditional_text:[content tagSummary]];
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
-				self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
 				tag_field.borderStyle = UITextBorderStyleRoundedRect;
 				tag_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
 				tag_field.placeholder = @"separate, with commas";
 				tag_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 				
-				UIButton *tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-				tag_button.frame = CGRectMake(265, 3, 44, 44);
 				[tag_button setTitle:@"+" forState:nil];
 				tag_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:30];
 				[tag_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
@@ -183,6 +210,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (!tags_updated) {
 			[cell start_spinning];
+			tag_spinner = [cell spinner];
 			[cell bringSubviewToFront:cell.spinner];
 		}		
     } else if (indexPath.section == 3) {
@@ -196,13 +224,10 @@
 				[cell setMain_text:[content commentCountText]];
 				
 				if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
-					self.comment_field = [[UITextField alloc] initWithFrame:CGRectMake(118, 8, 140, 24)];
 					comment_field.borderStyle = UITextBorderStyleRoundedRect;
 					comment_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
 					comment_field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 					
-					UIButton *comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-					comment_button.frame = CGRectMake(265, 3, 44, 44);
 					comment_button.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:23];
 					[comment_button setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
 					[comment_button setTitle:@"!" forState:nil];
@@ -216,6 +241,7 @@
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			if (!comments_updated) {
 				[cell start_spinning];
+				comment_spinner = [cell spinner];
 				[cell bringSubviewToFront:cell.spinner];
 			}
 		} else {
@@ -285,7 +311,20 @@
 	NSIndexSet *set;
 	if ([type isEqualToString:@"CommentEntity"]) {
 		comments_updated = YES;
-		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"3 1")];
+		NSInteger previous_comments = [[content commentCount] integerValue];
+		[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
+		NSInteger current_comments = [[content commentCount] integerValue];
+		if (current_comments > previous_comments) {
+			NSInteger new_comments = current_comments - previous_comments;
+			NSMutableArray *new_comment_indices = [NSMutableArray arrayWithCapacity:new_comments];
+			for (NSInteger i = 0; i < new_comments; i++) {
+				NSUInteger indexSet[] = {3, i + previous_comments + 1};
+				NSIndexPath *indexOfComment = [NSIndexPath indexPathWithIndexes:indexSet length:2];
+				[new_comment_indices insertObject:indexOfComment atIndex:i];
+			}
+			[self.tableView insertRowsAtIndexPaths:new_comment_indices withRowAnimation:UITableViewRowAnimationBottom];
+		}
+		[comment_spinner stopAnimating];
 	} else if ([type isEqualToString:@"RatingEntity"]) {
 		ratings_updated = YES;
 		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
@@ -293,8 +332,6 @@
 		tags_updated = YES;
 		set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2 1")];
 	}
-	[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
-	[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
 }
 
 #pragma mark -
@@ -427,6 +464,11 @@
 
 - (void)dealloc {
 	self.content = nil;
+	self.slider = nil;
+	self.comment_field = nil;
+	self.comment_button = nil;
+	self.tag_field = nil;
+	self.tag_button = nil;
     [super dealloc];
 }
 
