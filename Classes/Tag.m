@@ -58,11 +58,10 @@
     Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
 	NSError **aError;
-	if([res isError] && aError) {
+	if([res isError]) {
 		*aError = res.error;
 		return nil;
-	}
-	else {
+	} else {
 		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
 }
