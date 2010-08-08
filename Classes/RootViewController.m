@@ -120,22 +120,12 @@
 		exercises_cell.coloredLabel.center = CGPointMake(160, lines_cell.coloredLabel.center.y);
 		goals_cell.coloredLabel.center = CGPointMake(160, goals_cell.coloredLabel.center.y);
 		
-		lines_cell.spinner.center = CGPointMake(290, lines_cell.spinner.center.y);
-		tips_cell.spinner.center = CGPointMake(290, tips_cell.spinner.center.y);
-		exercises_cell.spinner.center = CGPointMake(290, exercises_cell.spinner.center.y);
-		goals_cell.spinner.center = CGPointMake(290, goals_cell.spinner.center.y);
-		
 		site.center = CGPointMake(242, site.center.y);
 	} else {
 		lines_cell.coloredLabel.center = CGPointMake(100, lines_cell.coloredLabel.center.y);
 		tips_cell.coloredLabel.center = CGPointMake(170, lines_cell.coloredLabel.center.y);
 		exercises_cell.coloredLabel.center = CGPointMake(265, lines_cell.coloredLabel.center.y);
 		goals_cell.coloredLabel.center = CGPointMake(350, goals_cell.coloredLabel.center.y);
-		
-		lines_cell.spinner.center = CGPointMake(450, lines_cell.spinner.center.y);
-		tips_cell.spinner.center = CGPointMake(450, tips_cell.spinner.center.y);
-		exercises_cell.spinner.center = CGPointMake(450, exercises_cell.spinner.center.y);
-		goals_cell.spinner.center = CGPointMake(450, goals_cell.spinner.center.y);
 		
 		site.center = CGPointMake(400, site.center.y);
 	}	

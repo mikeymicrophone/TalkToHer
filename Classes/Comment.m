@@ -54,14 +54,14 @@
 	
     Response *res = [ORConnection get:commentsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
-	NSArray *comments;
-	@try {
-		comments = [self allFromXMLData:res.body];
+	NSError **aError;
+	if([res isError] && aError) {
+		*aError = res.error;
+		return nil;
 	}
-	@catch (NSException *e) {
-		comments = [NSArray array];
+	else {
+		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
-    return comments;
 }
 
 @end

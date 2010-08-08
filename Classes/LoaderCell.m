@@ -21,16 +21,22 @@
     return self;
 }
 
+-(void)layoutSubviews {
+	[super layoutSubviews];
+	[coloredLabel removeFromSuperview];
+	[spinner removeFromSuperview];
+	[self addSubview:coloredLabel];
+	spinner.center = CGPointMake(self.frame.size.width - 30, 23);
+	[self addSubview:spinner];
+}
+
 -(void)addColoredLabel {
 	self.coloredLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self reuseIdentifier]]];
 	coloredLabel.center = self.center;
-	[self addSubview:coloredLabel];
 }
 
 -(void)addSpinner {
 	self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	spinner.center = CGPointMake(290, 23);
-	[self addSubview:spinner];
 }
 
 -(void)stop_spinning {

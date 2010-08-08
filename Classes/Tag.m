@@ -55,17 +55,16 @@
 						  [taggable getRemoteId],
 						  [self getRemoteCollectionName],
 						  [self getRemoteProtocolExtension]];
-	
     Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
-    NSArray *tags;
-	@try {
-		tags = [self allFromXMLData:res.body];
+	NSError **aError;
+	if([res isError] && aError) {
+		*aError = res.error;
+		return nil;
 	}
-	@catch (NSException *e) {
-		tags = [NSArray array];
+	else {
+		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
-	return tags;
 }
 
 @end

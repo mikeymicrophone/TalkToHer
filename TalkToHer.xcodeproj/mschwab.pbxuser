@@ -45,6 +45,7 @@
 		activeSDKPreference = iphonesimulator4.0;
 		activeTarget = E4CB910D120E915A00B8CCD6 /* TalkToHer */;
 		addToTargets = (
+			E4CB910D120E915A00B8CCD6 /* TalkToHer */,
 		);
 		breakpoints = (
 		);
@@ -224,9 +225,9 @@
 	};
 	E40D0DF011D9361B004CC712 /* InspirationCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1279, 1365}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1279, 1378}}";
 			sepNavSelRange = "{1573, 38}";
-			sepNavVisRange = "{1309, 1237}";
+			sepNavVisRange = "{1309, 1235}";
 		};
 	};
 	E439365211D453CE00D6DED9 /* Source Control */ = {
@@ -254,7 +255,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {922, 4732}}";
 			sepNavSelRange = "{2007, 1003}";
-			sepNavVisRange = "{1917, 1109}";
+			sepNavVisRange = "{0, 904}";
 			sepNavWindowFrame = "{{134, 109}, {933, 559}}";
 		};
 	};
@@ -503,9 +504,9 @@
 	};
 	E444EA09120E606C009B8CA2 /* BroadcastController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {938, 1391}}";
-			sepNavSelRange = "{2390, 0}";
-			sepNavVisRange = "{354, 281}";
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 1092}}";
+			sepNavSelRange = "{527, 0}";
+			sepNavVisRange = "{0, 898}";
 		};
 	};
 	E444EA14120E6A25009B8CA2 /* PBXTextBookmark */ = {
@@ -533,7 +534,7 @@
 		fRef = E444EA09120E606C009B8CA2 /* BroadcastController.m */;
 		name = "BroadcastController.m: 62";
 		rLen = 0;
-		rLoc = 2218;
+		rLoc = 2230;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 29;
@@ -606,17 +607,17 @@
 	};
 	E4A1549D11DBFF5700A044D7 /* InspectionController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {909, 624}}";
-			sepNavSelRange = "{454, 0}";
-			sepNavVisRange = "{44, 1061}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 637}}";
+			sepNavSelRange = "{471, 0}";
+			sepNavVisRange = "{44, 986}";
 		};
 	};
 	E4A1549E11DBFF5700A044D7 /* InspectionController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1506, 232}\";\n            s = 0;\n        },\n                {\n            r = \"{1741, 80}\";\n            s = 0;\n        },\n                {\n            r = \"{1824, 88}\";\n            s = 0;\n        },\n                {\n            r = \"{1915, 86}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 19915}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {936, 6708}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 6864}}";
 			sepNavSelRange = "{15098, 0}";
-			sepNavVisRange = "{14428, 1530}";
+			sepNavVisRange = "{9670, 1466}";
 		};
 	};
 	E4A1572E11DF989700A044D7 /* ContributionController.h */ = {

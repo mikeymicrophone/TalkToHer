@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+@class InspirationCell;
 
 @interface InspectionController : UITableViewController <MFMailComposeViewControllerDelegate> {
 	id content;
@@ -17,6 +18,9 @@
 	UISlider *slider;
 	UIButton *tag_button;
 	UIButton *comment_button;
+	InspirationCell *text_her;
+	InspirationCell *broadcast;
+	BOOL comments_updated;
 	UIActivityIndicatorView *comment_spinner;
 	BOOL ratings_updated;
 	UIActivityIndicatorView *rating_spinner;
@@ -34,6 +38,8 @@
 @property (nonatomic, retain) UILabel *rating;
 @property (nonatomic, retain) UIButton *tag_button;
 @property (nonatomic, retain) UIButton *comment_button;
+@property (nonatomic, retain) InspirationCell *text_her;
+@property (nonatomic, retain) InspirationCell *broadcast;
 
 -(id)initWithContent:(id)contentObj;
 -(id)inspect_content:(id)contentObj;

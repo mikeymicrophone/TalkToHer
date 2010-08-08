@@ -54,14 +54,14 @@
 	
     Response *res = [ORConnection get:ratingsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
-	NSArray *ratings;
-	@try {
-		ratings = [self fromXMLData:res.body];
+	NSError **aError;
+	if([res isError] && aError) {
+		*aError = res.error;
+		return nil;
 	}
-	@catch (NSException *e) {
-		ratings = [NSArray array];
+	else {
+		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
-    return ratings;
 }
 
 @end

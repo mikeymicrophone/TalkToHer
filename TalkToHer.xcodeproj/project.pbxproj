@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4771CC3120F396A00E497D5 /* text_her.png in Resources */ = {isa = PBXBuildFile; fileRef = E4771CC2120F396A00E497D5 /* text_her.png */; };
 		E4CB910F120E915A00B8CCD6 /* InspirationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCD11D514F000068008 /* InspirationController.xib */; };
 		E4CB9110120E915A00B8CCD6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCE11D514F000068008 /* MainWindow.xib */; };
 		E4CB9111120E915A00B8CCD6 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6ACCF11D514F000068008 /* RootViewController.xib */; };
@@ -25,7 +26,6 @@
 		E4CB911E120E915A00B8CCD6 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4001D1E12006E6B001359B0 /* icon@2x.png */; };
 		E4CB911F120E915A00B8CCD6 /* GoalSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0D7F41201C2A6006AB8AF /* GoalSettingController.xib */; };
 		E4CB9120120E915A00B8CCD6 /* InfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DB3412031D0A006AB8AF /* InfoController.xib */; };
-		E4CB9121120E915A00B8CCD6 /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0DEDC1204A654006AB8AF /* text.png */; };
 		E4CB9122120E915A00B8CCD6 /* set_a_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA419120615B700266C34 /* set_a_goal.png */; };
 		E4CB9123120E915A00B8CCD6 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4DEA4B71206309800266C34 /* default.png */; };
 		E4CB9124120E915A00B8CCD6 /* broadcast.png in Resources */ = {isa = PBXBuildFile; fileRef = E444EA01120E5F05009B8CA2 /* broadcast.png */; };
@@ -186,6 +186,7 @@
 		E444EA01120E5F05009B8CA2 /* broadcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = broadcast.png; sourceTree = "<group>"; };
 		E444EA08120E606C009B8CA2 /* BroadcastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastController.h; sourceTree = "<group>"; };
 		E444EA09120E606C009B8CA2 /* BroadcastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastController.m; sourceTree = "<group>"; };
+		E4771CC2120F396A00E497D5 /* text_her.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_her.png; sourceTree = "<group>"; };
 		E47ED3FA120CD3770011DA3E /* ConceptEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptEntity.h; sourceTree = "<group>"; };
 		E47ED3FB120CD3770011DA3E /* ConceptEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptEntity.m; sourceTree = "<group>"; };
 		E47ED3FF120CE1D70011DA3E /* FirstClassContentPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstClassContentPiece.h; sourceTree = "<group>"; };
@@ -213,7 +214,6 @@
 		E4C0DB3212031D0A006AB8AF /* InfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoController.h; sourceTree = "<group>"; };
 		E4C0DB3312031D0A006AB8AF /* InfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoController.m; sourceTree = "<group>"; };
 		E4C0DB3412031D0A006AB8AF /* InfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoController.xib; path = Classes/InfoController.xib; sourceTree = "<group>"; };
-		E4C0DEDC1204A654006AB8AF /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 		E4C0DF3C1204C11D006AB8AF /* Rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
 		E4C0DF3D1204C11D006AB8AF /* Rating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rating.m; sourceTree = "<group>"; };
 		E4C0DF3F1204C1AF006AB8AF /* RatingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingEntity.h; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 				E419E36D11F0199500F400DD /* login.png */,
 				E419E38011F0236E00F400DD /* write.png */,
 				E419E37C11F0224800F400DD /* more.png */,
-				E4C0DEDC1204A654006AB8AF /* text.png */,
+				E4771CC2120F396A00E497D5 /* text_her.png */,
 				E4DEA419120615B700266C34 /* set_a_goal.png */,
 				E444EA01120E5F05009B8CA2 /* broadcast.png */,
 				E4A1573011DF989700A044D7 /* ContributionController.xib */,
@@ -826,10 +826,10 @@
 				E4CB911E120E915A00B8CCD6 /* icon@2x.png in Resources */,
 				E4CB911F120E915A00B8CCD6 /* GoalSettingController.xib in Resources */,
 				E4CB9120120E915A00B8CCD6 /* InfoController.xib in Resources */,
-				E4CB9121120E915A00B8CCD6 /* text.png in Resources */,
 				E4CB9122120E915A00B8CCD6 /* set_a_goal.png in Resources */,
 				E4CB9123120E915A00B8CCD6 /* default.png in Resources */,
 				E4CB9124120E915A00B8CCD6 /* broadcast.png in Resources */,
+				E4771CC3120F396A00E497D5 /* text_her.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

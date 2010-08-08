@@ -19,7 +19,7 @@
 
 @implementation InspectionController
 
-@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating;
+@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -36,7 +36,9 @@
 	tag_button.frame = CGRectMake(265, 3, 44, 44);
 	self.comment_field = [[UITextField alloc] initWithFrame:CGRectMake(118, 8, 140, 24)];
 	self.comment_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	comment_button.frame = CGRectMake(265, 3, 44, 44);	
+	comment_button.frame = CGRectMake(265, 3, 44, 44);
+	self.text_her = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"text_her"] autorelease];
+	self.broadcast = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"broadcast"] autorelease];
 	
 	return self;
 }
@@ -95,7 +97,9 @@
 		tag_field.frame = CGRectMake(tag_field.frame.origin.x, tag_field.frame.origin.y, 180, tag_field.frame.size.height);
 		tag_button.frame = CGRectMake(265, tag_button.frame.origin.y, tag_button.frame.size.width, tag_button.frame.size.height);
 		comment_field.frame = CGRectMake(comment_field.frame.origin.x, comment_field.frame.origin.y, 140, comment_field.frame.size.height);
-		comment_button.frame = CGRectMake(265, comment_button.frame.origin.y, comment_button.frame.size.width, comment_button.frame.size.height);		
+		comment_button.frame = CGRectMake(265, comment_button.frame.origin.y, comment_button.frame.size.width, comment_button.frame.size.height);
+		text_her.coloredLabel.center = CGPointMake(160, text_her.coloredLabel.center.y);
+		broadcast.coloredLabel.center = CGPointMake(160, broadcast.coloredLabel.center.y);
 	} else {
 		slider.frame = CGRectMake(slider.frame.origin.x, slider.frame.origin.y, 340, slider.frame.size.height);
 		rating.frame = CGRectMake(433, rating.frame.origin.y, rating.frame.size.width, rating.frame.size.height);
@@ -103,6 +107,8 @@
 		tag_button.frame = CGRectMake(425, tag_button.frame.origin.y, tag_button.frame.size.width, tag_button.frame.size.height);
 		comment_field.frame = CGRectMake(comment_field.frame.origin.x, comment_field.frame.origin.y, 300, comment_field.frame.size.height);
 		comment_button.frame = CGRectMake(425, comment_button.frame.origin.y, comment_button.frame.size.width, comment_button.frame.size.height);
+		text_her.coloredLabel.center = CGPointMake(240, text_her.coloredLabel.center.y);
+		broadcast.coloredLabel.center = CGPointMake(300, broadcast.coloredLabel.center.y);
 	}
 	
 }
@@ -239,9 +245,11 @@
 				}
 			}
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
-			[cell start_spinning];
-			comment_spinner = [cell spinner];
-			[cell bringSubviewToFront:cell.spinner];
+			if (!comments_updated) {
+				[cell start_spinning];
+				comment_spinner = [cell spinner];
+				[cell bringSubviewToFront:cell.spinner];
+			}
 		} else {
 			CommentEntity *comment = [[content comments] objectAtIndex:indexPath.row - 1];
 			NSString *identifier = [NSString stringWithFormat:@"CommentEntity_%@", [comment getRemoteId]];
@@ -262,30 +270,33 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	} else if (indexPath.section == 5) {
 		if ([MFMessageComposeViewController canSendText]) {
-			CellIdentifier = @"text";
+			CellIdentifier = @"text_her";
 			
-			cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			cell = text_her;
 			if (cell == nil) {
 				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+				self.text_her = cell;
 			}
 			cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		} else {
 			CellIdentifier = @"broadcast";
 			
-			cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			cell = broadcast;
 			if (cell == nil) {
 				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+				self.broadcast = cell;
 			}
 			cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		}
 	} else if (indexPath.section == 6) {
 		CellIdentifier = @"broadcast";
 		
-		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		cell = broadcast;
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			self.broadcast = cell;
 		}
-		cell.selectionStyle = UITableViewCellSelectionStyleGray;		
+		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	}
 
     return cell;
@@ -331,6 +342,7 @@
 	}
 	[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
 	if ([type isEqualToString:@"CommentEntity"]) {
+		comments_updated = YES;
 		NSInteger current_comments = [[content commentCount] integerValue];
 		if (current_comments > previous_comments) {
 			NSInteger new_comments = current_comments - previous_comments;
@@ -344,6 +356,7 @@
 		}
 		[comment_spinner stopAnimating];
 	} else if ([type isEqualToString:@"RatingEntity"]) {
+		ratings_updated = YES;
 		NSInteger current_ratings = [content ratingCount];
 		if (current_ratings > previous_ratings) {
 			ratings_updated = YES;
@@ -353,6 +366,7 @@
 			[rating_spinner stopAnimating]; 
 		 }
 	} else if ([type isEqualToString:@"TagEntity"]) {
+		tags_updated = YES;
 		NSInteger current_tags = [content tagCount];
 		if (current_tags > previous_tags) {
 			NSString *tag_in_progress = nil;
