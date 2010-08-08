@@ -18,6 +18,7 @@
 -(Line *)objectiveResource;
 -(NSString *)main_text;
 -(NSString *)additional_text;
+-(NSString *)full_text;
 -(void)setWrittenContent:(NSString *)writtenContent;
 -(BOOL)matches:(NSManagedObject *)po;
 -(void)markForDelayedSubmission;

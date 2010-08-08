@@ -22,6 +22,10 @@
 	return @"";
 }
 
+-(NSString *)full_text {
+	return [self phrasing];
+}
+
 -(void)setWrittenContent:(NSString *)writtenContent {
 	[self setPhrasing:writtenContent];
 }

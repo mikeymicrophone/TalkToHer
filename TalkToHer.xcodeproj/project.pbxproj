@@ -46,6 +46,8 @@
 		E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */; };
 		E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */; };
 		E444E87F120D346D009B8CA2 /* Concept.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E87E120D346D009B8CA2 /* Concept.m */; };
+		E444EA02120E5F05009B8CA2 /* broadcast.png in Resources */ = {isa = PBXBuildFile; fileRef = E444EA01120E5F05009B8CA2 /* broadcast.png */; };
+		E444EA0A120E606C009B8CA2 /* BroadcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = E444EA09120E606C009B8CA2 /* BroadcastController.m */; };
 		E47ED3FC120CD3770011DA3E /* ConceptEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED3FB120CD3770011DA3E /* ConceptEntity.m */; };
 		E47ED401120CE1D70011DA3E /* FirstClassContentPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED400120CE1D70011DA3E /* FirstClassContentPiece.m */; };
 		E47ED404120CE2260011DA3E /* FirstClassContentPiece+Ratable.m in Sources */ = {isa = PBXBuildFile; fileRef = E47ED403120CE2260011DA3E /* FirstClassContentPiece+Ratable.m */; };
@@ -183,6 +185,9 @@
 		E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirstClassContentPiece+Commendable.m"; sourceTree = "<group>"; };
 		E444E87D120D346D009B8CA2 /* Concept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concept.h; sourceTree = "<group>"; };
 		E444E87E120D346D009B8CA2 /* Concept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Concept.m; sourceTree = "<group>"; };
+		E444EA01120E5F05009B8CA2 /* broadcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = broadcast.png; sourceTree = "<group>"; };
+		E444EA08120E606C009B8CA2 /* BroadcastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastController.h; sourceTree = "<group>"; };
+		E444EA09120E606C009B8CA2 /* BroadcastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastController.m; sourceTree = "<group>"; };
 		E47ED3FA120CD3770011DA3E /* ConceptEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptEntity.h; sourceTree = "<group>"; };
 		E47ED3FB120CD3770011DA3E /* ConceptEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptEntity.m; sourceTree = "<group>"; };
 		E47ED3FF120CE1D70011DA3E /* FirstClassContentPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstClassContentPiece.h; sourceTree = "<group>"; };
@@ -399,6 +404,7 @@
 				E419E37C11F0224800F400DD /* more.png */,
 				E4C0DEDC1204A654006AB8AF /* text.png */,
 				E4DEA419120615B700266C34 /* set_a_goal.png */,
+				E444EA01120E5F05009B8CA2 /* broadcast.png */,
 				E4A1573011DF989700A044D7 /* ContributionController.xib */,
 				E4A1589611E4E2A600A044D7 /* IdentificationController.xib */,
 				E4C0DB3412031D0A006AB8AF /* InfoController.xib */,
@@ -445,6 +451,7 @@
 				E4C0D7F21201C2A6006AB8AF /* GoalSettingController.h */,
 				E409694011F1154E0055459F /* ProgressController.h */,
 				E4C0DB3212031D0A006AB8AF /* InfoController.h */,
+				E444EA08120E606C009B8CA2 /* BroadcastController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				E4A1589511E4E2A600A044D7 /* IdentificationController.m */,
 				E439369611D50DD300D6DED9 /* InspirationController.m */,
@@ -453,6 +460,7 @@
 				E4C0D7F31201C2A6006AB8AF /* GoalSettingController.m */,
 				E409694111F1154E0055459F /* ProgressController.m */,
 				E4C0DB3312031D0A006AB8AF /* InfoController.m */,
+				E444EA09120E606C009B8CA2 /* BroadcastController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -821,6 +829,7 @@
 				E4C0DEDD1204A654006AB8AF /* text.png in Resources */,
 				E4DEA41A120615B700266C34 /* set_a_goal.png in Resources */,
 				E4DEA4B81206309800266C34 /* default.png in Resources */,
+				E444EA02120E5F05009B8CA2 /* broadcast.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +918,7 @@
 				E444E851120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m in Sources */,
 				E444E854120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m in Sources */,
 				E444E87F120D346D009B8CA2 /* Concept.m in Sources */,
+				E444EA0A120E606C009B8CA2 /* BroadcastController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

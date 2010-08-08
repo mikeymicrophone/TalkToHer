@@ -22,6 +22,10 @@
 	return @"";
 }
 
+-(NSString *)full_text {
+	return [self advice];
+}
+
 -(NSString *)getRemoteCollectionName {
 	return @"tips";
 }

@@ -49,6 +49,10 @@
 	NSError *error = nil;
 	NSArray *results = [[self moc] executeFetchRequest:f error:&error];
 	[f release];
+	for (NSObject *o in results) {
+		NSLog(@"id is %@", [o getRemoteId]);
+	}
+	
 	return results;
 }
 

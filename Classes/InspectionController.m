@@ -10,6 +10,7 @@
 #import "IdentificationController.h"
 #import "InspirationCell.h"
 #import "GoalSettingController.h"
+#import "BroadcastController.h"
 #import "Rating.h"
 #import "Tag.h"
 #import "Comment.h"
@@ -111,9 +112,9 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	if ([MFMessageComposeViewController canSendText]) {
-		return 6;
+		return 7;
 	} else {
-		return 5;
+		return 6;
 	}
 }
 
@@ -259,14 +260,32 @@
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
-	}else if (indexPath.section == 5) {
-		CellIdentifier = @"text";
+	} else if (indexPath.section == 5) {
+		if ([MFMessageComposeViewController canSendText]) {
+			CellIdentifier = @"text";
+			
+			cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			}
+			cell.selectionStyle = UITableViewCellSelectionStyleGray;
+		} else {
+			CellIdentifier = @"broadcast";
+			
+			cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			}
+			cell.selectionStyle = UITableViewCellSelectionStyleGray;
+		}
+	} else if (indexPath.section == 6) {
+		CellIdentifier = @"broadcast";
 		
 		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		}
-		cell.selectionStyle = UITableViewCellSelectionStyleGray;
+		cell.selectionStyle = UITableViewCellSelectionStyleGray;		
 	}
 
     return cell;
@@ -359,12 +378,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 5) {
-		MFMessageComposeViewController *textController = [[MFMessageComposeViewController alloc] init];
-		textController.body = [content main_text];
-		textController.messageComposeDelegate = self;
-		
-		[self presentModalViewController:textController animated:YES];
-		[textController release];
+		if ([MFMessageComposeViewController canSendText]) {
+			MFMessageComposeViewController *textController = [[MFMessageComposeViewController alloc] init];
+			textController.body = [content main_text];
+			textController.messageComposeDelegate = self;
+			
+			[self presentModalViewController:textController animated:YES];
+			[textController release];			
+		} else {
+			BroadcastController *broadcastController = [[BroadcastController alloc] initWithBroadcast:[content full_text]];
+			[self presentModalViewController:broadcastController animated:NO];
+		}
 	} else if (indexPath.section == 4) {
 		if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 			GoalSettingController *goalSettingController = [[GoalSettingController alloc] initWithObjective:content];			
@@ -373,6 +397,9 @@
 		} else {
 			[self log_in];
 		}
+	} else if (indexPath.section == 6) {
+		BroadcastController *broadcastController = [[BroadcastController alloc] initWithBroadcast:[content full_text]];
+		[self presentModalViewController:broadcastController animated:NO];
 	}
 }
 

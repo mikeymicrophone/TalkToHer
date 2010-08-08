@@ -22,6 +22,10 @@
 	return [self instruction];
 }
 
+-(NSString *)full_text {
+	return [self instruction];
+}
+
 -(NSString *)getRemoteCollectionName {
 	return @"exercises";
 }
@@ -61,10 +65,6 @@
 
 -(void)hasBeenSubmitted {
 	[self setValue:[NSNumber numberWithInt:0] forKey:@"delayed"];
-}
-
--(NSString *)full_text {
-	return [self instruction];
 }
 
 @end

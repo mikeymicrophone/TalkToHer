@@ -265,13 +265,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>E40017E111FE3915001359B0</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
+									<integer>22</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspectionController.m</string>
+								<string>BroadcastController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,24 +323,17 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InspectionController.m</string>
+										<string>BroadcastController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E444E9FB120E5594009B8CA2</string>
+										<string>E444EA9E120E73BA009B8CA2</string>
 										<key>history</key>
 										<array>
-											<string>E444E900120DC87B009B8CA2</string>
-											<string>E444E921120DDA40009B8CA2</string>
-											<string>E444E95C120DEB94009B8CA2</string>
-											<string>E444E96F120DEF9F009B8CA2</string>
-											<string>E444E976120DFAFA009B8CA2</string>
-											<string>E444E988120E2349009B8CA2</string>
-											<string>E444E989120E2349009B8CA2</string>
-											<string>E444E98A120E2349009B8CA2</string>
-											<string>E444E98C120E2349009B8CA2</string>
-											<string>E444E9E7120E4F72009B8CA2</string>
-											<string>E444E9E8120E4F72009B8CA2</string>
+											<string>E444EA14120E6A25009B8CA2</string>
+											<string>E444EA74120E7125009B8CA2</string>
+											<string>E444EA75120E7125009B8CA2</string>
+											<string>E444EA76120E7125009B8CA2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -537,13 +531,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E444E9F7120E53AC009B8CA2</string>
+		<string>E444EA9F120E73BA009B8CA2</string>
 		<string>E444E87B120D3376009B8CA2</string>
 		<string>E444E87C120D3376009B8CA2</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>20 17 1237 709 0 0 1280 778 </string>
@@ -569,7 +563,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InspectionController.m</string>
+								<string>BroadcastController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -919,7 +913,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
