@@ -45,6 +45,22 @@
 	[x setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
 	[x addTarget:self action:@selector(dismissModalViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:x];
+	
+	UIButton *flash = [UIButton buttonWithType:UIButtonTypeCustom];
+	[flash setTitle:@"!" forState:UIControlStateNormal];
+	flash.frame = CGRectMake(10, 250, 44, 44);
+	[flash setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
+	[flash addTarget:self action:@selector(flashScreen) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:flash];
+	
+}
+
+-(void)flashScreen {
+	self.view.alpha = 0.0;
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.65];
+	self.view.alpha = 1.0;
+	[UIView commitAnimations];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
