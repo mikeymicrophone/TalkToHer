@@ -53,13 +53,24 @@
 	[flash setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
 	[flash addTarget:self action:@selector(flashScreen) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:flash];
-	
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	[self flashScreen];
 }
 
 -(void)flashScreen {
 	self.view.alpha = 0.0;
 	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:3.65];
+	[UIView setAnimationDuration:1.7];
 	self.view.alpha = 1.0;
 	[UIView commitAnimations];
 }

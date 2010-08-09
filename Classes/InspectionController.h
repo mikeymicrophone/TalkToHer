@@ -29,6 +29,7 @@
 	NSInteger previous_ratings;
 	NSInteger previous_comments;
 	NSInteger previous_tags;
+	UILabel *comment_count;
 }
 
 @property (nonatomic, retain) id content;
@@ -40,6 +41,7 @@
 @property (nonatomic, retain) UIButton *comment_button;
 @property (nonatomic, retain) InspirationCell *text_her;
 @property (nonatomic, retain) InspirationCell *broadcast;
+@property (nonatomic, retain) UILabel *comment_count;
 
 -(id)initWithContent:(id)contentObj;
 -(id)inspect_content:(id)contentObj;

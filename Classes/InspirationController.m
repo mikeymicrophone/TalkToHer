@@ -45,7 +45,6 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	if (more_button == nil) {
@@ -58,7 +57,6 @@
 		write_button.selectionStyle = UITableViewCellSelectionStyleNone;
 	}
 }
-
 
 - (BOOL)canBecomeFirstResponder {
     return YES;

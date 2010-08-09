@@ -19,7 +19,7 @@
 
 @implementation InspectionController
 
-@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast;
+@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast, comment_count;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -245,6 +245,7 @@
 				}
 			}
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			self.comment_count = cell.main;
 			if (!comments_updated) {
 				[cell start_spinning];
 				comment_spinner = [cell spinner];
@@ -353,6 +354,12 @@
 				[new_comment_indices insertObject:indexOfComment atIndex:i];
 			}
 			[self.tableView insertRowsAtIndexPaths:new_comment_indices withRowAnimation:UITableViewRowAnimationBottom];
+//			if (new_comments == 1 && [[comment_count text] isEqualToString:@"0 comments"]) {
+//				comment_count.text = @"1 comment";			
+//			} else {
+//				comment_count.text = [NSString stringWithFormat:@"%d comments", current_comments];
+//			}
+//			[comment_count drawTextInRect:comment_count.frame];
 		}
 		[comment_spinner stopAnimating];
 	} else if ([type isEqualToString:@"RatingEntity"]) {
