@@ -35,7 +35,7 @@
     [ps setValue:targetType	forKey:@"targetType"];
 	[ps setValue:concept forKey:@"concept"];
 	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
-    [ps setValue:subjectType	forKey:@"subjectType"];
+    [ps setValue:subjectType forKey:@"subjectType"];
 	[ps setValue:[NSNumber numberWithInt:[subjectId integerValue]] forKey:@"subjectId"];
     [ps setValue:[NSNumber numberWithInt:[tagId integerValue]] forKey:@"tagId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
@@ -49,12 +49,14 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)taggable {
+	
     NSString *tagsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 						  [self getRemoteSite],
 						  [taggable getRemoteCollectionName],
 						  [taggable getRemoteId],
 						  [self getRemoteCollectionName],
 						  [self getRemoteProtocolExtension]];
+	NSLog(@"path: %@; taggable: %@; id: %@", tagsPath, taggable, [taggable getRemoteId]);
     Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
 	NSError **aError;

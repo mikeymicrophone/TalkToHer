@@ -19,7 +19,7 @@
 
 @implementation InspectionController
 
-@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast, comment_count;
+@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -228,7 +228,7 @@
 				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				
 				[cell setMain_text:[content commentCountText]];
-				
+
 				if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 					comment_field.borderStyle = UITextBorderStyleRoundedRect;
 					comment_field.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
@@ -245,7 +245,7 @@
 				}
 			}
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
-			self.comment_count = cell.main;
+
 			if (!comments_updated) {
 				[cell start_spinning];
 				comment_spinner = [cell spinner];
@@ -353,13 +353,20 @@
 				NSIndexPath *indexOfComment = [NSIndexPath indexPathWithIndexes:indexSet length:2];
 				[new_comment_indices insertObject:indexOfComment atIndex:i];
 			}
+			NSString *comment_in_progress = nil;
+			if ([comment_field isFirstResponder]) {
+				comment_in_progress = comment_field.text;
+				[comment_field resignFirstResponder];
+			}
+			[self.tableView beginUpdates];
+			NSUInteger commentHeader[] = {3, 0};
+			[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathWithIndexes:commentHeader length:2]] withRowAnimation:UITableViewRowAnimationTop];
 			[self.tableView insertRowsAtIndexPaths:new_comment_indices withRowAnimation:UITableViewRowAnimationBottom];
-//			if (new_comments == 1 && [[comment_count text] isEqualToString:@"0 comments"]) {
-//				comment_count.text = @"1 comment";			
-//			} else {
-//				comment_count.text = [NSString stringWithFormat:@"%d comments", current_comments];
-//			}
-//			[comment_count drawTextInRect:comment_count.frame];
+			[self.tableView endUpdates];
+			if (comment_in_progress) {
+				comment_field.text = comment_in_progress;
+				[comment_field becomeFirstResponder];
+			}			
 		}
 		[comment_spinner stopAnimating];
 	} else if ([type isEqualToString:@"RatingEntity"]) {

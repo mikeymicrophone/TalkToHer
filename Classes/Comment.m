@@ -45,6 +45,7 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)commendable {
+	
     NSString *commentsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 						   [self getRemoteSite],
 						   [commendable getRemoteCollectionName],

@@ -45,6 +45,7 @@
 }
 
 + (NSArray *)findAllFor:(NSObject *)ratable {
+	
     NSString *ratingsPath = [NSString stringWithFormat:@"%@%@/%@/%@%@",
 							  [self getRemoteSite],
 							  [ratable getRemoteCollectionName],

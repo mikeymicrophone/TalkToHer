@@ -21,7 +21,6 @@
 	display.lineBreakMode = UILineBreakModeWordWrap;
 	display.numberOfLines = 20;
 	display.textAlignment = UITextAlignmentCenter;
-	display.textColor = [UIColor blackColor];
 	return self;
 }
 
@@ -39,6 +38,8 @@
 	}
 	display.font = [UIFont fontWithName:@"TrebuchetMS" size:fontSize];
 	[self.view addSubview:display];
+	NSLog(@"view frame: %@", NSStringFromCGRect(self.view.frame));
+	NSLog(@"display frame: %@", NSStringFromCGRect(display.frame));
 	
 	UIButton *x = [UIButton buttonWithType:UIButtonTypeCustom];
 	[x setTitle:@"x" forState:UIControlStateNormal];
@@ -55,12 +56,16 @@
 	[self.view addSubview:flash];
 }
 
-- (BOOL)canBecomeFirstResponder {
+-(BOOL)canBecomeFirstResponder {
     return YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
     [self becomeFirstResponder];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+	[self resignFirstResponder];
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {

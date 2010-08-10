@@ -10,7 +10,7 @@
 
 @implementation InspirationCell
 
-@synthesize main_text, additional_text, type, main;
+@synthesize main_text, additional_text, type;
 
 + (CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width {
 	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];
@@ -48,7 +48,7 @@
 	CGSize cs = [main_text sizeWithFont:[UIFont fontWithName:@"TrebuchetMS" size:18] constrainedToSize:CGSizeMake(f.size.width-30.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
 
 	if (main == nil) {
-		self.main = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, f.size.width-30, cs.height+5)];
+		main = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, f.size.width-30, cs.height+5)];
 		main.text = main_text;
 		main.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
 		main.lineBreakMode = UILineBreakModeWordWrap;
@@ -57,7 +57,6 @@
 	} else {
 		main.frame = CGRectMake(15, 5, f.size.width-30, cs.height+5);
 	}
-
 	[self addSubview:main];
 	
 	if (addl == nil) {
@@ -91,7 +90,6 @@
 }
 
 - (void)dealloc {
-	self.main = nil;
 	self.main_text = nil;
 	self.additional_text = nil;
 	self.type = nil;
