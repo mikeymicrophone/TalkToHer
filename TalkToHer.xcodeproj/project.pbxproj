@@ -929,16 +929,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
 				MOMC_NO_WARNINGS = NO;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
-				"PROVISIONING_PROFILE[sdk=*]" = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
 				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
@@ -947,8 +947,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Mike Schwab (L7HTSLAD6U)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -956,8 +956,8 @@
 				MOMC_NO_WARNINGS = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
-				"PROVISIONING_PROFILE[sdk=*]" = "E55BAF50-E00A-47A8-B9AC-11F0AD498030";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
 				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
