@@ -33,13 +33,13 @@
 -(void)persistInMoc:(NSManagedObjectContext *)moc {
     TagEntity *ps = [[TagEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Tag" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
     [ps setValue:targetType	forKey:@"targetType"];
-	[ps setValue:concept forKey:@"concept"];
 	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
     [ps setValue:subjectType forKey:@"subjectType"];
 	[ps setValue:[NSNumber numberWithInt:[subjectId integerValue]] forKey:@"subjectId"];
     [ps setValue:[NSNumber numberWithInt:[tagId integerValue]] forKey:@"tagId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 	if ([tagId integerValue] == 0) {
+		[ps setValue:concept forKey:@"concept"];
 		[ps markForDelayedSubmission];
 	}
 	
@@ -56,7 +56,7 @@
 						  [taggable getRemoteId],
 						  [self getRemoteCollectionName],
 						  [self getRemoteProtocolExtension]];
-	NSLog(@"path: %@; taggable: %@; id: %@", tagsPath, taggable, [taggable getRemoteId]);
+
     Response *res = [ORConnection get:tagsPath withUser:[[self class] getRemoteUser] 
 						  andPassword:[[self class] getRemotePassword]];
 	NSError **aError;
@@ -69,7 +69,11 @@
 }
 
 -(BOOL)matches:(NSManagedObject *)po {
-	return [[self targetType] isEqualToString:[po targetType]] && [[self subjectType] isEqualToString:[po subjectType]] && ([self targetId] == [po targetId]) && ([self subjectId] == [po subjectId]);
+	NSLog(@"t type: %@ %@ %d", [self targetType], [po targetType], [[self targetType] isEqualToString:[po targetType]]);
+	NSLog(@"s type: %@ %@ %d", [self subjectType], [po subjectType], [[self subjectType] isEqualToString:[po subjectType]]);
+	NSLog(@"t id: %@ %@ %d", [self targetId], [po targetId], ([[self targetId] integerValue] == [[po targetId] integerValue]));
+	NSLog(@"s id: %@ %@ %d", [self subjectId], [po subjectId], ([[self subjectId] integerValue] == [[po subjectId] integerValue]));
+	return [[self targetType] isEqualToString:[po targetType]] && [[self subjectType] isEqualToString:[po subjectType]] && ([[self targetId] integerValue] == [[po targetId] integerValue]) && ([[self subjectId] integerValue] == [[po subjectId] integerValue]);
 }
 
 @end

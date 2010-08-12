@@ -138,7 +138,7 @@
 	
 	NSString *CellIdentifier;
 	InspirationCell *cell;
-	NSLog(@"cell: %@", indexPath);
+
     // Configure the cell...
 	if (indexPath.section == 0) {
 		CellIdentifier = @"display";
@@ -302,7 +302,7 @@
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	}
-	NSLog(@"cell configured");
+
     return cell;
 }
 
@@ -378,6 +378,7 @@
 		 }
 	} else if ([type isEqualToString:@"TagEntity"]) {
 		tags_updated = YES;
+		NSLog(@"tag count: %d", [content tagCount]);
 		NSInteger current_tags = [content tagCount];
 		if (current_tags > [previous_tags integerValue]) {
 			NSString *tag_in_progress = nil;
@@ -496,7 +497,9 @@
 			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
 				[t createRemote];
 			}
+			NSLog(@"tags: %d", [content tagCount]);
 			[t persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+			dispatch_async(dispatch_get_main_queue(), ^{ [self updateMetadataOfType:@"TagEntity"]; });
 		});
 		dispatch_release(queue);
 	}
