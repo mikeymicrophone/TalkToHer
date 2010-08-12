@@ -19,7 +19,7 @@
 
 @implementation InspectionController
 
-@synthesize content, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast;
+@synthesize content, ratings_cell, tags_cell, comments_header_cell, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -457,9 +457,8 @@
 		
 		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
 			[r createRemote];
-		} else {
-			[r persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
 		}
+		[r persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
 	});
 	dispatch_release(queue);
 }
@@ -488,9 +487,8 @@
 			
 			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
 				[t createRemote];
-			} else {
-				[t persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
-			}			
+			}
+			[t persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
 		});
 		dispatch_release(queue);
 	}
@@ -514,9 +512,8 @@
 			
 			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
 				[c createRemote];
-			} else {
-				[c persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
 			}
+			[c persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
 		});
 		dispatch_release(queue);
 	}

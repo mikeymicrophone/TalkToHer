@@ -68,4 +68,8 @@
 	}
 }
 
+-(BOOL)matches:(NSManagedObject *)po {
+	return [[self targetType] isEqualToString:[po targetType]] && [[self subjectType] isEqualToString:[po subjectType]] && ([self targetId] == [po targetId]) && ([self subjectId] == [po subjectId]);
+}
+
 @end

@@ -38,7 +38,6 @@
 		[ps markForDelayedSubmission];
 	}
 
-	
 	NSError *mocSaveError = nil;
     if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }
     [ps release];
@@ -62,6 +61,12 @@
 	} else {
 		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
+}
+
+-(BOOL)matches:(NSManagedObject *)po {
+	NSLog(@"my target id: %@, po target id: %@, equality: %d", [[self targetId] className], [[po targetId] className], [[self targetId] integerValue] == [[po targetId] integerValue]);
+	NSLog(@"my id: %@, po id: %@", [self ratingId], [po ratingId]);
+	return [[self targetType] isEqualToString:[po targetType]] && ([[self targetId] integerValue] == [[po targetId] integerValue]) && ([[self userId] integerValue] == [[po userId] integerValue]);
 }
 
 @end

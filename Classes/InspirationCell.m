@@ -10,7 +10,7 @@
 
 @implementation InspirationCell
 
-@synthesize main_text, additional_text, type;
+@synthesize main_text, additional_text, type, main, addl;
 
 + (CGFloat)cellHeightForMainText:(NSString *)mtext additional:(NSString *)additional width:(CGFloat)width {
 	UIFont *captionFont = [UIFont fontWithName:@"TrebuchetMS" size:18];
@@ -48,7 +48,7 @@
 	CGSize cs = [main_text sizeWithFont:[UIFont fontWithName:@"TrebuchetMS" size:18] constrainedToSize:CGSizeMake(f.size.width-30.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
 
 	if (main == nil) {
-		main = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, f.size.width-30, cs.height+5)];
+		self.main = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, f.size.width-30, cs.height+5)];
 		main.text = main_text;
 		main.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
 		main.lineBreakMode = UILineBreakModeWordWrap;
@@ -60,7 +60,7 @@
 	[self addSubview:main];
 	
 	if (addl == nil) {
-		addl = [[UILabel alloc] initWithFrame:CGRectMake(15, cs.height+10, f.size.width-30, f.size.height-cs.height-15)];
+		self.addl = [[UILabel alloc] initWithFrame:CGRectMake(15, cs.height+10, f.size.width-30, f.size.height-cs.height-15)];
 		addl.text = additional_text;
 		addl.font = [UIFont fontWithName:@"TrebuchetMS" size:15];
 		addl.lineBreakMode = UILineBreakModeWordWrap;
@@ -92,6 +92,8 @@
 - (void)dealloc {
 	self.main_text = nil;
 	self.additional_text = nil;
+	self.main = nil;
+	self.addl = nil;
 	self.type = nil;
     [super dealloc];
 }

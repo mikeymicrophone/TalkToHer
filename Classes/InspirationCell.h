@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSString *main_text;
 @property (nonatomic, retain) NSString *additional_text;
 @property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) UILabel *main;
+@property (nonatomic, retain) UILabel *addl;
 
 -(id)initWithContent:(NSObject *)c;
 -(void)addLabels;

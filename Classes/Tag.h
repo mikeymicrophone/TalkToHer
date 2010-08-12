@@ -31,4 +31,5 @@
 -(Tag *)initWithManagedObject:(TagEntity *)ps;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
 + (NSArray *)findAllFor:(NSObject *)taggable;
+-(BOOL)matches:(NSManagedObject *)po;
 @end

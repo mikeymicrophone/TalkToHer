@@ -12,6 +12,9 @@
 
 @interface InspectionController : UITableViewController <MFMailComposeViewControllerDelegate> {
 	id content;
+	InspirationCell *ratings_cell;
+	InspirationCell *tags_cell;
+	InspirationCell *comments_header_cell;
 	UILabel *rating;
 	UITextField *tag_field;
 	UITextField *comment_field;
@@ -32,6 +35,9 @@
 }
 
 @property (nonatomic, retain) id content;
+@property (nonatomic, retain) InspirationCell *ratings_cell;
+@property (nonatomic, retain) InspirationCell *tags_cell;
+@property (nonatomic, retain) InspirationCell *comments_header_cell;
 @property (nonatomic, retain) UITextField *tag_field;
 @property (nonatomic, retain) UITextField *comment_field;
 @property (nonatomic, retain) UISlider *slider;

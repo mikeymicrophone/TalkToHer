@@ -237,6 +237,9 @@
 	
 	currentlyReachable = [r isReachable] || [server_location isEqualToString:@"http://localhost:3000/"];
 	
+	// diagnostic
+//	currentlyReachable = NO;
+	
 	if (currentlyReachable && connectionIsFresh) {
 		connectionIsFresh = NO;
 	} else {

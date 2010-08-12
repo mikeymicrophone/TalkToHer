@@ -26,4 +26,5 @@
 
 -(Comment *)initWithManagedObject:(CommentEntity *)ps;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
+-(BOOL)matches:(NSManagedObject *)po;
 @end

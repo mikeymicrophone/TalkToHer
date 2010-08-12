@@ -27,4 +27,5 @@
 -(Rating *)initWithManagedObject:(RatingEntity *)po;
 -(void)persistInMoc:(NSManagedObjectContext *)moc;
 + (NSArray *)findAllFor:(NSObject *)ratable;
+-(BOOL)matches:(NSManagedObject *)po;
 @end

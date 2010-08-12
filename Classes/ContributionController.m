@@ -31,7 +31,7 @@
 	heading.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 	
 	if ([contentType isEqualToString:@"Exercise"]) {
-		heading.text = @"Sharing: an Exercise";
+		heading.text = @"Sharing: an exercise";
 		
 		exercise_name = [[UITextField alloc] initWithFrame:CGRectMake(21, 150, 166, 31)];
 		exercise_name.borderStyle = UITextBorderStyleRoundedRect;
@@ -39,7 +39,7 @@
 		exercise_name.font = [UIFont fontWithName:@"TrebuchetMS" size:13];
 		exercise_name.placeholder = @"name of exercise";
 	} else {
-		heading.text = [NSString stringWithFormat:@"Sharing: a %@", contentType];
+		heading.text = [NSString stringWithFormat:@"Sharing: a %@", [contentType lowercaseString]];
 	}
 	return self;
 }

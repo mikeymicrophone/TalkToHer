@@ -36,6 +36,7 @@
     [ps setValue:[NSNumber numberWithInt:[commentId integerValue]] forKey:@"commentId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 	if ([commentId integerValue] == 0) {
+		NSLog(@"marking comment for delayed submission");
 		[ps markForDelayedSubmission];
 	}
 	
@@ -63,5 +64,10 @@
 		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
 }
+
+-(BOOL)matches:(NSManagedObject *)po {
+    return [[self text] isEqualToString:[po valueForKey:@"text"]] && ([[self targetId] integerValue] == [[po valueForKey:@"targetId"] integerValue]) && [[self targetType] isEqualToString:[po targetType]];
+}
+
 
 @end
