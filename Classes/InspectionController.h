@@ -29,9 +29,9 @@
 	UIActivityIndicatorView *rating_spinner;
 	BOOL tags_updated;
 	UIActivityIndicatorView *tag_spinner;
-	NSInteger previous_ratings;
-	NSInteger previous_comments;
-	NSInteger previous_tags;
+	NSNumber *previous_ratings;
+	NSNumber *previous_comments;
+	NSNumber *previous_tags;
 }
 
 @property (nonatomic, retain) id content;
@@ -46,6 +46,9 @@
 @property (nonatomic, retain) UIButton *comment_button;
 @property (nonatomic, retain) InspirationCell *text_her;
 @property (nonatomic, retain) InspirationCell *broadcast;
+@property (nonatomic, retain) NSNumber *previous_ratings;
+@property (nonatomic, retain) NSNumber *previous_comments;
+@property (nonatomic, retain) NSNumber *previous_tags;
 
 -(id)initWithContent:(id)contentObj;
 -(id)inspect_content:(id)contentObj;
@@ -56,4 +59,5 @@
 -(void)tagReady;
 -(void)commentReady;
 -(void)updateMetadataOfType:(NSString *)type;
+-(void)reloadForLogin;
 @end

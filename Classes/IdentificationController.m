@@ -7,6 +7,7 @@
 //
 
 #import "IdentificationController.h"
+#import "InspectionController.h"
 #import "UserSession.h"
 #import "User.h"
 #import "ObjectiveResourceConfig.h"
@@ -25,13 +26,10 @@
 
 	UITableView *rootView = [[[self parentViewController] bottomViewController] tableView];
 	NSIndexSet *sections = [NSIndexSet indexSetWithIndex:3];
-	UITableView *inspectionView = nil;
-	NSIndexSet *inspectionSections = nil;
+	InspectionController *inspectionController = nil;
 
 	if ([[[[self parentViewController] topViewController] className] isEqualToString:@"InspectionController"]) {
-//		[sections release];
-		inspectionView = [[[self parentViewController] topViewController] tableView];
-		inspectionSections = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")];
+		inspectionController = [[self parentViewController] topViewController];
 	}
 
 	dispatch_queue_t queue = dispatch_queue_create("com.talktoher.login", NULL);
@@ -43,8 +41,8 @@
 		if (response == nil) {
 			[self get_identity:username_field.text password:password_field.text];
 			dispatch_async(dispatch_get_main_queue(), ^{
-				if (inspectionView) {
-					[inspectionView reloadSections:inspectionSections withRowAnimation:UITableViewRowAnimationBottom];
+				if (inspectionController) {
+					[inspectionController reloadForLogin];
 				}
 				[rootView reloadSections:sections withRowAnimation:UITableViewRowAnimationBottom];
 			});

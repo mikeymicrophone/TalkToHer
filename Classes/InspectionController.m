@@ -19,7 +19,7 @@
 
 @implementation InspectionController
 
-@synthesize content, ratings_cell, tags_cell, comments_header_cell, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast;
+@synthesize content, ratings_cell, tags_cell, comments_header_cell, tag_field, comment_field, slider, tag_button, comment_button, rating, text_her, broadcast, previous_comments, previous_tags, previous_ratings;
 
 -(id)initWithContent:(id)contentObj {
 	if (![super initWithNibName:@"InspectionController" bundle:nil])
@@ -138,7 +138,7 @@
 	
 	NSString *CellIdentifier;
 	InspirationCell *cell;
-	
+	NSLog(@"cell: %@", indexPath);
     // Configure the cell...
 	if (indexPath.section == 0) {
 		CellIdentifier = @"display";
@@ -302,7 +302,7 @@
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	}
-
+	NSLog(@"cell configured");
     return cell;
 }
 
@@ -340,26 +340,21 @@
 
 -(void)updateMetadataOfType:(NSString *)type {
 	if (previous_comments == nil) {
-		previous_comments = [[content commentCount] integerValue];
-		previous_ratings = [content ratingCount];
-		previous_tags = [content tagCount];
+		self.previous_comments = [content commentCount];
+		self.previous_ratings = [NSNumber numberWithInt:[content ratingCount]];
+		self.previous_tags = [NSNumber numberWithInt:[content tagCount]];
 	}
 	[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
 	if ([type isEqualToString:@"CommentEntity"]) {
 		comments_updated = YES;
 		NSInteger current_comments = [[content commentCount] integerValue];
-		if (current_comments > previous_comments) {
-			NSInteger new_comments = current_comments - previous_comments;
+		if (current_comments > [previous_comments integerValue]) {
+			NSInteger new_comments = current_comments - [previous_comments integerValue];
 			NSMutableArray *new_comment_indices = [NSMutableArray arrayWithCapacity:new_comments];
 			for (NSInteger i = 0; i < new_comments; i++) {
-				NSUInteger indexSet[] = {3, i + previous_comments + 1};
+				NSUInteger indexSet[] = {3, i + [previous_comments integerValue] + 1};
 				NSIndexPath *indexOfComment = [NSIndexPath indexPathWithIndexes:indexSet length:2];
 				[new_comment_indices insertObject:indexOfComment atIndex:i];
-			}
-			NSString *comment_in_progress = nil;
-			if ([comment_field isFirstResponder]) {
-				comment_in_progress = comment_field.text;
-				[comment_field resignFirstResponder];
 			}
 			[self.tableView insertRowsAtIndexPaths:new_comment_indices withRowAnimation:UITableViewRowAnimationBottom];
 			if (current_comments == 1) {
@@ -367,16 +362,13 @@
 			} else {
 				comments_header_cell.main.text = [NSString stringWithFormat:@"%d comments", current_comments];
 			}
-			if (comment_in_progress) {
-				comment_field.text = comment_in_progress;
-				[comment_field becomeFirstResponder];
-			}			
 		}
 		[comment_spinner stopAnimating];
+		self.previous_comments = [content commentCount];
 	} else if ([type isEqualToString:@"RatingEntity"]) {
 		ratings_updated = YES;
 		NSInteger current_ratings = [content ratingCount];
-		if (current_ratings > previous_ratings) {
+		if (current_ratings > [previous_ratings integerValue]) {
 			ratings_updated = YES;
 			self.ratings_cell = nil;
 			NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
@@ -387,7 +379,7 @@
 	} else if ([type isEqualToString:@"TagEntity"]) {
 		tags_updated = YES;
 		NSInteger current_tags = [content tagCount];
-		if (current_tags > previous_tags) {
+		if (current_tags > [previous_tags integerValue]) {
 			NSString *tag_in_progress = nil;
 			if ([tag_field isFirstResponder]) {
 				tag_in_progress = tag_field.text;
@@ -469,10 +461,20 @@
 	dispatch_release(queue);
 }
 
+#pragma mark -
+#pragma mark login control
+
 -(void)log_in {
 	IdentificationController *identificationController = [[IdentificationController alloc] initWithNibName:nil bundle:nil];
 	[self presentModalViewController:identificationController animated:YES];
 	[identificationController release];
+}
+
+-(void)reloadForLogin {
+	self.ratings_cell = nil;
+	self.tags_cell = nil;
+	self.comments_header_cell = nil;
+	[self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 3")] withRowAnimation:UITableViewRowAnimationBottom];
 }
 
 #pragma mark -
@@ -520,6 +522,9 @@
 				[c createRemote];
 			}
 			[c persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self updateMetadataOfType:@"CommentEntity"];
+			});
 		});
 		dispatch_release(queue);
 	}
@@ -542,6 +547,9 @@
 
 - (void)dealloc {
 	self.content = nil;
+	self.ratings_cell = nil;
+	self.tags_cell = nil;
+	self.comments_header_cell = nil;	
 	self.slider = nil;
 	self.comment_field = nil;
 	self.comment_button = nil;
