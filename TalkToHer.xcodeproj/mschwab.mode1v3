@@ -326,7 +326,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4D776D71213B10900473EC2</string>
+										<string>E4D776E61213B42600473EC2</string>
 										<key>history</key>
 										<array>
 											<string>E4D7760A121393FD00473EC2</string>
@@ -544,13 +544,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E4D776CF1213A8E500473EC2</string>
+		<string>E4D776E71213B42600473EC2</string>
 		<string>E4D7760F121393FD00473EC2</string>
 		<string>E4D776041213909900473EC2</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>20 55 1237 709 0 0 1280 778 </string>

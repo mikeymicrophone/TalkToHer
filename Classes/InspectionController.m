@@ -151,7 +151,7 @@
 	} else if (indexPath.section == 1) {
 		CellIdentifier = @"rating";
 		
-		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		cell = ratings_cell;//(InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			
@@ -181,6 +181,7 @@
 				[log_in_button addTarget:self action:@selector(log_in) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:log_in_button];
 			}
+			self.ratings_cell = cell;
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (!ratings_updated) {
@@ -191,7 +192,7 @@
 	} else if (indexPath.section == 2) {
 		CellIdentifier = @"tags";
 		
-		cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		cell = tags_cell;//(InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			[cell setMain_text:[content tagCountText]];
@@ -212,6 +213,7 @@
 				[cell addSubview:tag_field];
 				[cell addSubview:tag_button];
 			}
+			self.tags_cell = cell;
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (!tags_updated) {
@@ -223,7 +225,7 @@
 		if (indexPath.row == 0) {
 			CellIdentifier = @"comments";
 			
-			cell = (InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			cell = comments_header_cell;//(InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 			if (cell == nil) {
 				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				
@@ -243,6 +245,7 @@
 					[cell addSubview:comment_field];
 					[cell addSubview:comment_button];
 				}
+				self.comments_header_cell = cell;
 			}
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
@@ -358,11 +361,12 @@
 				comment_in_progress = comment_field.text;
 				[comment_field resignFirstResponder];
 			}
-			[self.tableView beginUpdates];
-			NSUInteger commentHeader[] = {3, 0};
-			[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathWithIndexes:commentHeader length:2]] withRowAnimation:UITableViewRowAnimationTop];
 			[self.tableView insertRowsAtIndexPaths:new_comment_indices withRowAnimation:UITableViewRowAnimationBottom];
-			[self.tableView endUpdates];
+			if (current_comments == 1) {
+				comments_header_cell.main.text = @"1 comment";
+			} else {
+				comments_header_cell.main.text = [NSString stringWithFormat:@"%d comments", current_comments];
+			}
 			if (comment_in_progress) {
 				comment_field.text = comment_in_progress;
 				[comment_field becomeFirstResponder];
@@ -374,6 +378,7 @@
 		NSInteger current_ratings = [content ratingCount];
 		if (current_ratings > previous_ratings) {
 			ratings_updated = YES;
+			self.ratings_cell = nil;
 			NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"1 1")];
 			[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
 		 } else {
@@ -389,6 +394,7 @@
 				[tag_field resignFirstResponder];
 			}
 			tags_updated = YES;
+			self.tags_cell = nil;
 			NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSRangeFromString(@"2 1")];
 			[self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationBottom];
 			if (tag_in_progress) {
