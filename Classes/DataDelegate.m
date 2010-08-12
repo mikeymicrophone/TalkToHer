@@ -217,10 +217,11 @@
 		NSError *error = nil;
 		NSArray *results = [[self moc] executeFetchRequest:f error:&error];
 		[f release];
-
+		NSLog(@"klass: %@, results: %@", klass, results);
 		for (NSManagedObject *o in results) {
 			NSError *saveError = nil;
 			if ([[o objectiveResource] createRemoteWithResponse:&saveError]) {
+				NSLog(@"marking as submitted");
 				[o hasBeenSubmitted];
 			}
 		}
@@ -234,14 +235,14 @@
 	BOOL currentlyReachable;
 	Reachability *r = [Reachability reachabilityWithHostName:server_location];
 	
-	currentlyReachable = [r isReachable];// || [server_location isEqualToString:@"http://localhost:3000/"];
+	currentlyReachable = [r isReachable] || [server_location isEqualToString:@"http://localhost:3000/"];
 	
 	if (currentlyReachable && connectionIsFresh) {
 		connectionIsFresh = NO;
 	} else {
 		connectionIsFresh = YES;
 	}
-	
+
 	if (connectionIsFresh && currentlyReachable) {
 		[self attemptDelayedSubmissions];
 	}

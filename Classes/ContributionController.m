@@ -69,11 +69,12 @@
 		} else {
 			[content markForDelayedSubmission];
 		}
+		NSLog(@"new content: %@", content);
+		NSError *error = nil;
+		if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
 	});
 	dispatch_release(queue);
 	
-	NSError *error = nil;
-	if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
 	[[[[UIApplication sharedApplication] delegate] data_source] insertNewElement:content];
 	[[[[self parentViewController] topViewController] tableView] reloadData];	
 	

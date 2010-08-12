@@ -15,7 +15,7 @@
 -(id)initWithContentType:(NSString *)klass {
 	self = [super init];
 	self.content_page = [NSNumber numberWithInt:1];
-	self.displayed_amount = [NSNumber numberWithInt:3];
+	self.displayed_amount = [NSNumber numberWithInt:0];
 	self.content_type = klass;
 	[self load_content];
 	[self reorder_content];

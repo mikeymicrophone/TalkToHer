@@ -28,6 +28,12 @@
 		return nil;
 
 	self.content_source = source;
+	if ([[content_source loaded_amount] integerValue] >= 3) {
+		[content_source displayRows:3];
+	} else {
+		[content_source displayRows:[[content_source loaded_amount] integerValue]];
+	}
+
 	
 	if ([[content_source content_type] isEqualToString:@"Line"]) {
 		self.title = @"Lines";
