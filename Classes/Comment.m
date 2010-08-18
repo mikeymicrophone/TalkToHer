@@ -36,7 +36,6 @@
     [ps setValue:[NSNumber numberWithInt:[commentId integerValue]] forKey:@"commentId"];
     [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 	if ([commentId integerValue] == 0) {
-		NSLog(@"marking comment for delayed submission");
 		[ps markForDelayedSubmission];
 	}
 	
@@ -59,7 +58,7 @@
 	NSError **aError;
 	if([res isError]) {
 		*aError = res.error;
-		return nil;
+		return [NSArray array];
 	} else {
 		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}

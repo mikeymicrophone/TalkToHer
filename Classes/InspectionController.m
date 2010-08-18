@@ -30,6 +30,9 @@
 	ratings_updated = NO;
 
 	self.slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
+	[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
+	[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
+
 	self.rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
 	self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
 	self.tag_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -160,8 +163,8 @@
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 				slider.maximumValue = 5.0;
-				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
-				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
+//				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
+//				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:slider];
 				slider.value = [[content myRating] floatValue];
 				
@@ -302,7 +305,6 @@
 		}
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	}
-
     return cell;
 }
 
@@ -378,7 +380,6 @@
 		 }
 	} else if ([type isEqualToString:@"TagEntity"]) {
 		tags_updated = YES;
-		NSLog(@"tag count: %d", [content tagCount]);
 		NSInteger current_tags = [content tagCount];
 		if (current_tags > [previous_tags integerValue]) {
 			NSString *tag_in_progress = nil;
@@ -442,6 +443,16 @@
 
 -(void)ratingChanged:(UISlider *)sender {
 	rating.text = [NSString stringWithFormat:@"%.1f", [sender value]];
+	if ([[content myRating] floatValue] > 0.0) {
+		ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", ((([[content averageRatingText] floatValue] * (NSInteger)([content ratingCount] - 1)) + [sender value]) / [[content ratingCountText] integerValue])];
+	} else {
+		ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", ((([[content averageRatingText] floatValue] * (NSInteger)[content ratingCount]) + [sender value]) / [[content ratingCountText] integerValue] + 1)];
+		if ([content ratingCount] == 0) {
+			ratings_cell.addl.text = @"1 rating";
+		} else {
+			ratings_cell.addl.text = [NSString stringWithFormat:@"%d ratings", [content ratingCount] + 1];
+		}									  
+	}
 }
 
 -(void)ratingReady:(UISlider *)sender {
@@ -497,7 +508,6 @@
 			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
 				[t createRemote];
 			}
-			NSLog(@"tags: %d", [content tagCount]);
 			[t persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
 			dispatch_async(dispatch_get_main_queue(), ^{ [self updateMetadataOfType:@"TagEntity"]; });
 		});

@@ -69,7 +69,6 @@
 		} else {
 			[content markForDelayedSubmission];
 		}
-		NSLog(@"new content: %@", content);
 		NSError *error = nil;
 		if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
 	});

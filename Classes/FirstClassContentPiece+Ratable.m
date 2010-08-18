@@ -31,7 +31,8 @@
 	if ([self ratingCount] == 0) return 0.0;
 	float dividend = 0.0;
 	for (RatingEntity *r in [self ratings]) {
-		dividend += [[r opinion] floatValue];
+		dividend += [[r valueForKey:@"opinion"] floatValue];
+		
 	}
 	return dividend/([self ratingCount]*10);
 }

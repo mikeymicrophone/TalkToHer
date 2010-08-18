@@ -28,12 +28,27 @@
 }
 
 -(void)persistInMoc:(NSManagedObjectContext *)moc {
-    RatingEntity *ps = [[RatingEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Rating" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
-    [ps setValue:targetType	forKey:@"targetType"];
+	NSFetchRequest *f = [[NSFetchRequest alloc] init];
+	NSEntityDescription *e = [NSEntityDescription entityForName:@"Rating" inManagedObjectContext:moc];
+	[f setEntity:e];
+	[f setPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"userId = %@ and targetId = %@ and targetType = '%@'",
+													   [self userId], [self targetId], [self targetType]]]];
+	NSError *error;
+	NSArray *results = [moc executeFetchRequest:f error:&error];
+	
+	RatingEntity *ps;
+	
+	if ([results count] > 0) {
+		ps = [results objectAtIndex:0];
+	} else {
+		ps = [[RatingEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Rating" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
+		[ps setValue:targetType	forKey:@"targetType"];
+		[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
+		[ps setValue:[NSNumber numberWithInt:[ratingId integerValue]] forKey:@"ratingId"];
+		[ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];		
+	}
+    
 	[ps setValue:[NSNumber numberWithInt:[opinion integerValue]] forKey:@"opinion"];
-	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
-    [ps setValue:[NSNumber numberWithInt:[ratingId integerValue]] forKey:@"ratingId"];
-    [ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 	if ([ratingId integerValue] == 0) {
 		[ps markForDelayedSubmission];
 	}
@@ -57,15 +72,13 @@
 	NSError **aError;
 	if([res isError]) {
 		*aError = res.error;
-		return nil;
+		return [NSArray array];
 	} else {
 		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
 }
 
 -(BOOL)matches:(NSManagedObject *)po {
-	NSLog(@"my target id: %@, po target id: %@, equality: %d", [[self targetId] className], [[po targetId] className], [[self targetId] integerValue] == [[po targetId] integerValue]);
-	NSLog(@"my id: %@, po id: %@", [self ratingId], [po ratingId]);
 	return [[self targetType] isEqualToString:[po targetType]] && ([[self targetId] integerValue] == [[po targetId] integerValue]) && ([[self userId] integerValue] == [[po userId] integerValue]);
 }
 

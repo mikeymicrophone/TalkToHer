@@ -38,8 +38,6 @@
 	}
 	display.font = [UIFont fontWithName:@"TrebuchetMS" size:fontSize];
 	[self.view addSubview:display];
-	NSLog(@"view frame: %@", NSStringFromCGRect(self.view.frame));
-	NSLog(@"display frame: %@", NSStringFromCGRect(display.frame));
 	
 	UIButton *x = [UIButton buttonWithType:UIButtonTypeCustom];
 	[x setTitle:@"x" forState:UIControlStateNormal];

@@ -282,22 +282,23 @@
 				InspectionController *inspectionController = [[InspectionController alloc] initWithContent:uninspected_content];
 				[self.navigationController pushViewController:inspectionController animated:YES];
 				
+				
 				dispatch_queue_t queue;
 				queue = dispatch_queue_create("com.talktoher.inspect", NULL);
 				dispatch_async(queue, ^{
-					[uninspected_content updateComments];
+					if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) { [uninspected_content updateComments]; }
 					dispatch_async(dispatch_get_main_queue(), ^{
 						[inspectionController updateMetadataOfType:@"CommentEntity"];
 					});
 				});
 				dispatch_async(queue, ^{
-					[uninspected_content updateRatings];
+					if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) { [uninspected_content updateRatings]; }
 					dispatch_async(dispatch_get_main_queue(), ^{
 						[inspectionController updateMetadataOfType:@"RatingEntity"];
 					});
 				});
 				dispatch_async(queue, ^{
-					[uninspected_content updateTags];
+					if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) { [uninspected_content updateTags]; }
 					dispatch_async(dispatch_get_main_queue(), ^{
 						[inspectionController updateMetadataOfType:@"TagEntity"];
 					});

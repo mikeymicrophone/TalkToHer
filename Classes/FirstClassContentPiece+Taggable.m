@@ -41,7 +41,6 @@
 			NSArray *results = [[[[UIApplication sharedApplication] delegate] managedObjectContext] executeFetchRequest:f error:&error];
 			
 			if ([results count] == 0) {
-				NSLog(@"missing concept #%@", [t subjectId]);
 //				[[Concept findRemote:[t subjectId]] persistInMoc];
 			} else {
 				summary = [summary stringByAppendingFormat:@", %@", [[results objectAtIndex:0] name]];

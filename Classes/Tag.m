@@ -62,7 +62,7 @@
 	NSError **aError;
 	if([res isError]) {
 		*aError = res.error;
-		return nil;
+		return [NSArray array];
 	} else {
 		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
