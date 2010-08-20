@@ -32,6 +32,7 @@
 	NSNumber *previous_ratings;
 	NSNumber *previous_comments;
 	NSNumber *previous_tags;
+	BOOL rating_is_fresh;
 }
 
 @property (nonatomic, retain) id content;

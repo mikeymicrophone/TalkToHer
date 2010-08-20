@@ -32,6 +32,7 @@
 	self.slider = [[UISlider alloc] initWithFrame:CGRectMake(78, 18, 180, 20)];
 	[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
 	[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
+	[slider addTarget:self action:@selector(ratingArmed:) forControlEvents:UIControlEventTouchDown];
 
 	self.rating = [[UILabel alloc] initWithFrame:CGRectMake(273, 18, 30, 20)];
 	self.tag_field = [[UITextField alloc] initWithFrame:CGRectMake(78, 8, 180, 24)];
@@ -444,7 +445,18 @@
 -(void)ratingChanged:(UISlider *)sender {
 	rating.text = [NSString stringWithFormat:@"%.1f", [sender value]];
 	if ([[content myRating] floatValue] > 0.0) {
-		ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", ((([[content averageRatingText] floatValue] * (NSInteger)([content ratingCount] - 1)) + [sender value]) / [[content ratingCountText] integerValue])];
+		NSDecimalNumber *previous_average = [NSDecimalNumber decimalNumberWithString:[content averageRatingText]];
+		NSLog(@"rating text: %@", previous_average);
+		NSDecimalNumber *previous_count = [NSDecimalNumber decimalNumberWithMantissa:[content ratingCount] exponent:0 isNegative:NO];
+		NSLog(@"count: %@", previous_count);
+		NSDecimalNumber *multiplier = [previous_count decimalNumberBySubtracting:[NSDecimalNumber one]];
+		NSLog(@"multiplier: %@", multiplier);
+		NSDecimalNumber *aggregate = [previous_average decimalNumberByMultiplyingBy:multiplier];
+		NSLog(@"rating aggregate: %@", aggregate);
+		NSDecimalNumber *new_value = [NSDecimalNumber decimalNumberWithMantissa:[sender value] exponent:0 isNegative:NO];
+		NSLog(@"new rating: %@", new_value);
+		NSDecimalNumber *dividend = [aggregate decimalNumberByAdding:new_value];
+		ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", ((([[content averageRatingText] floatValue] * (NSInteger)[content ratingCount]) + [sender value]) / [[content ratingCountText] integerValue])];
 	} else {
 		ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", ((([[content averageRatingText] floatValue] * (NSInteger)[content ratingCount]) + [sender value]) / [[content ratingCountText] integerValue] + 1)];
 		if ([content ratingCount] == 0) {
@@ -456,21 +468,30 @@
 }
 
 -(void)ratingReady:(UISlider *)sender {
-	dispatch_queue_t queue;
-	queue = dispatch_queue_create("com.talktoher.submit", NULL);
-	dispatch_async(queue, ^{
-		Rating *r = [[Rating alloc] init];
-		r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)([sender value] * 10)];
-		r.targetId = [content getRemoteId];
-		r.targetType = [[content className] substringToIndex:[[content className] length] - 6];
-		r.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
-		
-		if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
-			[r createRemote];
-		}
-		[r persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
-	});
-	dispatch_release(queue);
+	if (rating_is_fresh) {
+		rating_is_fresh = NO;
+		dispatch_queue_t queue;
+		queue = dispatch_queue_create("com.talktoher.submit", NULL);
+		dispatch_async(queue, ^{
+			Rating *r = [[Rating alloc] init];
+			r.opinion = [NSString stringWithFormat:@"%d", (NSInteger)([sender value] * 10)];
+			r.targetId = [content getRemoteId];
+			r.targetType = [[content className] substringToIndex:[[content className] length] - 6];
+			r.userId = [[[[UIApplication sharedApplication] delegate] data_source] userId];
+			
+			if ([[[[UIApplication sharedApplication] delegate] data_source] lotd_is_reachable]) {
+				[r createRemote];
+			}
+			[r persistInMoc:[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+			[[[[UIApplication sharedApplication] delegate] managedObjectContext] refreshObject:content mergeChanges:YES];
+		});
+		dispatch_release(queue);
+	}
+}
+
+-(void)ratingArmed:(UISlider *)sender {
+	NSLog(@"touch down");
+	rating_is_fresh = YES;
 }
 
 #pragma mark -

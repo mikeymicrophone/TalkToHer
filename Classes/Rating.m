@@ -36,22 +36,22 @@
 	NSError *error;
 	NSArray *results = [moc executeFetchRequest:f error:&error];
 	
-	RatingEntity *ps;
-	
-	if ([results count] > 0) {
-		ps = [results objectAtIndex:0];
-	} else {
-		ps = [[RatingEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Rating" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
-		[ps setValue:targetType	forKey:@"targetType"];
-		[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
-		[ps setValue:[NSNumber numberWithInt:[ratingId integerValue]] forKey:@"ratingId"];
-		[ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];		
+	for (RatingEntity *r in results) {
+		NSLog(@"deleting: %@", r);
+		[moc deleteObject:r];
 	}
-    
+	
+	RatingEntity *ps = [[RatingEntity alloc] initWithEntity:[NSEntityDescription entityForName:@"Rating" inManagedObjectContext:moc] insertIntoManagedObjectContext:moc];
+	[ps setValue:targetType	forKey:@"targetType"];
+	[ps setValue:[NSNumber numberWithInt:[targetId integerValue]] forKey:@"targetId"];
+	[ps setValue:[NSNumber numberWithInt:[ratingId integerValue]] forKey:@"ratingId"];
+	[ps setValue:[NSNumber numberWithInt:[userId integerValue]] forKey:@"userId"];
 	[ps setValue:[NSNumber numberWithInt:[opinion integerValue]] forKey:@"opinion"];
 	if ([ratingId integerValue] == 0) {
 		[ps markForDelayedSubmission];
 	}
+	
+	NSLog(@"and replacing: %@", ps);
 
 	NSError *mocSaveError = nil;
     if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }

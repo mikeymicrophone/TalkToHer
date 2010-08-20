@@ -271,7 +271,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
+									<integer>6</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataDelegate.m</string>
+								<string>InspectionController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataDelegate.m</string>
+										<string>InspectionController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E4B98870121C922000CF9D54</string>
+										<string>E4B988F0121F448400CF9D54</string>
 										<key>history</key>
 										<array>
 											<string>E4D7760A121393FD00473EC2</string>
@@ -341,14 +341,13 @@
 											<string>E4D776D41213B10900473EC2</string>
 											<string>E42F36A512143EA700972977</string>
 											<string>E4383CD31218466500635CFF</string>
-											<string>E4383CD41218466500635CFF</string>
-											<string>E4383CFB12184DD500635CFF</string>
 											<string>E4B98835121C8A9F00CF9D54</string>
-											<string>E4B98836121C8A9F00CF9D54</string>
-											<string>E4B98865121C902000CF9D54</string>
-											<string>E4B98866121C902000CF9D54</string>
-											<string>E4B9886C121C909400CF9D54</string>
-											<string>E4B98853121C8E3400CF9D54</string>
+											<string>E4B98883121CABB200CF9D54</string>
+											<string>E4B98884121CABB200CF9D54</string>
+											<string>E4B98891121CDFC400CF9D54</string>
+											<string>E4B988E3121F431400CF9D54</string>
+											<string>E4B988E8121F437400CF9D54</string>
+											<string>E4B988E9121F437400CF9D54</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -550,8 +549,9 @@
 		<string>E4B98824121C84D100CF9D54</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
+		<string>E4B988E5121F431400CF9D54</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
@@ -794,7 +794,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FirstClassContentPiece+Taggable.m</string>
+										<string>Rating.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>

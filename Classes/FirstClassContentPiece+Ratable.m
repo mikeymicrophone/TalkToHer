@@ -16,6 +16,7 @@
 	for (RatingEntity *r in [self ratings]) {
 		if ([r userId] == [[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 			mine = r;
+			break;
 		}
 	}
 	NSNumber *rating;
@@ -32,7 +33,6 @@
 	float dividend = 0.0;
 	for (RatingEntity *r in [self ratings]) {
 		dividend += [[r valueForKey:@"opinion"] floatValue];
-		
 	}
 	return dividend/([self ratingCount]*10);
 }
