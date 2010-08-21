@@ -444,27 +444,29 @@
 
 -(void)ratingChanged:(UISlider *)sender {
 	rating.text = [NSString stringWithFormat:@"%.1f", [sender value]];
+	
+	NSDecimalNumber *previous_average = [NSDecimalNumber decimalNumberWithString:[content averageRatingText]];
+	NSDecimalNumber *previous_count = [NSDecimalNumber decimalNumberWithMantissa:[content ratingCount] exponent:0 isNegative:NO];
+
+	NSDecimalNumber *dividend;
+	NSDecimalNumber *multiplier;
 	if ([[content myRating] floatValue] > 0.0) {
-		NSDecimalNumber *previous_average = [NSDecimalNumber decimalNumberWithString:[content averageRatingText]];
-		NSLog(@"rating text: %@", previous_average);
-		NSDecimalNumber *previous_count = [NSDecimalNumber decimalNumberWithMantissa:[content ratingCount] exponent:0 isNegative:NO];
-		NSLog(@"count: %@", previous_count);
-		NSDecimalNumber *multiplier = [previous_count decimalNumberBySubtracting:[NSDecimalNumber one]];
-		NSLog(@"multiplier: %@", multiplier);
-		NSDecimalNumber *aggregate = [previous_average decimalNumberByMultiplyingBy:multiplier];
-		NSLog(@"rating aggregate: %@", aggregate);
-		NSDecimalNumber *new_value = [NSDecimalNumber decimalNumberWithMantissa:[sender value] exponent:0 isNegative:NO];
-		NSLog(@"new rating: %@", new_value);
-		NSDecimalNumber *dividend = [aggregate decimalNumberByAdding:new_value];
-		ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", ((([[content averageRatingText] floatValue] * (NSInteger)[content ratingCount]) + [sender value]) / [[content ratingCountText] integerValue])];
+		multiplier = [previous_count decimalNumberBySubtracting:[NSDecimalNumber one]];
+		dividend = previous_count;
 	} else {
-		ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", ((([[content averageRatingText] floatValue] * (NSInteger)[content ratingCount]) + [sender value]) / [[content ratingCountText] integerValue] + 1)];
+		multiplier = previous_count;
+		dividend = [previous_count decimalNumberByAdding:[NSDecimalNumber one]];
 		if ([content ratingCount] == 0) {
 			ratings_cell.addl.text = @"1 rating";
 		} else {
-			ratings_cell.addl.text = [NSString stringWithFormat:@"%d ratings", [content ratingCount] + 1];
+			ratings_cell.addl.text = [NSString stringWithFormat:@"%@ ratings", [[NSDecimalNumber decimalNumberWithMantissa:[content ratingCount] exponent:0 isNegative:NO] decimalNumberByAdding:[NSDecimalNumber one]]];
 		}									  
 	}
+	NSDecimalNumber *aggregate = [previous_average decimalNumberByMultiplyingBy:multiplier];
+	NSDecimalNumber *new_value = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", [sender value]]];
+	NSDecimalNumber *divisor = [aggregate decimalNumberByAdding:new_value];
+	
+	ratings_cell.main.text = [NSString stringWithFormat:@"%.1f", [[divisor decimalNumberByDividingBy:dividend] floatValue]];
 }
 
 -(void)ratingReady:(UISlider *)sender {
