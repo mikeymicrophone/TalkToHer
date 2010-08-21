@@ -259,7 +259,7 @@
 		}
 		
 		[tableView insertRowsAtIndexPaths:insertableRows withRowAnimation:UITableViewRowAnimationRight];
-		if ([[content_source loaded_amount] integerValue] > 0) {
+		if (displayed_rows > 0) {
 			[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:displayed_rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 		}
 
@@ -281,7 +281,6 @@
 				
 				InspectionController *inspectionController = [[InspectionController alloc] initWithContent:uninspected_content];
 				[self.navigationController pushViewController:inspectionController animated:YES];
-				
 				
 				dispatch_queue_t queue;
 				queue = dispatch_queue_create("com.talktoher.inspect", NULL);

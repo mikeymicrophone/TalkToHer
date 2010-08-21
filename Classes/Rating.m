@@ -37,7 +37,6 @@
 	NSArray *results = [moc executeFetchRequest:f error:&error];
 	
 	for (RatingEntity *r in results) {
-		NSLog(@"deleting: %@", r);
 		[moc deleteObject:r];
 	}
 	
@@ -50,8 +49,6 @@
 	if ([ratingId integerValue] == 0) {
 		[ps markForDelayedSubmission];
 	}
-	
-	NSLog(@"and replacing: %@", ps);
 
 	NSError *mocSaveError = nil;
     if (![moc save:&mocSaveError]) { NSLog(@"Unresolved error %@, %@", mocSaveError, [mocSaveError userInfo]); }

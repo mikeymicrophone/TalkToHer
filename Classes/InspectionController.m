@@ -492,7 +492,6 @@
 }
 
 -(void)ratingArmed:(UISlider *)sender {
-	NSLog(@"touch down");
 	rating_is_fresh = YES;
 }
 

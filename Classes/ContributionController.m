@@ -74,10 +74,9 @@
 	});
 	dispatch_release(queue);
 	
+	[self dismissModalViewControllerAnimated:YES];
 	[[[[UIApplication sharedApplication] delegate] data_source] insertNewElement:content];
-	[[[[self parentViewController] topViewController] tableView] reloadData];	
-	
-	[[self parentViewController] dismissModalViewControllerAnimated:YES];
+	[[[[self parentViewController] topViewController] tableView] reloadData];
 }
 
 -(IBAction)cancel {
