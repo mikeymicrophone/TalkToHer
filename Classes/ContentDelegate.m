@@ -42,11 +42,13 @@
 	}
 }
 
--(void)update_content {
+-(void)update_content:(BOOL)multiple {
 	[self load_content];
 	self.order = [self arrayWithoutNoncontiguousIndices:[self arrayWithoutNoncontiguousIndices:order]];
-	NSInteger amount_of_new_content = [loaded_amount integerValue] - [order count];
-	[order addObjectsFromArray:[self generateShuffledArrayOfLength:amount_of_new_content startingWith:[order count]]];
+	if (multiple) {
+		NSInteger amount_of_new_content = [loaded_amount integerValue] - [order count];
+		[order addObjectsFromArray:[self generateShuffledArrayOfLength:amount_of_new_content startingWith:[order count]]];
+	}
 	self.hidden_amount = [NSNumber numberWithInt:0];
 }
 
@@ -90,10 +92,12 @@
 
 #pragma mark content creation aftermath
 
--(void)insertNewContent {
-	[self update_content];
-	[self.order insertObject:[NSNumber numberWithInt:[content count] - 1] atIndex:[displayed_amount integerValue]];
-	[self displayRows:1];
+-(void)insertNewContent:(BOOL)multiple {
+	[self update_content:multiple];
+	if (!multiple) {
+		[self.order insertObject:[NSNumber numberWithInt:[content count] - 1] atIndex:[displayed_amount integerValue]];
+		[self displayRows:1];
+	}
 }
 
 #pragma mark content hiding aftermath

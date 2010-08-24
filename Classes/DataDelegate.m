@@ -90,7 +90,7 @@
 			[cell stop_spinning];
 			if (!(content == nil || [content count] == 0)) {
 				[self persistData:content ofType:type];
-				[self increment:[class_names objectForKey:type]];
+				[self increment:[class_names objectForKey:type] multiple:YES];
 			}
 		});
 	});
@@ -251,27 +251,27 @@
 #pragma mark -
 #pragma mark content adjustment
 
--(void)increment:(NSString *)type {
+-(void)increment:(NSString *)type multiple:(BOOL)multiple{
 	if ([type isEqualToString:@"Line"]) {
-		[lines update_content];
+		[lines update_content:multiple];
 	} else if ([type isEqualToString:@"Tip"]) {
-		[tips update_content];
+		[tips update_content:multiple];
 	} else if ([type isEqualToString:@"Exercise"]) {
-		[exercises update_content];
+		[exercises update_content:multiple];
 	} else if ([type isEqualToString:@"GoalOwnership"]) {
-		[goals update_content];
+		[goals update_content:multiple];
 	}
 }
 
--(void)insertNewElement:(NSManagedObject *)e {
+-(void)insertNewElement:(NSManagedObject *)e multiple:(BOOL)multiple {
 	if ([[e className] isEqualToString:@"LineEntity"]) {
-		[lines insertNewContent];
+		[lines insertNewContent:multiple];
 	} else if ([[e className] isEqualToString:@"TipEntity"]) {
-		[tips insertNewContent];
+		[tips insertNewContent:multiple];
 	} else if ([[e className] isEqualToString:@"ExerciseEntity"]) {
-		[exercises insertNewContent];
+		[exercises insertNewContent:multiple];
 	} else if ([[e className] isEqualToString:@"GoalOwnershipEntity"]) {
-		[goals insertNewContent];
+		[goals insertNewContent:multiple];
 	}
 }
 

@@ -71,12 +71,16 @@
 		}
 		NSError *error = nil;
 		if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[[[UIApplication sharedApplication] delegate] data_source] insertNewElement:content multiple:NO];
+			[[[self parentViewController] topViewController] popCreatedContent];			
+		});
 	});
 	dispatch_release(queue);
 	
 	[self dismissModalViewControllerAnimated:YES];
-	[[[[UIApplication sharedApplication] delegate] data_source] insertNewElement:content];
-	[[[[self parentViewController] topViewController] tableView] reloadData];
+//	[[[[self parentViewController] topViewController] tableView] beginUpdates];
+//	[[[[self parentViewController] topViewController] tableView] endUpdates];
 }
 
 -(IBAction)cancel {

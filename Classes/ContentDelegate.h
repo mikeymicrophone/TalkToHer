@@ -36,10 +36,10 @@
 -(NSMutableArray *)ascendingArrayOfLength:(NSInteger)length startingWith:(NSInteger)start;
 -(NSMutableArray *)shuffledArrayWithArray:(NSMutableArray *)array;
 -(void)load_content;
--(void)update_content;
+-(void)update_content:(BOOL)multiple;
 -(void)reorder_content;
 -(void)download_more;
--(void)insertNewContent;
+-(void)insertNewContent:(BOOL)multiple;
 -(void)removeOrderedIndex:(NSInteger)index;
 -(NSMutableArray *)arrayWithoutNoncontiguousIndices:(NSArray *)array;
 -(NSNumber *)largestValueInArray:(NSArray *)array;

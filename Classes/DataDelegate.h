@@ -46,6 +46,6 @@
 -(BOOL)lotd_is_reachable;
 -(void)loadRemoteDataOfTypes:(NSArray *)types forCellDelegate:(UITableViewController *)cell_controller;
 -(NSManagedObjectContext *)moc;
--(void)increment:(NSString *)type;
--(void)insertNewElement:(NSManagedObject *)e;
+-(void)increment:(NSString *)type multiple:(BOOL)multiple;
+-(void)insertNewElement:(NSManagedObject *)e multiple:(BOOL)multiple;
 @end
