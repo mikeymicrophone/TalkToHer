@@ -36,7 +36,7 @@
 - (id)initWithObjective:(NSObject *)objective {
     if ((self = [super initWithNibName:nil bundle:nil])) {
 		self.objectiveId = [objective getRemoteId];
-		self.objectiveType = [objective className];
+		self.objectiveType = [[objective className] substringToIndex:[[objective className] length] - 6];
 		self.text = [objective full_text];
 		
 		self.heading = [[UILabel alloc] initWithFrame:CGRectMake(6,5,308,21)];

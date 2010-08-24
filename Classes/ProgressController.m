@@ -29,7 +29,7 @@
 	[[[[[UIApplication sharedApplication] delegate] data_source] moc] save:&error];
 	[[goalOwnership objectiveResource] updateRemote];
 	[[self parentViewController] popToRootViewControllerAnimated:YES];	
-	[[[[[UIApplication sharedApplication] delegate] data_source] goals] update_content];
+	[[[[[UIApplication sharedApplication] delegate] data_source] goals] update_content:YES];
 //	[[[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView] reloadData];
 //	[[[[[[UIApplication sharedApplication] delegate] navigationController] topViewController] tableView] setNeedsDisplay];
 }
