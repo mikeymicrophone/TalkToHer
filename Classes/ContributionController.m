@@ -79,8 +79,6 @@
 	dispatch_release(queue);
 	
 	[self dismissModalViewControllerAnimated:YES];
-//	[[[[self parentViewController] topViewController] tableView] beginUpdates];
-//	[[[[self parentViewController] topViewController] tableView] endUpdates];
 }
 
 -(IBAction)cancel {

@@ -314,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataDelegate.m</string>
+								<string>InspirationController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataDelegate.m</string>
+										<string>InspirationController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E40963A5122394F800763929</string>
+										<string>E40963B2122397E400763929</string>
 										<key>history</key>
 										<array>
 											<string>E4D776941213A3BD00473EC2</string>
@@ -349,9 +349,6 @@
 											<string>E4289F4C1221ABE6008DD00C</string>
 											<string>E4289F6C1221B397008DD00C</string>
 											<string>E409638E1223927300763929</string>
-											<string>E409639A1223944000763929</string>
-											<string>E40963A4122394F800763929</string>
-											<string>E40963A1122394A400763929</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -549,14 +546,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E40963A3122394A400763929</string>
+		<string>E40963B3122397E400763929</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E40963741222334600763929</string>
 		<string>E40963751222334600763929</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E439365011D453CE00D6DED9</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mschwab/Documents/TalkToHer/TalkToHer.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>19 58 1237 709 0 0 1280 778 </string>
@@ -791,14 +788,12 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ContentDelegate.m</string>
+										<string>&lt;No Editor&gt;</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>

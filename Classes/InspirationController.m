@@ -196,9 +196,8 @@
 }
 
 -(void)popCreatedContent {
-	NSUInteger bottom_spot[] = {0, [content_source display_amount]};
-	NSArray *created_content_index = [NSArray arrayWithObject:[NSIndexPath indexPathWithIndexes:bottom_spot length:2]];
-	[self.tableView reloadData];//insertRowsAtIndexPaths:created_content_index withRowAnimation:UITableViewRowAnimationTop];
+	NSArray *created_content_index = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:[content_source display_amount] - 1 inSection:0]];
+	[self.tableView insertRowsAtIndexPaths:created_content_index withRowAnimation:UITableViewRowAnimationTop];
 }
 
 #pragma mark -
