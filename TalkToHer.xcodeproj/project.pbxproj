@@ -993,6 +993,40 @@
 			};
 			name = Release;
 		};
+		E4F3B9B01223A5DA003CA9B2 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
+				MOMC_NO_WARNINGS = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.0;
+			};
+			name = Distribution;
+		};
+		E4F3B9B11223A5DA003CA9B2 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mike Schwab";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TalkToHer_Prefix.pch;
+				INFOPLIST_FILE = "TalkToHer-Info.plist";
+				PRODUCT_NAME = TalkToHer;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4BCEDF61-2580-46CC-8D03-47E2413108FB";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1001,6 +1035,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				E4F3B9B01223A5DA003CA9B2 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1010,6 +1045,7 @@
 			buildConfigurations = (
 				E4CB9181120E915A00B8CCD6 /* Debug */,
 				E4CB9182120E915A00B8CCD6 /* Release */,
+				E4F3B9B11223A5DA003CA9B2 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

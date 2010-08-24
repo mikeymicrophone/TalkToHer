@@ -324,9 +324,12 @@
 		height = [InspirationCell cellHeightForMainText:[content tagCountText]
 											 additional:[content tagSummary]
 												  width:[[self view] frame].size.width];
+		if (height < 47) {
+			height = 47;
+		}
 	} else if (indexPath.section == 3) {
 		if (indexPath.row == 0) {
-			height = 44;
+			height = 47;
 		} else {
 			CommentEntity *c = [[content comments] objectAtIndex:(indexPath.row - 1)];
 			height = [InspirationCell cellHeightForMainText:[c main_text]
