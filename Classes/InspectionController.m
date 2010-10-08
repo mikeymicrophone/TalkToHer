@@ -155,7 +155,7 @@
 	} else if (indexPath.section == 1) {
 		CellIdentifier = @"rating";
 		
-		cell = ratings_cell;//(InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		cell = ratings_cell;
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			
@@ -164,8 +164,6 @@
 			
 			if ([[[UIApplication sharedApplication] delegate] userIsLoggedIn]) {
 				slider.maximumValue = 5.0;
-//				[slider addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
-//				[slider addTarget:self action:@selector(ratingReady:) forControlEvents:UIControlEventTouchUpInside];
 				[cell addSubview:slider];
 				slider.value = [[content myRating] floatValue];
 				
@@ -196,7 +194,7 @@
 	} else if (indexPath.section == 2) {
 		CellIdentifier = @"tags";
 		
-		cell = tags_cell;//(InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		cell = tags_cell;
 		if (cell == nil) {
 			cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			[cell setMain_text:[content tagCountText]];
@@ -229,7 +227,7 @@
 		if (indexPath.row == 0) {
 			CellIdentifier = @"comments";
 			
-			cell = comments_header_cell;//(InspirationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			cell = comments_header_cell;
 			if (cell == nil) {
 				cell = [[[InspirationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				
@@ -339,6 +337,8 @@
 	} else if (indexPath.section == 4) {
 		height = 40;
 	} else if (indexPath.section == 5) {
+		height = 40;
+	} else if (indexPath.section == 6) {
 		height = 40;
 	}
 	return height;

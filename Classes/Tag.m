@@ -69,10 +69,6 @@
 }
 
 -(BOOL)matches:(NSManagedObject *)po {
-	NSLog(@"t type: %@ %@ %d", [self targetType], [po targetType], [[self targetType] isEqualToString:[po targetType]]);
-	NSLog(@"s type: %@ %@ %d", [self subjectType], [po subjectType], [[self subjectType] isEqualToString:[po subjectType]]);
-	NSLog(@"t id: %@ %@ %d", [self targetId], [po targetId], ([[self targetId] integerValue] == [[po targetId] integerValue]));
-	NSLog(@"s id: %@ %@ %d", [self subjectId], [po subjectId], ([[self subjectId] integerValue] == [[po subjectId] integerValue]));
 	return [[self targetType] isEqualToString:[po targetType]] && [[self subjectType] isEqualToString:[po subjectType]] && ([[self targetId] integerValue] == [[po targetId] integerValue]) && ([[self subjectId] integerValue] == [[po subjectId] integerValue]);
 }
 

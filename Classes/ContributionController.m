@@ -7,6 +7,7 @@
 //
 
 #import "ContributionController.h"
+#import "InspirationController.h"
 #import "TalkToHerAppDelegate.h"
 #import "DataDelegate.h"
 #import <dispatch/dispatch.h>
@@ -61,6 +62,9 @@
 	if ([contentType isEqualToString:@"Exercise"]) {
 		[content setMoniker:exercise_name.text];
 	}
+	
+	InspirationController *inspirationController = [[self parentViewController] topViewController];
+	
 	dispatch_queue_t queue;
 	queue = dispatch_queue_create("com.talktoher.submission", NULL);
 	dispatch_async(queue, ^{
@@ -73,7 +77,7 @@
 		if (![[[[UIApplication sharedApplication] delegate] managedObjectContext] save:&error]) { NSLog(@"Unresolved error %@, %@", error, [error userInfo]); }
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[[[[UIApplication sharedApplication] delegate] data_source] insertNewElement:content multiple:NO];
-			[[[self parentViewController] topViewController] popCreatedContent];			
+			[inspirationController popCreatedContent];			
 		});
 	});
 	dispatch_release(queue);

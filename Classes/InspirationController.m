@@ -29,7 +29,9 @@
 
 	self.content_source = source;
 	if ([[content_source loaded_amount] integerValue] >= 3) {
-		[content_source displayRows:3];
+		if ([[content_source displayed_amount] integerValue] == 0) {
+			[content_source displayRows:3];
+		}
 	} else {
 		[content_source displayRows:[[content_source loaded_amount] integerValue]];
 	}

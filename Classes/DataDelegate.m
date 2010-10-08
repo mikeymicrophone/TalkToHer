@@ -22,7 +22,7 @@
 
 -(void)initialize_constants {
 	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", @"Rating", @"ratings", @"Tag", @"tags", @"Comment", @"comments", nil];
-	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
+	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";
 	[ObjectiveResourceConfig setSite:server_location];
 	connectionIsFresh = NO;
 }
@@ -233,7 +233,7 @@
 	BOOL currentlyReachable;
 	Reachability *r = [Reachability reachabilityWithHostName:server_location];
 	
-	currentlyReachable = [r isReachable] || [server_location isEqualToString:@"http://localhost:3000/"];
+	currentlyReachable = [r isReachable];
 	
 	if (currentlyReachable && connectionIsFresh) {
 		connectionIsFresh = NO;
