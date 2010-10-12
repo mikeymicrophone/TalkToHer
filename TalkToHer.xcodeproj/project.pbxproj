@@ -108,24 +108,20 @@
 		E4CB9172120E915A00B8CCD6 /* FirstClassContentPiece+Commendable.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E853120D3258009B8CA2 /* FirstClassContentPiece+Commendable.m */; };
 		E4CB9173120E915A00B8CCD6 /* Concept.m in Sources */ = {isa = PBXBuildFile; fileRef = E444E87E120D346D009B8CA2 /* Concept.m */; };
 		E4CB9174120E915A00B8CCD6 /* BroadcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = E444EA09120E606C009B8CA2 /* BroadcastController.m */; };
-		E4CB9176120E915A00B8CCD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		E4CB9177120E915A00B8CCD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		E4CB9178120E915A00B8CCD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		E4CB9179120E915A00B8CCD6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */; };
-		E4CB917A120E915A00B8CCD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666511EC00AA00A48898 /* CFNetwork.framework */; };
-		E4CB917B120E915A00B8CCD6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666711EC00B400A48898 /* MobileCoreServices.framework */; };
-		E4CB917C120E915A00B8CCD6 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E440666911EC00C800A48898 /* libz.1.2.3.dylib */; };
-		E4CB917D120E915A00B8CCD6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44066D911ED057000A48898 /* CoreData.framework */; };
-		E4CB917E120E915A00B8CCD6 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E435D8F211F7085F00A5061D /* AddressBook.framework */; };
-		E4CB917F120E915A00B8CCD6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4001D421200BB28001359B0 /* MessageUI.framework */; };
+		E4E4D5BA1264E5EC00132C69 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5B91264E5EC00132C69 /* CFNetwork.framework */; };
+		E4E4D5BE1264E5F700132C69 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5BD1264E5F700132C69 /* MobileCoreServices.framework */; };
+		E4E4D5C21264E61000132C69 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5C11264E61000132C69 /* CoreData.framework */; };
+		E4E4D5C61264E62800132C69 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5C51264E62800132C69 /* MessageUI.framework */; };
+		E4E4D5CA1264E64900132C69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5C91264E64900132C69 /* Foundation.framework */; };
+		E4E4D5CE1264E65D00132C69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5CD1264E65D00132C69 /* CoreGraphics.framework */; };
+		E4E4D5D21264E66F00132C69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5D11264E66F00132C69 /* SystemConfiguration.framework */; };
+		E4E4D5D61264E68C00132C69 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5D51264E68C00132C69 /* libz.1.2.3.dylib */; };
+		E4E4D5D81264E6B700132C69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4D5D71264E6B700132C69 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TalkToHerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkToHerAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TalkToHerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkToHerAppDelegate.m; sourceTree = "<group>"; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* TalkToHer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkToHer_Prefix.pch; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -136,7 +132,6 @@
 		E4001B4211FF8B8B001359B0 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
 		E4001D1D12006E6B001359B0 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E4001D1E12006E6B001359B0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		E4001D421200BB28001359B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E409694011F1154E0055459F /* ProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressController.h; sourceTree = "<group>"; };
 		E409694111F1154E0055459F /* ProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressController.m; sourceTree = "<group>"; };
 		E409694211F1154E0055459F /* ProgressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgressController.xib; path = Classes/ProgressController.xib; sourceTree = "<group>"; };
@@ -149,7 +144,6 @@
 		E419E37111F01A1F00F400DD /* tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tips.png; sourceTree = "<group>"; };
 		E419E37C11F0224800F400DD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		E419E38011F0236E00F400DD /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
-		E435D8F211F7085F00A5061D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E439369511D50DD300D6DED9 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
 		E439369611D50DD300D6DED9 /* InspirationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationController.m; sourceTree = "<group>"; };
 		E44065BF11EBB9F700A48898 /* LoaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaderCell.h; sourceTree = "<group>"; };
@@ -172,11 +166,7 @@
 		E440664F11EC002000A48898 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
 		E440665C11EC006300A48898 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E440665D11EC006300A48898 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		E440666511EC00AA00A48898 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		E440666711EC00B400A48898 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		E440666911EC00C800A48898 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		E44066CF11ECF7BF00A48898 /* Content.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Content.xcdatamodel; path = Classes/Content.xcdatamodel; sourceTree = "<group>"; };
-		E44066D911ED057000A48898 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E444E84F120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirstClassContentPiece+Taggable.h"; sourceTree = "<group>"; };
 		E444E850120D2FB0009B8CA2 /* FirstClassContentPiece+Taggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirstClassContentPiece+Taggable.m"; sourceTree = "<group>"; };
 		E444E852120D3258009B8CA2 /* FirstClassContentPiece+Commendable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirstClassContentPiece+Commendable.h"; sourceTree = "<group>"; };
@@ -229,7 +219,6 @@
 		E4C6ACCD11D514F000068008 /* InspirationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InspirationController.xib; path = Views/InspirationController.xib; sourceTree = "<group>"; };
 		E4C6ACCE11D514F000068008 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		E4C6ACCF11D514F000068008 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
-		E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E4C6AE5511D5415400068008 /* CoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSupport.h; sourceTree = "<group>"; };
 		E4C6AE5711D5415400068008 /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
 		E4C6AE5811D5415400068008 /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
@@ -325,6 +314,15 @@
 		E4DEA4B71206309800266C34 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		E4E0B2D511D7BF9300C0D0A2 /* DataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDelegate.h; sourceTree = "<group>"; };
 		E4E0B2D611D7BF9300C0D0A2 /* DataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDelegate.m; sourceTree = "<group>"; };
+		E4E4D5B91264E5EC00132C69 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E4E4D5BD1264E5F700132C69 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E4E4D5C11264E61000132C69 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E4E4D5C51264E62800132C69 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E4E4D5C91264E64900132C69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E4E4D5CD1264E65D00132C69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E4E4D5D11264E66F00132C69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E4E4D5D51264E68C00132C69 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		E4E4D5D71264E6B700132C69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,16 +330,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4CB9176120E915A00B8CCD6 /* Foundation.framework in Frameworks */,
-				E4CB9177120E915A00B8CCD6 /* UIKit.framework in Frameworks */,
-				E4CB9178120E915A00B8CCD6 /* CoreGraphics.framework in Frameworks */,
-				E4CB9179120E915A00B8CCD6 /* SystemConfiguration.framework in Frameworks */,
-				E4CB917A120E915A00B8CCD6 /* CFNetwork.framework in Frameworks */,
-				E4CB917B120E915A00B8CCD6 /* MobileCoreServices.framework in Frameworks */,
-				E4CB917C120E915A00B8CCD6 /* libz.1.2.3.dylib in Frameworks */,
-				E4CB917D120E915A00B8CCD6 /* CoreData.framework in Frameworks */,
-				E4CB917E120E915A00B8CCD6 /* AddressBook.framework in Frameworks */,
-				E4CB917F120E915A00B8CCD6 /* MessageUI.framework in Frameworks */,
+				E4E4D5BA1264E5EC00132C69 /* CFNetwork.framework in Frameworks */,
+				E4E4D5BE1264E5F700132C69 /* MobileCoreServices.framework in Frameworks */,
+				E4E4D5C21264E61000132C69 /* CoreData.framework in Frameworks */,
+				E4E4D5C61264E62800132C69 /* MessageUI.framework in Frameworks */,
+				E4E4D5CA1264E64900132C69 /* Foundation.framework in Frameworks */,
+				E4E4D5CE1264E65D00132C69 /* CoreGraphics.framework in Frameworks */,
+				E4E4D5D21264E66F00132C69 /* SystemConfiguration.framework in Frameworks */,
+				E4E4D5D61264E68C00132C69 /* libz.1.2.3.dylib in Frameworks */,
+				E4E4D5D81264E6B700132C69 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,19 +420,18 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E440666511EC00AA00A48898 /* CFNetwork.framework */,
-				E440666711EC00B400A48898 /* MobileCoreServices.framework */,
-				E440666911EC00C800A48898 /* libz.1.2.3.dylib */,
 				E440663811EBFFAD00A48898 /* ASIHTTPRequest */,
 				E4C6AE9011D5415400068008 /* ObjectiveResource */,
 				E4C6AE5311D5415400068008 /* lib */,
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
-				E4C6ADE811D5290E00068008 /* SystemConfiguration.framework */,
-				E44066D911ED057000A48898 /* CoreData.framework */,
-				E435D8F211F7085F00A5061D /* AddressBook.framework */,
-				E4001D421200BB28001359B0 /* MessageUI.framework */,
+				E4E4D5B91264E5EC00132C69 /* CFNetwork.framework */,
+				E4E4D5BD1264E5F700132C69 /* MobileCoreServices.framework */,
+				E4E4D5C11264E61000132C69 /* CoreData.framework */,
+				E4E4D5C51264E62800132C69 /* MessageUI.framework */,
+				E4E4D5C91264E64900132C69 /* Foundation.framework */,
+				E4E4D5CD1264E65D00132C69 /* CoreGraphics.framework */,
+				E4E4D5D11264E66F00132C69 /* SystemConfiguration.framework */,
+				E4E4D5D51264E68C00132C69 /* libz.1.2.3.dylib */,
+				E4E4D5D71264E6B700132C69 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -786,6 +782,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TalkToHer" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -929,36 +926,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
 				MOMC_NO_WARNINGS = NO;
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=*]" = "";
-				SDKROOT = iphoneos4.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.2;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADDITIONAL_SDKS = "";
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
 				MOMC_NO_WARNINGS = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=*]" = "";
-				SDKROOT = iphoneos4.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.2;
 			};
 			name = Release;
 		};
@@ -966,7 +970,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mike Schwab";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -974,7 +979,8 @@
 				GCC_PREFIX_HEADER = TalkToHer_Prefix.pch;
 				INFOPLIST_FILE = "TalkToHer-Info.plist";
 				PRODUCT_NAME = TalkToHer;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4BCEDF61-2580-46CC-8D03-47E2413108FB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 			};
 			name = Debug;
 		};
@@ -982,13 +988,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mike Schwab";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TalkToHer_Prefix.pch;
 				INFOPLIST_FILE = "TalkToHer-Info.plist";
 				PRODUCT_NAME = TalkToHer;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4BCEDF61-2580-46CC-8D03-47E2413108FB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -997,18 +1005,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = NO;
 				MOMC_NO_WARNINGS = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Distribution;
 		};
@@ -1016,13 +1027,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mike Schwab";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TalkToHer_Prefix.pch;
 				INFOPLIST_FILE = "TalkToHer-Info.plist";
 				PRODUCT_NAME = TalkToHer;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4BCEDF61-2580-46CC-8D03-47E2413108FB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
