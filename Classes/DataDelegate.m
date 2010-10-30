@@ -3,7 +3,7 @@
 //  TalkToHer
 //
 //  Created by Michael Schwab on 6/27/10.
-//  Copyright 2010 Exco Ventures. All rights reserved.
+//  Copyright 2010 Charismatic Comfort. All rights reserved.
 //
 
 #import "DataDelegate.h"
@@ -22,7 +22,7 @@
 
 -(void)initialize_constants {
 	self.class_names = [NSDictionary dictionaryWithObjectsAndKeys:@"Line", @"lines", @"Tip", @"tips", @"Exercise", @"exercises", @"GoalOwnership", @"goals", @"Rating", @"ratings", @"Tag", @"tags", @"Comment", @"comments", nil];
-	self.server_location = @"http://lineoftheday.com/";//@"http://localhost:3000/";//
+	self.server_location = @"http://localhost:3000/";//@"http://lineoftheday.com/";//
 	[ObjectiveResourceConfig setSite:server_location];
 	connectionIsFresh = NO;
 }
@@ -233,7 +233,7 @@
 	BOOL currentlyReachable;
 	Reachability *r = [Reachability reachabilityWithHostName:server_location];
 	
-	currentlyReachable = [r isReachable];
+	currentlyReachable = [r isReachable] || [server_location isEqualToString:@"http://localhost:3000/"];
 	
 	if (currentlyReachable && connectionIsFresh) {
 		connectionIsFresh = NO;

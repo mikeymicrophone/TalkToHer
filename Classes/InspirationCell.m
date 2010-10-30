@@ -3,7 +3,7 @@
 //  TalkToHer
 //
 //  Created by Michael Schwab on 6/28/10.
-//  Copyright 2010 Exco Ventures. All rights reserved.
+//  Copyright 2010 Charismatic Comfort. All rights reserved.
 //
 
 #import "InspirationCell.h"
@@ -90,12 +90,12 @@
 }
 
 - (void)dealloc {
+	[super dealloc];
 	self.main_text = nil;
 	self.additional_text = nil;
 	self.main = nil;
 	self.addl = nil;
 	self.type = nil;
-    [super dealloc];
 }
 
 @end

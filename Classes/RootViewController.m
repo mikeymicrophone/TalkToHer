@@ -3,7 +3,7 @@
 //  TalkToHer
 //
 //  Created by Michael Schwab on 6/24/10.
-//  Copyright Exco Ventures 2010. All rights reserved.
+//  Copyright Charismatic Comfort 2010. All rights reserved.
 //
 
 #import "RootViewController.h"
@@ -25,7 +25,7 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
 	
 	self.lines_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"lines"] autorelease];
@@ -34,20 +34,20 @@
 	self.goals_cell = [[[LoaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"goals"] autorelease];
 	
 	NSArray *loadable_data_types = [NSArray arrayWithObjects:@"lines", @"tips", @"exercises", nil];
-	
-	[[[[UIApplication sharedApplication] delegate] data_source] loadRemoteDataOfTypes:loadable_data_types forCellDelegate:self];
+    [[[[UIApplication sharedApplication] delegate] data_source] loadRemoteDataOfTypes:loadable_data_types forCellDelegate:self];
+
 }
 
 /*
- - (void)viewDidAppear:(BOOL)animated {
- [super viewDidAppear:animated];
- }
- */
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+*/
 /*
  - (void)viewWillDisappear:(BOOL)animated {
  [super viewWillDisappear:animated];
  }
- */
+*/
 /*
  - (void)viewDidDisappear:(BOOL)animated {
  [super viewDidDisappear:animated];

@@ -3,14 +3,14 @@
 //  TalkToHer
 //
 //  Created by Michael Schwab on 7/12/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 Charismatic Comfort. All rights reserved.
 //
 
 #import "LoaderCell.h"
 
 @implementation LoaderCell
 
-@synthesize spinner, coloredLabel;
+@synthesize spinner, coloredLabel, contentCount;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (!(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]))
@@ -18,6 +18,10 @@
 	
 	[self addSpinner];
 	[self addColoredLabel];
+	
+	if ([reuseIdentifier isEqualToString:@"lines"] || [reuseIdentifier isEqualToString:@"tips"] || [reuseIdentifier isEqualToString:@"exercises"] || [reuseIdentifier isEqualToString:@"goals"]) {
+		[self addContentCount];
+	}
     return self;
 }
 
@@ -47,10 +51,20 @@
 	[self.spinner startAnimating];
 }
 
+-(void)addContentCount {
+	self.contentCount = [UIButton buttonWithType:UIButtonTypeCustom];
+	contentCount.frame = CGRectMake(self.frame.size.width - 60, 0, 60, 44);
+	contentCount.titleLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
+	[contentCount setTitle:[NSString stringWithFormat:@"%@", [[[[[UIApplication sharedApplication] delegate] data_source] performSelector:NSSelectorFromString([self reuseIdentifier])] loaded_amount]] forState:nil];
+	[contentCount setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:nil];
+	[self addSubview:contentCount];
+}
+
 - (void)dealloc {
     [super dealloc];
 	self.spinner = nil;
 	self.coloredLabel = nil;
+//	self.contentCount = nil;
 }
 
 @end

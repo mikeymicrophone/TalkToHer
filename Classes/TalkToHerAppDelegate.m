@@ -3,7 +3,7 @@
 //  TalkToHer
 //
 //  Created by Michael Schwab on 6/24/10.
-//  Copyright Exco Ventures 2010. All rights reserved.
+//  Copyright Charismatic Comfort 2010. All rights reserved.
 //
 
 #import "TalkToHerAppDelegate.h"
@@ -24,12 +24,12 @@
 	self.data_source = [[DataDelegate alloc] init];
 	[data_source attemptIdentification];
 	[data_source initialize_constants];
-	[data_source initialize_content];
     
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
-
+	
+	[data_source initialize_content];
     return YES;
 }
 
